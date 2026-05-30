@@ -140,7 +140,7 @@ export default function MapPage() {
   const [style, setStyle] = useState<StyleKey>("Dark")
   const [is3D, setIs3D] = useState(false)
   const [time, setTime] = useState("--:--:--")
-  const [activityOpen, setActivityOpen] = useState(false)
+  const [activityOpen, setActivityOpen] = useState(true)
   const [timelineOpen, setTimelineOpen] = useState(false)
   const [agentRunning, setAgentRunning] = useState(false)
   const [speed, setSpeed] = useState(1)
@@ -280,7 +280,7 @@ export default function MapPage() {
     if (!decision || !runningRef.current) return
 
     const durationMin = Math.min(decision.duration_minutes || 5, 60)
-    const stayDuration = (durationMin * 1000) / speed
+    const stayDuration = (durationMin * 1000) / (speedRef.current / 200 || 1)
 
     setActivities((prev) => [{ name: agent.name, activity: `${decision.activity} (${durationMin}min)`, reasoning: decision.reasoning }, ...prev].slice(0, 50))
 
@@ -309,7 +309,7 @@ export default function MapPage() {
       timersRef.current.push(t)
     }
     step()
-  }, [speed])
+  }, [])
 
   // Render loop for autonomous mode
   useEffect(() => {
@@ -420,6 +420,17 @@ export default function MapPage() {
 
     const indices = new Array(currentAgents.length).fill(0)
     let done = false
+
+    // If no valid routes, skip animation and go straight to autonomous
+    const hasRoutes = smoothRoutes.some((r) => r.length > 0)
+    if (!hasRoutes) {
+      currentAgents.forEach((_, i) => {
+        const delay = i * 1000
+        const t = setTimeout(() => cycleAgent(i), delay)
+        timersRef.current.push(t)
+      })
+      return
+    }
 
     const step = () => {
       if (done) return

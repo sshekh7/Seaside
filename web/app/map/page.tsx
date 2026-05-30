@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-const TOKEN =
-  "pk.eyJ1Ijoic3NoZWtoNyIsImEiOiJjbXBycm1maWQxMmRtMnJxN3ExNGJ0M2N0In0.8a_FtEd1CxeQic9R_-priQ";
+const TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
 const STYLES = {
   Dark: "mapbox://styles/mapbox/dark-v11",

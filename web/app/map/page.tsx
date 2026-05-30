@@ -156,6 +156,7 @@ export default function MapPage() {
   const [followingIndex, setFollowingIndex] = useState<number | null>(null)
   const runningRef = useRef(false)
   const activeRoutesRef = useRef<(GeoJSON.Feature | null)[]>([])
+  const agentMemoriesRef = useRef<Record<string, string[]>>({})
   const simTimeRef = useRef(new Date(new Date().setHours(8, 0, 0, 0)))
   const [simTime, setSimTime] = useState("08:00 AM")
   const [activities, setActivities] = useState<{ name: string; activity: string; reasoning: string }[]>([])
@@ -285,8 +286,12 @@ export default function MapPage() {
     const agent = currentAgents[agentIdx]
     const currentPos = positionsRef.current[agentIdx] || agent.start
 
-    const decision = await thinkAgent(agent, agent.zone, [], simTimeRef.current)
+    const decision = await thinkAgent(agent, agent.zone, (agentMemoriesRef.current[agent.id] || []).map(a => ({ activity: a })), simTimeRef.current)
     if (!decision || !runningRef.current) return
+
+    // Store this activity in agent's memory (keep last 5)
+    if (!agentMemoriesRef.current[agent.id]) agentMemoriesRef.current[agent.id] = []
+    agentMemoriesRef.current[agent.id] = [...agentMemoriesRef.current[agent.id], decision.activity].slice(-5)
 
     const durationMin = Math.min(decision.duration_minutes || 5, 60)
     // Stay duration: scale sim minutes to real seconds, cap at 5s real time

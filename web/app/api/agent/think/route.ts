@@ -32,6 +32,8 @@ ${memories?.length ? memories.map((m: { activity: string }) => `- ${m.activity}`
 
 What do YOU do next? Be unique to your character — not everyone does the same thing at the same time. Some people gym at dawn, some skip breakfast, some walk their dog, some meditate, some scroll their phone at a cafe. Pick something that fits YOUR specific personality and habits.
 
+IMPORTANT: Do NOT repeat your recent activities. If you already had coffee, don't get more coffee. If you already ate, don't eat again. Move on to something different. A real day has variety: commuting, working, exercising, shopping, socializing, cooking, reading, walking, errands, hobbies.
+
 Pick a REAL specific place in Seattle/Bellevue/Redmond (actual business names, parks, neighborhoods).
 
 Respond ONLY with valid JSON, no markdown, no code blocks, no explanation:

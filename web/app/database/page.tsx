@@ -128,7 +128,15 @@ export default function DatabasePage() {
   }, [selectedAgent])
 
   const deleteAgent = async (id: string) => {
+    const agent = agents.find((a) => a.id === id)
     await supabase.from("agents").delete().eq("id", id)
+    if (agent) {
+      fetch("/api/agent/delete-plans", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ agent_name: agent.name }),
+      })
+    }
     if (selectedAgent === id) setSelectedAgent(null)
     setAgents((prev) => prev.filter((a) => a.id !== id))
     setTotalCount((c) => Math.max(0, c - 1))

@@ -43,7 +43,7 @@ export default function NewAgentPage() {
   const handleCreate = async () => {
     if (!canDeploy) return
     setSaving(true)
-    const { error } = await supabase.from("agents").insert({
+    const { data, error } = await supabase.from("agents").insert({
       name: name.trim(),
       profile_pic: config,
       job_description: jobDescription.trim() || null,
@@ -51,11 +51,18 @@ export default function NewAgentPage() {
       location_home: locationHome.trim() || null,
       age: age ? parseInt(age) : null,
       personality: personality.trim() || null,
-    })
+    }).select("id").single()
     setSaving(false)
     if (error) {
       alert("Failed to create agent: " + error.message)
       return
+    }
+    if (data?.id) {
+      fetch("/api/agent/generate-plan", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ agent_id: data.id }),
+      })
     }
     router.push("/map")
   }

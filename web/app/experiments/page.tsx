@@ -132,6 +132,7 @@ type Weather = {
 }
 
 function parseWeather(prompt: string): Weather | null {
+  if (!prompt) return null
   const lower = prompt.toLowerCase()
   let tempF: number | null = null
   const t = lower.match(/(-?\d{2,3})\s?°?\s?f\b/)

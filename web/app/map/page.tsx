@@ -118,7 +118,7 @@ export default function MapPage() {
   const [style, setStyle] = useState<StyleKey>("Dark")
   const [is3D, setIs3D] = useState(false)
   const [time, setTime] = useState("--:--:--")
-  const [activityOpen, setActivityOpen] = useState(true)
+  const [activityOpen, setActivityOpen] = useState(false)
   const [timelineOpen, setTimelineOpen] = useState(false)
   const [agentRunning, setAgentRunning] = useState(false)
   const [speed, setSpeed] = useState(1)

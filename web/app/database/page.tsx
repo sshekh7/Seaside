@@ -1,11 +1,14 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import dynamic from "next/dynamic"
-import { Trash } from "@phosphor-icons/react/dist/ssr"
+import { CircleNotch, MagnifyingGlass, Trash, X } from "@phosphor-icons/react/dist/ssr"
 import type { NiceAvatarProps } from "react-nice-avatar"
 
 import { supabase } from "@/lib/supabase"
+
+const PAGE_SIZE = 30
+const SEARCH_DEBOUNCE_MS = 350
 
 const Avatar = dynamic(() => import("react-nice-avatar"), {
   ssr: false,
@@ -37,18 +40,87 @@ export default function DatabasePage() {
   const [agents, setAgents] = useState<Agent[]>([])
   const [memories, setMemories] = useState<Memory[]>([])
   const [selectedAgent, setSelectedAgent] = useState<string | null>(null)
+  const [search, setSearch] = useState("")
+  const [debouncedSearch, setDebouncedSearch] = useState("")
+  const [hasMore, setHasMore] = useState(true)
+  const [loading, setLoading] = useState(false)
+  const [totalCount, setTotalCount] = useState(0)
+  const sentinelRef = useRef<HTMLDivElement | null>(null)
+  const loadingRef = useRef(false)
+  const hasMoreRef = useRef(true)
+  const searchRef = useRef("")
 
-  const fetchAgents = async () => {
-    const { data } = await supabase.from("agents").select("*").order("created_at", { ascending: false })
-    if (data) setAgents(data)
-  }
+  useEffect(() => {
+    const trimmed = search.trim()
+    if (trimmed === debouncedSearch) return
+    const id = setTimeout(() => setDebouncedSearch(trimmed), SEARCH_DEBOUNCE_MS)
+    return () => clearTimeout(id)
+  }, [search, debouncedSearch])
+
+  const isPendingSearch = search.trim() !== debouncedSearch
+  const isInitialLoading = loading && agents.length === 0
+
+  const loadPage = useCallback(async (from: number, query: string, replace: boolean) => {
+    if (loadingRef.current) return
+    loadingRef.current = true
+    setLoading(true)
+    let q = supabase
+      .from("agents")
+      .select("*", { count: "exact" })
+      .order("created_at", { ascending: false })
+      .range(from, from + PAGE_SIZE - 1)
+    if (query) {
+      const pattern = `%${query.replace(/[%_]/g, (m) => `\\${m}`)}%`
+      q = q.or(
+        `name.ilike.${pattern},job_description.ilike.${pattern},personality.ilike.${pattern},location_home.ilike.${pattern},location_work.ilike.${pattern}`,
+      )
+    }
+    const { data, count } = await q
+    if (searchRef.current !== query) {
+      loadingRef.current = false
+      setLoading(false)
+      return
+    }
+    if (data) {
+      setAgents((prev) => {
+        const next = replace ? data : [...prev, ...data]
+        const more = count != null ? next.length < count : data.length === PAGE_SIZE
+        hasMoreRef.current = more
+        setHasMore(more)
+        return next
+      })
+      if (count != null) setTotalCount(count)
+    }
+    loadingRef.current = false
+    setLoading(false)
+  }, [])
+
+  useEffect(() => {
+    searchRef.current = debouncedSearch
+    hasMoreRef.current = true
+    setHasMore(true)
+    setAgents([])
+    loadPage(0, debouncedSearch, true)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearch])
+
+  useEffect(() => {
+    const el = sentinelRef.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      const entry = entries[0]
+      if (entry.isIntersecting && hasMoreRef.current && !loadingRef.current) {
+        loadPage(agents.length, searchRef.current, false)
+      }
+    }, { rootMargin: "200px" })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [agents.length, loadPage])
 
   const fetchMemories = async (agentId: string) => {
     const { data } = await supabase.from("memory").select("*").eq("agent_id", agentId).order("time_start", { ascending: false })
     if (data) setMemories(data)
   }
-
-  useEffect(() => { fetchAgents() }, [])
 
   useEffect(() => {
     if (selectedAgent) fetchMemories(selectedAgent)
@@ -58,45 +130,106 @@ export default function DatabasePage() {
   const deleteAgent = async (id: string) => {
     await supabase.from("agents").delete().eq("id", id)
     if (selectedAgent === id) setSelectedAgent(null)
-    fetchAgents()
+    setAgents((prev) => prev.filter((a) => a.id !== id))
+    setTotalCount((c) => Math.max(0, c - 1))
   }
 
   return (
     <div className="flex h-svh flex-col bg-background text-foreground">
       <header className="flex items-center border-b border-border/60 px-6 py-3">
         <h1 className="text-sm font-medium uppercase tracking-[0.18em]">Database</h1>
-        <span className="ml-3 text-xs text-muted-foreground">{agents.length} agents</span>
+        <span className="ml-3 text-xs text-muted-foreground">{totalCount} agents</span>
       </header>
 
       <div className="flex min-h-0 flex-1">
         {/* Agents list */}
-        <div className="w-80 shrink-0 overflow-y-auto border-r border-border/60">
-          <div className="px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Agents</div>
-          {agents.length === 0 && (
-            <p className="px-4 py-8 text-center text-xs text-muted-foreground">No agents yet. Create one from the sidebar.</p>
-          )}
-          {agents.map((agent) => (
-            <div
-              key={agent.id}
-              onClick={() => setSelectedAgent(agent.id)}
-              className={`flex w-full cursor-pointer items-center gap-3 border-b border-border/40 px-4 py-3 text-left transition hover:bg-secondary/40 ${selectedAgent === agent.id ? "bg-secondary/60" : ""}`}
-            >
-              <div className="size-9 shrink-0 overflow-hidden rounded-full border border-border/60">
-                {agent.profile_pic && <Avatar style={{ width: "100%", height: "100%" }} {...agent.profile_pic} />}
+        <div className="flex w-80 shrink-0 flex-col border-r border-border/60">
+          <div className="border-b border-border/60 p-3">
+            <div className="relative">
+              <MagnifyingGlass
+                size={14}
+                className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+              />
+              <input
+                type="search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search agents…"
+                className="w-full rounded-md border border-border/60 bg-secondary/30 py-2 pl-9 pr-9 text-sm placeholder:text-muted-foreground/70 focus:border-border focus:outline-none focus:ring-1 focus:ring-border"
+              />
+              <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
+                {isPendingSearch || (loading && debouncedSearch) ? (
+                  <CircleNotch size={14} className="animate-spin text-muted-foreground" />
+                ) : search ? (
+                  <button
+                    type="button"
+                    onClick={() => setSearch("")}
+                    className="pointer-events-auto rounded p-0.5 text-muted-foreground/60 transition hover:bg-secondary hover:text-foreground"
+                    aria-label="Clear search"
+                  >
+                    <X size={12} />
+                  </button>
+                ) : null}
               </div>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium">{agent.name}</p>
-                <p className="truncate text-xs text-muted-foreground">{agent.job_description || agent.personality || "No description"}</p>
-              </div>
-              <button
-                onClick={(e) => { e.stopPropagation(); deleteAgent(agent.id) }}
-                className="rounded p-1 text-muted-foreground/50 transition hover:bg-destructive/10 hover:text-destructive"
-                aria-label="Delete agent"
-              >
-                <Trash size={14} />
-              </button>
             </div>
-          ))}
+          </div>
+          <div className="min-h-0 flex-1 overflow-y-auto">
+            <div className="flex items-center justify-between px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+              <span>{debouncedSearch ? `Results (${agents.length})` : "Agents"}</span>
+              {isPendingSearch && <span className="normal-case tracking-normal text-muted-foreground/60">typing…</span>}
+            </div>
+            {isInitialLoading && (
+              <div className="space-y-px">
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="flex items-center gap-3 border-b border-border/40 px-4 py-3">
+                    <div className="size-9 shrink-0 animate-pulse rounded-full bg-muted/40" />
+                    <div className="min-w-0 flex-1 space-y-1.5">
+                      <div className="h-3 w-2/3 animate-pulse rounded bg-muted/40" />
+                      <div className="h-2.5 w-4/5 animate-pulse rounded bg-muted/30" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+            {!isInitialLoading && agents.length === 0 && (
+              <p className="px-4 py-8 text-center text-xs text-muted-foreground">
+                {debouncedSearch ? "No matching agents." : "No agents yet. Create one from the sidebar."}
+              </p>
+            )}
+            <div className={`transition-opacity duration-150 ${isPendingSearch ? "opacity-60" : "opacity-100"}`}>
+              {agents.map((agent) => (
+                <div
+                  key={agent.id}
+                  onClick={() => setSelectedAgent(agent.id)}
+                  className={`flex w-full cursor-pointer items-center gap-3 border-b border-border/40 px-4 py-3 text-left transition hover:bg-secondary/40 ${selectedAgent === agent.id ? "bg-secondary/60" : ""}`}
+                >
+                  <div className="size-9 shrink-0 overflow-hidden rounded-full border border-border/60">
+                    {agent.profile_pic && <Avatar style={{ width: "100%", height: "100%" }} {...agent.profile_pic} />}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium">{agent.name}</p>
+                    <p className="truncate text-xs text-muted-foreground">{agent.job_description || agent.personality || "No description"}</p>
+                  </div>
+                  <button
+                    onClick={(e) => { e.stopPropagation(); deleteAgent(agent.id) }}
+                    className="rounded p-1 text-muted-foreground/50 transition hover:bg-destructive/10 hover:text-destructive"
+                    aria-label="Delete agent"
+                  >
+                    <Trash size={14} />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div ref={sentinelRef} className="h-8" />
+            {loading && agents.length > 0 && (
+              <div className="flex items-center justify-center gap-2 px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                <CircleNotch size={12} className="animate-spin" /> Loading
+              </div>
+            )}
+            {!hasMore && agents.length > 0 && !loading && (
+              <p className="px-4 py-3 text-center text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60">End of list</p>
+            )}
+          </div>
         </div>
 
         {/* Agent detail + memory */}

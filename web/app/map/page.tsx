@@ -155,6 +155,7 @@ export default function MapPage() {
   const followTargetRef = useRef<{ zoom: number; pitch: number }>({ zoom: 16.5, pitch: 55 })
   const [followingIndex, setFollowingIndex] = useState<number | null>(null)
   const runningRef = useRef(false)
+  const activeRoutesRef = useRef<(GeoJSON.Feature | null)[]>([])
   const simTimeRef = useRef(new Date(new Date().setHours(8, 0, 0, 0)))
   const [simTime, setSimTime] = useState("08:00 AM")
   const [activities, setActivities] = useState<{ name: string; activity: string; reasoning: string }[]>([])
@@ -267,6 +268,14 @@ export default function MapPage() {
     return () => clearInterval(interval)
   }, [agentRunning, speed])
 
+  // Update shared route source with active routes
+  const updateRouteSource = useCallback(() => {
+    const map = mapRef.current
+    if (!map || !map.getSource("all-routes")) return
+    const features = activeRoutesRef.current.filter(Boolean) as GeoJSON.Feature[]
+    ;(map.getSource("all-routes") as mapboxgl.GeoJSONSource).setData({ type: "FeatureCollection", features })
+  }, [])
+
   // Autonomous cycle for a single agent
   const cycleAgent = useCallback(async (agentIdx: number) => {
     const map = mapRef.current
@@ -293,12 +302,27 @@ export default function MapPage() {
       return
     }
 
+    // Draw route line for this agent
+    if (map && map.getSource("all-routes")) {
+      const feature: GeoJSON.Feature = {
+        type: "Feature",
+        properties: { color: agent.color, agentId: agent.id },
+        geometry: { type: "LineString", coordinates: route },
+      }
+      // Store active routes per agent
+      activeRoutesRef.current[agentIdx] = feature
+      updateRouteSource()
+    }
+
     const smooth = interpolateRoute(route, 3)
     let i = 0
     const step = () => {
       if (!runningRef.current) return
       if (i >= smooth.length) {
         positionsRef.current[agentIdx] = smooth[smooth.length - 1]
+        // Clear this agent's route line on arrival
+        activeRoutesRef.current[agentIdx] = null
+        updateRouteSource()
         const t = setTimeout(() => cycleAgent(agentIdx), stayDuration)
         timersRef.current.push(t)
         return
@@ -344,7 +368,6 @@ export default function MapPage() {
     if (!map || currentAgents.length === 0) return
 
     setAgentRunning(true)
-    setLoadingRoutes(true)
     runningRef.current = true
     setActivities([])
     framesRef.current = []
@@ -352,56 +375,22 @@ export default function MapPage() {
     timersRef.current.forEach(clearTimeout)
     timersRef.current = []
 
-    // Fetch routes in batches
-    const routes: ([number, number][] | null)[] = []
-    for (let batch = 0; batch < currentAgents.length; batch += 10) {
-      const batchResults = await Promise.all(
-        currentAgents.slice(batch, batch + 10).map((a) => fetchRoute(a.start, a.end))
-      )
-      routes.push(...batchResults)
-    }
-    setLoadingRoutes(false)
+    // Initialize positions and set up map layers
+    positionsRef.current = currentAgents.map((a) => a.start)
 
-    const smoothRoutes: [number, number][][] = []
-    const routeFeatures: GeoJSON.Feature[] = []
-
-    routes.forEach((route, i) => {
-      if (!route) { smoothRoutes.push([]); return }
-      smoothRoutes.push(interpolateRoute(route, 3))
-      routeFeatures.push({
-        type: "Feature",
-        properties: { color: currentAgents[i].color },
-        geometry: { type: "LineString", coordinates: route },
-      })
-    })
-
-    const routeCollection: GeoJSON.FeatureCollection = { type: "FeatureCollection", features: routeFeatures }
-    if (map.getSource("all-routes")) {
-      (map.getSource("all-routes") as mapboxgl.GeoJSONSource).setData(routeCollection)
-    } else {
-      map.addSource("all-routes", { type: "geojson", data: routeCollection })
-      map.addLayer({
-        id: "all-routes-line", type: "line", source: "all-routes",
-        paint: { "line-color": ["get", "color"], "line-width": 1.5, "line-opacity": 0.3 },
-      })
-    }
-
-    const makeCollection = (positions: [number, number][]): GeoJSON.FeatureCollection => ({
+    const collection: GeoJSON.FeatureCollection = {
       type: "FeatureCollection",
-      features: positions.map((pos, i) => ({
+      features: currentAgents.map((a, i) => ({
         type: "Feature" as const,
-        properties: { agentIndex: i, color: currentAgents[i].color },
-        geometry: { type: "Point" as const, coordinates: pos },
+        properties: { agentIndex: i, color: a.color },
+        geometry: { type: "Point" as const, coordinates: a.start },
       })),
-    })
-
-    const currentPositions = currentAgents.map((a, i) => smoothRoutes[i]?.[0] ?? a.start)
-    positionsRef.current = currentPositions
+    }
 
     if (map.getSource("agents-src")) {
-      (map.getSource("agents-src") as mapboxgl.GeoJSONSource).setData(makeCollection(currentPositions))
+      (map.getSource("agents-src") as mapboxgl.GeoJSONSource).setData(collection)
     } else {
-      map.addSource("agents-src", { type: "geojson", data: makeCollection(currentPositions) })
+      map.addSource("agents-src", { type: "geojson", data: collection })
       map.addLayer({
         id: "agents-glow", type: "circle", source: "agents-src",
         paint: {
@@ -418,94 +407,22 @@ export default function MapPage() {
       })
     }
 
-    const indices = new Array(currentAgents.length).fill(0)
-    let done = false
-
-    // If no valid routes, skip animation and go straight to autonomous
-    const hasRoutes = smoothRoutes.some((r) => r.length > 0)
-    if (!hasRoutes) {
-      currentAgents.forEach((_, i) => {
-        const delay = i * 1000
-        const t = setTimeout(() => cycleAgent(i), delay)
-        timersRef.current.push(t)
+    // Route lines source (shared, updated per agent cycle)
+    if (!map.getSource("all-routes")) {
+      map.addSource("all-routes", { type: "geojson", data: { type: "FeatureCollection", features: [] } })
+      map.addLayer({
+        id: "all-routes-line", type: "line", source: "all-routes",
+        paint: { "line-color": ["get", "color"], "line-width": 2, "line-opacity": 0.4, "line-dasharray": [2, 2] },
       })
-      return
     }
 
-    const step = () => {
-      if (done) return
-      let allDone = true
-      const frame: TimelineFrame = { total: 0, perAgent: {} }
-      for (let i = 0; i < currentAgents.length; i++) {
-        const a = currentAgents[i]
-        if (indices[i] < smoothRoutes[i].length) {
-          const prev = currentPositions[i]
-          const next = smoothRoutes[i][indices[i]]
-          const dx = next[0] - prev[0]
-          const dy = next[1] - prev[1]
-          const d = Math.sqrt(dx * dx + dy * dy)
-          currentPositions[i] = next
-          indices[i]++
-          allDone = false
-          frame.total += d
-          frame.perAgent[a.id] = d
-        } else {
-          frame.perAgent[a.id] = 0
-        }
-      }
-      const nextFrames = framesRef.current.length >= MAX_FRAMES
-        ? [...framesRef.current.slice(framesRef.current.length - MAX_FRAMES + 1), frame]
-        : [...framesRef.current, frame]
-      framesRef.current = nextFrames
-      setFrames(nextFrames)
-      ;(map.getSource("agents-src") as mapboxgl.GeoJSONSource).setData(makeCollection(currentPositions))
-      const fi = followingIndexRef.current
-      if (fi !== null && fi >= 0 && currentPositions[fi]) {
-        const route = smoothRoutes[fi]
-        const i = indices[fi]
-        let desiredBearing = map.getBearing()
-        if (route && route.length > 1) {
-          // Average direction over the next ~12 steps so heading reads as a smooth curve, not a jitter
-          const here = currentPositions[fi]
-          const ahead = route[Math.min(route.length - 1, i + 12)]
-          const dx = ahead[0] - here[0]
-          const dy = ahead[1] - here[1]
-          if (dx * dx + dy * dy > 1e-12) {
-            desiredBearing = (Math.atan2(dx, dy) * 180) / Math.PI
-          }
-        }
-        // Shortest-arc lerp from current bearing toward desired, so we never spin the long way
-        const current = map.getBearing()
-        let delta = ((desiredBearing - current + 540) % 360) - 180
-        const bearing = current + delta * 0.18 // soft heading follow
-        const target = followTargetRef.current
-        map.easeTo({
-          center: currentPositions[fi],
-          zoom: target.zoom,
-          pitch: target.pitch,
-          bearing,
-          // Run the ease ~3 ticks long with a cubic ease so each tick smoothly
-          // hands off to the next instead of snapping at every step boundary
-          duration: speedRef.current * 3,
-          easing: (t) => t * (2 - t),
-          essential: true,
-        })
-      }
-      if (allDone) {
-        // Initial animation done — start autonomous cycles
-        setLoadingRoutes(false)
-        currentAgents.forEach((_, i) => {
-          const delay = i * 1000
-          const t = setTimeout(() => cycleAgent(i), delay)
-          timersRef.current.push(t)
-        })
-        return
-      }
-      const t = setTimeout(step, speedRef.current)
+    // Kick off autonomous cycles immediately (staggered)
+    currentAgents.forEach((_, i) => {
+      const delay = i * 800
+      const t = setTimeout(() => cycleAgent(i), delay)
       timersRef.current.push(t)
-    }
-    step()
-  }, [])
+    })
+  }, [cycleAgent])
 
   const enable3D = useCallback((map: mapboxgl.Map) => {
     map.easeTo({ pitch: 55, bearing: 0 })

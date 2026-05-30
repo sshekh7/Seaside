@@ -10,7 +10,7 @@
 //   CONCURRENCY=6   # max agents planned at once (default 6)
 
 import "dotenv/config"
-import { mkdirSync, writeFileSync } from "node:fs"
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { listAgents } from "./lib/agents"
 import { completeJson, getLlmMs, resetLlmMs } from "./lib/llm"
 import { geocode, getMapboxMs, resetMapboxMs, getCacheStats, resetCacheStats } from "./lib/mapbox"
@@ -208,7 +208,21 @@ async function mapPool<T, R>(items: T[], limit: number, fn: (item: T, index: num
 }
 
 async function main() {
-  const agents = await listAgents()
+  const allAgents = await listAgents()
+
+  // Optional scoping: set ONLY_SEEDED=1 to plan only the agents listed in
+  // output/seeded-agents.json (the freshly created batch), leaving everyone
+  // else's existing plans untouched.
+  let agents = allAgents
+  if (process.env.ONLY_SEEDED === "1") {
+    const seededFile = process.env.SEEDED_FILE || "seeded-agents.json"
+    const seededPath = new URL(`./output/${seededFile}`, import.meta.url).pathname
+    const { ids } = JSON.parse(readFileSync(seededPath, "utf8")) as { ids: string[] }
+    const idSet = new Set(ids)
+    agents = allAgents.filter((a) => idSet.has(a.id))
+    console.log(`[reset] ONLY_SEEDED=1 (${seededFile}) — scoped to ${agents.length} seeded agents (of ${allAgents.length} total)`)
+  }
+
   console.log(`[reset] ${agents.length} agents × ${DAYS.length} days, concurrency=${CONCURRENCY}`)
   console.log(`[reset] agents: ${agents.map((a) => a.name).join(", ")}\n`)
 

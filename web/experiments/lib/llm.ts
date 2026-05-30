@@ -1,9 +1,15 @@
-// LLM provider abstraction. Uses AWS Bedrock (Claude Haiku 4.5).
+// LLM provider abstraction. Supports AWS Bedrock (Claude Haiku 4.5) and Azure OpenAI.
 //   - chat completion w/ retry
 //   - JSON object response_format
 //   - cumulative latency tracking
+//
+// Select provider via LLM_PROVIDER env ("bedrock" default, or "azure").
+// Running two sims with different providers lets you double throughput without
+// sharing a single quota.
 
 import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime"
+
+const PROVIDER = (process.env.LLM_PROVIDER || "bedrock").toLowerCase()
 
 const client = new BedrockRuntimeClient({
   region: process.env.BEDROCK_REGION || process.env.AWS_REGION || "us-west-2",
@@ -14,6 +20,11 @@ const client = new BedrockRuntimeClient({
 })
 
 const MODEL = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+
+// Azure OpenAI config. Endpoint already includes the /openai/v1/ base path.
+const AZURE_ENDPOINT = (process.env.AZURE_OPENAI_ENDPOINT || "").trim().replace(/\/+$/, "")
+const AZURE_API_KEY = process.env.AZURE_OPENAI_API_KEY || ""
+const AZURE_DEPLOYMENT = process.env.AZURE_OPENAI_DEPLOYMENT || "gpt-5.4-nano"
 
 let totalMs = 0
 export function getLlmMs() {
@@ -36,31 +47,74 @@ async function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms))
 }
 
+async function callBedrock(opts: Opts): Promise<string> {
+  const body = JSON.stringify({
+    anthropic_version: "bedrock-2023-05-31",
+    max_tokens: opts.maxTokens || 4096,
+    temperature: opts.temperature ?? 0.7,
+    system: opts.system,
+    messages: [{ role: "user", content: opts.user }],
+  })
+
+  const command = new InvokeModelCommand({
+    modelId: MODEL,
+    contentType: "application/json",
+    body: new TextEncoder().encode(body),
+  })
+
+  const response = await client.send(command)
+  const result = JSON.parse(new TextDecoder().decode(response.body))
+  const text = result.content?.[0]?.text
+  if (!text) throw new Error("empty completion")
+  return text
+}
+
+async function callAzure(opts: Opts): Promise<string> {
+  if (!AZURE_ENDPOINT) throw new Error("AZURE_OPENAI_ENDPOINT not set")
+  if (!AZURE_API_KEY) throw new Error("AZURE_OPENAI_API_KEY not set")
+
+  const url = `${AZURE_ENDPOINT}/chat/completions`
+  const payload: Record<string, unknown> = {
+    model: AZURE_DEPLOYMENT,
+    max_completion_tokens: opts.maxTokens || 4096,
+    messages: [
+      { role: "system", content: opts.system },
+      { role: "user", content: opts.user },
+    ],
+  }
+  if (opts.jsonMode) payload.response_format = { type: "json_object" }
+  // gpt-5 family only supports default temperature; omit unless explicitly non-default.
+  if (opts.temperature !== undefined) payload.temperature = opts.temperature
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "api-key": AZURE_API_KEY,
+    },
+    body: JSON.stringify(payload),
+  })
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "")
+    if (res.status === 429) throw new Error(`Too many requests (azure 429): ${errText.slice(0, 200)}`)
+    throw new Error(`azure ${res.status}: ${errText.slice(0, 300)}`)
+  }
+
+  const result = await res.json()
+  const text = result.choices?.[0]?.message?.content
+  if (!text) throw new Error("empty completion")
+  return text
+}
+
 export async function complete(opts: Opts): Promise<string> {
   const max = opts.attempts ?? 3
   let lastErr: unknown
   for (let i = 0; i < max; i++) {
     try {
       const t0 = Date.now()
-      const body = JSON.stringify({
-        anthropic_version: "bedrock-2023-05-31",
-        max_tokens: opts.maxTokens || 4096,
-        temperature: opts.temperature ?? 0.7,
-        system: opts.system,
-        messages: [{ role: "user", content: opts.user }],
-      })
-
-      const command = new InvokeModelCommand({
-        modelId: MODEL,
-        contentType: "application/json",
-        body: new TextEncoder().encode(body),
-      })
-
-      const response = await client.send(command)
-      const result = JSON.parse(new TextDecoder().decode(response.body))
+      const text = PROVIDER === "azure" ? await callAzure(opts) : await callBedrock(opts)
       totalMs += Date.now() - t0
-      const text = result.content?.[0]?.text
-      if (!text) throw new Error("empty completion")
       return text
     } catch (err) {
       lastErr = err

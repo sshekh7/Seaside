@@ -11,7 +11,8 @@ const client = new BedrockRuntimeClient({
 
 export async function POST(req: NextRequest) {
   try {
-    const { agent, currentLocation, memories } = await req.json()
+    const { agent, currentLocation, memories, simTime } = await req.json()
+    const time = simTime ? new Date(simTime) : new Date()
 
   const prompt = `You are ${agent.name}, a person living in the Seattle metro area.
 
@@ -22,13 +23,19 @@ Your home: ${agent.location_home || "Seattle"}
 Your workplace: ${agent.location_work || "Seattle"}
 
 Current location: ${currentLocation || "Downtown Seattle"}
-Current time: ${new Date().toLocaleTimeString()}
+Current time: ${time.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true })} on ${time.toLocaleDateString("en-US", { weekday: "long" })}
 
 Recent memories:
 ${memories?.length ? memories.map((m: { activity: string }) => `- ${m.activity}`).join("\n") : "- No recent memories"}
 
-Based on your personality and current context, decide what to do next. Respond in JSON:
-{"activity": "brief description of what you're doing", "destination": "specific place name in Seattle/Bellevue/Redmond area", "reasoning": "one sentence why"}`
+Based on your personality, job, and the current time, decide what to do next. Consider realistic human behavior:
+- People sleep at night (typically 10pm-7am at home)
+- People work during business hours (9am-5pm at their workplace)
+- People eat meals (breakfast, lunch, dinner)
+- People run errands, socialize, exercise, relax
+
+Respond in JSON:
+{"activity": "brief description of what you're doing", "destination": "specific place name in Seattle/Bellevue/Redmond area", "duration_minutes": number (how long you'll stay there, e.g. 480 for sleeping, 60 for lunch, 30 for coffee), "reasoning": "one sentence why"}`
 
   const body = JSON.stringify({
     anthropic_version: "bedrock-2023-05-31",

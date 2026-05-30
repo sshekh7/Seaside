@@ -68,9 +68,13 @@ const LAST = [
 // using them makes every resident share an identical home point. Street
 // addresses hit the real Mapbox geocoder and spread out across the city.
 //
-// Each entry: real Seattle-area streets with a plausible house-number range and
-// the directional/city suffix Mapbox expects. Numbers are randomized per agent.
-const STREETS: { street: string; suffix: string; min: number; max: number }[] = [
+// Each entry: real streets with a plausible house-number range and the
+// directional/city suffix Mapbox expects. Numbers are randomized per agent.
+// Streets are split by region so a batch can be scoped to the Eastside (or
+// Seattle) via the REGION env var: "seattle" | "eastside" | "all" (default).
+type Street = { street: string; suffix: string; min: number; max: number }
+
+const SEATTLE_STREETS: Street[] = [
   // North Seattle
   { street: "NE 65th St", suffix: "Seattle, WA", min: 100, max: 4500 },
   { street: "NE 45th St", suffix: "Seattle, WA", min: 1000, max: 5200 },
@@ -98,27 +102,71 @@ const STREETS: { street: string; suffix: string; min: number; max: number }[] = 
   { street: "24th Ave NW", suffix: "Seattle, WA", min: 5000, max: 9000 },
   { street: "32nd Ave NW", suffix: "Seattle, WA", min: 6500, max: 8800 },
   { street: "15th Ave NW", suffix: "Seattle, WA", min: 4500, max: 9500 },
-  // Eastside
+]
+
+const EASTSIDE_STREETS: Street[] = [
+  // Bellevue
   { street: "148th Ave NE", suffix: "Bellevue, WA", min: 1000, max: 7000 },
   { street: "Bel-Red Rd", suffix: "Bellevue, WA", min: 12000, max: 16000 },
+  { street: "Northup Way", suffix: "Bellevue, WA", min: 10000, max: 14000 },
+  { street: "Lake Hills Blvd", suffix: "Bellevue, WA", min: 14000, max: 16800 },
+  { street: "108th Ave NE", suffix: "Bellevue, WA", min: 100, max: 4200 },
+  { street: "Newport Way", suffix: "Bellevue, WA", min: 12000, max: 16500 },
+  { street: "Somerset Blvd SE", suffix: "Bellevue, WA", min: 4000, max: 6200 },
+  // Redmond
   { street: "156th Ave NE", suffix: "Redmond, WA", min: 7000, max: 11000 },
   { street: "Avondale Rd NE", suffix: "Redmond, WA", min: 8000, max: 13000 },
+  { street: "Redmond Way", suffix: "Redmond, WA", min: 15000, max: 18500 },
+  { street: "NE 116th St", suffix: "Redmond, WA", min: 7000, max: 11000 },
+  { street: "Education Hill Rd NE", suffix: "Redmond, WA", min: 8000, max: 10500 },
+  // Kirkland
   { street: "6th St S", suffix: "Kirkland, WA", min: 100, max: 1500 },
   { street: "NE 85th St", suffix: "Kirkland, WA", min: 200, max: 1400 },
+  { street: "Market St", suffix: "Kirkland, WA", min: 100, max: 1800 },
+  { street: "Juanita Dr NE", suffix: "Kirkland, WA", min: 9000, max: 13500 },
+  { street: "100th Ave NE", suffix: "Kirkland, WA", min: 7000, max: 12000 },
+  // Renton
   { street: "Benson Rd S", suffix: "Renton, WA", min: 2000, max: 4200 },
+  { street: "NE 4th St", suffix: "Renton, WA", min: 1000, max: 4600 },
+  { street: "Union Ave NE", suffix: "Renton, WA", min: 1000, max: 4400 },
+  // Issaquah / Sammamish
+  { street: "NW Sammamish Rd", suffix: "Issaquah, WA", min: 100, max: 2600 },
+  { street: "Front St N", suffix: "Issaquah, WA", min: 100, max: 1900 },
+  { street: "228th Ave SE", suffix: "Sammamish, WA", min: 1000, max: 4200 },
+  { street: "SE 8th St", suffix: "Sammamish, WA", min: 20000, max: 24000 },
+  // Bothell / Woodinville
+  { street: "Main St", suffix: "Bothell, WA", min: 9000, max: 12000 },
+  { street: "NE 195th St", suffix: "Bothell, WA", min: 1000, max: 4200 },
+  { street: "NE 175th St", suffix: "Woodinville, WA", min: 13000, max: 17000 },
+  { street: "Woodinville-Redmond Rd NE", suffix: "Woodinville, WA", min: 13000, max: 17000 },
+  // Mercer Island / Newcastle
+  { street: "Island Crest Way", suffix: "Mercer Island, WA", min: 2000, max: 8000 },
+  { street: "Coal Creek Pkwy SE", suffix: "Newcastle, WA", min: 6000, max: 9000 },
+  // Shoreline (north end, between Seattle & Eastside)
   { street: "Aurora Ave N", suffix: "Shoreline, WA", min: 14500, max: 20000 },
 ]
+
+const REGION = (process.env.REGION || "all").toLowerCase()
+const STREETS: Street[] =
+  REGION === "eastside" ? EASTSIDE_STREETS : REGION === "seattle" ? SEATTLE_STREETS : [...SEATTLE_STREETS, ...EASTSIDE_STREETS]
 
 function makeHome(): string {
   const s = pick(STREETS)
   return `${int(s.min, s.max)} ${s.street}, ${s.suffix}`
 }
-const WORK_HUBS = [
-  "South Lake Union, Seattle", "Downtown Seattle", "Pioneer Square, Seattle", "Bellevue downtown",
-  "Redmond, WA", "Fremont, Seattle", "Ballard, Seattle", "U-District, Seattle",
+const SEATTLE_HUBS = [
+  "South Lake Union, Seattle", "Downtown Seattle", "Pioneer Square, Seattle",
+  "Fremont, Seattle", "Ballard, Seattle", "U-District, Seattle",
   "Interbay, Seattle", "SoDo, Seattle", "First Hill, Seattle", "Capitol Hill, Seattle",
-  "Georgetown, Seattle", "Kirkland, WA", "Renton, WA", "Tukwila, WA",
+  "Georgetown, Seattle",
 ]
+const EASTSIDE_HUBS = [
+  "Bellevue downtown", "Redmond, WA", "Kirkland, WA", "Renton, WA",
+  "Issaquah, WA", "Bothell, WA", "Factoria, Bellevue", "Overlake, Redmond",
+  "Totem Lake, Kirkland", "Sammamish, WA", "Woodinville, WA", "Mercer Island, WA",
+]
+const WORK_HUBS =
+  REGION === "eastside" ? EASTSIDE_HUBS : REGION === "seattle" ? SEATTLE_HUBS : [...SEATTLE_HUBS, ...EASTSIDE_HUBS]
 const JOBS = [
   "Software engineer at a cloud infrastructure startup",
   "Barista and shift lead at a third-wave coffee shop",

@@ -21,7 +21,6 @@ import {
   CloudSun,
   Crosshair,
   Cube,
-  Export,
   Fire,
   MagnifyingGlass,
   Pause,
@@ -413,7 +412,7 @@ function DayReplay({
   const [speed, setSpeed] = useState(900)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [following, setFollowing] = useState(false)
-  const [autoplay, setAutoplay] = useState(false)
+  const [autoplay, setAutoplay] = useState(true)
   const [timelineOpen, setTimelineOpen] = useState(false)
   const [eventOpen, setEventOpen] = useState(false)
 
@@ -522,22 +521,6 @@ function DayReplay({
   useEffect(() => {
     setCardPos(null)
   }, [selectedId])
-
-  // Per-agent export state
-  const [agentExporting, setAgentExporting] = useState(false)
-  const [agentExportResult, setAgentExportResult] = useState<{
-    boxUrl: string
-    fileName: string
-    aiSummary: string | null
-  } | null>(null)
-
-  // Clear export result when agent changes
-  useEffect(() => {
-    setAgentExportResult(null)
-  }, [selectedId])
-
-  // Multi-day path history overlay
-  const [showHistory, setShowHistory] = useState(false)
 
   const onCardDragStart = (e: React.PointerEvent<HTMLDivElement>) => {
     // Ignore drags that start on the action buttons.
@@ -735,35 +718,6 @@ function DayReplay({
     routeSrc.setData({ type: "FeatureCollection", features })
   }, [selectedPlan])
 
-  // Multi-day history routes overlay.
-  useEffect(() => {
-    const map = mapRef.current
-    if (!map || !mapLoadedRef.current) return
-    const src = map.getSource("history-routes") as mapboxgl.GeoJSONSource | undefined
-    if (!src) return
-    if (!showHistory || !selectedId) {
-      src.setData({ type: "FeatureCollection", features: [] })
-      return
-    }
-    // Collect routes from every day for this agent, color-coded by day index
-    const DAY_COLORS = ["#f472b6", "#38bdf8", "#34d399", "#fb923c", "#a78bfa", "#facc15", "#f87171"]
-    const features: GeoJSON.Feature[] = []
-    days.forEach((d, di) => {
-      const plan = d.plans.find((p) => p.agent_id === selectedId)
-      if (!plan) return
-      const color = DAY_COLORS[di % DAY_COLORS.length]
-      plan.beats.forEach((b) => {
-        if (!b.travel_from_prev?.polyline?.length) return
-        features.push({
-          type: "Feature",
-          properties: { color, day: d.sim_date, dayNum: d.day_number, mode: b.travel_from_prev!.mode },
-          geometry: { type: "LineString", coordinates: b.travel_from_prev!.polyline },
-        })
-      })
-    })
-    src.setData({ type: "FeatureCollection", features })
-  }, [showHistory, selectedId, days])
-
   // Single RAF loop: advance the clock and write every agent's position into
   // the shared GeoJSON source. No per-frame React churn except the clock.
   useEffect(() => {
@@ -954,58 +908,6 @@ function DayReplay({
       essential: true,
     })
   }, [selectedPlan, dayStartMs])
-
-  // Export the selected agent's full multi-day history to Box and get AI analysis
-  const exportAgent = useCallback(async () => {
-    if (!selectedPlan) return
-    setAgentExporting(true)
-    setAgentExportResult(null)
-    try {
-      // Gather this agent's plans across ALL days for cross-day comparison
-      const agentPlans = days.map((d) => {
-        const plan = d.plans.find((p) => p.agent_id === selectedPlan.agent_id)
-        if (!plan) return null
-        return {
-          date: d.sim_date,
-          day_number: d.day_number,
-          diary: plan.diary,
-          world_event: plan.world_event_prompt,
-          beats: plan.beats.map((b) => ({
-            time: `${b.start_time} → ${b.end_time}`,
-            activity: b.activity,
-            activity_type: b.activity_type,
-            location: b.location_name,
-            coordinates: b.location,
-            travel_mode: b.travel_from_prev?.mode ?? null,
-            travel_path: b.travel_from_prev?.polyline ?? null,
-            travel_duration_min: b.travel_from_prev?.duration_minutes ?? null,
-            reasoning: b.reasoning,
-          })),
-        }
-      }).filter(Boolean)
-
-      const res = await fetch("/api/export/agent", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          agentId: selectedPlan.agent_id,
-          agentName: selectedPlan.agent_name,
-          days: agentPlans,
-        }),
-      })
-      const data = await res.json()
-      if (data.error) throw new Error(data.error)
-      setAgentExportResult({
-        boxUrl: data.boxUrl,
-        fileName: data.fileName,
-        aiSummary: data.aiSummary ?? null,
-      })
-    } catch (err) {
-      alert("Export failed: " + (err instanceof Error ? err.message : "Unknown error"))
-    } finally {
-      setAgentExporting(false)
-    }
-  }, [selectedPlan, days])
 
   // Select an agent by id (used by the find box): flag it, fly the camera to
   // its current position, and start following — mirrors clicking its dot.
@@ -1363,34 +1265,6 @@ function DayReplay({
                 <div className="flex items-center gap-1">
                   <button
                     type="button"
-                    onClick={exportAgent}
-                    disabled={agentExporting}
-                    className={cn(
-                      "rounded-sm p-1 transition",
-                      agentExporting
-                        ? "cursor-not-allowed text-muted-foreground/30"
-                        : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
-                    )}
-                    aria-label="Export to Box"
-                    title="Export to Box"
-                  >
-                    <Export size={12} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowHistory((v) => !v)}
-                    className={cn(
-                      "rounded-sm px-1.5 py-1 text-[9px] uppercase tracking-[0.15em] transition",
-                      showHistory
-                        ? "bg-secondary text-foreground"
-                        : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground",
-                    )}
-                    title="Show paths from all days"
-                  >
-                    All days
-                  </button>
-                  <button
-                    type="button"
                     onClick={recenter}
                     className={cn(
                       "rounded-sm p-1 transition",
@@ -1522,31 +1396,6 @@ function DayReplay({
 
                 {/* Day so far — beats up to the current sim time */}
                 <div className="border-t border-border/60 px-3 py-2.5">
-
-                  {/* Multi-day path legend — shown when history overlay is on */}
-                  {showHistory && days.length > 0 && (() => {
-                    const DAY_COLORS = ["#f472b6", "#38bdf8", "#34d399", "#fb923c", "#a78bfa", "#facc15", "#f87171"]
-                    return (
-                      <div className="mb-2.5 rounded-sm border border-border/40 bg-secondary/20 px-2 py-2">
-                        <div className="mb-1.5 text-[9px] uppercase tracking-[0.18em] text-muted-foreground">Path history</div>
-                        <div className="flex flex-col gap-1">
-                          {days.map((d, di) => (
-                            <div key={d.sim_date} className="flex items-center gap-2">
-                              <span
-                                className="h-0.5 w-5 shrink-0 rounded-full"
-                                style={{ backgroundColor: DAY_COLORS[di % DAY_COLORS.length] }}
-                              />
-                              <span className="text-[10px] text-foreground/70">
-                                Day {d.day_number} — {fmtDate(d.sim_date)}
-                                {di === dayIdx ? <span className="ml-1 text-muted-foreground/60">(current)</span> : null}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )
-                  })()}
-
                   <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
                     <span>Day so far</span>
                     <span className="font-mono normal-case tracking-normal text-muted-foreground/60">
@@ -1610,53 +1459,7 @@ function DayReplay({
               </div>
             </div>
           )}
-
-          {/* Box AI debrief panel — shown after agent export */}
-          {agentExportResult && (
-            <div className="animate-in fade-in slide-in-from-bottom-2 duration-200 rounded-md border border-border/60 bg-card/95 shadow-lg backdrop-blur w-72">
-              <div className="flex items-center justify-between border-b border-border/60 px-3 py-2">
-                <div className="flex items-center gap-2">
-                  <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_0_rgb(52,211,153)]" />
-                  <span className="text-[10px] uppercase tracking-[0.18em] text-foreground">
-                    Box AI Debrief
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <a
-                    href={agentExportResult.boxUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground underline underline-offset-2 hover:text-foreground"
-                  >
-                    View file
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setAgentExportResult(null)}
-                    className="rounded p-0.5 text-muted-foreground hover:text-foreground"
-                    aria-label="Dismiss"
-                  >
-                    <X size={10} />
-                  </button>
-                </div>
-              </div>
-              <div className="px-3 py-2.5">
-                {agentExportResult.aiSummary ? (
-                  <p className="text-[11px] leading-relaxed text-foreground/85">
-                    {agentExportResult.aiSummary}
-                  </p>
-                ) : (
-                  <p className="text-[11px] text-muted-foreground">
-                    Saved to Box as{" "}
-                    <span className="font-medium text-foreground">
-                      {agentExportResult.fileName}
-                    </span>
-                    . Box AI unavailable.
-                  </p>
-                )}
-              </div>
-            </div>
-          )}        </div>
+        </div>
       </div>
 
       {/* BOTTOM: city-activity graph drawer */}
@@ -2152,26 +1955,6 @@ function TimelineChart({
 
 function installLayers(map: mapboxgl.Map) {
   if (!map.getContainer?.()) return
-
-  // Multi-day history routes (rendered below the current-day route).
-  if (!map.getSource("history-routes")) {
-    map.addSource("history-routes", {
-      type: "geojson",
-      data: { type: "FeatureCollection", features: [] },
-    })
-    map.addLayer({
-      id: "history-routes-line",
-      type: "line",
-      source: "history-routes",
-      layout: { "line-cap": "round", "line-join": "round" },
-      paint: {
-        "line-color": ["get", "color"],
-        "line-width": 2,
-        "line-opacity": 0.45,
-        "line-dasharray": [2, 3],
-      },
-    })
-  }
 
   // Selected agent's planned route (faint).
   if (!map.getSource("sel-route")) {

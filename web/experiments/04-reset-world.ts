@@ -8,6 +8,8 @@
 //
 // Env overrides:
 //   CONCURRENCY=6   # max agents planned at once (default 6)
+//   NUM_DAYS=2      # only simulate the first N days (default: all 7). Useful
+//                   # when you just want early-day coverage for many agents.
 
 import "dotenv/config"
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
@@ -20,6 +22,7 @@ import { generateDiary } from "./lib/diary"
 import type { AgentDayPlan, AgentRow, AgentState, SkeletonBeat } from "./lib/types"
 
 const CONCURRENCY = parseInt(process.env.CONCURRENCY || "6", 10)
+const NUM_DAYS = parseInt(process.env.NUM_DAYS || "7", 10)
 
 // One distinct world event per simulated day. Seattle, early June 2026.
 const DAYS: { sim_date: string; day_number: number; world_event: string }[] = [
@@ -223,11 +226,15 @@ async function main() {
     console.log(`[reset] ONLY_SEEDED=1 (${seededFile}) — scoped to ${agents.length} seeded agents (of ${allAgents.length} total)`)
   }
 
-  console.log(`[reset] ${agents.length} agents × ${DAYS.length} days, concurrency=${CONCURRENCY}`)
   console.log(`[reset] agents: ${agents.map((a) => a.name).join(", ")}\n`)
 
   const outDir = new URL("./output/plans/", import.meta.url).pathname
   mkdirSync(outDir, { recursive: true })
+
+  // Optionally cap to the first NUM_DAYS days (early-day coverage for many
+  // agents matters more than a full week here).
+  const days = DAYS.slice(0, Math.max(1, Math.min(NUM_DAYS, DAYS.length)))
+  console.log(`[reset] ${agents.length} agents × ${days.length} days, concurrency=${CONCURRENCY}`)
 
   // Per-agent rolling continuity, carried forward across sequential days.
   const prevByAgent: Record<string, { state: AgentState | null; diaries: string[] }> = {}
@@ -236,7 +243,7 @@ async function main() {
   let okCount = 0
   let failCount = 0
 
-  for (const day of DAYS) {
+  for (const day of days) {
     const dayT0 = Date.now()
     console.log(`=== ${day.sim_date} (day ${day.day_number}) ===`)
     console.log(`    event: ${day.world_event}`)
@@ -287,7 +294,7 @@ async function main() {
     console.log(`    (day done in ${((Date.now() - dayT0) / 1000).toFixed(1)}s)\n`)
   }
 
-  console.log(`[reset] complete — ${okCount} ok, ${failCount} failed across ${agents.length * DAYS.length} plans`)
+  console.log(`[reset] complete — ${okCount} ok, ${failCount} failed across ${agents.length * days.length} plans`)
 }
 
 void main()

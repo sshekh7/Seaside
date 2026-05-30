@@ -1,8 +1,8 @@
-# Sealantir — Engineering Document
+# Seaside — Engineering Document
 
 ## 1. Product overview
 
-Sealantir is a single-world human-simulation viewer. The world is populated by
+Seaside is a single-world human-simulation viewer. The world is populated by
 ~1000 agents (a mix of LinkedIn-scraped, user-created, and LLM-generated
 personas) living in the Seattle metro. Time advances one **sim day** at a time;
 each sim day is planned end-to-end by an LLM before it is ever shown. The
@@ -310,7 +310,7 @@ Contents:
 4. Static map snapshot of the route — Mapbox Static Images API with all
    `travel_from_prev.polyline`s overlaid.
 
-Stored in Box at `/sealantir/days/<sim_date>/<agent_id>.pdf`. The Box file id
+Stored in Box at `/seaside/days/<sim_date>/<agent_id>.pdf`. The Box file id
 is written to `agent_day_plans.pdf_box_file_id`.
 
 Retrieval (`/me`):
@@ -376,9 +376,9 @@ Two options, both via Apify:
 
 Per profile:
 
-- Store raw JSON in Box at `/sealantir/agents/<id>/linkedin.json`. Save the
+- Store raw JSON in Box at `/seaside/agents/<id>/linkedin.json`. Save the
   Box file id on `agents.linkedin_box_file_id`.
-- Send the profile to LLM with a "distill into a Sealantir agent" prompt that
+- Send the profile to LLM with a "distill into a Seaside agent" prompt that
   returns `{ name, age, personality, job_description, location_home,
   location_work }`. Insert as `agents` row with `source = 'apify'`.
 

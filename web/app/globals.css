@@ -123,6 +123,10 @@
   * {
     @apply border-border outline-ring/50;
     }
+  html,
+  body {
+    overscroll-behavior: none;
+    }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "ss01", "ss02", "cv09", "cv11", "calt", "zero";

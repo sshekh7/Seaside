@@ -1,4 +1,4 @@
-# Sealantir — Decisions
+# Seaside — Decisions
 
 A running log of decisions made while scoping the project. Each entry is
 short: the question, the choice, and the reasoning. New decisions get

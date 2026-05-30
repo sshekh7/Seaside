@@ -845,7 +845,7 @@ function PlanReplay(props: {
       <header className="flex h-10 shrink-0 items-center justify-between border-b border-border/40 bg-[#0a0a0d] px-3 text-[10px] uppercase tracking-[0.18em]">
         <div className="flex items-center gap-3">
           <span className="font-mono font-semibold text-foreground">
-            SEALANTIR
+            SEASIDE
           </span>
           <span className="text-muted-foreground/40">//</span>
           <span className="text-muted-foreground">

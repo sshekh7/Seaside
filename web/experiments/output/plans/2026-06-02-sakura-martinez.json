@@ -1,0 +1,79 @@
+{
+  "sim_date": "2026-06-02",
+  "day_number": 2,
+  "agent_id": "e818e4fc-82f7-4e65-87b4-26fde11ce28b",
+  "agent_name": "Sakura Martinez",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-02T13:00:00.000Z",
+      "end_time": "2026-06-02T14:25:00.000Z",
+      "activity": "Wakes up, brews coffee, and does a quick rain-practical morning routine while reviewing counselor notes for the day.; Gets ready and takes care of a few last-minute errands at home—packing a film camera, snacks, and supplies for school check-ins.",
+      "activity_type": "home",
+      "location_name": "Home (Shoreline)",
+      "location": [
+        -122.345226,
+        47.739911
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Drizzly weather nudges her to keep the morning calm and routine-bound before heading out."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-02T14:50:00.000Z",
+      "end_time": "2026-06-02T15:15:00.000Z",
+      "activity": "Commutes toward school.",
+      "activity_type": "commute",
+      "location_name": "Issaquah Highlands Park (Issaquah)",
+      "location": [
+        -122.345226,
+        47.739911
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Placeholder to satisfy schema."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-02T15:15:00.000Z",
+      "end_time": "2026-06-03T13:00:00.000Z",
+      "activity": "Sleep",
+      "activity_type": "sleep",
+      "location_name": "Home (Shoreline)",
+      "location": [
+        -122.345226,
+        47.739911
+      ],
+      "travel_from_prev": null,
+      "reasoning": "(auto) overnight rest at home"
+    }
+  ],
+  "diary": "Grey started settling over Shoreline before my coffee even finished brewing. I did my usual rain-practical morning routine—hood up, camera packed like I was going somewhere important (even if it was just to the counselor office). By the time I reached Issaquah Highlands Park, the drizzle had turned the pathways into a kind of soft blur. I watched kids splash through puddles while I waited for the first wave of check-ins, then tucked myself back into the elementary routine: listening, writing down little worries, handing out stickers like they were tiny lifelines.\n\nTraffic did that cross-lake thing all morning—SR-520 bridge eastbound closed 9am-noon, and everyone seemed to be arriving a little later, a little sharper at the edges. I tried to keep my voice steady when the day felt stretched.\n\nAfter school, I finally shut my laptop and let the rain be the only soundtrack. Tonight feels quieter, in a good way—like I earned the calm.",
+  "thought_process": "I planned my morning around the rain and around being “available,” which is counselor code for staying calm even when the city gets chaotic. The bridge closure on SR-520 made me expect delays, so I chose to do my first notes and prep before I left, then kept my schedule flexible once I got to the school. The drizzly light over Issaquah Highlands Park made me feel gentler; it’s easier to notice kids’ moods when the world looks softened. By midday, the extra commotion from traffic had me more alert than usual, but it also reminded me not to take urgency personally. When the day finally slowed, I felt my shoulders drop—like my attention had done its job.",
+  "end_state": {
+    "location": [
+      -122.345226,
+      47.739911
+    ],
+    "energy": 85,
+    "notes": ""
+  },
+  "world_event_prompt": "Grey, drizzly Tuesday with steady rain from 7am to 2pm, high of 58F. SR-520 bridge closed eastbound 9am-noon for emergency repair, snarling cross-lake traffic.",
+  "generated_at": "2026-05-30T18:58:29.360Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": false,
+    "compressed_minutes_saved": 0,
+    "sleep_beat_synthesized": true,
+    "returned_home_before_sleep": true,
+    "llm_ms": 3885,
+    "mapbox_ms": 0,
+    "total_ms": 7345
+  },
+  "_ok": true
+}

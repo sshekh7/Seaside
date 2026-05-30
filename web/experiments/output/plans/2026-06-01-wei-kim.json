@@ -1,0 +1,1057 @@
+{
+  "sim_date": "2026-06-01",
+  "day_number": 1,
+  "agent_id": "456db283-3201-4eaa-aad1-1baa45028027",
+  "agent_name": "Wei Kim",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-01T14:15:00.000Z",
+      "end_time": "2026-06-01T14:36:07.253Z",
+      "activity": "Wake up, coffee, check sourdough starter, light breakfast at home.",
+      "activity_type": "home",
+      "location_name": "Home (University District, Seattle)",
+      "location": [
+        -122.309261,
+        47.67581
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Fresh Monday morning with full energy; Wei starts with his routine ritual of tending to his sourdough and enjoying quiet time before the day."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-01T14:43:07.253Z",
+      "end_time": "2026-06-01T15:04:14.506Z",
+      "activity": "Walk to nearby bagel shop and grab breakfast sandwich.",
+      "activity_type": "errand",
+      "location_name": "Blazer Bagels (University District, Seattle)",
+      "location": [
+        -122.3128,
+        47.6605
+      ],
+      "travel_from_prev": {
+        "mode": "driving",
+        "polyline": [
+          [
+            -122.309261,
+            47.67581
+          ],
+          [
+            -122.309794,
+            47.675804
+          ],
+          [
+            -122.310336,
+            47.675801
+          ],
+          [
+            -122.310777,
+            47.675799
+          ],
+          [
+            -122.310865,
+            47.675799
+          ],
+          [
+            -122.310952,
+            47.675798
+          ],
+          [
+            -122.311039,
+            47.675797
+          ],
+          [
+            -122.311403,
+            47.675795
+          ],
+          [
+            -122.31182,
+            47.675793
+          ],
+          [
+            -122.311943,
+            47.675792
+          ],
+          [
+            -122.311941,
+            47.675705
+          ],
+          [
+            -122.311938,
+            47.675428
+          ],
+          [
+            -122.311937,
+            47.675342
+          ],
+          [
+            -122.311935,
+            47.675181
+          ],
+          [
+            -122.311931,
+            47.674832
+          ],
+          [
+            -122.31193,
+            47.674754
+          ],
+          [
+            -122.31193,
+            47.674681
+          ],
+          [
+            -122.311931,
+            47.674462
+          ],
+          [
+            -122.311931,
+            47.674365
+          ],
+          [
+            -122.311931,
+            47.674074
+          ],
+          [
+            -122.311931,
+            47.67407
+          ],
+          [
+            -122.311932,
+            47.674011
+          ],
+          [
+            -122.311932,
+            47.674009
+          ],
+          [
+            -122.311932,
+            47.67398
+          ],
+          [
+            -122.31193,
+            47.673875
+          ],
+          [
+            -122.311931,
+            47.673846
+          ],
+          [
+            -122.311928,
+            47.673512
+          ],
+          [
+            -122.311924,
+            47.673121
+          ],
+          [
+            -122.311924,
+            47.673057
+          ],
+          [
+            -122.31192,
+            47.672439
+          ],
+          [
+            -122.311924,
+            47.672329
+          ],
+          [
+            -122.311945,
+            47.672217
+          ],
+          [
+            -122.31196,
+            47.672177
+          ],
+          [
+            -122.312009,
+            47.672084
+          ],
+          [
+            -122.312032,
+            47.672054
+          ],
+          [
+            -122.312072,
+            47.672003
+          ],
+          [
+            -122.312013,
+            47.671962
+          ],
+          [
+            -122.312001,
+            47.671951
+          ],
+          [
+            -122.311971,
+            47.671924
+          ],
+          [
+            -122.311952,
+            47.671906
+          ],
+          [
+            -122.311928,
+            47.671853
+          ],
+          [
+            -122.311922,
+            47.671736
+          ],
+          [
+            -122.311924,
+            47.671695
+          ],
+          [
+            -122.311923,
+            47.671667
+          ],
+          [
+            -122.311923,
+            47.671641
+          ],
+          [
+            -122.311906,
+            47.671208
+          ],
+          [
+            -122.3119,
+            47.670945
+          ],
+          [
+            -122.311898,
+            47.670913
+          ],
+          [
+            -122.311897,
+            47.670904
+          ],
+          [
+            -122.311902,
+            47.67072
+          ],
+          [
+            -122.311902,
+            47.670672
+          ],
+          [
+            -122.311901,
+            47.67064
+          ],
+          [
+            -122.3119,
+            47.670478
+          ],
+          [
+            -122.3119,
+            47.670448
+          ],
+          [
+            -122.3119,
+            47.670439
+          ],
+          [
+            -122.311895,
+            47.669505
+          ],
+          [
+            -122.311893,
+            47.669446
+          ],
+          [
+            -122.311893,
+            47.669384
+          ],
+          [
+            -122.311903,
+            47.669021
+          ],
+          [
+            -122.311903,
+            47.668974
+          ],
+          [
+            -122.311907,
+            47.66861
+          ],
+          [
+            -122.311907,
+            47.668604
+          ],
+          [
+            -122.311907,
+            47.668584
+          ],
+          [
+            -122.311906,
+            47.668521
+          ],
+          [
+            -122.311906,
+            47.668445
+          ],
+          [
+            -122.311907,
+            47.668148
+          ],
+          [
+            -122.31191,
+            47.667305
+          ],
+          [
+            -122.311912,
+            47.666641
+          ],
+          [
+            -122.311912,
+            47.666499
+          ],
+          [
+            -122.311912,
+            47.666424
+          ],
+          [
+            -122.311913,
+            47.666373
+          ],
+          [
+            -122.311913,
+            47.666371
+          ],
+          [
+            -122.311913,
+            47.666364
+          ],
+          [
+            -122.311914,
+            47.666346
+          ],
+          [
+            -122.311914,
+            47.666336
+          ],
+          [
+            -122.311916,
+            47.666236
+          ],
+          [
+            -122.311916,
+            47.666192
+          ],
+          [
+            -122.311948,
+            47.665283
+          ],
+          [
+            -122.311958,
+            47.664989
+          ],
+          [
+            -122.311959,
+            47.664894
+          ],
+          [
+            -122.311961,
+            47.664804
+          ],
+          [
+            -122.311962,
+            47.664725
+          ],
+          [
+            -122.311967,
+            47.664353
+          ],
+          [
+            -122.311967,
+            47.663144
+          ],
+          [
+            -122.311967,
+            47.66309
+          ],
+          [
+            -122.311968,
+            47.663012
+          ],
+          [
+            -122.311969,
+            47.66239
+          ],
+          [
+            -122.311971,
+            47.661648
+          ],
+          [
+            -122.311971,
+            47.661542
+          ],
+          [
+            -122.311973,
+            47.66151
+          ],
+          [
+            -122.311972,
+            47.661465
+          ],
+          [
+            -122.311972,
+            47.661361
+          ],
+          [
+            -122.311972,
+            47.661267
+          ],
+          [
+            -122.311973,
+            47.661161
+          ],
+          [
+            -122.311978,
+            47.660923
+          ],
+          [
+            -122.311981,
+            47.660691
+          ],
+          [
+            -122.311995,
+            47.659851
+          ],
+          [
+            -122.311995,
+            47.659822
+          ],
+          [
+            -122.311997,
+            47.659782
+          ],
+          [
+            -122.312139,
+            47.659784
+          ],
+          [
+            -122.312207,
+            47.659784
+          ],
+          [
+            -122.312258,
+            47.659784
+          ],
+          [
+            -122.312333,
+            47.659785
+          ],
+          [
+            -122.3126,
+            47.659789
+          ],
+          [
+            -122.312598,
+            47.659859
+          ],
+          [
+            -122.312581,
+            47.660378
+          ],
+          [
+            -122.312579,
+            47.660499
+          ]
+        ],
+        "duration_minutes": 7
+      },
+      "reasoning": "Quick neighborhood errand on a sunny morning; Wei likes knowing the local food rotation and grabbing quality breakfast before work."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-01T15:04:14.506Z",
+      "end_time": "2026-06-01T15:28:52.968Z",
+      "activity": "Walk to U-District workplace.",
+      "activity_type": "commute",
+      "location_name": "University District, Seattle",
+      "location": [
+        -122.3128,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Light Rail is closed 9am–3pm, so Wei walks his familiar route; he's only 15–20 min away and prefers the walk on nice weather days anyway."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-01T15:28:52.968Z",
+      "end_time": "2026-06-01T17:00:24.397Z",
+      "activity": "Site meetings and project coordination at construction office.",
+      "activity_type": "work",
+      "location_name": "University District, Seattle",
+      "location": [
+        -122.3128,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Wei starts his work morning; he's aware of the USA vs Wales match at 11am but doesn't attend—he prefers to stay focused on project deadlines rather than join crowds at bars."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-01T17:00:24.397Z",
+      "end_time": "2026-06-01T17:42:38.902Z",
+      "activity": "Lunch break; grabs a food truck from his known rotation near campus.",
+      "activity_type": "meal",
+      "location_name": "University District, Seattle",
+      "location": [
+        -122.3128,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Wei deliberately times lunch around the match start time but doesn't watch—he'd rather enjoy a sunny day outdoors with a reliable food truck he knows well."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-01T17:42:38.902Z",
+      "end_time": "2026-06-01T21:34:58.682Z",
+      "activity": "Afternoon project work: site inspections, budget reviews, contractor check-ins.",
+      "activity_type": "work",
+      "location_name": "University District, Seattle",
+      "location": [
+        -122.3128,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Wei powers through the afternoon; the Light Rail closure is noted but doesn't affect him since he walked in and will walk home."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-01T21:41:58.682Z",
+      "end_time": "2026-06-01T22:10:08.352Z",
+      "activity": "Walk home from work.",
+      "activity_type": "commute",
+      "location_name": "Home (University District, Seattle)",
+      "location": [
+        -122.309261,
+        47.67581
+      ],
+      "travel_from_prev": {
+        "mode": "driving",
+        "polyline": [
+          [
+            -122.312579,
+            47.660499
+          ],
+          [
+            -122.312581,
+            47.660378
+          ],
+          [
+            -122.312598,
+            47.659859
+          ],
+          [
+            -122.3126,
+            47.659789
+          ],
+          [
+            -122.312333,
+            47.659785
+          ],
+          [
+            -122.312258,
+            47.659784
+          ],
+          [
+            -122.312207,
+            47.659784
+          ],
+          [
+            -122.312139,
+            47.659784
+          ],
+          [
+            -122.311997,
+            47.659782
+          ],
+          [
+            -122.311995,
+            47.659822
+          ],
+          [
+            -122.311995,
+            47.659851
+          ],
+          [
+            -122.311981,
+            47.660691
+          ],
+          [
+            -122.311978,
+            47.660923
+          ],
+          [
+            -122.311973,
+            47.661161
+          ],
+          [
+            -122.311972,
+            47.661267
+          ],
+          [
+            -122.311972,
+            47.661361
+          ],
+          [
+            -122.311972,
+            47.661465
+          ],
+          [
+            -122.311973,
+            47.66151
+          ],
+          [
+            -122.311971,
+            47.661542
+          ],
+          [
+            -122.311971,
+            47.661648
+          ],
+          [
+            -122.311969,
+            47.66239
+          ],
+          [
+            -122.311968,
+            47.663012
+          ],
+          [
+            -122.311967,
+            47.66309
+          ],
+          [
+            -122.311967,
+            47.663144
+          ],
+          [
+            -122.311967,
+            47.664353
+          ],
+          [
+            -122.311962,
+            47.664725
+          ],
+          [
+            -122.311961,
+            47.664804
+          ],
+          [
+            -122.311959,
+            47.664894
+          ],
+          [
+            -122.311958,
+            47.664989
+          ],
+          [
+            -122.311948,
+            47.665283
+          ],
+          [
+            -122.311916,
+            47.666192
+          ],
+          [
+            -122.311916,
+            47.666236
+          ],
+          [
+            -122.311914,
+            47.666336
+          ],
+          [
+            -122.311914,
+            47.666346
+          ],
+          [
+            -122.311913,
+            47.666364
+          ],
+          [
+            -122.311913,
+            47.666371
+          ],
+          [
+            -122.311913,
+            47.666373
+          ],
+          [
+            -122.311912,
+            47.666424
+          ],
+          [
+            -122.311912,
+            47.666499
+          ],
+          [
+            -122.311912,
+            47.666641
+          ],
+          [
+            -122.31191,
+            47.667305
+          ],
+          [
+            -122.311907,
+            47.668148
+          ],
+          [
+            -122.311906,
+            47.668445
+          ],
+          [
+            -122.311906,
+            47.668521
+          ],
+          [
+            -122.311907,
+            47.668584
+          ],
+          [
+            -122.311907,
+            47.668604
+          ],
+          [
+            -122.311907,
+            47.66861
+          ],
+          [
+            -122.311903,
+            47.668974
+          ],
+          [
+            -122.311903,
+            47.669021
+          ],
+          [
+            -122.311893,
+            47.669384
+          ],
+          [
+            -122.311893,
+            47.669446
+          ],
+          [
+            -122.311895,
+            47.669505
+          ],
+          [
+            -122.3119,
+            47.670439
+          ],
+          [
+            -122.3119,
+            47.670448
+          ],
+          [
+            -122.3119,
+            47.670478
+          ],
+          [
+            -122.311901,
+            47.67064
+          ],
+          [
+            -122.311902,
+            47.670672
+          ],
+          [
+            -122.311902,
+            47.67072
+          ],
+          [
+            -122.311897,
+            47.670904
+          ],
+          [
+            -122.311898,
+            47.670913
+          ],
+          [
+            -122.3119,
+            47.670945
+          ],
+          [
+            -122.311906,
+            47.671208
+          ],
+          [
+            -122.311923,
+            47.671641
+          ],
+          [
+            -122.311923,
+            47.671667
+          ],
+          [
+            -122.311924,
+            47.671695
+          ],
+          [
+            -122.311922,
+            47.671736
+          ],
+          [
+            -122.311928,
+            47.671853
+          ],
+          [
+            -122.311952,
+            47.671906
+          ],
+          [
+            -122.311971,
+            47.671924
+          ],
+          [
+            -122.312001,
+            47.671951
+          ],
+          [
+            -122.312013,
+            47.671962
+          ],
+          [
+            -122.312072,
+            47.672003
+          ],
+          [
+            -122.312032,
+            47.672054
+          ],
+          [
+            -122.312009,
+            47.672084
+          ],
+          [
+            -122.31196,
+            47.672177
+          ],
+          [
+            -122.311945,
+            47.672217
+          ],
+          [
+            -122.311924,
+            47.672329
+          ],
+          [
+            -122.31192,
+            47.672439
+          ],
+          [
+            -122.311924,
+            47.673057
+          ],
+          [
+            -122.311924,
+            47.673121
+          ],
+          [
+            -122.311928,
+            47.673512
+          ],
+          [
+            -122.311931,
+            47.673846
+          ],
+          [
+            -122.31193,
+            47.673875
+          ],
+          [
+            -122.311932,
+            47.67398
+          ],
+          [
+            -122.311932,
+            47.674009
+          ],
+          [
+            -122.311932,
+            47.674011
+          ],
+          [
+            -122.311931,
+            47.67407
+          ],
+          [
+            -122.311931,
+            47.674074
+          ],
+          [
+            -122.311931,
+            47.674365
+          ],
+          [
+            -122.311931,
+            47.674462
+          ],
+          [
+            -122.31193,
+            47.674681
+          ],
+          [
+            -122.31193,
+            47.674754
+          ],
+          [
+            -122.311931,
+            47.674832
+          ],
+          [
+            -122.311935,
+            47.675181
+          ],
+          [
+            -122.311937,
+            47.675342
+          ],
+          [
+            -122.311938,
+            47.675428
+          ],
+          [
+            -122.311941,
+            47.675705
+          ],
+          [
+            -122.311943,
+            47.675792
+          ],
+          [
+            -122.31182,
+            47.675793
+          ],
+          [
+            -122.311403,
+            47.675795
+          ],
+          [
+            -122.311039,
+            47.675797
+          ],
+          [
+            -122.310952,
+            47.675798
+          ],
+          [
+            -122.310865,
+            47.675799
+          ],
+          [
+            -122.310777,
+            47.675799
+          ],
+          [
+            -122.310336,
+            47.675801
+          ],
+          [
+            -122.309794,
+            47.675804
+          ],
+          [
+            -122.309261,
+            47.67581
+          ]
+        ],
+        "duration_minutes": 7
+      },
+      "reasoning": "Evening walk home; Light Rail closure is ending at 3pm, but Wei prefers the walk anyway. Sunny weather makes it pleasant."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-01T22:10:08.352Z",
+      "end_time": "2026-06-01T22:45:20.440Z",
+      "activity": "Prepare dinner; work on sourdough—shape loaves for overnight fermentation.",
+      "activity_type": "home",
+      "location_name": "Home (University District, Seattle)",
+      "location": [
+        -122.309261,
+        47.67581
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Wei unwinds by baking; shaping sourdough for tomorrow's bake aligns with his sentimental, mindful personality and helps transition to evening."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-01T22:45:20.440Z",
+      "end_time": "2026-06-01T23:27:34.945Z",
+      "activity": "Eat dinner and tidy kitchen.",
+      "activity_type": "meal",
+      "location_name": "Home (University District, Seattle)",
+      "location": [
+        -122.309261,
+        47.67581
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Simple, quiet dinner at home; Wei values calm evenings after a focused work day."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-01T23:27:34.945Z",
+      "end_time": "2026-06-02T01:13:11.209Z",
+      "activity": "Evening leisure: read, listen to music, light birdwatching notes from the week.",
+      "activity_type": "leisure",
+      "location_name": "Home (University District, Seattle)",
+      "location": [
+        -122.309261,
+        47.67581
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Wind-down evening at home; Wei reflects on the week's birdwatching observations and enjoys quiet, introspective time before bed."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-02T01:13:11.209Z",
+      "end_time": "2026-06-02T13:00:00.000Z",
+      "activity": "Sleep.",
+      "activity_type": "sleep",
+      "location_name": "Home (University District, Seattle)",
+      "location": [
+        -122.309261,
+        47.67581
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Seven and a half hours of sleep; Wei ends his Monday refreshed and ready for sourdough baking in the morning."
+    }
+  ],
+  "diary": "Monday morning felt good—crisp coffee at home, checked on my sourdough starter (looking healthy), then walked over to Blazer Bagels for a proper breakfast sandwich. The whole U-District was quiet at that hour. Work was steady: site meetings, budget reviews, the usual coordination dance. Grabbed lunch from the food truck near campus around 10—their curry noodles hit different on a sunny day like this. Afternoon flew by with inspections and contractor check-ins. The Light Rail closure didn't affect me much since I walk everything anyway. Got home early enough to shape my loaves for overnight fermentation, which felt satisfying. Dinner, then just time to read and jot down some birdwatching notes from the week. Saw a pileated woodpecker last Tuesday I never got around to recording. Quiet evening. Felt grounded.",
+  "thought_process": "I stayed in my groove today—the routine of walking, working, baking kept me centered. I noticed the World Cup buzz downtown (bars opening early for USA-Wales), but honestly, I wasn't pulled toward that energy. Work was straightforward; no major crises, which meant I could focus on the details I actually enjoy. The sourdough is where my head really was by evening—there's something about shaping loaves that makes the day feel complete, like I'm building something beyond project timelines. The weather helped too; 74 and sunny meant the walks felt easy rather than obligatory. I think I'm in a phase where I'm leaning into smaller rhythms instead of chasing the bigger social moments. It suits me right now.",
+  "end_state": {
+    "location": [
+      -122.309261,
+      47.67581
+    ],
+    "energy": 45,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June, high of 74F. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT — bars downtown open early. Light Rail closed between Westlake and University District 9am-3pm for maintenance.",
+  "generated_at": "2026-05-30T18:57:25.163Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 4,
+    "route_misses": 8,
+    "overflow_fixed_by_shift": 2,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 404,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 39897,
+    "mapbox_ms": 1632,
+    "total_ms": 16229
+  },
+  "_ok": true
+}

@@ -8,22 +8,22 @@
     {
       "index": 0,
       "start_time": "2026-06-02T14:30:00.000Z",
-      "end_time": "2026-06-02T14:50:10.435Z",
-      "activity": "Wake up, shower, and have breakfast at home.",
+      "end_time": "2026-06-02T14:49:52.421Z",
+      "activity": "Wake up, shower, and grab coffee at home",
       "activity_type": "home",
-      "location_name": "Home (Downtown Redmond)",
+      "location_name": "Home (Redmond Downtown)",
       "location": [
         -122.12153,
         47.673904
       ],
       "travel_from_prev": null,
-      "reasoning": "Fresh start to the day with full energy; morning routine before heading to work."
+      "reasoning": "Tuesday morning wake-up; yesterday's energy was moderate (45/100) so a calm, routine start. Rain outside means staying in for breakfast."
     },
     {
       "index": 1,
-      "start_time": "2026-06-02T14:58:10.435Z",
-      "end_time": "2026-06-02T15:08:15.652Z",
-      "activity": "Short commute to Microsoft Building 99.",
+      "start_time": "2026-06-02T14:57:52.421Z",
+      "end_time": "2026-06-02T15:21:03.579Z",
+      "activity": "Commute to Building 99 via I-90, avoiding SR-520 closure",
       "activity_type": "commute",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -648,13 +648,13 @@
         ],
         "duration_minutes": 8
       },
-      "reasoning": "Living and working in Redmond means a quick local commute; arriving before 8:30am is typical for an engineer."
+      "reasoning": "SR-520 eastbound is closed 9am–noon; leaving early avoids the crunch. Steady rain means extra buffer time budgeted for wet roads."
     },
     {
       "index": 2,
-      "start_time": "2026-06-02T15:08:15.652Z",
-      "end_time": "2026-06-02T16:59:13.043Z",
-      "activity": "Deep focus work on code review and feature development.",
+      "start_time": "2026-06-02T15:21:03.579Z",
+      "end_time": "2026-06-02T17:46:48.000Z",
+      "activity": "Code reviews, sprint standup, and debugging",
       "activity_type": "work",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -662,1297 +662,27 @@
         47.6429
       ],
       "travel_from_prev": null,
-      "reasoning": "Morning is prime coding time; wrapping up before the 11am FIFA match (USA vs Wales) that Priyanshu, as a fun-loving guy, will want to catch."
+      "reasoning": "Solid morning focus before lunch; yesterday's World Cup energy has faded, so today is back to steady work rhythm. Rain and SR-520 closure keep him anchored on campus."
     },
     {
       "index": 3,
-      "start_time": "2026-06-02T16:59:13.043Z",
-      "end_time": "2026-06-02T18:09:49.565Z",
-      "activity": "Watch USA vs Wales FIFA World Cup match at a nearby sports bar or break room with colleagues.",
-      "activity_type": "social",
-      "location_name": "Microsoft Building 99, Redmond Main Campus",
+      "start_time": "2026-06-02T17:46:48.000Z",
+      "end_time": "2026-06-02T18:16:36.632Z",
+      "activity": "Grab lunch at the campus cafeteria",
+      "activity_type": "meal",
+      "location_name": "Microsoft Puget Sound Building 99 Cafeteria, Redmond Main Campus",
       "location": [
         -122.1311,
         47.6429
       ],
       "travel_from_prev": null,
-      "reasoning": "Fun-loving personality means he'd catch the live match at exactly 11am; likely with coworkers in a break room or nearby venue on campus."
+      "reasoning": "Rain is still steady until 2pm, so eating on campus is practical; no reason to venture out into drizzle. Fuel up for afternoon work."
     },
     {
       "index": 4,
-      "start_time": "2026-06-02T18:17:49.565Z",
-      "end_time": "2026-06-02T18:38:00.000Z",
-      "activity": "Grab lunch at a casual spot nearby.",
-      "activity_type": "meal",
-      "location_name": "Whole Foods Market (Downtown Redmond)",
-      "location": [
-        -122.1215,
-        47.674
-      ],
-      "travel_from_prev": {
-        "mode": "driving",
-        "polyline": [
-          [
-            -122.130954,
-            47.642817
-          ],
-          [
-            -122.130987,
-            47.64279
-          ],
-          [
-            -122.131101,
-            47.642742
-          ],
-          [
-            -122.13128,
-            47.642717
-          ],
-          [
-            -122.131283,
-            47.642643
-          ],
-          [
-            -122.13129,
-            47.64251
-          ],
-          [
-            -122.13203,
-            47.642511
-          ],
-          [
-            -122.132078,
-            47.642513
-          ],
-          [
-            -122.132312,
-            47.642525
-          ],
-          [
-            -122.132312,
-            47.64261
-          ],
-          [
-            -122.132312,
-            47.642682
-          ],
-          [
-            -122.132313,
-            47.64362
-          ],
-          [
-            -122.132312,
-            47.643861
-          ],
-          [
-            -122.132312,
-            47.643981
-          ],
-          [
-            -122.132312,
-            47.644079
-          ],
-          [
-            -122.132312,
-            47.644243
-          ],
-          [
-            -122.132311,
-            47.644365
-          ],
-          [
-            -122.132311,
-            47.644486
-          ],
-          [
-            -122.132311,
-            47.644663
-          ],
-          [
-            -122.132315,
-            47.645022
-          ],
-          [
-            -122.132327,
-            47.645885
-          ],
-          [
-            -122.132327,
-            47.645886
-          ],
-          [
-            -122.132327,
-            47.64589
-          ],
-          [
-            -122.132327,
-            47.645893
-          ],
-          [
-            -122.132327,
-            47.645917
-          ],
-          [
-            -122.132328,
-            47.646038
-          ],
-          [
-            -122.132519,
-            47.646037
-          ],
-          [
-            -122.13299,
-            47.646033
-          ],
-          [
-            -122.133305,
-            47.646031
-          ],
-          [
-            -122.133653,
-            47.646028
-          ],
-          [
-            -122.133832,
-            47.646027
-          ],
-          [
-            -122.13399,
-            47.646026
-          ],
-          [
-            -122.134206,
-            47.646025
-          ],
-          [
-            -122.134371,
-            47.646023
-          ],
-          [
-            -122.134412,
-            47.646023
-          ],
-          [
-            -122.135338,
-            47.646016
-          ],
-          [
-            -122.135394,
-            47.646016
-          ],
-          [
-            -122.135431,
-            47.646016
-          ],
-          [
-            -122.135475,
-            47.646015
-          ],
-          [
-            -122.135523,
-            47.646171
-          ],
-          [
-            -122.135576,
-            47.64635
-          ],
-          [
-            -122.135719,
-            47.646825
-          ],
-          [
-            -122.135726,
-            47.646848
-          ],
-          [
-            -122.135889,
-            47.647212
-          ],
-          [
-            -122.136078,
-            47.647634
-          ],
-          [
-            -122.136399,
-            47.648302
-          ],
-          [
-            -122.136735,
-            47.64931
-          ],
-          [
-            -122.137102,
-            47.650092
-          ],
-          [
-            -122.137336,
-            47.650549
-          ],
-          [
-            -122.13759,
-            47.651158
-          ],
-          [
-            -122.137735,
-            47.651512
-          ],
-          [
-            -122.137917,
-            47.652163
-          ],
-          [
-            -122.138019,
-            47.6526
-          ],
-          [
-            -122.138065,
-            47.652952
-          ],
-          [
-            -122.13809,
-            47.653434
-          ],
-          [
-            -122.138071,
-            47.65399
-          ],
-          [
-            -122.138035,
-            47.654361
-          ],
-          [
-            -122.13801,
-            47.654611
-          ],
-          [
-            -122.138004,
-            47.654634
-          ],
-          [
-            -122.137816,
-            47.655369
-          ],
-          [
-            -122.137725,
-            47.65581
-          ],
-          [
-            -122.137613,
-            47.656252
-          ],
-          [
-            -122.137433,
-            47.656761
-          ],
-          [
-            -122.137158,
-            47.657362
-          ],
-          [
-            -122.136883,
-            47.657871
-          ],
-          [
-            -122.136617,
-            47.658392
-          ],
-          [
-            -122.136145,
-            47.659293
-          ],
-          [
-            -122.135554,
-            47.6604
-          ],
-          [
-            -122.13546,
-            47.660616
-          ],
-          [
-            -122.135388,
-            47.660781
-          ],
-          [
-            -122.134043,
-            47.663291
-          ],
-          [
-            -122.133757,
-            47.663753
-          ],
-          [
-            -122.133295,
-            47.664341
-          ],
-          [
-            -122.132891,
-            47.664768
-          ],
-          [
-            -122.132613,
-            47.665032
-          ],
-          [
-            -122.132306,
-            47.665348
-          ],
-          [
-            -122.132099,
-            47.665531
-          ],
-          [
-            -122.131843,
-            47.665706
-          ],
-          [
-            -122.13126,
-            47.66607
-          ],
-          [
-            -122.130537,
-            47.666453
-          ],
-          [
-            -122.129737,
-            47.666818
-          ],
-          [
-            -122.129378,
-            47.666993
-          ],
-          [
-            -122.129259,
-            47.667083
-          ],
-          [
-            -122.129225,
-            47.667131
-          ],
-          [
-            -122.129177,
-            47.667199
-          ],
-          [
-            -122.129131,
-            47.667292
-          ],
-          [
-            -122.129095,
-            47.667425
-          ],
-          [
-            -122.129085,
-            47.667515
-          ],
-          [
-            -122.12912,
-            47.667637
-          ],
-          [
-            -122.129195,
-            47.667769
-          ],
-          [
-            -122.129501,
-            47.66812
-          ],
-          [
-            -122.12969,
-            47.668366
-          ],
-          [
-            -122.129753,
-            47.668494
-          ],
-          [
-            -122.129791,
-            47.668681
-          ],
-          [
-            -122.129786,
-            47.66881
-          ],
-          [
-            -122.129771,
-            47.668889
-          ],
-          [
-            -122.129726,
-            47.669014
-          ],
-          [
-            -122.129682,
-            47.669113
-          ],
-          [
-            -122.129634,
-            47.669184
-          ],
-          [
-            -122.129609,
-            47.66921
-          ],
-          [
-            -122.129476,
-            47.669348
-          ],
-          [
-            -122.129385,
-            47.669451
-          ],
-          [
-            -122.129007,
-            47.669718
-          ],
-          [
-            -122.128612,
-            47.669983
-          ],
-          [
-            -122.128588,
-            47.67
-          ],
-          [
-            -122.128052,
-            47.670349
-          ],
-          [
-            -122.128033,
-            47.670361
-          ],
-          [
-            -122.127979,
-            47.670396
-          ],
-          [
-            -122.127958,
-            47.67041
-          ],
-          [
-            -122.127625,
-            47.670632
-          ],
-          [
-            -122.127527,
-            47.6707
-          ],
-          [
-            -122.127221,
-            47.670915
-          ],
-          [
-            -122.127152,
-            47.670969
-          ],
-          [
-            -122.126951,
-            47.671074
-          ],
-          [
-            -122.126619,
-            47.671214
-          ],
-          [
-            -122.126198,
-            47.671384
-          ],
-          [
-            -122.125551,
-            47.671636
-          ],
-          [
-            -122.124846,
-            47.671898
-          ],
-          [
-            -122.124677,
-            47.671963
-          ],
-          [
-            -122.124511,
-            47.672031
-          ],
-          [
-            -122.124396,
-            47.672083
-          ],
-          [
-            -122.124268,
-            47.672149
-          ],
-          [
-            -122.124153,
-            47.672219
-          ],
-          [
-            -122.124074,
-            47.672267
-          ],
-          [
-            -122.123878,
-            47.672404
-          ],
-          [
-            -122.123822,
-            47.672506
-          ],
-          [
-            -122.123761,
-            47.672594
-          ],
-          [
-            -122.123658,
-            47.672708
-          ],
-          [
-            -122.123608,
-            47.672767
-          ],
-          [
-            -122.123565,
-            47.67282
-          ],
-          [
-            -122.123559,
-            47.672829
-          ],
-          [
-            -122.123488,
-            47.672934
-          ],
-          [
-            -122.12344,
-            47.67297
-          ],
-          [
-            -122.123388,
-            47.672995
-          ],
-          [
-            -122.123367,
-            47.673033
-          ],
-          [
-            -122.123365,
-            47.673036
-          ],
-          [
-            -122.123321,
-            47.673118
-          ],
-          [
-            -122.123181,
-            47.673368
-          ],
-          [
-            -122.123154,
-            47.67343
-          ],
-          [
-            -122.123153,
-            47.673432
-          ],
-          [
-            -122.123115,
-            47.673489
-          ],
-          [
-            -122.123016,
-            47.67367
-          ],
-          [
-            -122.122881,
-            47.673914
-          ],
-          [
-            -122.122766,
-            47.67413
-          ],
-          [
-            -122.122727,
-            47.674203
-          ],
-          [
-            -122.122593,
-            47.674171
-          ],
-          [
-            -122.122373,
-            47.674117
-          ],
-          [
-            -122.122368,
-            47.674116
-          ],
-          [
-            -122.122268,
-            47.674092
-          ],
-          [
-            -122.122262,
-            47.67409
-          ],
-          [
-            -122.12204,
-            47.674033
-          ],
-          [
-            -122.121693,
-            47.673947
-          ],
-          [
-            -122.121527,
-            47.673906
-          ],
-          [
-            -122.121543,
-            47.674033
-          ]
-        ],
-        "duration_minutes": 8
-      },
-      "reasoning": "Post-match lunch; Whole Foods is a quick walk or short drive from Microsoft campus and offers fresh, fast options."
-    },
-    {
-      "index": 5,
-      "start_time": "2026-06-02T18:46:00.000Z",
-      "end_time": "2026-06-02T18:56:05.217Z",
-      "activity": "Return to Microsoft Building 99.",
-      "activity_type": "commute",
-      "location_name": "Microsoft Building 99, Redmond Main Campus",
-      "location": [
-        -122.1311,
-        47.6429
-      ],
-      "travel_from_prev": {
-        "mode": "driving",
-        "polyline": [
-          [
-            -122.121543,
-            47.674033
-          ],
-          [
-            -122.121527,
-            47.673906
-          ],
-          [
-            -122.121693,
-            47.673947
-          ],
-          [
-            -122.12204,
-            47.674033
-          ],
-          [
-            -122.122262,
-            47.67409
-          ],
-          [
-            -122.122268,
-            47.674092
-          ],
-          [
-            -122.122368,
-            47.674116
-          ],
-          [
-            -122.122373,
-            47.674117
-          ],
-          [
-            -122.122593,
-            47.674171
-          ],
-          [
-            -122.122727,
-            47.674203
-          ],
-          [
-            -122.122766,
-            47.67413
-          ],
-          [
-            -122.122881,
-            47.673914
-          ],
-          [
-            -122.123016,
-            47.67367
-          ],
-          [
-            -122.123115,
-            47.673489
-          ],
-          [
-            -122.123153,
-            47.673432
-          ],
-          [
-            -122.123154,
-            47.67343
-          ],
-          [
-            -122.123181,
-            47.673368
-          ],
-          [
-            -122.123321,
-            47.673118
-          ],
-          [
-            -122.123365,
-            47.673036
-          ],
-          [
-            -122.123367,
-            47.673033
-          ],
-          [
-            -122.123388,
-            47.672995
-          ],
-          [
-            -122.12344,
-            47.67297
-          ],
-          [
-            -122.123488,
-            47.672934
-          ],
-          [
-            -122.123559,
-            47.672829
-          ],
-          [
-            -122.123565,
-            47.67282
-          ],
-          [
-            -122.123608,
-            47.672767
-          ],
-          [
-            -122.123658,
-            47.672708
-          ],
-          [
-            -122.123761,
-            47.672594
-          ],
-          [
-            -122.123822,
-            47.672506
-          ],
-          [
-            -122.123878,
-            47.672404
-          ],
-          [
-            -122.124074,
-            47.672267
-          ],
-          [
-            -122.124153,
-            47.672219
-          ],
-          [
-            -122.124268,
-            47.672149
-          ],
-          [
-            -122.124396,
-            47.672083
-          ],
-          [
-            -122.124511,
-            47.672031
-          ],
-          [
-            -122.124677,
-            47.671963
-          ],
-          [
-            -122.124846,
-            47.671898
-          ],
-          [
-            -122.125551,
-            47.671636
-          ],
-          [
-            -122.126198,
-            47.671384
-          ],
-          [
-            -122.126619,
-            47.671214
-          ],
-          [
-            -122.126951,
-            47.671074
-          ],
-          [
-            -122.127152,
-            47.670969
-          ],
-          [
-            -122.127221,
-            47.670915
-          ],
-          [
-            -122.127527,
-            47.6707
-          ],
-          [
-            -122.127625,
-            47.670632
-          ],
-          [
-            -122.127958,
-            47.67041
-          ],
-          [
-            -122.127979,
-            47.670396
-          ],
-          [
-            -122.128033,
-            47.670361
-          ],
-          [
-            -122.128052,
-            47.670349
-          ],
-          [
-            -122.128588,
-            47.67
-          ],
-          [
-            -122.128612,
-            47.669983
-          ],
-          [
-            -122.129007,
-            47.669718
-          ],
-          [
-            -122.129385,
-            47.669451
-          ],
-          [
-            -122.129476,
-            47.669348
-          ],
-          [
-            -122.129609,
-            47.66921
-          ],
-          [
-            -122.129634,
-            47.669184
-          ],
-          [
-            -122.129682,
-            47.669113
-          ],
-          [
-            -122.129726,
-            47.669014
-          ],
-          [
-            -122.129771,
-            47.668889
-          ],
-          [
-            -122.129786,
-            47.66881
-          ],
-          [
-            -122.129791,
-            47.668681
-          ],
-          [
-            -122.129753,
-            47.668494
-          ],
-          [
-            -122.12969,
-            47.668366
-          ],
-          [
-            -122.129501,
-            47.66812
-          ],
-          [
-            -122.129195,
-            47.667769
-          ],
-          [
-            -122.12912,
-            47.667637
-          ],
-          [
-            -122.129085,
-            47.667515
-          ],
-          [
-            -122.129095,
-            47.667425
-          ],
-          [
-            -122.129131,
-            47.667292
-          ],
-          [
-            -122.129177,
-            47.667199
-          ],
-          [
-            -122.129225,
-            47.667131
-          ],
-          [
-            -122.129259,
-            47.667083
-          ],
-          [
-            -122.129378,
-            47.666993
-          ],
-          [
-            -122.129737,
-            47.666818
-          ],
-          [
-            -122.130537,
-            47.666453
-          ],
-          [
-            -122.13126,
-            47.66607
-          ],
-          [
-            -122.131843,
-            47.665706
-          ],
-          [
-            -122.132099,
-            47.665531
-          ],
-          [
-            -122.132306,
-            47.665348
-          ],
-          [
-            -122.132613,
-            47.665032
-          ],
-          [
-            -122.132891,
-            47.664768
-          ],
-          [
-            -122.133295,
-            47.664341
-          ],
-          [
-            -122.133757,
-            47.663753
-          ],
-          [
-            -122.134043,
-            47.663291
-          ],
-          [
-            -122.135388,
-            47.660781
-          ],
-          [
-            -122.13546,
-            47.660616
-          ],
-          [
-            -122.135554,
-            47.6604
-          ],
-          [
-            -122.136145,
-            47.659293
-          ],
-          [
-            -122.136617,
-            47.658392
-          ],
-          [
-            -122.136883,
-            47.657871
-          ],
-          [
-            -122.137158,
-            47.657362
-          ],
-          [
-            -122.137433,
-            47.656761
-          ],
-          [
-            -122.137613,
-            47.656252
-          ],
-          [
-            -122.137725,
-            47.65581
-          ],
-          [
-            -122.137816,
-            47.655369
-          ],
-          [
-            -122.138004,
-            47.654634
-          ],
-          [
-            -122.13801,
-            47.654611
-          ],
-          [
-            -122.138035,
-            47.654361
-          ],
-          [
-            -122.138071,
-            47.65399
-          ],
-          [
-            -122.13809,
-            47.653434
-          ],
-          [
-            -122.138065,
-            47.652952
-          ],
-          [
-            -122.138019,
-            47.6526
-          ],
-          [
-            -122.137917,
-            47.652163
-          ],
-          [
-            -122.137735,
-            47.651512
-          ],
-          [
-            -122.13759,
-            47.651158
-          ],
-          [
-            -122.137336,
-            47.650549
-          ],
-          [
-            -122.137102,
-            47.650092
-          ],
-          [
-            -122.136735,
-            47.64931
-          ],
-          [
-            -122.136399,
-            47.648302
-          ],
-          [
-            -122.136078,
-            47.647634
-          ],
-          [
-            -122.135889,
-            47.647212
-          ],
-          [
-            -122.135726,
-            47.646848
-          ],
-          [
-            -122.135719,
-            47.646825
-          ],
-          [
-            -122.135576,
-            47.64635
-          ],
-          [
-            -122.135523,
-            47.646171
-          ],
-          [
-            -122.135475,
-            47.646015
-          ],
-          [
-            -122.135431,
-            47.646016
-          ],
-          [
-            -122.135394,
-            47.646016
-          ],
-          [
-            -122.135338,
-            47.646016
-          ],
-          [
-            -122.134412,
-            47.646023
-          ],
-          [
-            -122.134371,
-            47.646023
-          ],
-          [
-            -122.134206,
-            47.646025
-          ],
-          [
-            -122.13399,
-            47.646026
-          ],
-          [
-            -122.133832,
-            47.646027
-          ],
-          [
-            -122.133653,
-            47.646028
-          ],
-          [
-            -122.133305,
-            47.646031
-          ],
-          [
-            -122.13299,
-            47.646033
-          ],
-          [
-            -122.132519,
-            47.646037
-          ],
-          [
-            -122.132328,
-            47.646038
-          ],
-          [
-            -122.132327,
-            47.645917
-          ],
-          [
-            -122.132327,
-            47.645893
-          ],
-          [
-            -122.132327,
-            47.64589
-          ],
-          [
-            -122.132327,
-            47.645886
-          ],
-          [
-            -122.132327,
-            47.645885
-          ],
-          [
-            -122.132315,
-            47.645022
-          ],
-          [
-            -122.132311,
-            47.644663
-          ],
-          [
-            -122.132311,
-            47.644486
-          ],
-          [
-            -122.132311,
-            47.644365
-          ],
-          [
-            -122.132312,
-            47.644243
-          ],
-          [
-            -122.132312,
-            47.644079
-          ],
-          [
-            -122.132312,
-            47.643981
-          ],
-          [
-            -122.132312,
-            47.643861
-          ],
-          [
-            -122.132313,
-            47.64362
-          ],
-          [
-            -122.132312,
-            47.642682
-          ],
-          [
-            -122.132312,
-            47.64261
-          ],
-          [
-            -122.132312,
-            47.642525
-          ],
-          [
-            -122.132078,
-            47.642513
-          ],
-          [
-            -122.13203,
-            47.642511
-          ],
-          [
-            -122.13129,
-            47.64251
-          ],
-          [
-            -122.131283,
-            47.642643
-          ],
-          [
-            -122.13128,
-            47.642717
-          ],
-          [
-            -122.131101,
-            47.642742
-          ],
-          [
-            -122.130987,
-            47.64279
-          ],
-          [
-            -122.130954,
-            47.642817
-          ]
-        ],
-        "duration_minutes": 8
-      },
-      "reasoning": "Short return commute after lunch break; back to work in the afternoon."
-    },
-    {
-      "index": 6,
-      "start_time": "2026-06-02T18:56:05.217Z",
-      "end_time": "2026-06-02T21:37:28.695Z",
-      "activity": "Afternoon standup, meetings, and collaborative coding sessions.",
+      "start_time": "2026-06-02T18:16:36.632Z",
+      "end_time": "2026-06-02T21:25:24.632Z",
+      "activity": "Afternoon meetings, design review, and wrapping up tasks",
       "activity_type": "work",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -1960,15 +690,15 @@
         47.6429
       ],
       "travel_from_prev": null,
-      "reasoning": "Standard afternoon work block with team meetings; wrapping up by 5:30pm allows time for evening activity."
+      "reasoning": "Rain clears by 2pm, but staying on campus is efficient. Productive afternoon block before heading home."
     },
     {
-      "index": 7,
-      "start_time": "2026-06-02T21:45:28.695Z",
-      "end_time": "2026-06-02T21:58:55.652Z",
-      "activity": "Commute home from Microsoft.",
+      "index": 5,
+      "start_time": "2026-06-02T21:33:24.632Z",
+      "end_time": "2026-06-02T21:56:35.790Z",
+      "activity": "Drive home from Building 99",
       "activity_type": "commute",
-      "location_name": "Home (Downtown Redmond)",
+      "location_name": "Home (Redmond Downtown)",
       "location": [
         -122.12153,
         47.673904
@@ -2591,76 +1321,77 @@
         ],
         "duration_minutes": 8
       },
-      "reasoning": "End-of-day commute back to Redmond home; sunny weather makes the drive pleasant."
+      "reasoning": "SR-520 closure is over by now; standard evening commute home. Road conditions improving as rain has stopped."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-02T21:56:35.790Z",
+      "end_time": "2026-06-02T22:33:01.895Z",
+      "activity": "Prepare and eat dinner at home",
+      "activity_type": "meal",
+      "location_name": "Home (Redmond Downtown)",
+      "location": [
+        -122.12153,
+        47.673904
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Relaxing evening meal; moderate energy from yesterday means he's content with a quiet night in rather than going out."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-02T22:33:01.895Z",
+      "end_time": "2026-06-03T01:02:05.053Z",
+      "activity": "Unwind with games and browsing, maybe check World Cup highlights",
+      "activity_type": "leisure",
+      "location_name": "Home (Redmond Downtown)",
+      "location": [
+        -122.12153,
+        47.673904
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Fun-loving personality means some gaming or streaming; yesterday's World Cup excitement lingers as a background interest but doesn't dominate."
     },
     {
       "index": 8,
-      "start_time": "2026-06-02T21:58:55.652Z",
-      "end_time": "2026-06-02T22:25:49.565Z",
-      "activity": "Prepare and eat dinner at home.",
-      "activity_type": "meal",
-      "location_name": "Home (Downtown Redmond)",
-      "location": [
-        -122.12153,
-        47.673904
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Home-cooked dinner or takeout; a relaxing meal after a full work day."
-    },
-    {
-      "index": 9,
-      "start_time": "2026-06-02T22:25:49.565Z",
-      "end_time": "2026-06-03T01:07:13.043Z",
-      "activity": "Evening leisure: watch highlights, play games, or hang out with friends.",
-      "activity_type": "leisure",
-      "location_name": "Home (Downtown Redmond)",
-      "location": [
-        -122.12153,
-        47.673904
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Fun-loving personality; evening is for relaxation and entertainment on a sunny June evening; staying home keeps it low-key."
-    },
-    {
-      "index": 10,
-      "start_time": "2026-06-03T01:07:13.043Z",
+      "start_time": "2026-06-03T01:02:05.053Z",
       "end_time": "2026-06-03T13:00:00.000Z",
-      "activity": "Wind down and sleep.",
+      "activity": "Sleep",
       "activity_type": "sleep",
-      "location_name": "Home (Downtown Redmond)",
+      "location_name": "Home (Redmond Downtown)",
       "location": [
         -122.12153,
         47.673904
       ],
       "travel_from_prev": null,
-      "reasoning": "Full 8-hour sleep; ends at 6:30am next morning, allowing for a healthy sleep schedule before another work day."
+      "reasoning": "8+ hours sleep, ending before 7:30am next morning to maintain routine. Rain day and steady work leave him satisfied but ready for rest."
     }
   ],
-  "diary": "Woke up to a gorgeous Monday morning—the kind that makes you forget it's only June. Got through my code reviews pretty smoothly before the big distraction hit: USA vs Wales at 11. A bunch of us gathered in the break room, and honestly, the energy was electric. We were all yelling at the screen like we'd never seen soccer before. Grabbed a quick lunch at Whole Foods after, still buzzing from the match. The afternoon was heavy with meetings, but I powered through. By the time I got home, I just wanted to decompress—made some dinner, scrolled through highlight reels, and honestly just felt grateful for the simplicity of a day that worked out. There's something satisfying about routine when it clicks.",
-  "thought_process": "I started the day energized by the weather and fell into a solid work rhythm—code review felt purposeful. When the World Cup match came up, I made a conscious choice to join everyone; working solo all morning meant I was ready for that social break, and the collective excitement was a real mood lifter. The Light Rail closure didn't affect me since I'm driving, but it made me aware of how lucky my commute is. By afternoon, the meetings felt heavier, and I noticed my energy dipping, so I prioritized an earlier exit home. The leisure time wasn't about productivity—it was about recalibration. Sometimes you need a day that's just... normal.",
+  "diary": "Woke up to that familiar drizzle—the kind that makes you want to stay in bed another twenty minutes. The SR-520 closure had me paranoid about traffic, so I routed through I-90 instead. Building 99 was the usual Tuesday grind: code reviews that exposed some sloppy logic I'd written last week (embarrassing but fixable), standup where I mostly listened, then debugging that actually felt good when I tracked down the issue around 10am. Cafeteria salad was forgettable. The afternoon design review dragged on, but at least we settled the API question that's been hanging over us. By the time I got home, the rain had stopped and everything felt a little lighter. Made some proper dinner instead of reheating, then got lost in a couple matches and some World Cup replays. There's something about a quiet rainy evening that just resets you.",
+  "thought_process": "The weather and the bridge closure put me in a cautious headspace this morning—I wanted to avoid any commute chaos, so routing around SR-520 felt like the smart play. Work felt routine in the best way; I wasn't dreading anything, just moving through the day. The code review sting actually motivated me rather than deflating me, which surprised me. I think I'm in a place where feedback feels constructive instead of critical. By afternoon, I was running on fumes but the design review actually needed my input, so I stayed engaged. Coming home felt earned. I deliberately cooked instead of defaulting to leftovers—small thing, but it felt intentional. The World Cup clips were a good wind-down. Overall, the grey day didn't get to me the way it sometimes does.",
   "end_state": {
     "location": [
       -122.12153,
       47.673904
     ],
-    "energy": 45,
+    "energy": 55,
     "notes": ""
   },
-  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
-  "generated_at": "2026-05-30T17:30:39.758Z",
+  "world_event_prompt": "Grey, drizzly Tuesday with steady rain from 7am to 2pm, high of 58F. SR-520 bridge closed eastbound 9am-noon for emergency repair, snarling cross-lake traffic.",
+  "generated_at": "2026-05-30T17:57:40.279Z",
   "stats": {
     "skeleton_attempts": 1,
     "repair_used": false,
-    "geocode_misses": 0,
-    "route_misses": 0,
-    "overflow_fixed_by_shift": 4,
+    "geocode_misses": 2,
+    "route_misses": 3,
+    "overflow_fixed_by_shift": 2,
     "overflow_remaining": 0,
     "compressed_to_fit_day": true,
-    "compressed_minutes_saved": 452,
+    "compressed_minutes_saved": 481,
     "sleep_beat_synthesized": false,
     "returned_home_before_sleep": true,
-    "llm_ms": 14396,
-    "mapbox_ms": 0,
-    "total_ms": 15009
-  }
+    "llm_ms": 52853,
+    "mapbox_ms": 523,
+    "total_ms": 14814
+  },
+  "_ok": true
 }

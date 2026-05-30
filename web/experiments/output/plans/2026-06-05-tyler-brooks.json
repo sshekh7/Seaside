@@ -7,9 +7,9 @@
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-05T13:45:00.000Z",
-      "end_time": "2026-06-05T14:05:26.526Z",
-      "activity": "Wake up, shower, coffee, check emails at home",
+      "start_time": "2026-06-05T14:00:00.000Z",
+      "end_time": "2026-06-05T14:17:07.957Z",
+      "activity": "Wake up, shower, coffee routine at home.",
       "activity_type": "home",
       "location_name": "Home (South Lake Union, Seattle)",
       "location": [
@@ -17,13 +17,13 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "Tyler is a workaholic who gets to the office by 7:30, so he wakes early to prep. Full energy on day one."
+      "reasoning": "Tyler's rigid schedule: in office by 7:30. Short, efficient morning routine—no folding in breakfast since he eats at desk."
     },
     {
       "index": 1,
-      "start_time": "2026-06-05T14:05:26.526Z",
-      "end_time": "2026-06-05T14:19:04.210Z",
-      "activity": "Short walk/commute to Amazon HQ",
+      "start_time": "2026-06-05T14:17:07.957Z",
+      "end_time": "2026-06-05T14:23:59.140Z",
+      "activity": "Bike commute to Amazon HQ.",
       "activity_type": "commute",
       "location_name": "Amazon HQ (South Lake Union, Seattle)",
       "location": [
@@ -31,13 +31,13 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "South Lake Union to Amazon HQ is a very short commute; Tyler arrives by 7:30 as per his routine."
+      "reasoning": "Lives a few blocks away; bike is his standard mode. Arrives by 7:30 as per profile."
     },
     {
       "index": 2,
-      "start_time": "2026-06-05T14:19:04.210Z",
-      "end_time": "2026-06-05T17:19:38.526Z",
-      "activity": "Deep work on sprint tasks, standup, code review",
+      "start_time": "2026-06-05T14:23:59.140Z",
+      "end_time": "2026-06-05T17:35:52.258Z",
+      "activity": "Deep work on optimization sprint, standup, code review, mentoring.",
       "activity_type": "work",
       "location_name": "Amazon HQ (South Lake Union, Seattle)",
       "location": [
@@ -45,27 +45,27 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "Intense workaholic SDE3 dives into work immediately; ignores the USA vs Wales FIFA match at 11am (not relevant to his work-focused persona)."
+      "reasoning": "Typical Friday morning: early flow state, likely standup participation (not skipping today), mentoring junior devs on patterns. Eats prepped meal at desk."
     },
     {
       "index": 3,
-      "start_time": "2026-06-05T17:19:38.526Z",
-      "end_time": "2026-06-05T17:50:18.315Z",
-      "activity": "Lunch at desk: prepped meal from Sunday",
-      "activity_type": "meal",
-      "location_name": "Amazon HQ (South Lake Union, Seattle)",
+      "start_time": "2026-06-05T17:35:52.258Z",
+      "end_time": "2026-06-05T17:46:09.032Z",
+      "activity": "Quick lunch errand: grab fresh salad nearby to supplement desk prep.",
+      "activity_type": "errand",
+      "location_name": "Whole Foods Market (South Lake Union)",
       "location": [
         -122.3367,
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "Tyler eats lunch at his desk as part of his intense work routine; uses meal-prepped container from Sunday."
+      "reasoning": "Friday treat: fresh greens to pair with prepped protein. Walking distance from HQ; Friday energy means he breaks routine slightly."
     },
     {
       "index": 4,
-      "start_time": "2026-06-05T17:50:18.315Z",
-      "end_time": "2026-06-05T21:04:30.315Z",
-      "activity": "Afternoon focused work, meetings, debugging",
+      "start_time": "2026-06-05T17:46:09.032Z",
+      "end_time": "2026-06-05T21:22:01.290Z",
+      "activity": "Afternoon work: design review, async code patterns, PR reviews.",
       "activity_type": "work",
       "location_name": "Amazon HQ (South Lake Union, Seattle)",
       "location": [
@@ -73,13 +73,13 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "Continues intense work block through afternoon. Light Rail closure between Westlake and U-District does not affect him (HQ is in South Lake Union, gym is likely nearby)."
+      "reasoning": "Afternoon push before gym. Typically stays focused; Friday afternoon is still productive before the weekend mindset kicks in."
     },
     {
       "index": 5,
-      "start_time": "2026-06-05T21:21:30.315Z",
-      "end_time": "2026-06-05T21:31:43.578Z",
-      "activity": "Walk to gym",
+      "start_time": "2026-06-05T21:39:01.290Z",
+      "end_time": "2026-06-05T21:49:18.064Z",
+      "activity": "Bike to gym.",
       "activity_type": "commute",
       "location_name": "Seattle Athletic Club (Downtown Seattle)",
       "location": [
@@ -1356,13 +1356,13 @@
         ],
         "duration_minutes": 17
       },
-      "reasoning": "Gym at 6 PM sharp is non-negotiable in Tyler's routine; short walk from downtown HQ to a central gym location."
+      "reasoning": "6 PM gym session is non-negotiable. Quick bike ride from HQ to downtown gym."
     },
     {
       "index": 6,
-      "start_time": "2026-06-05T21:31:43.578Z",
-      "end_time": "2026-06-05T22:22:49.894Z",
-      "activity": "Intense 75-minute workout: weight training and cardio",
+      "start_time": "2026-06-05T21:49:18.064Z",
+      "end_time": "2026-06-05T22:40:41.935Z",
+      "activity": "Heavy lifting and cardio session.",
       "activity_type": "exercise",
       "location_name": "Seattle Athletic Club (Downtown Seattle)",
       "location": [
@@ -1370,13 +1370,13 @@
         47.595332
       ],
       "travel_from_prev": null,
-      "reasoning": "Disciplined SDE3 hits the gym at exactly 6 PM; tracks all workouts. Sunny weather makes evening energy high."
+      "reasoning": "Consistent gym discipline. Warm, breezy 77F day makes evening workout appealing. Full session clears mental fog."
     },
     {
       "index": 7,
-      "start_time": "2026-06-05T22:39:49.894Z",
-      "end_time": "2026-06-05T22:56:51.999Z",
-      "activity": "Commute home",
+      "start_time": "2026-06-05T22:57:41.935Z",
+      "end_time": "2026-06-05T23:11:24.301Z",
+      "activity": "Shower and walk home.",
       "activity_type": "commute",
       "location_name": "Home (South Lake Union, Seattle)",
       "location": [
@@ -2653,13 +2653,13 @@
         ],
         "duration_minutes": 17
       },
-      "reasoning": "Returns to South Lake Union apartment after gym; budgets for shower/freshen up before heading home."
+      "reasoning": "Post-gym routine: shower at gym, then slow walk home through downtown. Pride street fair is downtown/Capitol Hill (not his direct path), so he avoids the Broadway/Pike closures by staying on his usual SLU route."
     },
     {
       "index": 8,
-      "start_time": "2026-06-05T22:56:51.999Z",
-      "end_time": "2026-06-05T23:30:56.210Z",
-      "activity": "Shower, dinner prep, light meal",
+      "start_time": "2026-06-05T23:11:24.301Z",
+      "end_time": "2026-06-05T23:38:49.032Z",
+      "activity": "Prepare and eat dinner, hydrate.",
       "activity_type": "meal",
       "location_name": "Home (South Lake Union, Seattle)",
       "location": [
@@ -2667,13 +2667,13 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "Post-gym routine: shower, prepare and eat a light dinner (likely prepped or simple protein-based meal)."
+      "reasoning": "Friday dinner: likely leftover prep or simple cook. Warm evening means he hydrates well. Not interested in Pride festivities (energy: 45/100 yesterday suggests introversion or fatigue)."
     },
     {
       "index": 9,
-      "start_time": "2026-06-05T23:30:56.210Z",
-      "end_time": "2026-06-06T01:02:55.578Z",
-      "activity": "Email catch-up, spreadsheet tracking, personal admin; Read tech news, relax on couch",
+      "start_time": "2026-06-05T23:38:49.032Z",
+      "end_time": "2026-06-06T01:21:36.774Z",
+      "activity": "Update fitness spreadsheet, read about database optimization, light leisure.",
       "activity_type": "leisure",
       "location_name": "Home (South Lake Union, Seattle)",
       "location": [
@@ -2681,13 +2681,13 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "Workaholic winds down by reviewing emails and updating personal tracking spreadsheets; maintains discipline even in evening."
+      "reasoning": "Friday wind-down: consistent evening routine. Tracks metrics obsessively, enjoys technical deep-dives. No social plans; low energy from yesterday carries through."
     },
     {
       "index": 10,
-      "start_time": "2026-06-06T01:02:55.578Z",
+      "start_time": "2026-06-06T01:21:36.774Z",
       "end_time": "2026-06-06T13:00:00.000Z",
-      "activity": "Sleep",
+      "activity": "Sleep.",
       "activity_type": "sleep",
       "location_name": "Home (South Lake Union, Seattle)",
       "location": [
@@ -2695,11 +2695,11 @@
         47.6427
       ],
       "travel_from_prev": null,
-      "reasoning": "8-hour sleep block (22:30–06:30) spans overnight; Tyler maintains rigid sleep discipline to support early 6:45 wake-up and intense work schedule."
+      "reasoning": "7.5 hours sleep, ending at 6:15 AM Saturday (before 06:00 cutoff is not required for Saturday, but overnight span is clear). Consistent sleep hygiene for weekend recovery."
     }
   ],
-  "diary": "Monday came and went in that blur I've gotten used to. Woke up early, knocked back coffee while scanning emails—nothing urgent, which felt like a win. The walk to HQ was crisp, and I managed to get real deep work done this morning before the standup derailed things. Grabbed my prepped meal at my desk around 10:30, which saved me from the cafeteria madness.\n\nAcidentally saw the World Cup match was on—USA vs Wales—but work had me. The light rail closure meant I couldn't take my usual route anyway, so I walked to the gym instead. That 75-minute session hit different today; I needed it. Left feeling lighter somehow. Showered, threw together dinner, then spent the evening doing email triage and updating my tracking spreadsheet. Tech news scrolling on the couch rounded it out. Felt productive, felt steady.",
-  "thought_process": "I structured the day around work momentum and physical release. The light rail closure actually freed me up mentally—instead of being annoyed, I saw the gym as the obvious move, which turned out to be exactly what I needed. Work was solid; I stayed focused through lunch and didn't get too caught up in the World Cup buzz even though it was on. My evening admin time felt earned, not like I was procrastinating. I think I'm in a good rhythm lately where I'm not fighting the routine but actually leaning into it. The early bedtime is intentional; no reason to stay up.",
+  "diary": "Friday felt like the right day to push hard. Morning routine was smooth—coffee hit different knowing the weather would be perfect for the bike ride in. Work was solid; we crushed the optimization sprint, and mentoring one of the junior devs through a tricky async pattern reminded me why I love this job. Grabbed a salad at Whole Foods around mid-morning, nothing fancy, just needed fuel.\n\nThe gym session was exactly what I needed—heavy legs, some cardio, the usual. There's something about lifting that clears your head, especially after staring at code all day. Biked home as the sun was still high, and I could hear the early buzz from Capitol Hill. Pride stuff kicking off down on Broadway; the energy was already building.\n\nDinner was quiet at home, just me and my spreadsheet updates. Read some stuff about database optimization before bed. Felt settled, accomplished. Good week.",
+  "thought_process": "I stayed in my lane today—work, exercise, routine. The Pride festivities downtown didn't really pull at me; I'm genuinely happy for the city, but I'm not the type to dive into crowds on a Friday evening. Instead I leaned into what I know: deep work, physical exertion, and the comfort of home. My mood was steady, maybe even elevated from the workout endorphins. I chose the gym over exploring the street fair because I needed that structure and the headspace it gives me. The weather was perfect, which made the bike commute feel less like obligation and more like a small win. By evening I was content, not restless.",
   "end_state": {
     "location": [
       -122.3367,
@@ -2708,21 +2708,22 @@
     "energy": 45,
     "notes": ""
   },
-  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
-  "generated_at": "2026-05-30T17:32:55.901Z",
+  "world_event_prompt": "Warm, breezy Friday, high of 77F. Seattle Pride kickoff: Capitol Hill street fair and road closures along Broadway and Pike from 5pm. Festive, busy evening downtown.",
+  "generated_at": "2026-05-30T17:59:59.739Z",
   "stats": {
     "skeleton_attempts": 1,
     "repair_used": false,
-    "geocode_misses": 0,
-    "route_misses": 0,
+    "geocode_misses": 5,
+    "route_misses": 5,
     "overflow_fixed_by_shift": 2,
     "overflow_remaining": 0,
     "compressed_to_fit_day": true,
-    "compressed_minutes_saved": 454,
+    "compressed_minutes_saved": 439,
     "sleep_beat_synthesized": false,
     "returned_home_before_sleep": true,
-    "llm_ms": 14976,
-    "mapbox_ms": 0,
-    "total_ms": 15292
-  }
+    "llm_ms": 72643,
+    "mapbox_ms": 997,
+    "total_ms": 16672
+  },
+  "_ok": true
 }

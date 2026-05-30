@@ -9,177 +9,1065 @@
       "index": 0,
       "start_time": "2026-06-02T14:00:00.000Z",
       "end_time": "2026-06-02T14:35:00.000Z",
-      "activity": "Wake up, make morning tea, feed the indoor cat, check the weather.",
+      "activity": "Wake up, feed Miso, make tea, and settle in by the window with the morning light.",
       "activity_type": "home",
-      "location_name": "Home (Wallingford, Seattle)",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "Rosa's gentle morning routine—she's a creature of habit and starts her day early with tea and quiet reflection before venturing out."
+      "reasoning": "Rosa's consistent morning ritual; the grey drizzly weather makes the quiet indoor routine especially appealing rather than rushing out early."
     },
     {
       "index": 1,
-      "start_time": "2026-06-02T14:35:00.000Z",
-      "end_time": "2026-06-02T14:55:00.000Z",
-      "activity": "Walk to nearby park to feed the birds.",
-      "activity_type": "errand",
-      "location_name": "Wallingford Park (Wallingford, Seattle)",
+      "start_time": "2026-06-02T14:41:00.000Z",
+      "end_time": "2026-06-02T15:11:00.000Z",
+      "activity": "Walk to Gas Works Park through light rain to feed the birds.",
+      "activity_type": "commute",
+      "location_name": "Gas Works Park (Wallingford)",
       "location": [
-        -122.332,
-        47.6605
+        -122.3344,
+        47.6457
       ],
-      "travel_from_prev": null,
-      "reasoning": "Part of her daily ritual; the sunny morning is perfect for this short walk from home, and she feeds the ducks and pigeons before the heat builds."
+      "travel_from_prev": {
+        "mode": "driving",
+        "polyline": [
+          [
+            -122.332002,
+            47.660291
+          ],
+          [
+            -122.33248,
+            47.660293
+          ],
+          [
+            -122.332521,
+            47.660294
+          ],
+          [
+            -122.33252,
+            47.660299
+          ],
+          [
+            -122.332526,
+            47.660311
+          ],
+          [
+            -122.332537,
+            47.660322
+          ],
+          [
+            -122.332553,
+            47.660331
+          ],
+          [
+            -122.332572,
+            47.660335
+          ],
+          [
+            -122.33258,
+            47.660335
+          ],
+          [
+            -122.332591,
+            47.660335
+          ],
+          [
+            -122.33261,
+            47.660331
+          ],
+          [
+            -122.332627,
+            47.660324
+          ],
+          [
+            -122.332639,
+            47.660312
+          ],
+          [
+            -122.332645,
+            47.660298
+          ],
+          [
+            -122.332645,
+            47.660294
+          ],
+          [
+            -122.332675,
+            47.660294
+          ],
+          [
+            -122.333045,
+            47.660297
+          ],
+          [
+            -122.333696,
+            47.660301
+          ],
+          [
+            -122.333708,
+            47.660301
+          ],
+          [
+            -122.33371,
+            47.660316
+          ],
+          [
+            -122.33372,
+            47.66033
+          ],
+          [
+            -122.333736,
+            47.66034
+          ],
+          [
+            -122.333757,
+            47.660346
+          ],
+          [
+            -122.333767,
+            47.660347
+          ],
+          [
+            -122.333779,
+            47.660347
+          ],
+          [
+            -122.333801,
+            47.660343
+          ],
+          [
+            -122.333819,
+            47.660335
+          ],
+          [
+            -122.333831,
+            47.660323
+          ],
+          [
+            -122.333837,
+            47.66031
+          ],
+          [
+            -122.333837,
+            47.660304
+          ],
+          [
+            -122.333854,
+            47.660304
+          ],
+          [
+            -122.334241,
+            47.660303
+          ],
+          [
+            -122.334902,
+            47.660308
+          ],
+          [
+            -122.334957,
+            47.660308
+          ],
+          [
+            -122.334957,
+            47.660316
+          ],
+          [
+            -122.334965,
+            47.660329
+          ],
+          [
+            -122.334978,
+            47.660338
+          ],
+          [
+            -122.334996,
+            47.660345
+          ],
+          [
+            -122.335009,
+            47.660346
+          ],
+          [
+            -122.335015,
+            47.660346
+          ],
+          [
+            -122.335035,
+            47.660344
+          ],
+          [
+            -122.335052,
+            47.660337
+          ],
+          [
+            -122.335063,
+            47.660327
+          ],
+          [
+            -122.335069,
+            47.660316
+          ],
+          [
+            -122.33507,
+            47.660309
+          ],
+          [
+            -122.335118,
+            47.660309
+          ],
+          [
+            -122.335589,
+            47.660309
+          ],
+          [
+            -122.336092,
+            47.660313
+          ],
+          [
+            -122.336198,
+            47.660314
+          ],
+          [
+            -122.336199,
+            47.660248
+          ],
+          [
+            -122.336212,
+            47.659206
+          ],
+          [
+            -122.336213,
+            47.659159
+          ],
+          [
+            -122.336214,
+            47.659066
+          ],
+          [
+            -122.336228,
+            47.658092
+          ],
+          [
+            -122.336228,
+            47.657983
+          ],
+          [
+            -122.33623,
+            47.657892
+          ],
+          [
+            -122.336242,
+            47.656894
+          ],
+          [
+            -122.336243,
+            47.656812
+          ],
+          [
+            -122.336244,
+            47.656766
+          ],
+          [
+            -122.336257,
+            47.65575
+          ],
+          [
+            -122.336259,
+            47.655649
+          ],
+          [
+            -122.336259,
+            47.655571
+          ],
+          [
+            -122.336279,
+            47.654387
+          ],
+          [
+            -122.33628,
+            47.654315
+          ],
+          [
+            -122.33628,
+            47.654253
+          ],
+          [
+            -122.336279,
+            47.654067
+          ],
+          [
+            -122.33629,
+            47.653218
+          ],
+          [
+            -122.33629,
+            47.653154
+          ],
+          [
+            -122.336291,
+            47.653083
+          ],
+          [
+            -122.336303,
+            47.65217
+          ],
+          [
+            -122.336305,
+            47.652035
+          ],
+          [
+            -122.336306,
+            47.651983
+          ],
+          [
+            -122.336306,
+            47.651926
+          ],
+          [
+            -122.336308,
+            47.651802
+          ],
+          [
+            -122.336324,
+            47.65057
+          ],
+          [
+            -122.336325,
+            47.650504
+          ],
+          [
+            -122.336325,
+            47.650446
+          ],
+          [
+            -122.336339,
+            47.649396
+          ],
+          [
+            -122.33634,
+            47.649306
+          ],
+          [
+            -122.33634,
+            47.649265
+          ],
+          [
+            -122.336341,
+            47.649198
+          ],
+          [
+            -122.336342,
+            47.649134
+          ],
+          [
+            -122.336342,
+            47.649101
+          ],
+          [
+            -122.336348,
+            47.64867
+          ],
+          [
+            -122.336356,
+            47.64814
+          ],
+          [
+            -122.336356,
+            47.648041
+          ],
+          [
+            -122.336248,
+            47.648041
+          ],
+          [
+            -122.335336,
+            47.648037
+          ],
+          [
+            -122.335331,
+            47.648037
+          ],
+          [
+            -122.335321,
+            47.648037
+          ],
+          [
+            -122.335318,
+            47.648037
+          ],
+          [
+            -122.335287,
+            47.648037
+          ],
+          [
+            -122.335163,
+            47.648037
+          ],
+          [
+            -122.335165,
+            47.647966
+          ],
+          [
+            -122.335165,
+            47.647952
+          ],
+          [
+            -122.335165,
+            47.647864
+          ],
+          [
+            -122.335167,
+            47.647674
+          ],
+          [
+            -122.335168,
+            47.647537
+          ],
+          [
+            -122.33517,
+            47.647376
+          ],
+          [
+            -122.335173,
+            47.647069
+          ],
+          [
+            -122.335174,
+            47.646892
+          ],
+          [
+            -122.335175,
+            47.646837
+          ],
+          [
+            -122.334498,
+            47.646839
+          ],
+          [
+            -122.334501,
+            47.646694
+          ],
+          [
+            -122.334511,
+            47.646637
+          ],
+          [
+            -122.334538,
+            47.646612
+          ],
+          [
+            -122.3347,
+            47.646536
+          ],
+          [
+            -122.334959,
+            47.646448
+          ]
+        ],
+        "duration_minutes": 6
+      },
+      "reasoning": "Beloved morning ritual; the drizzle is gentle enough for her usual visit, though she'll keep it shorter than yesterday due to the rain."
     },
     {
       "index": 2,
-      "start_time": "2026-06-02T14:55:00.000Z",
-      "end_time": "2026-06-02T15:25:00.000Z",
-      "activity": "Walk back home and prepare a light breakfast.",
-      "activity_type": "home",
-      "location_name": "Home (Wallingford, Seattle)",
+      "start_time": "2026-06-02T15:11:00.000Z",
+      "end_time": "2026-06-02T15:56:00.000Z",
+      "activity": "Feed the ducks and geese, watch the early morning quiet despite the rain.",
+      "activity_type": "leisure",
+      "location_name": "Gas Works Park (Wallingford)",
       "location": [
-        -122.332,
-        47.6605
+        -122.3344,
+        47.6457
       ],
       "travel_from_prev": null,
-      "reasoning": "She returns home to have breakfast and settle in for the morning; her routine is predictable and grounding."
+      "reasoning": "Even in drizzle, the birds still need feeding; Rosa finds peace in the routine and the muted light reflects her low energy from yesterday."
     },
     {
       "index": 3,
-      "start_time": "2026-06-02T15:25:00.000Z",
-      "end_time": "2026-06-02T17:45:00.000Z",
-      "activity": "Read the newspaper and tidy up the house.",
-      "activity_type": "leisure",
-      "location_name": "Home (Wallingford, Seattle)",
+      "start_time": "2026-06-02T16:02:00.000Z",
+      "end_time": "2026-06-02T16:32:00.000Z",
+      "activity": "Walk home from the park, towel off, and freshen up.",
+      "activity_type": "commute",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
-      "travel_from_prev": null,
-      "reasoning": "Rosa spends a quiet morning at home reading and puttering; this is typical for a retired person with no work obligations."
+      "travel_from_prev": {
+        "mode": "driving",
+        "polyline": [
+          [
+            -122.334959,
+            47.646448
+          ],
+          [
+            -122.3347,
+            47.646536
+          ],
+          [
+            -122.334538,
+            47.646612
+          ],
+          [
+            -122.334511,
+            47.646637
+          ],
+          [
+            -122.334501,
+            47.646694
+          ],
+          [
+            -122.334498,
+            47.646839
+          ],
+          [
+            -122.335175,
+            47.646837
+          ],
+          [
+            -122.335174,
+            47.646892
+          ],
+          [
+            -122.335173,
+            47.647069
+          ],
+          [
+            -122.33517,
+            47.647376
+          ],
+          [
+            -122.335168,
+            47.647537
+          ],
+          [
+            -122.335167,
+            47.647674
+          ],
+          [
+            -122.335165,
+            47.647864
+          ],
+          [
+            -122.335165,
+            47.647952
+          ],
+          [
+            -122.335165,
+            47.647966
+          ],
+          [
+            -122.335163,
+            47.648037
+          ],
+          [
+            -122.335287,
+            47.648037
+          ],
+          [
+            -122.335318,
+            47.648037
+          ],
+          [
+            -122.335321,
+            47.648037
+          ],
+          [
+            -122.335331,
+            47.648037
+          ],
+          [
+            -122.335336,
+            47.648037
+          ],
+          [
+            -122.336248,
+            47.648041
+          ],
+          [
+            -122.336356,
+            47.648041
+          ],
+          [
+            -122.336356,
+            47.64814
+          ],
+          [
+            -122.336348,
+            47.64867
+          ],
+          [
+            -122.336342,
+            47.649101
+          ],
+          [
+            -122.336342,
+            47.649134
+          ],
+          [
+            -122.336341,
+            47.649198
+          ],
+          [
+            -122.33634,
+            47.649265
+          ],
+          [
+            -122.33634,
+            47.649306
+          ],
+          [
+            -122.336339,
+            47.649396
+          ],
+          [
+            -122.336325,
+            47.650446
+          ],
+          [
+            -122.336325,
+            47.650504
+          ],
+          [
+            -122.336324,
+            47.65057
+          ],
+          [
+            -122.336308,
+            47.651802
+          ],
+          [
+            -122.336306,
+            47.651926
+          ],
+          [
+            -122.336306,
+            47.651983
+          ],
+          [
+            -122.336305,
+            47.652035
+          ],
+          [
+            -122.336303,
+            47.65217
+          ],
+          [
+            -122.336291,
+            47.653083
+          ],
+          [
+            -122.33629,
+            47.653154
+          ],
+          [
+            -122.33629,
+            47.653218
+          ],
+          [
+            -122.336279,
+            47.654067
+          ],
+          [
+            -122.33628,
+            47.654253
+          ],
+          [
+            -122.33628,
+            47.654315
+          ],
+          [
+            -122.336279,
+            47.654387
+          ],
+          [
+            -122.336259,
+            47.655571
+          ],
+          [
+            -122.336259,
+            47.655649
+          ],
+          [
+            -122.336257,
+            47.65575
+          ],
+          [
+            -122.336244,
+            47.656766
+          ],
+          [
+            -122.336243,
+            47.656812
+          ],
+          [
+            -122.336242,
+            47.656894
+          ],
+          [
+            -122.33623,
+            47.657892
+          ],
+          [
+            -122.336228,
+            47.657983
+          ],
+          [
+            -122.336228,
+            47.658092
+          ],
+          [
+            -122.336214,
+            47.659066
+          ],
+          [
+            -122.336213,
+            47.659159
+          ],
+          [
+            -122.336212,
+            47.659206
+          ],
+          [
+            -122.336199,
+            47.660248
+          ],
+          [
+            -122.336198,
+            47.660314
+          ],
+          [
+            -122.336092,
+            47.660313
+          ],
+          [
+            -122.335589,
+            47.660309
+          ],
+          [
+            -122.335118,
+            47.660309
+          ],
+          [
+            -122.33507,
+            47.660309
+          ],
+          [
+            -122.335069,
+            47.660316
+          ],
+          [
+            -122.335063,
+            47.660327
+          ],
+          [
+            -122.335052,
+            47.660337
+          ],
+          [
+            -122.335035,
+            47.660344
+          ],
+          [
+            -122.335015,
+            47.660346
+          ],
+          [
+            -122.335009,
+            47.660346
+          ],
+          [
+            -122.334996,
+            47.660345
+          ],
+          [
+            -122.334978,
+            47.660338
+          ],
+          [
+            -122.334965,
+            47.660329
+          ],
+          [
+            -122.334957,
+            47.660316
+          ],
+          [
+            -122.334957,
+            47.660308
+          ],
+          [
+            -122.334902,
+            47.660308
+          ],
+          [
+            -122.334241,
+            47.660303
+          ],
+          [
+            -122.333854,
+            47.660304
+          ],
+          [
+            -122.333837,
+            47.660304
+          ],
+          [
+            -122.333837,
+            47.66031
+          ],
+          [
+            -122.333831,
+            47.660323
+          ],
+          [
+            -122.333819,
+            47.660335
+          ],
+          [
+            -122.333801,
+            47.660343
+          ],
+          [
+            -122.333779,
+            47.660347
+          ],
+          [
+            -122.333767,
+            47.660347
+          ],
+          [
+            -122.333757,
+            47.660346
+          ],
+          [
+            -122.333736,
+            47.66034
+          ],
+          [
+            -122.33372,
+            47.66033
+          ],
+          [
+            -122.33371,
+            47.660316
+          ],
+          [
+            -122.333708,
+            47.660301
+          ],
+          [
+            -122.333696,
+            47.660301
+          ],
+          [
+            -122.333045,
+            47.660297
+          ],
+          [
+            -122.332675,
+            47.660294
+          ],
+          [
+            -122.332645,
+            47.660294
+          ],
+          [
+            -122.332645,
+            47.660298
+          ],
+          [
+            -122.332639,
+            47.660312
+          ],
+          [
+            -122.332627,
+            47.660324
+          ],
+          [
+            -122.33261,
+            47.660331
+          ],
+          [
+            -122.332591,
+            47.660335
+          ],
+          [
+            -122.33258,
+            47.660335
+          ],
+          [
+            -122.332572,
+            47.660335
+          ],
+          [
+            -122.332553,
+            47.660331
+          ],
+          [
+            -122.332537,
+            47.660322
+          ],
+          [
+            -122.332526,
+            47.660311
+          ],
+          [
+            -122.33252,
+            47.660299
+          ],
+          [
+            -122.332521,
+            47.660294
+          ],
+          [
+            -122.33248,
+            47.660293
+          ],
+          [
+            -122.332002,
+            47.660291
+          ]
+        ],
+        "duration_minutes": 6
+      },
+      "reasoning": "Return home to dry off and warm up before the day's main activities; the rain is still steady at this hour."
     },
     {
       "index": 4,
-      "start_time": "2026-06-02T17:45:00.000Z",
-      "end_time": "2026-06-02T18:15:00.000Z",
-      "activity": "Commute to Wallingford Library by bus.",
-      "activity_type": "commute",
-      "location_name": "Wallingford Library (Wallingford, Seattle)",
+      "start_time": "2026-06-02T16:32:00.000Z",
+      "end_time": "2026-06-02T17:12:00.000Z",
+      "activity": "Prepare a light breakfast and read the morning news indoors.",
+      "activity_type": "home",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "She travels by bus (avoiding Light Rail closure between Westlake and U-District) to reach her beloved library, where she often spends afternoons."
+      "reasoning": "Settling into a quiet morning; the rain and low energy suggest staying put rather than rushing out; SR-520 closure doesn't affect local Wallingford errands."
     },
     {
       "index": 5,
-      "start_time": "2026-06-02T18:15:00.000Z",
-      "end_time": "2026-06-02T19:15:00.000Z",
-      "activity": "Browse books and settle in the reading room; note the USA vs Wales FIFA match is on but she doesn't follow soccer closely.",
-      "activity_type": "leisure",
-      "location_name": "Wallingford Library (Wallingford, Seattle)",
+      "start_time": "2026-06-02T17:12:00.000Z",
+      "end_time": "2026-06-02T17:37:00.000Z",
+      "activity": "Walk to Wallingford library branch in the drizzle.",
+      "activity_type": "commute",
+      "location_name": "Wallingford Branch Library (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "Rosa is at the library during the 11am match time; as a retired librarian, she prefers reading to sports and doesn't adjust her day for the FIFA broadcast."
+      "reasoning": "Short neighborhood walk; rain is manageable for her; the library is her usual Tuesday haunt and a dry, warm refuge."
     },
     {
       "index": 6,
-      "start_time": "2026-06-02T19:15:00.000Z",
-      "end_time": "2026-06-02T19:50:00.000Z",
-      "activity": "Walk to a nearby café for a light lunch.",
-      "activity_type": "meal",
-      "location_name": "Molly Moon's (Wallingford, Seattle)",
+      "start_time": "2026-06-02T17:37:00.000Z",
+      "end_time": "2026-06-02T19:42:00.000Z",
+      "activity": "Browse new arrivals, chat with librarians, and settle in with a good mystery novel.",
+      "activity_type": "leisure",
+      "location_name": "Wallingford Branch Library (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "She steps out for a simple meal in her neighborhood; the sunny weather makes this an easy, pleasant outing."
+      "reasoning": "Rosa's cherished library time; the steady rain makes this the perfect indoor activity; low energy from yesterday means she'll stay longer and rest here."
     },
     {
       "index": 7,
-      "start_time": "2026-06-02T19:50:00.000Z",
-      "end_time": "2026-06-02T21:30:00.000Z",
-      "activity": "Return to library and read in the afternoon light.",
-      "activity_type": "leisure",
-      "location_name": "Wallingford Library (Wallingford, Seattle)",
+      "start_time": "2026-06-02T19:42:00.000Z",
+      "end_time": "2026-06-02T20:12:00.000Z",
+      "activity": "Walk to QFC in the rain to pick up groceries for lunch and dinner.",
+      "activity_type": "commute",
+      "location_name": "QFC (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "Back to her sanctuary—the library is where Rosa feels most at home after a career spent among books and patrons."
+      "reasoning": "Short errand within neighborhood; rain is still present but manageable for a local walk; avoids any cross-lake travel affected by SR-520 closure."
     },
     {
       "index": 8,
-      "start_time": "2026-06-02T21:30:00.000Z",
-      "end_time": "2026-06-02T22:10:00.000Z",
-      "activity": "Commute home by bus.",
-      "activity_type": "commute",
-      "location_name": "Home (Wallingford, Seattle)",
+      "start_time": "2026-06-02T20:12:00.000Z",
+      "end_time": "2026-06-02T20:52:00.000Z",
+      "activity": "Shop for fresh fish, vegetables, and tea; chat with familiar staff.",
+      "activity_type": "errand",
+      "location_name": "QFC (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "The Light Rail closure is no concern to her route; she takes the bus home as the afternoon wanes."
+      "reasoning": "Familiar routine; rain has lightened by early afternoon; Rosa enjoys the social connection with store staff even in her quieter moods."
     },
     {
       "index": 9,
-      "start_time": "2026-06-02T22:10:00.000Z",
-      "end_time": "2026-06-02T23:30:00.000Z",
-      "activity": "Water the garden and do light housework.",
-      "activity_type": "home",
-      "location_name": "Home (Wallingford, Seattle)",
+      "start_time": "2026-06-02T20:52:00.000Z",
+      "end_time": "2026-06-02T21:22:00.000Z",
+      "activity": "Walk home with groceries, drying out as rain clears.",
+      "activity_type": "commute",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "Back home, Rosa tends to her garden in the warm afternoon sun and keeps her home tidy—part of her structured retirement rhythm."
+      "reasoning": "Short walk home; rain ends by 2pm as forecast, so the return journey is pleasant and she can rest."
     },
     {
       "index": 10,
-      "start_time": "2026-06-02T23:30:00.000Z",
-      "end_time": "2026-06-03T00:45:00.000Z",
-      "activity": "Prepare and eat an early dinner.",
-      "activity_type": "meal",
-      "location_name": "Home (Wallingford, Seattle)",
+      "start_time": "2026-06-02T21:22:00.000Z",
+      "end_time": "2026-06-03T00:42:00.000Z",
+      "activity": "Prepare and enjoy a simple lunch, then rest, read, and journal by the window as the afternoon clears.",
+      "activity_type": "home",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "Rosa eats dinner early—a lifelong habit—and keeps her evening calm and wind-down focused."
+      "reasoning": "Low energy from yesterday suggests a quiet afternoon; she'll prepare her fish dinner later and spend the clearing afternoon in her favorite quiet routine."
     },
     {
       "index": 11,
-      "start_time": "2026-06-03T00:45:00.000Z",
-      "end_time": "2026-06-03T04:30:00.000Z",
-      "activity": "Read a novel and listen to soft music in the living room.",
-      "activity_type": "leisure",
-      "location_name": "Home (Wallingford, Seattle)",
+      "start_time": "2026-06-03T00:42:00.000Z",
+      "end_time": "2026-06-03T01:42:00.000Z",
+      "activity": "Prepare and enjoy baked fish with roasted carrots and a small salad.",
+      "activity_type": "meal",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
       ],
       "travel_from_prev": null,
-      "reasoning": "Evening wind-down: Rosa settles into her favorite chair with a book and music, preparing her mind and body for sleep."
+      "reasoning": "Rosa's favorite simple dinner; early meal fits her natural rhythm and low energy; she'll be ready for wind-down by evening."
     },
     {
       "index": 12,
-      "start_time": "2026-06-03T04:30:00.000Z",
+      "start_time": "2026-06-03T01:42:00.000Z",
+      "end_time": "2026-06-03T05:12:00.000Z",
+      "activity": "Read, journal, and listen to soft music or a podcast by the window as evening settles.",
+      "activity_type": "leisure",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Gentle wind-down activity at home; reflects Rosa's preference for quiet evenings and her low energy; sets up natural transition to sleep."
+    },
+    {
+      "index": 13,
+      "start_time": "2026-06-03T05:12:00.000Z",
       "end_time": "2026-06-03T13:00:00.000Z",
       "activity": "Sleep",
       "activity_type": "sleep",
-      "location_name": "Home (Wallingford, Seattle)",
+      "location_name": "Home (Wallingford)",
       "location": [
         -122.332,
         47.6605
@@ -188,31 +1076,32 @@
       "reasoning": "(auto) overnight rest at home"
     }
   ],
-  "diary": "Started the day the way I always do—tea, Whiskers, and checking if the weather gods were being kind. They were. The park was lovely this morning; the pigeons seemed hungrier than usual, or maybe I was just more generous with the breadcrumbs. Back home for breakfast, then I lost myself in the newspaper until it was time to head to the library. I took the bus over to Wallingford—the light rail was down, but it didn't bother me. The library felt like coming home, even though I'm retired now. I noticed folks chattering about some soccer match, but I just found my usual corner with a good book. Molly Moon's for lunch—their soup was perfect. Spent the afternoon reading in that golden afternoon light streaming through the windows. Home by three, watered the tomatoes, made a simple dinner. Now I'm settled with my novel and some Debussy playing softly. These quiet days feel full somehow.",
-  "thought_process": "Today felt unhurried, which is exactly what I needed. I chose the library over staying home because, honestly, retirement hasn't quite erased that pull toward books and quiet spaces—it's just different now, without the responsibility. The light rail closure didn't faze me; I've learned to work with the city's rhythms rather than fight them. I noticed the World Cup buzz but felt no pull toward it; at my age, I've made peace with not needing to follow everything. My mood was steady and content—the weather helped, the garden needed attention, and I wanted to feel useful even in small ways. I think I'm learning that retirement isn't about doing less; it's about choosing what genuinely fills you up.",
+  "diary": "The rain this morning felt like an old friend—grey and steady, the kind that keeps you close to home. I bundled up and walked to Gas Works anyway; the ducks needed feeding, and there's something about that quiet hour before the city wakes. The park was nearly empty, just me and the birds and the sound of water on water.\n\nBack home, I settled into my routine: tea, breakfast, the library branch by mid-morning. Found a new mystery novel that grabbed me immediately. The librarians there still remember me, which felt nice. Picked up fresh fish at QFC—salmon, good quality—and chatted with the produce manager about heirloom tomatoes.\n\nThe afternoon was pure luxury: lunch, reading, journaling by the window as the clouds finally broke. Baked that salmon for dinner with carrots, simple and warm. Now it's evening and I'm tucked in with my book and music. Days like this remind me why I love my quiet life.",
+  "thought_process": "The rain initially felt limiting—I could've stayed in—but I chose the park anyway because routine matters more than weather at my age. The closure on SR-520 barely registered; I don't cross the lake anymore, and it underscored why my Wallingford neighborhood is perfect for me now. I stayed local, moving between familiar places: home, park, library, market. My mood shifted gently from the contemplative gray of morning to contentment by afternoon. The library visit was deliberate—I needed that intellectual anchor, that sense of being among stories. By evening, I felt settled, unhurried. This day was about rhythm and small pleasures: feeding birds, discovering a new book, quality ingredients, soft music. At 67, I've learned to value these quiet victories.",
   "end_state": {
     "location": [
       -122.332,
       47.6605
     ],
-    "energy": 35,
+    "energy": 30,
     "notes": ""
   },
-  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
-  "generated_at": "2026-05-30T17:31:00.587Z",
+  "world_event_prompt": "Grey, drizzly Tuesday with steady rain from 7am to 2pm, high of 58F. SR-520 bridge closed eastbound 9am-noon for emergency repair, snarling cross-lake traffic.",
+  "generated_at": "2026-05-30T17:58:04.350Z",
   "stats": {
     "skeleton_attempts": 1,
     "repair_used": false,
-    "geocode_misses": 0,
-    "route_misses": 0,
-    "overflow_fixed_by_shift": 0,
+    "geocode_misses": 6,
+    "route_misses": 4,
+    "overflow_fixed_by_shift": 2,
     "overflow_remaining": 0,
     "compressed_to_fit_day": true,
-    "compressed_minutes_saved": 390,
+    "compressed_minutes_saved": 432,
     "sleep_beat_synthesized": true,
     "returned_home_before_sleep": true,
-    "llm_ms": 16539,
-    "mapbox_ms": 0,
-    "total_ms": 16902
-  }
+    "llm_ms": 105485,
+    "mapbox_ms": 1396,
+    "total_ms": 20031
+  },
+  "_ok": true
 }

@@ -8,8 +8,8 @@
     {
       "index": 0,
       "start_time": "2026-06-02T15:00:00.000Z",
-      "end_time": "2026-06-02T15:22:48.889Z",
-      "activity": "Wake up, shower, make coffee at home.",
+      "end_time": "2026-06-02T15:22:38.636Z",
+      "activity": "Wake up, shower, coffee at home while checking messages and emails.",
       "activity_type": "home",
       "location_name": "Home (Ballard, Seattle)",
       "location": [
@@ -17,71 +17,15 @@
         47.6685
       ],
       "travel_from_prev": null,
-      "reasoning": "Marcus is a night owl with full energy today; morning routine is quick before heading out to a cafe for work."
+      "reasoning": "Monday's energy was high (40/100) but still low enough to warrant a gentler start. Rain outside means staying indoors first; skateboard stays in the corner for now."
     },
     {
       "index": 1,
-      "start_time": "2026-06-02T15:22:48.889Z",
-      "end_time": "2026-06-02T15:39:06.667Z",
-      "activity": "Skateboard to a nearby cafe for work setup.",
+      "start_time": "2026-06-02T15:47:38.636Z",
+      "end_time": "2026-06-02T16:13:31.363Z",
+      "activity": "Skateboard commute through light rain to favorite work spot.",
       "activity_type": "commute",
-      "location_name": "Ballard Coffee House (Ballard, Seattle)",
-      "location": [
-        -122.3837,
-        47.6685
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Short skateboard commute within Ballard; Marcus prefers working from cafes and this one is local and familiar."
-    },
-    {
-      "index": 2,
-      "start_time": "2026-06-02T15:39:06.667Z",
-      "end_time": "2026-06-02T16:57:20.000Z",
-      "activity": "Work on graphic design projects; laptop and coffee.",
-      "activity_type": "work",
-      "location_name": "Ballard Coffee House (Ballard, Seattle)",
-      "location": [
-        -122.3837,
-        47.6685
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Morning work session before the FIFA match; Marcus gets productive early to wind down for the 11am USA vs Wales broadcast."
-    },
-    {
-      "index": 3,
-      "start_time": "2026-06-02T16:57:20.000Z",
-      "end_time": "2026-06-02T18:05:46.667Z",
-      "activity": "Watch USA vs Wales FIFA World Cup match at a sports bar.",
-      "activity_type": "leisure",
-      "location_name": "The Ballard Annex (Ballard, Seattle)",
-      "location": [
-        -122.3837,
-        47.6685
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Marcus catches the 11am match live at a local sports bar; he's into culture and music, and soccer fits his vibe. Match timing is respected."
-    },
-    {
-      "index": 4,
-      "start_time": "2026-06-02T18:05:46.667Z",
-      "end_time": "2026-06-02T18:25:20.000Z",
-      "activity": "Grab lunch and socialize with other watchers at the bar.",
-      "activity_type": "meal",
-      "location_name": "The Ballard Annex (Ballard, Seattle)",
-      "location": [
-        -122.3837,
-        47.6685
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Lunch flows naturally after the match; he stays at the sports bar for food and casual social time."
-    },
-    {
-      "index": 5,
-      "start_time": "2026-06-02T18:50:20.000Z",
-      "end_time": "2026-06-02T19:06:37.778Z",
-      "activity": "Skateboard to a different cafe to reset and work.",
-      "activity_type": "commute",
-      "location_name": "Cafe Solstice (Capitol Hill, Seattle)",
+      "location_name": "Café Solstice (Capitol Hill, Seattle)",
       "location": [
         -122.3192,
         47.6213
@@ -2200,27 +2144,41 @@
         ],
         "duration_minutes": 25
       },
-      "reasoning": "Across-town skateboard + walk to Capitol Hill for afternoon work session; avoids Light Rail closure (westlake-u-district) by staying west/central."
+      "reasoning": "Drizzle is manageable on a skateboard; Marcus doesn't mind rain. Heading to Café Solstice (yesterday's afternoon spot) to continue momentum on client work. Light rail down is irrelevant—skateboard is always the plan."
     },
     {
-      "index": 6,
-      "start_time": "2026-06-02T19:06:37.778Z",
-      "end_time": "2026-06-02T21:17:00.000Z",
-      "activity": "Deep work session on design projects; multiple coffee refills.",
+      "index": 2,
+      "start_time": "2026-06-02T16:13:31.363Z",
+      "end_time": "2026-06-02T18:19:40.908Z",
+      "activity": "Deep work session: design client project, refine mockups, respond to feedback.",
       "activity_type": "work",
-      "location_name": "Cafe Solstice (Capitol Hill, Seattle)",
+      "location_name": "Café Solstice (Capitol Hill, Seattle)",
       "location": [
         -122.3192,
         47.6213
       ],
       "travel_from_prev": null,
-      "reasoning": "Long afternoon work block; Marcus is a night owl and gets into flow state with a change of scenery and new cafe vibe."
+      "reasoning": "Rain continues until 2pm, so indoor work at a café is perfect. Marcus gets 3+ hours of focused design time before lunch hunger hits. The SR-520 closure doesn't affect a Capitol Hill-based freelancer."
     },
     {
-      "index": 7,
-      "start_time": "2026-06-02T21:17:00.000Z",
-      "end_time": "2026-06-02T21:36:33.333Z",
-      "activity": "Quick errand: browse vinyl records at a local record shop.",
+      "index": 3,
+      "start_time": "2026-06-02T18:19:40.908Z",
+      "end_time": "2026-06-02T18:48:47.726Z",
+      "activity": "Grab lunch: sandwich and espresso at the café, chat with barista about tonight's music scene.",
+      "activity_type": "meal",
+      "location_name": "Café Solstice (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Staying at the same café for lunch keeps workflow smooth. Rain is tapering by early afternoon; Marcus asks about underground shows while fueling up."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-02T18:48:47.726Z",
+      "end_time": "2026-06-02T19:11:26.362Z",
+      "activity": "Skateboard errand to nearby record store to hunt for new arrivals and chat with owner.",
       "activity_type": "errand",
       "location_name": "Sonic Boom Records (Capitol Hill, Seattle)",
       "location": [
@@ -2228,15 +2186,1389 @@
         47.6213
       ],
       "travel_from_prev": null,
-      "reasoning": "Marcus collects vinyl and Capitol Hill is the epicenter for record shops; quick break from work to feed his passion."
+      "reasoning": "Rain is ending by 2pm; Marcus takes a quick break to visit Sonic Boom (yesterday's vinyl treasure hunt was a win). Same neighborhood, short roll away."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-02T19:11:26.362Z",
+      "end_time": "2026-06-02T19:34:04.998Z",
+      "activity": "Skateboard back to Café Solstice, settle in for afternoon work push.",
+      "activity_type": "commute",
+      "location_name": "Café Solstice (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Returning to the work spot for the second half of the day. Rain is clear; Marcus has momentum to finish client deliverables by evening."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-02T19:34:04.998Z",
+      "end_time": "2026-06-02T21:43:28.634Z",
+      "activity": "Afternoon work session: finalize designs, prepare client handoff, invoice prep.",
+      "activity_type": "work",
+      "location_name": "Café Solstice (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "3.5-hour focused block to complete deliverables. Weather is clear; Marcus is in flow state. Café provides steady ambient energy without distraction."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-02T21:56:28.634Z",
+      "end_time": "2026-06-02T22:19:07.270Z",
+      "activity": "Skateboard across Capitol Hill to dinner spot, grab a quick bite before evening plans.",
+      "activity_type": "meal",
+      "location_name": "Matt's in the Market (Pike Place Market, Downtown Seattle)",
+      "location": [
+        -122.3422,
+        47.6097
+      ],
+      "travel_from_prev": {
+        "mode": "driving",
+        "polyline": [
+          [
+            -122.319197,
+            47.621092
+          ],
+          [
+            -122.319464,
+            47.62109
+          ],
+          [
+            -122.319567,
+            47.621089
+          ],
+          [
+            -122.319695,
+            47.621088
+          ],
+          [
+            -122.319925,
+            47.621087
+          ],
+          [
+            -122.320748,
+            47.621081
+          ],
+          [
+            -122.320884,
+            47.62108
+          ],
+          [
+            -122.320883,
+            47.621012
+          ],
+          [
+            -122.320882,
+            47.620891
+          ],
+          [
+            -122.320882,
+            47.620811
+          ],
+          [
+            -122.320876,
+            47.620158
+          ],
+          [
+            -122.320874,
+            47.620013
+          ],
+          [
+            -122.320873,
+            47.619912
+          ],
+          [
+            -122.321042,
+            47.619911
+          ],
+          [
+            -122.321561,
+            47.619908
+          ],
+          [
+            -122.321654,
+            47.619907
+          ],
+          [
+            -122.322102,
+            47.619904
+          ],
+          [
+            -122.322216,
+            47.619903
+          ],
+          [
+            -122.322344,
+            47.619902
+          ],
+          [
+            -122.32238,
+            47.619902
+          ],
+          [
+            -122.322734,
+            47.619897
+          ],
+          [
+            -122.322844,
+            47.619891
+          ],
+          [
+            -122.322954,
+            47.619883
+          ],
+          [
+            -122.323079,
+            47.619871
+          ],
+          [
+            -122.323156,
+            47.619861
+          ],
+          [
+            -122.323182,
+            47.619857
+          ],
+          [
+            -122.323191,
+            47.619856
+          ],
+          [
+            -122.323318,
+            47.619837
+          ],
+          [
+            -122.323453,
+            47.619813
+          ],
+          [
+            -122.323476,
+            47.619809
+          ],
+          [
+            -122.323541,
+            47.6198
+          ],
+          [
+            -122.323637,
+            47.619781
+          ],
+          [
+            -122.323728,
+            47.619759
+          ],
+          [
+            -122.323822,
+            47.619734
+          ],
+          [
+            -122.323927,
+            47.619703
+          ],
+          [
+            -122.323961,
+            47.619691
+          ],
+          [
+            -122.32401,
+            47.619675
+          ],
+          [
+            -122.324138,
+            47.619632
+          ],
+          [
+            -122.324268,
+            47.619579
+          ],
+          [
+            -122.324276,
+            47.619576
+          ],
+          [
+            -122.324401,
+            47.619522
+          ],
+          [
+            -122.324529,
+            47.619461
+          ],
+          [
+            -122.324645,
+            47.619399
+          ],
+          [
+            -122.324659,
+            47.619391
+          ],
+          [
+            -122.324751,
+            47.619338
+          ],
+          [
+            -122.324875,
+            47.619259
+          ],
+          [
+            -122.324989,
+            47.619176
+          ],
+          [
+            -122.325012,
+            47.619159
+          ],
+          [
+            -122.32509,
+            47.619096
+          ],
+          [
+            -122.325179,
+            47.619025
+          ],
+          [
+            -122.325226,
+            47.61898
+          ],
+          [
+            -122.325253,
+            47.618953
+          ],
+          [
+            -122.325287,
+            47.618919
+          ],
+          [
+            -122.325325,
+            47.61888
+          ],
+          [
+            -122.325364,
+            47.618836
+          ],
+          [
+            -122.325482,
+            47.618695
+          ],
+          [
+            -122.325569,
+            47.618586
+          ],
+          [
+            -122.325639,
+            47.618496
+          ],
+          [
+            -122.32571,
+            47.618408
+          ],
+          [
+            -122.325853,
+            47.618232
+          ],
+          [
+            -122.3262,
+            47.617804
+          ],
+          [
+            -122.326252,
+            47.61774
+          ],
+          [
+            -122.326296,
+            47.617688
+          ],
+          [
+            -122.326648,
+            47.617261
+          ],
+          [
+            -122.326682,
+            47.617227
+          ],
+          [
+            -122.326693,
+            47.617215
+          ],
+          [
+            -122.326779,
+            47.617138
+          ],
+          [
+            -122.326813,
+            47.617115
+          ],
+          [
+            -122.326848,
+            47.61709
+          ],
+          [
+            -122.32689,
+            47.617067
+          ],
+          [
+            -122.326941,
+            47.617045
+          ],
+          [
+            -122.327068,
+            47.616991
+          ],
+          [
+            -122.327776,
+            47.616697
+          ],
+          [
+            -122.327881,
+            47.616654
+          ],
+          [
+            -122.328031,
+            47.616566
+          ],
+          [
+            -122.328335,
+            47.616448
+          ],
+          [
+            -122.328615,
+            47.616366
+          ],
+          [
+            -122.328638,
+            47.616359
+          ],
+          [
+            -122.329458,
+            47.616009
+          ],
+          [
+            -122.32963,
+            47.615932
+          ],
+          [
+            -122.329787,
+            47.615861
+          ],
+          [
+            -122.329801,
+            47.615855
+          ],
+          [
+            -122.330193,
+            47.615682
+          ],
+          [
+            -122.330257,
+            47.615656
+          ],
+          [
+            -122.33051,
+            47.61555
+          ],
+          [
+            -122.330639,
+            47.615497
+          ],
+          [
+            -122.330729,
+            47.615459
+          ],
+          [
+            -122.330839,
+            47.615415
+          ],
+          [
+            -122.330869,
+            47.615403
+          ],
+          [
+            -122.331076,
+            47.615313
+          ],
+          [
+            -122.331524,
+            47.615123
+          ],
+          [
+            -122.331732,
+            47.615035
+          ],
+          [
+            -122.331852,
+            47.614984
+          ],
+          [
+            -122.331966,
+            47.614937
+          ],
+          [
+            -122.332099,
+            47.61488
+          ],
+          [
+            -122.332657,
+            47.614645
+          ],
+          [
+            -122.33286,
+            47.614557
+          ],
+          [
+            -122.332923,
+            47.61453
+          ],
+          [
+            -122.332936,
+            47.614525
+          ],
+          [
+            -122.332946,
+            47.614521
+          ],
+          [
+            -122.333032,
+            47.614483
+          ],
+          [
+            -122.333514,
+            47.61428
+          ],
+          [
+            -122.333558,
+            47.614262
+          ],
+          [
+            -122.33385,
+            47.614144
+          ],
+          [
+            -122.334055,
+            47.614062
+          ],
+          [
+            -122.334145,
+            47.614025
+          ],
+          [
+            -122.334202,
+            47.614001
+          ],
+          [
+            -122.334244,
+            47.613984
+          ],
+          [
+            -122.334635,
+            47.613823
+          ],
+          [
+            -122.33465,
+            47.613817
+          ],
+          [
+            -122.334753,
+            47.613774
+          ],
+          [
+            -122.335099,
+            47.613631
+          ],
+          [
+            -122.335191,
+            47.613593
+          ],
+          [
+            -122.335238,
+            47.613573
+          ],
+          [
+            -122.335311,
+            47.613544
+          ],
+          [
+            -122.33549,
+            47.613471
+          ],
+          [
+            -122.335762,
+            47.613361
+          ],
+          [
+            -122.336188,
+            47.613188
+          ],
+          [
+            -122.33621,
+            47.61318
+          ],
+          [
+            -122.336303,
+            47.613146
+          ],
+          [
+            -122.336424,
+            47.613097
+          ],
+          [
+            -122.336542,
+            47.613048
+          ],
+          [
+            -122.337246,
+            47.612739
+          ],
+          [
+            -122.33744,
+            47.612654
+          ],
+          [
+            -122.337468,
+            47.612677
+          ],
+          [
+            -122.337509,
+            47.612773
+          ],
+          [
+            -122.337759,
+            47.612941
+          ],
+          [
+            -122.337842,
+            47.612998
+          ],
+          [
+            -122.337928,
+            47.613049
+          ],
+          [
+            -122.339066,
+            47.61372
+          ],
+          [
+            -122.339138,
+            47.613762
+          ],
+          [
+            -122.339232,
+            47.613691
+          ],
+          [
+            -122.339272,
+            47.61366
+          ],
+          [
+            -122.339601,
+            47.613406
+          ],
+          [
+            -122.339933,
+            47.61315
+          ],
+          [
+            -122.340046,
+            47.613063
+          ],
+          [
+            -122.340096,
+            47.613025
+          ],
+          [
+            -122.340149,
+            47.612984
+          ],
+          [
+            -122.340464,
+            47.612742
+          ],
+          [
+            -122.340803,
+            47.61248
+          ],
+          [
+            -122.340897,
+            47.612408
+          ],
+          [
+            -122.341007,
+            47.612324
+          ],
+          [
+            -122.341328,
+            47.612077
+          ],
+          [
+            -122.341658,
+            47.611823
+          ],
+          [
+            -122.341701,
+            47.611789
+          ],
+          [
+            -122.341779,
+            47.61173
+          ],
+          [
+            -122.341866,
+            47.611661
+          ],
+          [
+            -122.341888,
+            47.611644
+          ],
+          [
+            -122.342013,
+            47.611546
+          ],
+          [
+            -122.342193,
+            47.611404
+          ],
+          [
+            -122.342526,
+            47.611134
+          ],
+          [
+            -122.342607,
+            47.611069
+          ],
+          [
+            -122.342701,
+            47.610988
+          ],
+          [
+            -122.342723,
+            47.61097
+          ],
+          [
+            -122.343042,
+            47.61073
+          ],
+          [
+            -122.343372,
+            47.610474
+          ],
+          [
+            -122.343417,
+            47.610445
+          ],
+          [
+            -122.343456,
+            47.610421
+          ],
+          [
+            -122.343362,
+            47.610365
+          ],
+          [
+            -122.342251,
+            47.609697
+          ]
+        ],
+        "duration_minutes": 13
+      },
+      "reasoning": "Craving a sit-down dinner with a view; Pike Place is a natural transition hub. Quick skateboard ride down to grab food and scout the evening vibe."
     },
     {
       "index": 8,
-      "start_time": "2026-06-02T22:01:33.333Z",
-      "end_time": "2026-06-02T22:40:40.000Z",
-      "activity": "Skateboard back to Ballard; stop at a grocery store for dinner supplies.",
+      "start_time": "2026-06-02T22:19:07.270Z",
+      "end_time": "2026-06-02T22:44:59.997Z",
+      "activity": "Eat dinner, people-watch, enjoy the cleared-up evening air by the market.",
+      "activity_type": "leisure",
+      "location_name": "Matt's in the Market (Pike Place Market, Downtown Seattle)",
+      "location": [
+        -122.3422,
+        47.6097
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Transition beat: work day is done, evening social energy is building. Marcus takes time to decompress and stay downtown for the underground show he heard about at the café."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-02T22:57:59.997Z",
+      "end_time": "2026-06-02T23:17:24.542Z",
+      "activity": "Skateboard to underground music venue in Capitol Hill for live show.",
       "activity_type": "commute",
-      "location_name": "Ballard Market (Ballard, Seattle)",
+      "location_name": "Kremwerk (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": {
+        "mode": "driving",
+        "polyline": [
+          [
+            -122.342251,
+            47.609697
+          ],
+          [
+            -122.343362,
+            47.610365
+          ],
+          [
+            -122.343456,
+            47.610421
+          ],
+          [
+            -122.343417,
+            47.610445
+          ],
+          [
+            -122.343372,
+            47.610474
+          ],
+          [
+            -122.343042,
+            47.61073
+          ],
+          [
+            -122.342723,
+            47.61097
+          ],
+          [
+            -122.342701,
+            47.610988
+          ],
+          [
+            -122.342607,
+            47.611069
+          ],
+          [
+            -122.342526,
+            47.611134
+          ],
+          [
+            -122.342193,
+            47.611404
+          ],
+          [
+            -122.342013,
+            47.611546
+          ],
+          [
+            -122.341888,
+            47.611644
+          ],
+          [
+            -122.341866,
+            47.611661
+          ],
+          [
+            -122.341779,
+            47.61173
+          ],
+          [
+            -122.341701,
+            47.611789
+          ],
+          [
+            -122.341658,
+            47.611823
+          ],
+          [
+            -122.341328,
+            47.612077
+          ],
+          [
+            -122.341007,
+            47.612324
+          ],
+          [
+            -122.340897,
+            47.612408
+          ],
+          [
+            -122.340803,
+            47.61248
+          ],
+          [
+            -122.340464,
+            47.612742
+          ],
+          [
+            -122.340149,
+            47.612984
+          ],
+          [
+            -122.340096,
+            47.613025
+          ],
+          [
+            -122.340046,
+            47.613063
+          ],
+          [
+            -122.339933,
+            47.61315
+          ],
+          [
+            -122.339601,
+            47.613406
+          ],
+          [
+            -122.339272,
+            47.61366
+          ],
+          [
+            -122.339232,
+            47.613691
+          ],
+          [
+            -122.339138,
+            47.613762
+          ],
+          [
+            -122.339066,
+            47.61372
+          ],
+          [
+            -122.337928,
+            47.613049
+          ],
+          [
+            -122.337842,
+            47.612998
+          ],
+          [
+            -122.337759,
+            47.612941
+          ],
+          [
+            -122.337509,
+            47.612773
+          ],
+          [
+            -122.337468,
+            47.612677
+          ],
+          [
+            -122.33744,
+            47.612654
+          ],
+          [
+            -122.337246,
+            47.612739
+          ],
+          [
+            -122.336542,
+            47.613048
+          ],
+          [
+            -122.336424,
+            47.613097
+          ],
+          [
+            -122.336303,
+            47.613146
+          ],
+          [
+            -122.33621,
+            47.61318
+          ],
+          [
+            -122.336188,
+            47.613188
+          ],
+          [
+            -122.335762,
+            47.613361
+          ],
+          [
+            -122.33549,
+            47.613471
+          ],
+          [
+            -122.335311,
+            47.613544
+          ],
+          [
+            -122.335238,
+            47.613573
+          ],
+          [
+            -122.335191,
+            47.613593
+          ],
+          [
+            -122.335099,
+            47.613631
+          ],
+          [
+            -122.334753,
+            47.613774
+          ],
+          [
+            -122.33465,
+            47.613817
+          ],
+          [
+            -122.334635,
+            47.613823
+          ],
+          [
+            -122.334244,
+            47.613984
+          ],
+          [
+            -122.334202,
+            47.614001
+          ],
+          [
+            -122.334145,
+            47.614025
+          ],
+          [
+            -122.334055,
+            47.614062
+          ],
+          [
+            -122.33385,
+            47.614144
+          ],
+          [
+            -122.333558,
+            47.614262
+          ],
+          [
+            -122.333514,
+            47.61428
+          ],
+          [
+            -122.333032,
+            47.614483
+          ],
+          [
+            -122.332946,
+            47.614521
+          ],
+          [
+            -122.332936,
+            47.614525
+          ],
+          [
+            -122.332923,
+            47.61453
+          ],
+          [
+            -122.33286,
+            47.614557
+          ],
+          [
+            -122.332657,
+            47.614645
+          ],
+          [
+            -122.332099,
+            47.61488
+          ],
+          [
+            -122.331966,
+            47.614937
+          ],
+          [
+            -122.331852,
+            47.614984
+          ],
+          [
+            -122.331732,
+            47.615035
+          ],
+          [
+            -122.331524,
+            47.615123
+          ],
+          [
+            -122.331076,
+            47.615313
+          ],
+          [
+            -122.330869,
+            47.615403
+          ],
+          [
+            -122.330839,
+            47.615415
+          ],
+          [
+            -122.330729,
+            47.615459
+          ],
+          [
+            -122.330639,
+            47.615497
+          ],
+          [
+            -122.33051,
+            47.61555
+          ],
+          [
+            -122.330257,
+            47.615656
+          ],
+          [
+            -122.330193,
+            47.615682
+          ],
+          [
+            -122.329801,
+            47.615855
+          ],
+          [
+            -122.329787,
+            47.615861
+          ],
+          [
+            -122.32963,
+            47.615932
+          ],
+          [
+            -122.329458,
+            47.616009
+          ],
+          [
+            -122.328638,
+            47.616359
+          ],
+          [
+            -122.328615,
+            47.616366
+          ],
+          [
+            -122.328335,
+            47.616448
+          ],
+          [
+            -122.328031,
+            47.616566
+          ],
+          [
+            -122.327881,
+            47.616654
+          ],
+          [
+            -122.327776,
+            47.616697
+          ],
+          [
+            -122.327068,
+            47.616991
+          ],
+          [
+            -122.326941,
+            47.617045
+          ],
+          [
+            -122.32689,
+            47.617067
+          ],
+          [
+            -122.326848,
+            47.61709
+          ],
+          [
+            -122.326813,
+            47.617115
+          ],
+          [
+            -122.326779,
+            47.617138
+          ],
+          [
+            -122.326693,
+            47.617215
+          ],
+          [
+            -122.326682,
+            47.617227
+          ],
+          [
+            -122.326648,
+            47.617261
+          ],
+          [
+            -122.326296,
+            47.617688
+          ],
+          [
+            -122.326252,
+            47.61774
+          ],
+          [
+            -122.3262,
+            47.617804
+          ],
+          [
+            -122.325853,
+            47.618232
+          ],
+          [
+            -122.32571,
+            47.618408
+          ],
+          [
+            -122.325639,
+            47.618496
+          ],
+          [
+            -122.325569,
+            47.618586
+          ],
+          [
+            -122.325482,
+            47.618695
+          ],
+          [
+            -122.325364,
+            47.618836
+          ],
+          [
+            -122.325325,
+            47.61888
+          ],
+          [
+            -122.325287,
+            47.618919
+          ],
+          [
+            -122.325253,
+            47.618953
+          ],
+          [
+            -122.325226,
+            47.61898
+          ],
+          [
+            -122.325179,
+            47.619025
+          ],
+          [
+            -122.32509,
+            47.619096
+          ],
+          [
+            -122.325012,
+            47.619159
+          ],
+          [
+            -122.324989,
+            47.619176
+          ],
+          [
+            -122.324875,
+            47.619259
+          ],
+          [
+            -122.324751,
+            47.619338
+          ],
+          [
+            -122.324659,
+            47.619391
+          ],
+          [
+            -122.324645,
+            47.619399
+          ],
+          [
+            -122.324529,
+            47.619461
+          ],
+          [
+            -122.324401,
+            47.619522
+          ],
+          [
+            -122.324276,
+            47.619576
+          ],
+          [
+            -122.324268,
+            47.619579
+          ],
+          [
+            -122.324138,
+            47.619632
+          ],
+          [
+            -122.32401,
+            47.619675
+          ],
+          [
+            -122.323961,
+            47.619691
+          ],
+          [
+            -122.323927,
+            47.619703
+          ],
+          [
+            -122.323822,
+            47.619734
+          ],
+          [
+            -122.323728,
+            47.619759
+          ],
+          [
+            -122.323637,
+            47.619781
+          ],
+          [
+            -122.323541,
+            47.6198
+          ],
+          [
+            -122.323476,
+            47.619809
+          ],
+          [
+            -122.323453,
+            47.619813
+          ],
+          [
+            -122.323318,
+            47.619837
+          ],
+          [
+            -122.323191,
+            47.619856
+          ],
+          [
+            -122.323182,
+            47.619857
+          ],
+          [
+            -122.323156,
+            47.619861
+          ],
+          [
+            -122.323079,
+            47.619871
+          ],
+          [
+            -122.322954,
+            47.619883
+          ],
+          [
+            -122.322844,
+            47.619891
+          ],
+          [
+            -122.322734,
+            47.619897
+          ],
+          [
+            -122.32238,
+            47.619902
+          ],
+          [
+            -122.322344,
+            47.619902
+          ],
+          [
+            -122.322216,
+            47.619903
+          ],
+          [
+            -122.322102,
+            47.619904
+          ],
+          [
+            -122.321654,
+            47.619907
+          ],
+          [
+            -122.321561,
+            47.619908
+          ],
+          [
+            -122.321042,
+            47.619911
+          ],
+          [
+            -122.320873,
+            47.619912
+          ],
+          [
+            -122.320874,
+            47.620013
+          ],
+          [
+            -122.320876,
+            47.620158
+          ],
+          [
+            -122.320882,
+            47.620811
+          ],
+          [
+            -122.320882,
+            47.620891
+          ],
+          [
+            -122.320883,
+            47.621012
+          ],
+          [
+            -122.320884,
+            47.62108
+          ],
+          [
+            -122.320748,
+            47.621081
+          ],
+          [
+            -122.319925,
+            47.621087
+          ],
+          [
+            -122.319695,
+            47.621088
+          ],
+          [
+            -122.319567,
+            47.621089
+          ],
+          [
+            -122.319464,
+            47.62109
+          ],
+          [
+            -122.319197,
+            47.621092
+          ]
+        ],
+        "duration_minutes": 13
+      },
+      "reasoning": "Marcus heard about a show tonight from the café barista. Kremwerk is a known underground electronic/indie venue; Marcus loves the energy. Short roll from Pike Place."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-02T23:17:24.542Z",
+      "end_time": "2026-06-03T01:33:16.360Z",
+      "activity": "Attend live electronic music show, drink beer, socialize with other music enthusiasts.",
+      "activity_type": "social",
+      "location_name": "Kremwerk (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Marcus is a night owl who thrives on live music culture. This aligns with his personality—creative recharge after a productive day. Show energy carries him through the evening."
+    },
+    {
+      "index": 11,
+      "start_time": "2026-06-03T01:58:16.360Z",
+      "end_time": "2026-06-03T02:46:47.724Z",
+      "activity": "Skateboard home through quiet Capitol Hill streets, listening to music on earbuds.",
+      "activity_type": "commute",
+      "location_name": "Home (Ballard, Seattle)",
       "location": [
         -122.3837,
         47.6685
@@ -4355,27 +5687,13 @@
         ],
         "duration_minutes": 25
       },
-      "reasoning": "Return commute across town; Marcus grabs groceries on the way home for a casual dinner prep."
+      "reasoning": "Late-night roll home is natural for a night owl. Clear skies, empty streets, and good vibes carry him back to Ballard. No traffic concerns at this hour."
     },
     {
-      "index": 9,
-      "start_time": "2026-06-02T22:40:40.000Z",
-      "end_time": "2026-06-02T23:19:46.667Z",
-      "activity": "Make dinner at home; listen to vinyl records.",
-      "activity_type": "meal",
-      "location_name": "Home (Ballard, Seattle)",
-      "location": [
-        -122.3837,
-        47.6685
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Evening meal and leisure time at home; Marcus unwinds with music from his collection, fitting his night owl and music-lover personality."
-    },
-    {
-      "index": 10,
-      "start_time": "2026-06-02T23:19:46.667Z",
-      "end_time": "2026-06-03T01:46:26.667Z",
-      "activity": "Check for underground music shows; work on personal design projects or browse online.",
+      "index": 12,
+      "start_time": "2026-06-03T02:46:47.724Z",
+      "end_time": "2026-06-03T03:06:12.269Z",
+      "activity": "Wind down: spin new vinyl record, journal a bit, prepare for sleep.",
       "activity_type": "leisure",
       "location_name": "Home (Ballard, Seattle)",
       "location": [
@@ -4383,11 +5701,11 @@
         47.6685
       ],
       "travel_from_prev": null,
-      "reasoning": "Night owl wind-down: Marcus explores local music scene online, works on passion projects, and prepares for sleep later in the evening."
+      "reasoning": "Post-show ritual: Marcus puts on the new record he found yesterday, lets the music settle him. Ritual wind-down before sleep, already at home."
     },
     {
-      "index": 11,
-      "start_time": "2026-06-03T01:46:26.667Z",
+      "index": 13,
+      "start_time": "2026-06-03T03:06:12.269Z",
       "end_time": "2026-06-03T13:00:00.000Z",
       "activity": "Sleep.",
       "activity_type": "sleep",
@@ -4397,34 +5715,35 @@
         47.6685
       ],
       "travel_from_prev": null,
-      "reasoning": "Night owl sleeps in; 7+ hour sleep block ends well after midnight, respecting his natural late-night rhythm."
+      "reasoning": "5 hours 15 minutes of sleep, ending at 6am. Night owl schedule: late show, late sleep. Ends before 6:01am as required."
     }
   ],
-  "diary": "Started the day early with coffee at home, then cruised over to Ballard Coffee House on my board to get some design work in. The morning flew by—I was deep in a logo revision when I realized it was almost game time. Caught myself at The Ballard Annex for the USA vs Wales match. The energy there was electric, even if the game itself was a bit of a letdown. Grabbed lunch with some other folks watching, which was nice.\n\nAfter that, I needed a change of scenery, so I skateboarded over to Capitol Hill to Cafe Solstice. Put in some serious work there—multiple coffee refills, lost track of time. Swung by Sonic Boom Records and picked up a couple of vinyl finds before heading back home. Made dinner, threw on some records, and spent the evening tinkering with personal projects and hunting for underground shows. Ended the day feeling creatively restless but satisfied.",
-  "thought_process": "I structured my day around staying loose and mobile—working from different spots keeps me fresh and prevents the isolation of a home office. The World Cup match was an easy decision; I'd been meaning to check it out, and The Ballard Annex is basically my neighborhood spot anyway. The light rail closure didn't really affect me since I'm skateboarding everywhere, which felt like an advantage today. My mood shifted after lunch—I felt a bit antsy after the social energy of the bar, so switching to Cafe Solstice was strategic. The record store stop was impulsive but grounded me. By evening, I was itching to create something of my own rather than just client work, which tells me I need to carve out more personal project time soon.",
+  "diary": "Woke up to grey skies and that particular Seattle drizzle that makes everything feel slower. Skateboarded to Solstice through the rain—my board handles it better than I do, honestly. Spent the morning hammering through client work, the kind of deep focus that makes time disappear. Grabbed a sandwich and talked music with the barista; she mentioned tonight's show at Kremwerk, which sealed it for me.\n\nPopped over to Sonic Boom for vinyl hunting, came back with nothing but conversation, which felt right. Afternoon was all about finishing the designs and getting invoices ready. The rain stopped by the time I headed to Pike Place for dinner at Matt's—watched tourists and locals blur together while eating something good and simple.\n\nThe show tonight was exactly what I needed. Electronic, hypnotic, the kind of crowd that gets it. Skateboarded home through quiet streets with my earbuds on, feeling that post-music glow. Spun one of my new finds when I got back. Tired but content.",
+  "thought_process": "The rain shaped my whole day without me fighting it—I just moved through it on my board, which felt natural. I stayed geographically tight (Capitol Hill, Pike Place, Ballard) because the SR-520 closure meant the city felt smaller, more navigable on my own terms. Work came first and flowed well; I didn't force it. The record store trip was partly genuine errand, partly an excuse to shift gears, talk to someone else. By afternoon the weather lifted and so did my mood—dinner became less functional fuel and more an actual moment to sit and breathe. The live show felt inevitable rather than planned. Music pulls me out of my head when work gets too internal. Skateboarding home felt like the natural exhale after all that.",
   "end_state": {
     "location": [
       -122.3837,
       47.6685
     ],
-    "energy": 40,
+    "energy": 30,
     "notes": ""
   },
-  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
-  "generated_at": "2026-05-30T17:31:00.419Z",
+  "world_event_prompt": "Grey, drizzly Tuesday with steady rain from 7am to 2pm, high of 58F. SR-520 bridge closed eastbound 9am-noon for emergency repair, snarling cross-lake traffic.",
+  "generated_at": "2026-05-30T17:57:47.812Z",
   "stats": {
     "skeleton_attempts": 1,
     "repair_used": false,
     "geocode_misses": 0,
     "route_misses": 0,
-    "overflow_fixed_by_shift": 2,
+    "overflow_fixed_by_shift": 4,
     "overflow_remaining": 0,
     "compressed_to_fit_day": true,
-    "compressed_minutes_saved": 470,
+    "compressed_minutes_saved": 466,
     "sleep_beat_synthesized": false,
     "returned_home_before_sleep": true,
-    "llm_ms": 16373,
+    "llm_ms": 6457,
     "mapbox_ms": 0,
-    "total_ms": 16733
-  }
+    "total_ms": 22347
+  },
+  "_ok": true
 }

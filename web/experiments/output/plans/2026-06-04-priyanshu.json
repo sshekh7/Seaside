@@ -8,8 +8,8 @@
     {
       "index": 0,
       "start_time": "2026-06-04T14:30:00.000Z",
-      "end_time": "2026-06-04T15:00:00.000Z",
-      "activity": "Wake up, shower, and grab breakfast at home.",
+      "end_time": "2026-06-04T14:50:31.304Z",
+      "activity": "Wake up, shower, and grab coffee at home.",
       "activity_type": "home",
       "location_name": "Home (Redmond Downtown)",
       "location": [
@@ -17,13 +17,13 @@
         47.673904
       ],
       "travel_from_prev": null,
-      "reasoning": "Priyanshu starts the day at home with full energy. A quick 30-minute morning routine before heading to work."
+      "reasoning": "Standard morning routine. Energy was low yesterday (40/100) after the concert, so a gentle start makes sense. Priyanshu is still in Redmond downtown from yesterday's end coords."
     },
     {
       "index": 1,
-      "start_time": "2026-06-04T15:08:00.000Z",
-      "end_time": "2026-06-04T15:23:00.000Z",
-      "activity": "Short commute to Microsoft campus.",
+      "start_time": "2026-06-04T14:58:31.304Z",
+      "end_time": "2026-06-04T15:22:27.826Z",
+      "activity": "Drive to Microsoft Building 99, avoiding transit strike impacts.",
       "activity_type": "commute",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -648,13 +648,13 @@
         ],
         "duration_minutes": 8
       },
-      "reasoning": "Quick drive from downtown Redmond home to Building 99 on the main campus, very close proximity."
+      "reasoning": "Metro buses and Link are down until 4pm, so driving is the only option. Short commute from downtown Redmond to campus. Surge pricing makes rideshare unattractive; personal car is faster."
     },
     {
       "index": 2,
-      "start_time": "2026-06-04T15:23:00.000Z",
-      "end_time": "2026-06-04T18:08:00.000Z",
-      "activity": "Morning work session: code reviews and sprint planning.",
+      "start_time": "2026-06-04T15:22:27.826Z",
+      "end_time": "2026-06-04T17:52:57.391Z",
+      "activity": "Code review and debugging session; crush through morning tickets.",
       "activity_type": "work",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -662,27 +662,13 @@
         47.6429
       ],
       "travel_from_prev": null,
-      "reasoning": "Priyanshu starts his workday with focus on development tasks before the FIFA match airs at 11am."
+      "reasoning": "Priyanshu is a solid engineer who enjoys deep work. Yesterday's low energy and concert vibe mean he'll want to refocus on code today. Morning is prime debugging time."
     },
     {
       "index": 3,
-      "start_time": "2026-06-04T18:08:00.000Z",
-      "end_time": "2026-06-04T19:53:00.000Z",
-      "activity": "Watch USA vs Wales FIFA World Cup match in break room with colleagues.",
-      "activity_type": "leisure",
-      "location_name": "Microsoft Building 99, Redmond Main Campus",
-      "location": [
-        -122.1311,
-        47.6429
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Fun-loving Priyanshu catches the live 11am match with coworkers in the office break room, staying at campus."
-    },
-    {
-      "index": 4,
-      "start_time": "2026-06-04T19:53:00.000Z",
-      "end_time": "2026-06-04T20:38:00.000Z",
-      "activity": "Lunch break at Microsoft cafeteria.",
+      "start_time": "2026-06-04T17:52:57.391Z",
+      "end_time": "2026-06-04T18:23:44.348Z",
+      "activity": "Lunch with team in the cafeteria; casual conversation.",
       "activity_type": "meal",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -690,13 +676,13 @@
         47.6429
       ],
       "travel_from_prev": null,
-      "reasoning": "Grab lunch right after the match ends while still at campus with the group."
+      "reasoning": "Yesterday's team lunch was a highlight. Repeating the routine keeps social connection alive and breaks up the workday."
     },
     {
-      "index": 5,
-      "start_time": "2026-06-04T20:38:00.000Z",
-      "end_time": "2026-06-05T00:38:00.000Z",
-      "activity": "Afternoon work: debugging and implementation tasks.",
+      "index": 4,
+      "start_time": "2026-06-04T18:23:44.348Z",
+      "end_time": "2026-06-04T21:28:26.087Z",
+      "activity": "Afternoon meetings, code reviews, and more debugging.",
       "activity_type": "work",
       "location_name": "Microsoft Building 99, Redmond Main Campus",
       "location": [
@@ -704,13 +690,13 @@
         47.6429
       ],
       "travel_from_prev": null,
-      "reasoning": "Solid afternoon work block to stay productive after the match and lunch break."
+      "reasoning": "Standard afternoon work block. Meetings and debugging fill the time; no early exit today like yesterday. By 5:30pm, transit will be back online, so timing lines up."
     },
     {
-      "index": 6,
-      "start_time": "2026-06-05T00:46:00.000Z",
-      "end_time": "2026-06-05T01:01:00.000Z",
-      "activity": "Commute home from Microsoft campus.",
+      "index": 5,
+      "start_time": "2026-06-04T21:36:26.087Z",
+      "end_time": "2026-06-04T22:03:47.826Z",
+      "activity": "Drive home; transit strike is now over, but personal car is faster.",
       "activity_type": "commute",
       "location_name": "Home (Redmond Downtown)",
       "location": [
@@ -1335,27 +1321,13 @@
         ],
         "duration_minutes": 8
       },
-      "reasoning": "Quick drive back home from Building 99 to Redmond downtown."
+      "reasoning": "Commute home. Transit is back at 4pm, but after a full work day, driving directly home is more straightforward than waiting for buses."
     },
     {
-      "index": 7,
-      "start_time": "2026-06-05T01:01:00.000Z",
-      "end_time": "2026-06-05T02:01:00.000Z",
-      "activity": "Stop by Whole Foods for groceries and evening supplies.",
-      "activity_type": "errand",
-      "location_name": "Whole Foods Market (Redmond Downtown)",
-      "location": [
-        -122.12153,
-        47.673904
-      ],
-      "travel_from_prev": null,
-      "reasoning": "Quick grocery run near home while the sunny weather is still good; stock up for the week."
-    },
-    {
-      "index": 8,
-      "start_time": "2026-06-05T02:01:00.000Z",
-      "end_time": "2026-06-05T03:01:00.000Z",
-      "activity": "Cook dinner and eat at home.",
+      "index": 6,
+      "start_time": "2026-06-04T22:03:47.826Z",
+      "end_time": "2026-06-04T22:38:00.000Z",
+      "activity": "Make dinner and eat; nice evening weather invites relaxation.",
       "activity_type": "meal",
       "location_name": "Home (Redmond Downtown)",
       "location": [
@@ -1363,13 +1335,55 @@
         47.673904
       ],
       "travel_from_prev": null,
-      "reasoning": "Prepare a nice dinner at home after a full day; enjoy the kitchen and relax."
+      "reasoning": "Partly cloudy and 68°F is pleasant. Priyanshu likes cooking proper meals when he has time. Staying home after a solid work day."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-04T22:38:00.000Z",
+      "end_time": "2026-06-04T23:39:33.913Z",
+      "activity": "Casual walk around downtown Redmond; enjoy the mild weather.",
+      "activity_type": "leisure",
+      "location_name": "Downtown Redmond",
+      "location": [
+        -122.1215,
+        47.674
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Yesterday's low energy and concert left him wanting unstructured time. A light evening walk in good weather is restorative without demanding much. Nearby errand/leisure beat before winding down."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-04T23:39:33.913Z",
+      "end_time": "2026-06-05T00:00:05.217Z",
+      "activity": "Return home; settle in for the evening.",
+      "activity_type": "commute",
+      "location_name": "Home (Redmond Downtown)",
+      "location": [
+        -122.12153,
+        47.673904
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short walk back from downtown. Sets up wind-down at home before bed."
     },
     {
       "index": 9,
-      "start_time": "2026-06-05T03:01:00.000Z",
+      "start_time": "2026-06-05T00:00:05.217Z",
+      "end_time": "2026-06-05T01:32:26.087Z",
+      "activity": "Relax at home; game highlights, online chat with friends, wind down.",
+      "activity_type": "leisure",
+      "location_name": "Home (Redmond Downtown)",
+      "location": [
+        -122.12153,
+        47.673904
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Evening leisure routine mirrors recent days. Scrolling highlights, gaming with friends online, low-key vibe. Gets Priyanshu ready for bed without late-night energy spikes."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-05T01:32:26.087Z",
       "end_time": "2026-06-05T13:00:00.000Z",
-      "activity": "Sleep",
+      "activity": "Sleep.",
       "activity_type": "sleep",
       "location_name": "Home (Redmond Downtown)",
       "location": [
@@ -1377,34 +1391,35 @@
         47.673904
       ],
       "travel_from_prev": null,
-      "reasoning": "(auto) overnight rest at home"
+      "reasoning": "7 hours 15 minutes of sleep, ending at 6:30am the next day. Reasonable recovery after a full work day. Spans overnight as required."
     }
   ],
-  "diary": "Monday started with that perfect early-June sunshine streaming through my apartment—the kind that makes you feel like the day might actually go somewhere. Got to Building 99 on time, which never happens, and dove straight into code reviews. The morning flew by until someone mentioned the World Cup match at 11, and suddenly half the team materialized in the break room with coffee. USA vs Wales was tense, honestly. I found myself way more invested than I expected, cheering between bites of cafeteria salad. Back to debugging after lunch, the afternoon kind of blurred together in that good way where you're in the zone and time just disappears. By the time I left campus, my brain felt pleasantly fried. Whole Foods was its usual Monday chaos, but I grabbed what I needed and headed home to cook. Made a decent stir-fry, ate it slow. Now I'm sitting here with that satisfied exhaustion of a solid day—nothing dramatic, but everything just worked.",
-  "thought_process": "I chose to lean into the World Cup moment because it genuinely disrupted my routine in a good way—those unexpected social beats at work are what make days memorable, not just the grinding through tasks. The light rail closure didn't affect me since I drive, but I was aware of it as background noise. My mood stayed pretty steady throughout; I wasn't anxious about the sprint planning or anything, just focused. I think the sunshine helped—it made me feel purposeful even during routine stuff. The grocery stop and cooking dinner felt like a natural wind-down, necessary to transition from work-brain back to myself. I'm reflecting on how Mondays like this, when nothing goes wrong and you're just productive without strain, are maybe more valuable than the exciting chaotic ones.",
+  "diary": "Woke up early enough to avoid the transit strike chaos—lucked out driving straight to Building 99. The morning flew by; crushed through a nasty debugging session that's been bugging me all week. Grabbed lunch with the team in the cafeteria, and somehow we ended up talking about weekend plans instead of work, which was nice. Afternoon was a blur of meetings and more code reviews, but I left feeling like I actually shipped something meaningful. The strike was over by the time I headed home, but my car was faster anyway. Made a simple dinner and couldn't resist taking a walk downtown—68 degrees is rare enough that I had to get outside. The weather just hit different today. Came back, chatted with friends online, played some game highlights. Feeling calm, accomplished, and grateful the day didn't get derailed by transit issues.",
+  "thought_process": "I woke with the transit strike in the back of my mind, but having a car meant I could bypass all that frustration. The morning code review momentum carried me through; I was in flow state. Lunch felt like a mental break—I actually needed that social reset. The afternoon was heavy with meetings, but I didn't let it drag me down because I knew I'd crushed the morning. Driving home early felt like a win. The weather pulled me outside; partly cloudy and mild is the perfect excuse to walk and decompress. I think the strike, ironically, made my day feel simpler—no transit anxiety meant I could focus on work and then actually enjoy the evening. By the time I got home, I was relaxed enough to just exist without overthinking.",
   "end_state": {
     "location": [
       -122.12153,
       47.673904
     ],
-    "energy": 50,
+    "energy": 45,
     "notes": ""
   },
-  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
-  "generated_at": "2026-05-30T17:31:55.941Z",
+  "world_event_prompt": "Mild, partly cloudy Thursday, high of 68F. Citywide transit strike: all Metro buses and Link Light Rail suspended until 4pm. Rideshare surge pricing in effect.",
+  "generated_at": "2026-05-30T17:59:04.374Z",
   "stats": {
     "skeleton_attempts": 1,
     "repair_used": false,
-    "geocode_misses": 1,
+    "geocode_misses": 0,
     "route_misses": 0,
     "overflow_fixed_by_shift": 2,
     "overflow_remaining": 0,
     "compressed_to_fit_day": true,
-    "compressed_minutes_saved": 481,
-    "sleep_beat_synthesized": true,
+    "compressed_minutes_saved": 436,
+    "sleep_beat_synthesized": false,
     "returned_home_before_sleep": true,
-    "llm_ms": 14075,
-    "mapbox_ms": 154,
-    "total_ms": 14569
-  }
+    "llm_ms": 5274,
+    "mapbox_ms": 0,
+    "total_ms": 16211
+  },
+  "_ok": true
 }

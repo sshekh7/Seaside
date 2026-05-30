@@ -33,7 +33,7 @@ export default function RootLayout({
       )}
       style={{ colorScheme: "dark" }}
     >
-      <body>
+      <body suppressHydrationWarning>
         <TooltipProvider>
           <FixedSidebarProvider>
             <AppSidebar />

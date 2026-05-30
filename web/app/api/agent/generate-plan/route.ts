@@ -139,6 +139,15 @@ async function generateWeekInBackground(agent: Record<string, unknown>) {
       const plan = await generateDayPlan(agent, date, day)
       writeFileSync(file, JSON.stringify(plan, null, 2))
       console.log(`[plan-gen] saved ${date}-${slug}.json`)
+
+      // Also upsert into Supabase so Edge Functions (which have no filesystem
+      // access) can read plans for the daily-summary cron job.
+      await supabase
+        .from("plans")
+        .upsert(
+          { agent_id: agentId, sim_date: date, plan_data: plan, generated_at: plan.generated_at },
+          { onConflict: "agent_id,sim_date" }
+        )
     }
   } catch (err) {
     console.error(`[plan-gen] error for ${agent.name}:`, err)

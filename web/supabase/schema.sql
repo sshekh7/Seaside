@@ -24,3 +24,17 @@ create table memory (
 -- Index for fast lookups by agent
 create index idx_memory_agent_id on memory(agent_id);
 create index idx_memory_time on memory(agent_id, time_start desc);
+
+-- Plans table
+-- Stores the full generated day plan as JSONB so Supabase Edge Functions
+-- (which have no filesystem access) can read what generate-plan produced.
+create table if not exists plans (
+  id           uuid primary key default gen_random_uuid(),
+  agent_id     uuid references agents(id) on delete cascade not null,
+  sim_date     date not null,
+  plan_data    jsonb not null,
+  generated_at timestamptz default now(),
+  unique(agent_id, sim_date)
+);
+
+create index if not exists idx_plans_agent_date on plans(agent_id, sim_date);

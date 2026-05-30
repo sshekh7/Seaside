@@ -2,156 +2,120 @@
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-02T07:00:00-07:00",
-      "end_time": "2026-06-02T07:30:00-07:00",
-      "activity": "Wake up, shower, and make a quick breakfast at home",
+      "start_time": "2026-06-01T07:00:00-07:00",
+      "end_time": "2026-06-01T07:25:00-07:00",
+      "activity": "Wake up, shower, coffee, and quick breakfast at home.",
       "activity_type": "home",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Start the day with energy and get ready for a rainy work commute."
+      "location_name": "Home (South Lake Union, Seattle)",
+      "reasoning": "Tyler is a workaholic SDE3 who targets 7:30 office arrival; waking at 7:00 gives him 25 min for routine before commute."
     },
     {
       "index": 1,
-      "start_time": "2026-06-02T07:30:00-07:45:00-07:00",
-      "end_time": "2026-06-02T07:45:00-07:55:00-07:00",
-      "activity": "Grab coffee and pack a small umbrella and rain jacket",
-      "activity_type": "errand",
-      "location_name": "Starbucks (Redmond Town Center)",
-      "reasoning": "Quick grab-and-go to stay comfortable during heavy rain."
+      "start_time": "2026-06-01T07:25:00-07:00",
+      "end_time": "2026-06-01T07:45:00-07:00",
+      "activity": "Drive to Amazon HQ.",
+      "activity_type": "commute",
+      "location_name": "Amazon HQ (Downtown Seattle)",
+      "reasoning": "Short drive from South Lake Union to Downtown; 20 min covers traffic and parking, landing him at desk by 7:45."
     },
     {
       "index": 2,
-      "start_time": "2026-06-02T07:55:00-07:58:00-07:00",
-      "end_time": "2026-06-02T08:15:00-07:00",
-      "activity": "Drive to Microsoft and park near Building 99",
-      "activity_type": "commute",
-      "location_name": "Microsoft Building 99, Redmond",
-      "reasoning": "Short commute while rain is starting, with extra buffer for traffic."
+      "start_time": "2026-06-01T07:45:00-07:00",
+      "end_time": "2026-06-01T11:00:00-07:00",
+      "activity": "Deep work on SDE3 architecture review and code sprint.",
+      "activity_type": "work",
+      "location_name": "Amazon HQ (Downtown Seattle)",
+      "reasoning": "Tyler is intense and methodical; 3+ hours of uninterrupted morning work aligns with his workaholic profile before the 11am FIFA match."
     },
     {
       "index": 3,
-      "start_time": "2026-06-02T08:15:00-07:00",
-      "end_time": "2026-06-02T12:00:00-07:00",
-      "activity": "Deep work: review sprint tickets, implement a feature, and run tests",
-      "activity_type": "work",
-      "location_name": "Microsoft Building 99, Redmond",
-      "reasoning": "Primary focus block for a software engineering day despite weather disruptions."
+      "start_time": "2026-06-01T11:00:00-07:00",
+      "end_time": "2026-06-01T12:30:00-07:00",
+      "activity": "Watch USA vs Wales FIFA World Cup match in office break room or at desk.",
+      "activity_type": "leisure",
+      "location_name": "Amazon HQ (Downtown Seattle)",
+      "reasoning": "The 11am PDT match is unmissable; Tyler takes a break to watch, likely grabbing lunch at his desk during halftime or post-match."
     },
     {
       "index": 4,
-      "start_time": "2026-06-02T12:00:00-07:00",
-      "end_time": "2026-06-02T12:30:00-07:00",
-      "activity": "Lunch indoors with coworkers (order ahead due to rain)",
-      "activity_type": "meal",
-      "location_name": "Café at Microsoft (One Microsoft Way)",
-      "reasoning": "Heavy rain makes it better to keep lunch on-site and sheltered."
+      "start_time": "2026-06-01T12:30:00-07:00",
+      "end_time": "2026-06-01T17:30:00-07:00",
+      "activity": "Resume work; eat prepped meal at desk and handle afternoon meetings and code reviews.",
+      "activity_type": "work",
+      "location_name": "Amazon HQ (Downtown Seattle)",
+      "reasoning": "Tyler eats lunch at his desk as habit; he works through the afternoon until 5:30 to make his 6pm gym commitment."
     },
     {
       "index": 5,
-      "start_time": "2026-06-02T12:30:00-07:00",
-      "end_time": "2026-06-02T12:55:00-07:00",
-      "activity": "Light afternoon work: code review, merge changes, and plan next steps",
-      "activity_type": "work",
-      "location_name": "Microsoft Building 99, Redmond",
-      "reasoning": "Wrap up tasks efficiently before the day shifts into evening routines."
+      "start_time": "2026-06-01T17:30:00-07:00",
+      "end_time": "2026-06-01T17:50:00-07:00",
+      "activity": "Drive to gym from Amazon HQ.",
+      "activity_type": "commute",
+      "location_name": "Seattle Athletic Club (Downtown Seattle)",
+      "reasoning": "Quick drive across Downtown to reach gym; 20 min buffer ensures he arrives by 6pm sharp as per his rigid routine."
     },
     {
       "index": 6,
-      "start_time": "2026-06-02T12:55:00-07:00",
-      "end_time": "2026-06-02T13:25:00-07:00",
-      "activity": "Drive to a nearby grocery to restock snacks for the week",
-      "activity_type": "errand",
-      "location_name": "QFC (Redmond Way)",
-      "reasoning": "As rain continues until 2pm, run a nearby indoor errand without crossing the SR-520 eastbound closure window."
+      "start_time": "2026-06-01T17:50:00-07:00",
+      "end_time": "2026-06-01T18:00:00-07:00",
+      "activity": "Check in and change into workout gear.",
+      "activity_type": "exercise",
+      "location_name": "Seattle Athletic Club (Downtown Seattle)",
+      "reasoning": "10 min to settle in before starting his 6pm workout block."
     },
     {
       "index": 7,
-      "start_time": "2026-06-02T13:25:00-07:00",
-      "end_time": "2026-06-02T13:55:00-07:00",
-      "activity": "Head back to work, pick up remaining items, and prepare to wrap up",
-      "activity_type": "commute",
-      "location_name": "Microsoft Building 99, Redmond",
-      "reasoning": "Return to keep a clean transition out of work before evening."
+      "start_time": "2026-06-01T18:00:00-07:00",
+      "end_time": "2026-06-01T19:15:00-07:00",
+      "activity": "Intense 75-minute strength and cardio workout; tracks reps and heart rate.",
+      "activity_type": "exercise",
+      "location_name": "Seattle Athletic Club (Downtown Seattle)",
+      "reasoning": "Tyler's disciplined gym session; 75 min aligns with someone who tracks everything and maintains a rigorous fitness regimen."
     },
     {
       "index": 8,
-      "start_time": "2026-06-02T13:55:00-07:00",
-      "end_time": "2026-06-02T17:30:00-07:00",
-      "activity": "Finish up: resolve bugs, write a short status update, and close out tickets",
-      "activity_type": "work",
-      "location_name": "Microsoft Building 99, Redmond",
-      "reasoning": "A solid end-of-day work block to land deliverables despite the weather."
+      "start_time": "2026-06-01T19:15:00-07:00",
+      "end_time": "2026-06-01T19:40:00-07:00",
+      "activity": "Shower and change at gym.",
+      "activity_type": "exercise",
+      "location_name": "Seattle Athletic Club (Downtown Seattle)",
+      "reasoning": "25 min to clean up and prepare for evening commute home."
     },
     {
       "index": 9,
-      "start_time": "2026-06-02T17:30:00-07:00",
-      "end_time": "2026-06-02T17:50:00-07:00",
-      "activity": "Drive home from campus with a quick stop for dry clothes if needed",
+      "start_time": "2026-06-01T19:40:00-07:00",
+      "end_time": "2026-06-01T20:10:00-07:00",
+      "activity": "Drive home from gym.",
       "activity_type": "commute",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Use the post-work window to reset for the evening while staying local."
+      "location_name": "Home (South Lake Union, Seattle)",
+      "reasoning": "30 min drive back to South Lake Union from Downtown, accounting for early evening traffic."
     },
     {
       "index": 10,
-      "start_time": "2026-06-02T17:50:00-07:00",
-      "end_time": "2026-06-02T18:30:00-07:00",
-      "activity": "Workout at the gym: treadmill + light strength, upbeat playlist",
-      "activity_type": "exercise",
-      "location_name": "Seattle Athletic Club (Redmond)",
-      "reasoning": "Priyanshu is fun-loving and enjoys a positive outlet after a long workday."
+      "start_time": "2026-06-01T20:10:00-07:00",
+      "end_time": "2026-06-01T21:00:00-07:00",
+      "activity": "Prepare dinner, eat, and update fitness tracking spreadsheet.",
+      "activity_type": "leisure",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "reasoning": "Tyler is methodical and data-driven; he logs his workout metrics and meal prep for the week ahead while relaxing at home."
     },
     {
       "index": 11,
-      "start_time": "2026-06-02T18:30:00-07:00",
-      "end_time": "2026-06-02T19:10:00-07:00",
-      "activity": "Shower and change, then head out for a casual dinner",
-      "activity_type": "leisure",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Quick reset time before a social-ish meal with relaxed vibes."
+      "start_time": "2026-06-01T21:00:00-07:00",
+      "end_time": "2026-06-01T22:30:00-07:00",
+      "activity": "Wind down; read tech articles, check work Slack, and prep for tomorrow.",
+      "activity_type": "home",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "reasoning": "Final wind-down at home before sleep; even workaholics need mental decompression, though Tyler likely reviews tomorrow's agenda."
     },
     {
       "index": 12,
-      "start_time": "2026-06-02T19:10:00-07:00",
-      "end_time": "2026-06-02T20:00:00-07:00",
-      "activity": "Dinner: Thai food and a couple of fun non-alcoholic drinks",
-      "activity_type": "meal",
-      "location_name": "Thai Basil (Redmond)",
-      "reasoning": "Enjoy a comforting, tasty meal after work; indoor option suits rainy conditions earlier."
-    },
-    {
-      "index": 13,
-      "start_time": "2026-06-02T20:00:00-07:00",
-      "end_time": "2026-06-02T20:30:00-07:00",
-      "activity": "Walk off dinner with a short, relaxed loop near downtown Redmond",
-      "activity_type": "leisure",
-      "location_name": "Downtown Park (Redmond)",
-      "reasoning": "A low-key evening stroll matches his upbeat personality and keeps it local."
-    },
-    {
-      "index": 14,
-      "start_time": "2026-06-02T20:30:00-07:00",
-      "end_time": "2026-06-02T21:15:00-07:00",
-      "activity": "Come home, cook something simple, and catch up on tech news",
-      "activity_type": "leisure",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Wind down with comfort food and light browsing after a full day."
-    },
-    {
-      "index": 15,
-      "start_time": "2026-06-02T21:15:00-07:00",
-      "end_time": "2026-06-02T22:15:00-07:00",
-      "activity": "Plan tomorrow lightly, tidy up, and do a short reading session",
-      "activity_type": "leisure",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "A calm routine helps him recharge for another workday."
-    },
-    {
-      "index": 16,
-      "start_time": "2026-06-02T22:15:00-07:00",
-      "end_time": "2026-06-02T23:30:00-07:00",
-      "activity": "Sleep/wind down: dim lights, no screens, and get ready for rest",
+      "start_time": "2026-06-01T22:30:00-07:00",
+      "end_time": "2026-06-02T06:00:00-07:00",
+      "activity": "Sleep.",
       "activity_type": "sleep",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Ends the day by 23:30 and supports a healthy schedule after heavy rain disruptions."
+      "location_name": "Home (South Lake Union, Seattle)",
+      "reasoning": "7.5-hour sleep; Tyler maintains discipline in sleep hygiene to support his intense work and gym schedule, waking at 7am for next day's 7:30 office arrival."
     }
   ]
 }

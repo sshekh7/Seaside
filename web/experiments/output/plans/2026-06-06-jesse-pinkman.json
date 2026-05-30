@@ -1,121 +1,218 @@
 {
+  "sim_date": "2026-06-06",
+  "day_number": 6,
+  "agent_id": "f914d4ec-58c6-45b5-9b76-d6cab172aa3c",
+  "agent_name": "Jesse Pinkman",
+  "status": "ready",
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-06T09:15:00-07:00",
-      "end_time": "2026-06-06T09:45:00-07:00",
+      "start_time": "2026-06-06T16:15:00.000Z",
+      "end_time": "2026-06-06T16:35:07.059Z",
       "activity": "Wake up, shower, throw on clothes, make coffee at home.",
       "activity_type": "home",
       "location_name": "Home (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Jesse sleeps in late on weekends; Saturday morning wake at 9:15 feels natural for his restless schedule. Quick 30 min to get moving."
     },
     {
       "index": 1,
-      "start_time": "2026-06-06T09:45:00-07:00",
-      "end_time": "2026-06-06T10:05:00-07:00",
+      "start_time": "2026-06-06T16:35:07.059Z",
+      "end_time": "2026-06-06T16:48:31.765Z",
       "activity": "Skateboard to Victrola Coffee Roasters for a short morning shift.",
       "activity_type": "commute",
       "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Jesse skateboards to work; Capitol Hill is compact, so 20 min covers the ride and getting settled."
     },
     {
       "index": 2,
-      "start_time": "2026-06-06T10:05:00-07:00",
-      "end_time": "2026-06-06T11:00:00-07:00",
+      "start_time": "2026-06-06T16:48:31.765Z",
+      "end_time": "2026-06-06T17:25:24.706Z",
       "activity": "Work barista shift: take orders, make espresso drinks, chat with regulars.",
       "activity_type": "work",
       "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Saturday morning coffee rush; Jesse works part-time and needs the hours. Shift starts right away."
     },
     {
       "index": 3,
-      "start_time": "2026-06-06T11:00:00-07:00",
-      "end_time": "2026-06-06T12:30:00-07:00",
+      "start_time": "2026-06-06T17:25:24.706Z",
+      "end_time": "2026-06-06T18:25:45.882Z",
       "activity": "Watch USA vs Wales FIFA World Cup match on the shop TV, chat with coworkers and customers.",
       "activity_type": "leisure",
       "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "The 11am match is a big draw; Jesse loves sports and hanging with people. He likely stays at work to watch with the crowd and vibe, rather than leaving early or skipping it."
     },
     {
       "index": 4,
-      "start_time": "2026-06-06T12:30:00-07:00",
-      "end_time": "2026-06-06T13:00:00-07:00",
+      "start_time": "2026-06-06T18:25:45.882Z",
+      "end_time": "2026-06-06T18:45:52.941Z",
       "activity": "Finish barista shift, clean up, grab a quick snack.",
       "activity_type": "work",
       "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "End of morning shift; Jesse wraps up and takes a break from the counter."
     },
     {
       "index": 5,
-      "start_time": "2026-06-06T13:00:00-07:00",
-      "end_time": "2026-06-06T13:30:00-07:00",
+      "start_time": "2026-06-06T18:45:52.941Z",
+      "end_time": "2026-06-06T19:06:00.000Z",
       "activity": "Skateboard to Capitol Hill neighborhood, grab cheap pizza and a soda at a local spot.",
       "activity_type": "meal",
       "location_name": "Serious Pie (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Sunny Saturday; Jesse loves fast food and staying in his neighborhood. Short ride, quick lunch."
     },
     {
       "index": 6,
-      "start_time": "2026-06-06T13:30:00-07:00",
-      "end_time": "2026-06-06T15:00:00-07:00",
+      "start_time": "2026-06-06T19:06:00.000Z",
+      "end_time": "2026-06-06T20:06:21.176Z",
       "activity": "Volunteer at the Capitol Hill Youth Center: help with afternoon drop-in art class and chat with kids.",
       "activity_type": "social",
       "location_name": "Capitol Hill Youth Center (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Jesse volunteers on weekends; this Saturday slot fits his routine and his good heart, even if he plays it cool. Gives him purpose and community."
     },
     {
       "index": 7,
-      "start_time": "2026-06-06T15:00:00-07:00",
-      "end_time": "2026-06-06T15:45:00-07:00",
+      "start_time": "2026-06-06T20:06:21.176Z",
+      "end_time": "2026-06-06T20:36:31.764Z",
       "activity": "Skateboard home to Capitol Hill; light rail closure doesn't affect him since he doesn't use transit.",
       "activity_type": "commute",
       "location_name": "Home (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Light rail closure between Westlake and U-District is irrelevant to Jesse's Capitol Hill skateboard lifestyle. Easy 15 min ride home on a sunny day."
     },
     {
       "index": 8,
-      "start_time": "2026-06-06T15:45:00-07:00",
-      "end_time": "2026-06-06T17:30:00-07:00",
+      "start_time": "2026-06-06T20:36:31.764Z",
+      "end_time": "2026-06-06T21:46:56.470Z",
       "activity": "Hang out at home, draw graffiti-style art, sketch designs, listen to loud music.",
       "activity_type": "leisure",
       "location_name": "Home (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Jesse needs background noise and creative outlet. Afternoon art session at home is his sweet spot—impulsive energy channeled into sketchbooks and spray paint designs."
     },
     {
       "index": 9,
-      "start_time": "2026-06-06T17:30:00-07:00",
-      "end_time": "2026-06-06T18:15:00-07:00",
+      "start_time": "2026-06-06T21:46:56.470Z",
+      "end_time": "2026-06-06T22:17:07.058Z",
       "activity": "Skateboard to arcade bar in Capitol Hill for evening drinks and games with friends.",
       "activity_type": "commute",
       "location_name": "Shorty's (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Saturday night; Jesse loves arcade bars and hanging with people. Shorty's is a Capitol Hill staple perfect for his vibe."
     },
     {
       "index": 10,
-      "start_time": "2026-06-06T18:15:00-07:00",
-      "end_time": "2026-06-06T22:30:00-07:00",
+      "start_time": "2026-06-06T22:17:07.058Z",
+      "end_time": "2026-06-07T01:08:07.058Z",
       "activity": "Play arcade games, drink beer, socialize with friends, soak up the loud atmosphere.",
       "activity_type": "social",
       "location_name": "Shorty's (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Jesse thrives on noise and company; a 4+ hour arcade bar session on a Saturday night is peak Jesse behavior—loyal, impulsive, and fully present with his crew."
     },
     {
       "index": 11,
-      "start_time": "2026-06-06T22:30:00-07:00",
-      "end_time": "2026-06-06T23:15:00-07:00",
+      "start_time": "2026-06-07T01:08:07.058Z",
+      "end_time": "2026-06-07T01:38:17.646Z",
       "activity": "Skateboard home to Capitol Hill, wind down with some chill music and sketching.",
       "activity_type": "commute",
       "location_name": "Home (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Night ride home; Jesse is buzzed but safe on his board. Needs to get home before midnight to settle."
     },
     {
       "index": 12,
-      "start_time": "2026-06-06T23:15:00-07:00",
-      "end_time": "2026-06-07T06:30:00-07:00",
+      "start_time": "2026-06-07T01:38:17.646Z",
+      "end_time": "2026-06-07T13:00:00.000Z",
       "activity": "Final wind-down: put on headphones, listen to music, crash into bed and sleep deeply.",
       "activity_type": "sleep",
       "location_name": "Home (Capitol Hill, Seattle)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
       "reasoning": "Jesse needs sound to sleep; headphones with lo-fi or ambient music keep him from the anxiety of silence. 7.25 hours gets him to mid-morning Sunday, fitting his sleep-in lifestyle."
     }
-  ]
+  ],
+  "diary": "Woke up to perfect sunshine and skateboarded to Victrola for my morning shift. The coffee was flowing, and honestly, watching the USA game on the shop TV during my break hit different—everyone was hyped, even when we didn't score. There's something about that energy, you know? Grabbed pizza at Serious Pie after and headed to the youth center to help with art class. Those kids were drawing some wild stuff, and it reminded me why I love this volunteer gig. Spent the afternoon back home sketching graffiti designs with music cranked loud—just me and my markers, no distractions. Met up with friends at Shorty's later and absolutely crushed some arcade games. The energy there was infectious. Skateboarded home as the sun was setting over Capitol Hill, feeling that good tired feeling. Ready to crash.",
+  "thought_process": "Today felt balanced in a way I needed. I was initially bumped about the early shift, but the World Cup match gave everyone—including me—something to rally around, even if the result stung a bit. The light rail closure didn't matter since I skate everywhere anyway. Volunteering with the kids always centers me; seeing their creativity reminds me I'm on the right track with my art dreams, even if barista life pays the bills. My mood shifted from caffeinated and social in the morning to introspective during my drawing session, then back to social energy at the arcade. It's that cycle I need—work, creativity, community, play. Seattle's been good to me lately.",
+  "end_state": {
+    "location": [
+      -122.3192,
+      47.6213
+    ],
+    "energy": 35,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
+  "generated_at": "2026-05-30T18:39:16.187Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 420,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 18537,
+    "mapbox_ms": 0,
+    "total_ms": 19117
+  }
 }

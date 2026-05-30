@@ -799,17 +799,31 @@ function DayReplay({
           | mapboxgl.GeoJSONSource
           | undefined
         if (src) {
-          // DEMO: swarm override — lerp agents toward target
+          // DEMO: subtle swarm — some agents divert toward event over time
           const st = swarmTargetRef.current
           if (st) {
-            const progress = Math.min((Date.now() - swarmStartRef.current) / 15000, 1) // 15s to converge
-            for (const f of features) {
+            const elapsed = (Date.now() - swarmStartRef.current) / 1000
+            for (let fi = 0; fi < features.length; fi++) {
+              const f = features[fi]
+              const name = (f.properties?.name || "") as string
+              // Deterministic "interest" score per agent (0-1) based on name hash
+              const hash = name.split("").reduce((a, c) => a + c.charCodeAt(0), 0)
+              const interest = (hash % 100) / 100
+              // Only ~40% of agents are interested enough to go
+              if (interest < 0.6) continue
+              // Each agent has a different "departure delay" (5-60s real time)
+              const delay = 5 + (hash % 55)
+              if (elapsed < delay) continue
+              // Gradual approach after their delay
+              const agentElapsed = elapsed - delay
+              const progress = Math.min(agentElapsed / 30, 1) // 30s to arrive after departing
               const coords = (f.geometry as GeoJSON.Point).coordinates
-              // Add slight randomness so they don't all land on exact same spot
-              const jitter = 0.002 * (1 - progress)
-              const hash = (f.properties?.name || "").length * 0.1
-              coords[0] = coords[0] + (st.lng + Math.sin(hash) * jitter - coords[0]) * progress
-              coords[1] = coords[1] + (st.lat + Math.cos(hash) * jitter - coords[1]) * progress
+              // Slight spread so they don't all land on same point
+              const spread = 0.003 * (1 - progress * 0.7)
+              const ox = Math.sin(hash * 0.7) * spread
+              const oy = Math.cos(hash * 1.3) * spread
+              coords[0] = coords[0] + (st.lng + ox - coords[0]) * progress
+              coords[1] = coords[1] + (st.lat + oy - coords[1]) * progress
             }
           }
           src.setData({ type: "FeatureCollection", features })

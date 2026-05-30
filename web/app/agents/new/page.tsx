@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import { supabase } from "@/lib/supabase"
+import { TerrainHero } from "@/components/terrain-hero"
 
 const Avatar = dynamic(() => import("react-nice-avatar"), {
   ssr: false,
@@ -33,6 +34,8 @@ export default function NewAgentPage() {
   const [age, setAge] = React.useState("")
   const [config, setConfig] = React.useState<AvatarFullConfig>(() => genConfig())
   const [saving, setSaving] = React.useState(false)
+  const [generating, setGenerating] = React.useState(false)
+  const [genStep, setGenStep] = React.useState(0)
 
   const reroll = React.useCallback(() => {
     setConfig(genConfig())
@@ -58,13 +61,74 @@ export default function NewAgentPage() {
       return
     }
     if (data?.id) {
+      setGenerating(true)
+      const steps = [
+        "Analyzing personality profile...",
+        "Building daily routines...",
+        "Mapping commute patterns...",
+        "Generating social behaviors...",
+        "Planning weekly schedule...",
+        "Geocoding locations...",
+        "Computing walking routes...",
+        "Finalizing 7-day simulation...",
+      ]
+      const interval = setInterval(() => {
+        setGenStep((s) => (s + 1) % steps.length)
+      }, 2000)
+
       fetch("/api/agent/generate-plan", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ agent_id: data.id }),
       })
+
+      // Wait a bit then redirect (plans generate in background)
+      setTimeout(() => {
+        clearInterval(interval)
+        router.push("/map")
+      }, 12000)
+    } else {
+      router.push("/map")
     }
-    router.push("/map")
+  }
+
+  const genSteps = [
+    "Analyzing personality profile...",
+    "Building daily routines...",
+    "Mapping commute patterns...",
+    "Generating social behaviors...",
+    "Planning weekly schedule...",
+    "Geocoding locations...",
+    "Computing walking routes...",
+    "Finalizing 7-day simulation...",
+  ]
+
+  if (generating) {
+    return (
+      <main className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-[#05060a] text-foreground">
+        {/* Same terrain as homepage */}
+        <TerrainHero />
+
+        {/* Content overlay */}
+        <div className="relative z-10 flex flex-col items-center gap-8">
+          {/* Bright pulsating core */}
+          <div className="relative flex items-center justify-center">
+            <div className="absolute size-40 rounded-full bg-white/[0.03] animate-[ping_3s_ease-in-out_infinite]" />
+            <div className="absolute size-24 rounded-full bg-white/[0.06] animate-[pulse_2s_ease-in-out_infinite]" />
+            <div className="absolute size-10 rounded-full bg-white/30 animate-[pulse_1.5s_ease-in-out_infinite] shadow-[0_0_60px_20px_rgba(255,255,255,0.15)]" />
+            <div className="size-3 rounded-full bg-white shadow-[0_0_20px_8px_rgba(255,255,255,0.4)]" />
+          </div>
+
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-sm font-medium tracking-wide text-white/80">{genSteps[genStep]}</p>
+            <div className="h-[2px] w-40 overflow-hidden rounded-full bg-white/10">
+              <div className="h-full rounded-full bg-white/70 transition-all duration-1000 ease-out" style={{ width: `${((genStep + 1) / genSteps.length) * 100}%` }} />
+            </div>
+            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/30">{name}</p>
+          </div>
+        </div>
+      </main>
+    )
   }
 
   return (

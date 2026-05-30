@@ -1,0 +1,191 @@
+{
+  "sim_date": "2026-06-01",
+  "day_number": 1,
+  "agent_id": "ffafc805-615d-4247-9383-d072b5ac7491",
+  "agent_name": "Sage Sharma",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-01T15:00:00.000Z",
+      "end_time": "2026-06-01T15:24:06.667Z",
+      "activity": "Wake up, shower, make pour-over coffee, check messages.",
+      "activity_type": "home",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Sage is a homebody with full energy; starts the day with a pour-over ritual (refuses drip coffee) and settles in before heading out."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-01T15:24:06.667Z",
+      "end_time": "2026-06-01T15:41:20.000Z",
+      "activity": "Commute by bike to tattoo studio.",
+      "activity_type": "commute",
+      "location_name": "Fremont Tattoo Studio (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short neighborhood commute on a sunny day; Sage can bike locally within Fremont."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-01T15:41:20.000Z",
+      "end_time": "2026-06-01T17:38:26.667Z",
+      "activity": "Open studio, prepare equipment, consult with first client of the day.; Tattoo session with client.",
+      "activity_type": "work",
+      "location_name": "Fremont Tattoo Studio (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Studio work begins; Light Rail closure downtown is irrelevant to Fremont-based artist, so no impact on morning routine."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-01T17:38:26.667Z",
+      "end_time": "2026-06-01T17:59:06.667Z",
+      "activity": "Lunch break: grab a sandwich and tea at local Fremont spot.",
+      "activity_type": "meal",
+      "location_name": "Paseo (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Quick lunch within neighborhood; Sage stays local and avoids the downtown FIFA bar crowds."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-01T17:59:06.667Z",
+      "end_time": "2026-06-01T18:06:00.000Z",
+      "activity": "Walk back to studio.",
+      "activity_type": "commute",
+      "location_name": "Fremont Tattoo Studio (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short walk back within Fremont; sunny weather makes it pleasant."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-01T18:06:00.000Z",
+      "end_time": "2026-06-01T20:30:40.000Z",
+      "activity": "Afternoon tattoo sessions with two clients.",
+      "activity_type": "work",
+      "location_name": "Fremont Tattoo Studio (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Steady afternoon work; Sage is diligent with studio bookings on a sunny Monday."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-01T20:30:40.000Z",
+      "end_time": "2026-06-01T21:01:40.000Z",
+      "activity": "Commute by bike to Fremont Food Bank for volunteer shift.",
+      "activity_type": "commute",
+      "location_name": "Fremont Food Bank (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Sage volunteers regularly and stays within Fremont neighborhood; good use of sunny afternoon energy before winding down."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-01T21:01:40.000Z",
+      "end_time": "2026-06-01T22:14:00.000Z",
+      "activity": "Volunteer shift: sorting, stocking, and helping with distribution.",
+      "activity_type": "social",
+      "location_name": "Fremont Food Bank (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Core part of Sage's values; unpressured Monday schedule allows for solid volunteer time with close community."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-01T22:14:00.000Z",
+      "end_time": "2026-06-01T22:45:00.000Z",
+      "activity": "Bike home from food bank.",
+      "activity_type": "commute",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Return to Fremont home as evening sets in; sunny day winds down, Sage is ready to relax."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-01T22:45:00.000Z",
+      "end_time": "2026-06-02T00:59:20.000Z",
+      "activity": "Prepare simple dinner, listen to vinyl records.; Continue vinyl listening, light reading, relax on couch.",
+      "activity_type": "leisure",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Homebody evening ritual; Sage winds down with music and a meal, staying cozy at home."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-02T00:59:20.000Z",
+      "end_time": "2026-06-02T13:00:00.000Z",
+      "activity": "Sleep.",
+      "activity_type": "sleep",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.3503,
+        47.651
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Full 8-hour sleep; day ends naturally after a productive, in-neighborhood Monday with work, volunteering, and leisure."
+    }
+  ],
+  "diary": "Woke up to perfect weather and made my usual pour-over—the kind of Monday morning that feels like a fresh start. Biked to the studio through Fremont, still quiet at that hour. First client came in with a design they'd been sitting on for months; watching them finally commit to it felt good. Grabbed a sandwich at Paseo around mid-morning, caught snippets of people talking about the World Cup match, but I was already back at the chair. Two more sessions after lunch, both solid work. The afternoon volunteer shift at the Food Bank was exactly what I needed—something about sorting and helping folks, knowing it matters, it grounds me. Biked home as the sun started softening, put on some Coltrane, made pasta, and just... existed for a few hours. Feels like the kind of day that reminds me why I'm doing all this.",
+  "thought_process": "I was in a flow state most of the day, honestly. The World Cup thing didn't really pull at me—bars were buzzing downtown but I'm not that guy—and the Light Rail closure didn't matter since I bike everywhere anyway. What shaped my energy was the rhythm: ink work, then feeding community work, then solitude. There's something about tattooing that requires total presence, and I think I carried that focus into the food bank. By evening, I needed to decompress, so the vinyl and stillness felt earned rather than avoidant. Fremont's my anchor; I didn't leave the neighborhood all day and didn't want to.",
+  "end_state": {
+    "location": [
+      -122.3503,
+      47.651
+    ],
+    "energy": 45,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June, high of 74F. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT — bars downtown open early. Light Rail closed between Westlake and University District 9am-3pm for maintenance.",
+  "generated_at": "2026-05-30T18:05:32.364Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 420,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 5251,
+    "mapbox_ms": 0,
+    "total_ms": 15435
+  },
+  "_ok": true
+}

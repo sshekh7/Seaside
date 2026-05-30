@@ -1,0 +1,1329 @@
+{
+  "sim_date": "2026-06-07",
+  "day_number": 7,
+  "agent_id": "696e9527-52b9-4625-988c-f024f974b2f7",
+  "agent_name": "Raj Andersen",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-07T15:15:00.000Z",
+      "end_time": "2026-06-07T15:50:00.000Z",
+      "activity": "Waking up, coffee, and light breakfast at home while watching the morning light over the Sound.",
+      "activity_type": "home",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Sunday morning—no shift at Sea-Tac today. Low energy yesterday (35/100) means a gentle start; Raj wakes naturally and takes time to settle into the day with ritual coffee and views."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-07T15:57:00.000Z",
+      "end_time": "2026-06-07T16:17:00.000Z",
+      "activity": "Short walk to QFC to pick up fresh greens and supplies for the day.",
+      "activity_type": "errand",
+      "location_name": "QFC (Madrona, Seattle)",
+      "location": [
+        -122.284015,
+        47.615353
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.289332,
+            47.612895
+          ],
+          [
+            -122.28921,
+            47.612894
+          ],
+          [
+            -122.28921,
+            47.612932
+          ],
+          [
+            -122.289195,
+            47.61296
+          ],
+          [
+            -122.288762,
+            47.612957
+          ],
+          [
+            -122.288337,
+            47.612954
+          ],
+          [
+            -122.28831,
+            47.61399
+          ],
+          [
+            -122.288309,
+            47.61402
+          ],
+          [
+            -122.288294,
+            47.614055
+          ],
+          [
+            -122.288275,
+            47.614098
+          ],
+          [
+            -122.288195,
+            47.614112
+          ],
+          [
+            -122.288145,
+            47.61412
+          ],
+          [
+            -122.28809,
+            47.61412
+          ],
+          [
+            -122.287646,
+            47.614119
+          ],
+          [
+            -122.287195,
+            47.614118
+          ],
+          [
+            -122.287151,
+            47.614118
+          ],
+          [
+            -122.287097,
+            47.614117
+          ],
+          [
+            -122.287047,
+            47.614117
+          ],
+          [
+            -122.287,
+            47.614117
+          ],
+          [
+            -122.286543,
+            47.614115
+          ],
+          [
+            -122.286095,
+            47.614114
+          ],
+          [
+            -122.28609,
+            47.614115
+          ],
+          [
+            -122.286087,
+            47.614118
+          ],
+          [
+            -122.286062,
+            47.615143
+          ],
+          [
+            -122.286062,
+            47.61517
+          ],
+          [
+            -122.28605,
+            47.615202
+          ],
+          [
+            -122.286031,
+            47.615259
+          ],
+          [
+            -122.285958,
+            47.615285
+          ],
+          [
+            -122.285919,
+            47.615299
+          ],
+          [
+            -122.28588,
+            47.615299
+          ],
+          [
+            -122.285881,
+            47.61527
+          ],
+          [
+            -122.285838,
+            47.615231
+          ],
+          [
+            -122.285799,
+            47.615215
+          ],
+          [
+            -122.285751,
+            47.615205
+          ],
+          [
+            -122.285667,
+            47.615203
+          ],
+          [
+            -122.285628,
+            47.615208
+          ],
+          [
+            -122.285542,
+            47.615235
+          ],
+          [
+            -122.285355,
+            47.615323
+          ],
+          [
+            -122.285334,
+            47.615322
+          ],
+          [
+            -122.285288,
+            47.61532
+          ],
+          [
+            -122.285253,
+            47.615318
+          ],
+          [
+            -122.285233,
+            47.615317
+          ],
+          [
+            -122.285214,
+            47.615317
+          ],
+          [
+            -122.285161,
+            47.615281
+          ],
+          [
+            -122.285111,
+            47.615251
+          ],
+          [
+            -122.285075,
+            47.615234
+          ],
+          [
+            -122.285036,
+            47.615222
+          ],
+          [
+            -122.285002,
+            47.615216
+          ],
+          [
+            -122.284971,
+            47.615216
+          ],
+          [
+            -122.284937,
+            47.615221
+          ],
+          [
+            -122.284903,
+            47.615234
+          ],
+          [
+            -122.284856,
+            47.615257
+          ],
+          [
+            -122.284767,
+            47.615319
+          ],
+          [
+            -122.284749,
+            47.615336
+          ],
+          [
+            -122.284699,
+            47.615394
+          ],
+          [
+            -122.284653,
+            47.615393
+          ],
+          [
+            -122.284653,
+            47.615313
+          ],
+          [
+            -122.284617,
+            47.615313
+          ],
+          [
+            -122.284603,
+            47.615314
+          ],
+          [
+            -122.284586,
+            47.615315
+          ],
+          [
+            -122.284539,
+            47.615291
+          ],
+          [
+            -122.284494,
+            47.615274
+          ],
+          [
+            -122.284438,
+            47.615261
+          ],
+          [
+            -122.28437,
+            47.615251
+          ],
+          [
+            -122.284294,
+            47.615245
+          ],
+          [
+            -122.284052,
+            47.615245
+          ],
+          [
+            -122.284035,
+            47.615249
+          ],
+          [
+            -122.283938,
+            47.61525
+          ],
+          [
+            -122.284015,
+            47.615353
+          ]
+        ],
+        "duration_minutes": 7
+      },
+      "reasoning": "Neighborhood errand within walking distance; Raj values the scenic walk and local routine, especially on a clear morning when energy is still building."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-07T16:24:00.000Z",
+      "end_time": "2026-06-07T16:39:00.000Z",
+      "activity": "Return home and unpack groceries, organize the kitchen.",
+      "activity_type": "home",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.284015,
+            47.615353
+          ],
+          [
+            -122.283938,
+            47.61525
+          ],
+          [
+            -122.284035,
+            47.615249
+          ],
+          [
+            -122.284052,
+            47.615245
+          ],
+          [
+            -122.284294,
+            47.615245
+          ],
+          [
+            -122.28437,
+            47.615251
+          ],
+          [
+            -122.284438,
+            47.615261
+          ],
+          [
+            -122.284494,
+            47.615274
+          ],
+          [
+            -122.284539,
+            47.615291
+          ],
+          [
+            -122.284586,
+            47.615315
+          ],
+          [
+            -122.284603,
+            47.615314
+          ],
+          [
+            -122.284617,
+            47.615313
+          ],
+          [
+            -122.284653,
+            47.615313
+          ],
+          [
+            -122.284653,
+            47.615393
+          ],
+          [
+            -122.284699,
+            47.615394
+          ],
+          [
+            -122.284749,
+            47.615336
+          ],
+          [
+            -122.284767,
+            47.615319
+          ],
+          [
+            -122.284856,
+            47.615257
+          ],
+          [
+            -122.284903,
+            47.615234
+          ],
+          [
+            -122.284937,
+            47.615221
+          ],
+          [
+            -122.284971,
+            47.615216
+          ],
+          [
+            -122.285002,
+            47.615216
+          ],
+          [
+            -122.285036,
+            47.615222
+          ],
+          [
+            -122.285075,
+            47.615234
+          ],
+          [
+            -122.285111,
+            47.615251
+          ],
+          [
+            -122.285161,
+            47.615281
+          ],
+          [
+            -122.285214,
+            47.615317
+          ],
+          [
+            -122.285233,
+            47.615317
+          ],
+          [
+            -122.285253,
+            47.615318
+          ],
+          [
+            -122.285288,
+            47.61532
+          ],
+          [
+            -122.285334,
+            47.615322
+          ],
+          [
+            -122.285355,
+            47.615323
+          ],
+          [
+            -122.285542,
+            47.615235
+          ],
+          [
+            -122.285628,
+            47.615208
+          ],
+          [
+            -122.285667,
+            47.615203
+          ],
+          [
+            -122.285751,
+            47.615205
+          ],
+          [
+            -122.285799,
+            47.615215
+          ],
+          [
+            -122.285838,
+            47.615231
+          ],
+          [
+            -122.285881,
+            47.61527
+          ],
+          [
+            -122.28588,
+            47.615299
+          ],
+          [
+            -122.285919,
+            47.615299
+          ],
+          [
+            -122.285958,
+            47.615285
+          ],
+          [
+            -122.286031,
+            47.615259
+          ],
+          [
+            -122.28605,
+            47.615202
+          ],
+          [
+            -122.286062,
+            47.61517
+          ],
+          [
+            -122.286062,
+            47.615143
+          ],
+          [
+            -122.286087,
+            47.614118
+          ],
+          [
+            -122.28609,
+            47.614115
+          ],
+          [
+            -122.286095,
+            47.614114
+          ],
+          [
+            -122.286543,
+            47.614115
+          ],
+          [
+            -122.287,
+            47.614117
+          ],
+          [
+            -122.287047,
+            47.614117
+          ],
+          [
+            -122.287097,
+            47.614117
+          ],
+          [
+            -122.287151,
+            47.614118
+          ],
+          [
+            -122.287195,
+            47.614118
+          ],
+          [
+            -122.287646,
+            47.614119
+          ],
+          [
+            -122.28809,
+            47.61412
+          ],
+          [
+            -122.288145,
+            47.61412
+          ],
+          [
+            -122.288195,
+            47.614112
+          ],
+          [
+            -122.288275,
+            47.614098
+          ],
+          [
+            -122.288294,
+            47.614055
+          ],
+          [
+            -122.288309,
+            47.61402
+          ],
+          [
+            -122.28831,
+            47.61399
+          ],
+          [
+            -122.288337,
+            47.612954
+          ],
+          [
+            -122.288762,
+            47.612957
+          ],
+          [
+            -122.289195,
+            47.61296
+          ],
+          [
+            -122.28921,
+            47.612932
+          ],
+          [
+            -122.28921,
+            47.612894
+          ],
+          [
+            -122.289332,
+            47.612895
+          ]
+        ],
+        "duration_minutes": 7
+      },
+      "reasoning": "Quick return to settle in; Raj is naturally frugal and organized, and Sunday mornings are for grounding domestic tasks before the day opens up."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-07T16:39:00.000Z",
+      "end_time": "2026-06-07T18:29:00.000Z",
+      "activity": "Painting session at home—working on a watercolor study of the Sound at sunrise.",
+      "activity_type": "leisure",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Sunday is for creative time. Calm, sunny weather and low energy from yesterday make this the perfect window for unhurried painting by the window; Raj takes the scenic route through art."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-07T18:29:00.000Z",
+      "end_time": "2026-06-07T18:44:00.000Z",
+      "activity": "Break for tea and a snack, check messages.",
+      "activity_type": "home",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Natural pause in the painting session; Raj is thoughtful about pacing and doesn't rush through the day, especially on a low-energy Sunday."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-07T18:51:00.000Z",
+      "end_time": "2026-06-07T20:11:00.000Z",
+      "activity": "Leisurely walk along the Madrona waterfront, taking in the calm water and recreational boats.",
+      "activity_type": "leisure",
+      "location_name": "Madrona Park (Madrona, Seattle)",
+      "location": [
+        -122.284015,
+        47.615353
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.289332,
+            47.612895
+          ],
+          [
+            -122.28921,
+            47.612894
+          ],
+          [
+            -122.28921,
+            47.612932
+          ],
+          [
+            -122.289195,
+            47.61296
+          ],
+          [
+            -122.288762,
+            47.612957
+          ],
+          [
+            -122.288337,
+            47.612954
+          ],
+          [
+            -122.28831,
+            47.61399
+          ],
+          [
+            -122.288309,
+            47.61402
+          ],
+          [
+            -122.288294,
+            47.614055
+          ],
+          [
+            -122.288275,
+            47.614098
+          ],
+          [
+            -122.288195,
+            47.614112
+          ],
+          [
+            -122.288145,
+            47.61412
+          ],
+          [
+            -122.28809,
+            47.61412
+          ],
+          [
+            -122.287646,
+            47.614119
+          ],
+          [
+            -122.287195,
+            47.614118
+          ],
+          [
+            -122.287151,
+            47.614118
+          ],
+          [
+            -122.287097,
+            47.614117
+          ],
+          [
+            -122.287047,
+            47.614117
+          ],
+          [
+            -122.287,
+            47.614117
+          ],
+          [
+            -122.286543,
+            47.614115
+          ],
+          [
+            -122.286095,
+            47.614114
+          ],
+          [
+            -122.28609,
+            47.614115
+          ],
+          [
+            -122.286087,
+            47.614118
+          ],
+          [
+            -122.286062,
+            47.615143
+          ],
+          [
+            -122.286062,
+            47.61517
+          ],
+          [
+            -122.28605,
+            47.615202
+          ],
+          [
+            -122.286031,
+            47.615259
+          ],
+          [
+            -122.285958,
+            47.615285
+          ],
+          [
+            -122.285919,
+            47.615299
+          ],
+          [
+            -122.28588,
+            47.615299
+          ],
+          [
+            -122.285881,
+            47.61527
+          ],
+          [
+            -122.285838,
+            47.615231
+          ],
+          [
+            -122.285799,
+            47.615215
+          ],
+          [
+            -122.285751,
+            47.615205
+          ],
+          [
+            -122.285667,
+            47.615203
+          ],
+          [
+            -122.285628,
+            47.615208
+          ],
+          [
+            -122.285542,
+            47.615235
+          ],
+          [
+            -122.285355,
+            47.615323
+          ],
+          [
+            -122.285334,
+            47.615322
+          ],
+          [
+            -122.285288,
+            47.61532
+          ],
+          [
+            -122.285253,
+            47.615318
+          ],
+          [
+            -122.285233,
+            47.615317
+          ],
+          [
+            -122.285214,
+            47.615317
+          ],
+          [
+            -122.285161,
+            47.615281
+          ],
+          [
+            -122.285111,
+            47.615251
+          ],
+          [
+            -122.285075,
+            47.615234
+          ],
+          [
+            -122.285036,
+            47.615222
+          ],
+          [
+            -122.285002,
+            47.615216
+          ],
+          [
+            -122.284971,
+            47.615216
+          ],
+          [
+            -122.284937,
+            47.615221
+          ],
+          [
+            -122.284903,
+            47.615234
+          ],
+          [
+            -122.284856,
+            47.615257
+          ],
+          [
+            -122.284767,
+            47.615319
+          ],
+          [
+            -122.284749,
+            47.615336
+          ],
+          [
+            -122.284699,
+            47.615394
+          ],
+          [
+            -122.284653,
+            47.615393
+          ],
+          [
+            -122.284653,
+            47.615313
+          ],
+          [
+            -122.284617,
+            47.615313
+          ],
+          [
+            -122.284603,
+            47.615314
+          ],
+          [
+            -122.284586,
+            47.615315
+          ],
+          [
+            -122.284539,
+            47.615291
+          ],
+          [
+            -122.284494,
+            47.615274
+          ],
+          [
+            -122.284438,
+            47.615261
+          ],
+          [
+            -122.28437,
+            47.615251
+          ],
+          [
+            -122.284294,
+            47.615245
+          ],
+          [
+            -122.284052,
+            47.615245
+          ],
+          [
+            -122.284035,
+            47.615249
+          ],
+          [
+            -122.283938,
+            47.61525
+          ],
+          [
+            -122.284015,
+            47.615353
+          ]
+        ],
+        "duration_minutes": 7
+      },
+      "reasoning": "Perfect sunny Sunday and Lake Union seeing heavy boat traffic—Raj takes the scenic route and enjoys observing the water activity from shore without the crowd pressure. Values solitude and natural beauty."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-07T20:18:00.000Z",
+      "end_time": "2026-06-07T20:38:00.000Z",
+      "activity": "Walk back home along the neighborhood streets, stopping briefly to observe the light.",
+      "activity_type": "commute",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.284015,
+            47.615353
+          ],
+          [
+            -122.283938,
+            47.61525
+          ],
+          [
+            -122.284035,
+            47.615249
+          ],
+          [
+            -122.284052,
+            47.615245
+          ],
+          [
+            -122.284294,
+            47.615245
+          ],
+          [
+            -122.28437,
+            47.615251
+          ],
+          [
+            -122.284438,
+            47.615261
+          ],
+          [
+            -122.284494,
+            47.615274
+          ],
+          [
+            -122.284539,
+            47.615291
+          ],
+          [
+            -122.284586,
+            47.615315
+          ],
+          [
+            -122.284603,
+            47.615314
+          ],
+          [
+            -122.284617,
+            47.615313
+          ],
+          [
+            -122.284653,
+            47.615313
+          ],
+          [
+            -122.284653,
+            47.615393
+          ],
+          [
+            -122.284699,
+            47.615394
+          ],
+          [
+            -122.284749,
+            47.615336
+          ],
+          [
+            -122.284767,
+            47.615319
+          ],
+          [
+            -122.284856,
+            47.615257
+          ],
+          [
+            -122.284903,
+            47.615234
+          ],
+          [
+            -122.284937,
+            47.615221
+          ],
+          [
+            -122.284971,
+            47.615216
+          ],
+          [
+            -122.285002,
+            47.615216
+          ],
+          [
+            -122.285036,
+            47.615222
+          ],
+          [
+            -122.285075,
+            47.615234
+          ],
+          [
+            -122.285111,
+            47.615251
+          ],
+          [
+            -122.285161,
+            47.615281
+          ],
+          [
+            -122.285214,
+            47.615317
+          ],
+          [
+            -122.285233,
+            47.615317
+          ],
+          [
+            -122.285253,
+            47.615318
+          ],
+          [
+            -122.285288,
+            47.61532
+          ],
+          [
+            -122.285334,
+            47.615322
+          ],
+          [
+            -122.285355,
+            47.615323
+          ],
+          [
+            -122.285542,
+            47.615235
+          ],
+          [
+            -122.285628,
+            47.615208
+          ],
+          [
+            -122.285667,
+            47.615203
+          ],
+          [
+            -122.285751,
+            47.615205
+          ],
+          [
+            -122.285799,
+            47.615215
+          ],
+          [
+            -122.285838,
+            47.615231
+          ],
+          [
+            -122.285881,
+            47.61527
+          ],
+          [
+            -122.28588,
+            47.615299
+          ],
+          [
+            -122.285919,
+            47.615299
+          ],
+          [
+            -122.285958,
+            47.615285
+          ],
+          [
+            -122.286031,
+            47.615259
+          ],
+          [
+            -122.28605,
+            47.615202
+          ],
+          [
+            -122.286062,
+            47.61517
+          ],
+          [
+            -122.286062,
+            47.615143
+          ],
+          [
+            -122.286087,
+            47.614118
+          ],
+          [
+            -122.28609,
+            47.614115
+          ],
+          [
+            -122.286095,
+            47.614114
+          ],
+          [
+            -122.286543,
+            47.614115
+          ],
+          [
+            -122.287,
+            47.614117
+          ],
+          [
+            -122.287047,
+            47.614117
+          ],
+          [
+            -122.287097,
+            47.614117
+          ],
+          [
+            -122.287151,
+            47.614118
+          ],
+          [
+            -122.287195,
+            47.614118
+          ],
+          [
+            -122.287646,
+            47.614119
+          ],
+          [
+            -122.28809,
+            47.61412
+          ],
+          [
+            -122.288145,
+            47.61412
+          ],
+          [
+            -122.288195,
+            47.614112
+          ],
+          [
+            -122.288275,
+            47.614098
+          ],
+          [
+            -122.288294,
+            47.614055
+          ],
+          [
+            -122.288309,
+            47.61402
+          ],
+          [
+            -122.28831,
+            47.61399
+          ],
+          [
+            -122.288337,
+            47.612954
+          ],
+          [
+            -122.288762,
+            47.612957
+          ],
+          [
+            -122.289195,
+            47.61296
+          ],
+          [
+            -122.28921,
+            47.612932
+          ],
+          [
+            -122.28921,
+            47.612894
+          ],
+          [
+            -122.289332,
+            47.612895
+          ]
+        ],
+        "duration_minutes": 7
+      },
+      "reasoning": "Unhurried return; Raj always takes the scenic route and this calm Sunday is no exception. No rush, just presence."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-07T20:38:00.000Z",
+      "end_time": "2026-06-07T21:58:00.000Z",
+      "activity": "Prepare and enjoy a simple lunch of fresh greens, bread, and cheese at home.",
+      "activity_type": "meal",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Frugal and low-key; Raj uses the groceries he picked up this morning and eats mindfully at home, not rushing."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-07T21:58:00.000Z",
+      "end_time": "2026-06-08T00:13:00.000Z",
+      "activity": "Knitting project by the window—working on a new pattern while watching the afternoon light shift over the Sound.",
+      "activity_type": "leisure",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Core leisure activity for Raj; the calm, sunny afternoon is ideal for focused handwork. Energy slowly rebuilding, and he values this quiet, meditative time."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-08T00:13:00.000Z",
+      "end_time": "2026-06-08T00:58:00.000Z",
+      "activity": "Prepare a simple dinner—roasted vegetables and grains with fresh herbs.",
+      "activity_type": "meal",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Frugal, intentional meal-prep; Raj cooks simply and uses what he has. No restaurant crowds—he values quality time at home."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-08T00:58:00.000Z",
+      "end_time": "2026-06-08T05:58:00.000Z",
+      "activity": "Eat dinner slowly and read or listen to music by the window.; Evening at home—more knitting, tea, and reflection by the window as the light fades.",
+      "activity_type": "leisure",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Mindful evening wind-down; Raj savors the long June twilight, present and grounded after a day of creative and restorative activity."
+    },
+    {
+      "index": 11,
+      "start_time": "2026-06-08T05:58:00.000Z",
+      "end_time": "2026-06-08T13:00:00.000Z",
+      "activity": "Sleep",
+      "activity_type": "sleep",
+      "location_name": "Home (Madrona, Seattle)",
+      "location": [
+        -122.28933,
+        47.612896
+      ],
+      "travel_from_prev": null,
+      "reasoning": "(auto) overnight rest at home"
+    }
+  ],
+  "diary": "Woke to that perfect early-June light flooding the bedroom—the kind that makes you grateful you live on Madrona. Coffee and toast while the Sound lay flat and calm below. Grabbed greens at QFC, nothing fancy, just the usual Sunday errand run.\n\nSpent the morning painting, trying to capture that exact quality of light I'd just watched. Watercolor's unforgiving but that's what drew me to it today. The brushwork felt looser than usual, less controlled. Around midday I walked down to the park—Lake Union was packed with boats and paddleboards, all that energy and motion while I just stood there quiet. Watched the light bounce off the water.\n\nBack home for lunch, then settled into knitting by the window for hours. Just the needles clicking, my hands moving through the familiar pattern, the afternoon sliding into evening. Made a simple dinner. By the time darkness came, I was still at the window with tea, feeling that deep Sunday peace—the kind that makes you want to hold onto it before Monday crowds back in.",
+  "thought_process": "Today was exactly what I needed after a week of managing other people's flights and schedules. Working air traffic control means constant vigilance, constant responsibility—so Sundays like this, where I could move at my own pace without urgency, felt restorative. The weather helped; the forecast promised calm, and I let that external quiet permission me to stay inward. I chose painting this morning because I'd been thinking about that sunrise all week, and knitting this afternoon because repetitive, meditative work helps me transition from work-brain to rest-brain. Staying home the whole day wasn't isolation—it was intentional. The waterfront walk was my one venture out, just enough to feel connected to the city without being consumed by it. I noticed myself drawn repeatedly to windows and light, maybe because control towers are all about sight lines and clarity. By evening, I was genuinely content.",
+  "end_state": {
+    "location": [
+      -122.28933,
+      47.612896
+    ],
+    "energy": 40,
+    "notes": ""
+  },
+  "world_event_prompt": "Calm, sunny Sunday, high of 72F. Quiet end-of-week day with no major disruptions. Lake Union sees heavy recreational boat and paddle traffic in the afternoon.",
+  "generated_at": "2026-05-30T18:31:54.745Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 2,
+    "route_misses": 6,
+    "overflow_fixed_by_shift": 4,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 448,
+    "sleep_beat_synthesized": true,
+    "returned_home_before_sleep": true,
+    "llm_ms": 119136,
+    "mapbox_ms": 922,
+    "total_ms": 20085
+  },
+  "_ok": true
+}

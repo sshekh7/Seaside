@@ -407,11 +407,13 @@ function DayReplay({
 
   const [style, setStyle] = useState<StyleKey>("Dark")
   const [is3D, setIs3D] = useState(false)
+  const [heatmap, setHeatmap] = useState(false)
   const [offsetMs, setOffsetMs] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [speed, setSpeed] = useState(900)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [following, setFollowing] = useState(false)
+  const [autoplay, setAutoplay] = useState(false)
   const [timelineOpen, setTimelineOpen] = useState(false)
   const [eventOpen, setEventOpen] = useState(false)
 
@@ -479,7 +481,14 @@ function DayReplay({
   selectedRef.current = selectedId
   dayRef.current = day
   dayStartRef.current = dayStartMs
-
+  const heatmapRef = useRef(heatmap)
+  heatmapRef.current = heatmap
+  const autoplayRef = useRef(autoplay)
+  autoplayRef.current = autoplay
+  const dayIdxRef = useRef(dayIdx)
+  dayIdxRef.current = dayIdx
+  const daysLenRef = useRef(days.length)
+  daysLenRef.current = days.length
   const selectedPlan = selectedId
     ? (day.plans.find((p) => p.agent_id === selectedId) ?? null)
     : null
@@ -493,6 +502,11 @@ function DayReplay({
   const selInfoRef = useRef<{ idx: number; phase: "travel" | "stay" } | null>(
     null,
   )
+
+  // Decaying buffer of recent agent positions for the heatmap trail effect.
+  // Each entry's weight fades every sample tick, leaving comet-like trails.
+  const trailRef = useRef<{ lng: number; lat: number; w: number }[]>([])
+  const lastTrailRef = useRef(0)
 
   // Draggable position for the Unit Profile card. Null = default anchored
   // position (bottom-left). Once dragged it switches to a free top-left offset.
@@ -657,6 +671,7 @@ function DayReplay({
     map.once("style.load", () => {
       installLayers(map)
       if (is3D) enable3D(map)
+      if (heatmapRef.current) applyHeatmap(map, true)
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [style])
@@ -669,10 +684,27 @@ function DayReplay({
     else disable3D(map)
   }, [is3D])
 
-  // Day change — reset clock, refit.
+  // Heatmap toggle — swap the per-agent dots for a citywide density layer.
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapLoadedRef.current) return
+    applyHeatmap(map, heatmap)
+    if (!heatmap) {
+      // Reset the trail buffer so re-enabling starts fresh.
+      trailRef.current = []
+      const heatSrc = map.getSource("heat-src") as
+        | mapboxgl.GeoJSONSource
+        | undefined
+      heatSrc?.setData({ type: "FeatureCollection", features: [] })
+    }
+  }, [heatmap])
+
+  // Day change — reset clock, refit. Playback state is intentionally left
+  // untouched: an auto-advance at the end of a day keeps `playing` true so the
+  // next day rolls straight on, while manual day navigation pauses explicitly
+  // via `goToDay` before the day changes.
   useEffect(() => {
     setOffsetMs(0)
-    setPlaying(false)
     offsetRef.current = 0
     const map = mapRef.current
     if (map && mapLoadedRef.current) fitToDay(map, day)
@@ -745,9 +777,21 @@ function DayReplay({
       if (playingRef.current) {
         const next = offsetRef.current + dt * speedRef.current
         if (next >= dayLen) {
-          offsetRef.current = dayLen
-          setOffsetMs(dayLen)
-          setPlaying(false)
+          // Day's over. Auto-advance to the next day if there is one and
+          // continuous playback is on; otherwise stop at the end. `playing`
+          // stays true through the advance so the next day rolls straight on.
+          if (
+            autoplayRef.current &&
+            dayIdxRef.current < daysLenRef.current - 1
+          ) {
+            offsetRef.current = dayLen
+            setOffsetMs(dayLen)
+            setDayIdx(dayIdxRef.current + 1)
+          } else {
+            offsetRef.current = dayLen
+            setOffsetMs(dayLen)
+            setPlaying(false)
+          }
         } else {
           offsetRef.current = next
           setOffsetMs(next)
@@ -775,6 +819,8 @@ function DayReplay({
               name: plan.agent_name,
               color: colorForAgent(plan.agent_id),
               selected,
+              // Heatmap weight: agents in transit are "the action".
+              weight: cur.phase === "travel" ? 1 : 0.3,
             },
           })
         }
@@ -782,6 +828,38 @@ function DayReplay({
           | mapboxgl.GeoJSONSource
           | undefined
         if (src) src.setData({ type: "FeatureCollection", features })
+
+        // Heatmap trails: every ~80ms sample the current positions into a
+        // decaying buffer and feed the dedicated heat source. Older samples
+        // fade out, leaving a comet trail behind moving "action".
+        if (heatmapRef.current && now - lastTrailRef.current >= 80) {
+          lastTrailRef.current = now
+          const buf = trailRef.current
+          for (const p of buf) p.w *= 0.97
+          for (const f of features) {
+            const g = f.geometry as GeoJSON.Point
+            const [lng, lat] = g.coordinates as [number, number]
+            const w = (f.properties?.weight as number) ?? 0.3
+            buf.push({ lng, lat, w })
+          }
+          // Drop faded points and cap the buffer for performance.
+          const kept = buf.filter((p) => p.w > 0.03)
+          if (kept.length > 16000) kept.splice(0, kept.length - 16000)
+          trailRef.current = kept
+          const heatSrc = map.getSource("heat-src") as
+            | mapboxgl.GeoJSONSource
+            | undefined
+          if (heatSrc) {
+            heatSrc.setData({
+              type: "FeatureCollection",
+              features: kept.map((p) => ({
+                type: "Feature",
+                geometry: { type: "Point", coordinates: [p.lng, p.lat] },
+                properties: { weight: p.w },
+              })),
+            })
+          }
+        }
 
         // Selected-agent card: only re-render React on beat/phase change.
         if (selCur) {
@@ -850,6 +928,15 @@ function DayReplay({
     setPlaying(false)
     setOffsetMs(0)
   }, [])
+
+  // Manual day navigation pauses playback; auto-advance leaves it running.
+  const goToDay = useCallback(
+    (i: number) => {
+      setPlaying(false)
+      setDayIdx(Math.max(0, Math.min(daysLenRef.current - 1, i)))
+    },
+    [setDayIdx],
+  )
 
   const recenter = useCallback(() => {
     const map = mapRef.current
@@ -991,7 +1078,7 @@ function DayReplay({
           <div className="flex items-center gap-1">
             <button
               type="button"
-              onClick={() => setDayIdx(Math.max(0, dayIdx - 1))}
+              onClick={() => goToDay(dayIdx - 1)}
               disabled={dayIdx === 0}
               className="flex h-6 w-6 items-center justify-center rounded-sm text-muted-foreground transition hover:bg-secondary/40 hover:text-foreground disabled:opacity-30"
               aria-label="Previous day"
@@ -1000,7 +1087,7 @@ function DayReplay({
             </button>
             <select
               value={dayIdx}
-              onChange={(e) => setDayIdx(Number(e.target.value))}
+              onChange={(e) => goToDay(Number(e.target.value))}
               className="h-6 rounded-sm border border-border/40 bg-[#08080b] px-2 font-mono text-[11px] normal-case tracking-normal text-foreground focus:border-amber-400/60 focus:outline-none"
             >
               {days.map((d, i) => (
@@ -1011,7 +1098,7 @@ function DayReplay({
             </select>
             <button
               type="button"
-              onClick={() => setDayIdx(Math.min(days.length - 1, dayIdx + 1))}
+              onClick={() => goToDay(dayIdx + 1)}
               disabled={dayIdx === days.length - 1}
               className="flex h-6 w-6 items-center justify-center rounded-sm text-muted-foreground transition hover:bg-secondary/40 hover:text-foreground disabled:opacity-30"
               aria-label="Next day"
@@ -1019,6 +1106,21 @@ function DayReplay({
               <CaretRight size={11} weight="bold" />
             </button>
           </div>
+          <button
+            type="button"
+            onClick={() => setAutoplay((a) => !a)}
+            className={cn(
+              "flex h-6 items-center gap-1 rounded-sm border px-2 text-[9px] uppercase tracking-[0.18em] transition",
+              autoplay
+                ? "border-amber-400/60 bg-amber-400/15 text-amber-300"
+                : "border-border/40 text-muted-foreground hover:bg-secondary/40 hover:text-foreground",
+            )}
+            title="Continue into the next day when the current one ends"
+            aria-pressed={autoplay}
+          >
+            <ArrowsCounterClockwise size={11} weight="bold" />
+            Auto
+          </button>
         </div>
         <div className="flex items-center gap-3">
           <div ref={searchBoxRef} className="relative">
@@ -1114,7 +1216,7 @@ function DayReplay({
             )}
           </div>
           <span className="font-mono tabular-nums normal-case tracking-normal text-foreground/90">
-            {fmtClockFromOffset(offsetMs, dayStartMs)}
+            {fmtDate(day.sim_date)} · {fmtClockFromOffset(offsetMs, dayStartMs)}
           </span>
           <span className="text-muted-foreground/60">
             {day.plans.length} agents
@@ -1130,6 +1232,10 @@ function DayReplay({
           {/* Time · weather · world-event accordion (top-left) */}
           <div className="absolute left-3 top-3 z-10 w-72 max-w-[calc(100%-1.5rem)] rounded-md border border-border/40 bg-[#0a0a0d]/85 backdrop-blur">
             <div className="px-3 py-2.5">
+              {/* Date (weekday) */}
+              <div className="mb-1 text-[10px] uppercase tracking-[0.18em] text-amber-400/80">
+                {fmtDate(day.sim_date)}
+              </div>
               {/* Time (large) */}
               <div className="font-mono text-2xl font-semibold tabular-nums leading-none tracking-tight text-foreground">
                 {fmtClockFromOffset(offsetMs, dayStartMs)}
@@ -1212,6 +1318,12 @@ function DayReplay({
                 active={is3D}
                 onClick={() => setIs3D(!is3D)}
                 Icon={Cube}
+              />
+              <ToggleBtn
+                label="Heat"
+                active={heatmap}
+                onClick={() => setHeatmap(!heatmap)}
+                Icon={Fire}
               />
               <ToggleBtn
                 label="Follow"
@@ -2096,6 +2208,60 @@ function installLayers(map: mapboxgl.Map) {
       type: "geojson",
       data: { type: "FeatureCollection", features: [] },
     })
+    // Citywide activity heatmap (hidden until toggled). Fed by a dedicated
+    // trail source that accumulates recent positions with decaying weight,
+    // so the "action" leaves comet-like trails and lingers a moment.
+    if (!map.getSource("heat-src")) {
+      map.addSource("heat-src", {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] },
+      })
+    }
+    map.addLayer({
+      id: "agents-heat",
+      type: "heatmap",
+      source: "heat-src",
+      layout: { visibility: "none" },
+      paint: {
+        "heatmap-weight": ["get", "weight"],
+        "heatmap-intensity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          10,
+          0.8,
+          16,
+          1.8,
+        ],
+        "heatmap-radius": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          10,
+          16,
+          16,
+          40,
+        ],
+        "heatmap-color": [
+          "interpolate",
+          ["linear"],
+          ["heatmap-density"],
+          0,
+          "rgba(10,10,13,0)",
+          0.2,
+          "#1e3a8a",
+          0.4,
+          "#0891b2",
+          0.6,
+          "#22c55e",
+          0.8,
+          "#f59e0b",
+          1,
+          "#ef4444",
+        ],
+        "heatmap-opacity": 0.8,
+      },
+    })
     // Soft glow under the selected agent.
     map.addLayer({
       id: "agents-glow",
@@ -2136,12 +2302,21 @@ function installLayers(map: mapboxgl.Map) {
   }
 }
 
+// Toggle between the per-agent dots and the citywide density heatmap.
+function applyHeatmap(map: mapboxgl.Map, on: boolean) {
+  const set = (id: string, vis: "visible" | "none") => {
+    if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", vis)
+  }
+  set("agents-heat", on ? "visible" : "none")
+  set("agents-dot", on ? "none" : "visible")
+  set("agents-glow", on ? "none" : "visible")
+}
+
 function fitToDay(map: mapboxgl.Map, day: Day) {
   const coords: LngLat[] = []
   for (const plan of day.plans) {
     for (const b of plan.beats) coords.push(b.location)
-  }
-  if (coords.length < 2) return
+  }  if (coords.length < 2) return
   const bounds = coords.reduce(
     (acc, c) => acc.extend(c),
     new mapboxgl.LngLatBounds(coords[0], coords[0]),

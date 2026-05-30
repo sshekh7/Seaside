@@ -1,0 +1,176 @@
+{
+  "sim_date": "2026-06-01",
+  "day_number": 1,
+  "agent_id": "f914d4ec-58c6-45b5-9b76-d6cab172aa3c",
+  "agent_name": "Jesse Pinkman",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-01T16:00:00.000Z",
+      "end_time": "2026-06-01T16:35:00.000Z",
+      "activity": "Wakes up, showers, throws on clothes and grabs coffee at home.",
+      "activity_type": "home",
+      "location_name": "Home (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Jesse sleeps in late as per his profile; full energy means he's ready to start the day. Morning routine compressed into one beat to avoid back-to-back home beats."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-01T16:35:00.000Z",
+      "end_time": "2026-06-01T16:55:00.000Z",
+      "activity": "Skateboards to work through Capitol Hill neighborhood.",
+      "activity_type": "commute",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Jesse skateboards to work; Capitol Hill is his home and workplace, so a short 20-min commute fits his vibe and the neighborhood geography."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-01T16:55:00.000Z",
+      "end_time": "2026-06-01T18:00:00.000Z",
+      "activity": "Opens the coffee shop and starts his shift making espresso drinks.",
+      "activity_type": "work",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Part-time barista job; morning shift timing is plausible. Ends right at 11am to catch the FIFA match."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-01T18:00:00.000Z",
+      "end_time": "2026-06-01T19:45:00.000Z",
+      "activity": "Watches USA vs Wales FIFA World Cup match at an arcade bar with friends, grabs a beer and nachos.",
+      "activity_type": "social",
+      "location_name": "Monkey Loft (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Jesse loves arcade bars and the match airs at exactly 11am; he'd skip or swap his shift to catch it. Staying in Capitol Hill avoids the Light Rail closure affecting transit across town."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-01T19:45:00.000Z",
+      "end_time": "2026-06-01T20:05:00.000Z",
+      "activity": "Skateboards back to the coffee shop to resume his shift.",
+      "activity_type": "commute",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Light Rail closure doesn't affect Capitol Hill internal movement. Short skateboard ride back to finish the workday."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-01T20:05:00.000Z",
+      "end_time": "2026-06-02T00:30:00.000Z",
+      "activity": "Works afternoon shift at the coffee shop, serves customers, cleans up, closes out register.",
+      "activity_type": "work",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Part-time barista continues through late afternoon; plausible closing time for a Monday coffee shop."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-02T00:30:00.000Z",
+      "end_time": "2026-06-02T00:50:00.000Z",
+      "activity": "Skateboards home from work.",
+      "activity_type": "commute",
+      "location_name": "Home (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short skateboard ride home; Jesse is in his neighborhood."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-02T00:50:00.000Z",
+      "end_time": "2026-06-02T02:00:00.000Z",
+      "activity": "Grabs fast food dinner and eats at home while listening to loud music.",
+      "activity_type": "meal",
+      "location_name": "Home (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Jesse loves fast food and needs background noise; eating at home with music fits his restless, impulsive personality."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-02T02:00:00.000Z",
+      "end_time": "2026-06-02T05:30:00.000Z",
+      "activity": "Draws graffiti-style art at home, sketches on canvas, listens to music and scrolls through social media.",
+      "activity_type": "leisure",
+      "location_name": "Home (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Aspiring artist; Jesse spends evenings drawing graffiti art at home. Anxiety in quiet spaces means he keeps music on. Wind-down beat before sleep, already at home."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-02T05:30:00.000Z",
+      "end_time": "2026-06-02T13:00:00.000Z",
+      "activity": "Sleep",
+      "activity_type": "sleep",
+      "location_name": "Home (Capitol Hill)",
+      "location": [
+        -122.3192,
+        47.6213
+      ],
+      "travel_from_prev": null,
+      "reasoning": "(auto) overnight rest at home"
+    }
+  ],
+  "diary": "Woke up to perfect weather and honestly felt the energy right away. Quick coffee at home, then cruised through Capitol Hill on my board—the neighborhood's looking mad green this time of year. Opened Victrola solo, which was chill until the morning rush hit around 10:30. Then USA vs Wales came on and I couldn't resist ducking out to Monkey Loft with some coworkers. We were all losing it, especially when the US scored. The nachos hit different with that adrenaline going. Skateboarded back to work still buzzing, and the afternoon shift flew by. My hands were moving through espresso pulls on muscle memory while my head was still at the bar. Got home, threw on some loud music, grabbed tacos, and just lost myself in sketching for a few hours. Drew this piece that actually came out pretty fire—something about the World Cup energy got me inspired. Feeling that good tired now.",
+  "thought_process": "The sunny weather definitely put me in a better headspace from the start, and the World Cup match was the perfect excuse to take a mental break mid-shift. I wasn't expecting the game to hit me that hard, but there's something about that collective energy with friends that just lifts everything. I made the call to slip away because I know my manager doesn't really care as long as closing gets done right, and honestly, I needed that reset before the afternoon grind. The fast food and music combo at home is my go-to decompression, and today it actually fueled my art instead of just numbing me out. I felt creative energy flowing, which doesn't happen every day. The skateboarding through Capitol Hill kept me grounded between the chaos of work and the buzz of the game—it's like my reset button.",
+  "end_state": {
+    "location": [
+      -122.3192,
+      47.6213
+    ],
+    "energy": 50,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
+  "generated_at": "2026-05-30T18:39:12.860Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 405,
+    "sleep_beat_synthesized": true,
+    "returned_home_before_sleep": true,
+    "llm_ms": 15214,
+    "mapbox_ms": 0,
+    "total_ms": 15795
+  }
+}

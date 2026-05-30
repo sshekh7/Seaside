@@ -43,4 +43,33 @@ function getBoxClient() {
   return sdk.getAppAuthClient(process.env.BOX_ENTERPRISE_ID!)
 }
 
-export { getBoxClient }
+/**
+ * Ensures a folder path like ["Seaside Daily Reports", "2026-06-01"] exists
+ * under parentId (default: root "0"), creating missing segments.
+ * Returns the leaf folder ID.
+ */
+async function ensureBoxFolderPath(
+  client: ReturnType<typeof getBoxClient>,
+  segments: string[],
+  rootId = "0"
+): Promise<string> {
+  let currentId = rootId
+
+  for (const segment of segments) {
+    const items = await client.folders.getItems(currentId, { fields: "id,name,type" })
+    const existing = items.entries.find(
+      (e: { type: string; name: string }) => e.type === "folder" && e.name === segment
+    )
+
+    if (existing) {
+      currentId = existing.id
+    } else {
+      const created = await client.folders.create(currentId, segment)
+      currentId = created.id
+    }
+  }
+
+  return currentId
+}
+
+export { getBoxClient, ensureBoxFolderPath }

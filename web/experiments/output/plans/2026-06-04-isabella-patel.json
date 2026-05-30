@@ -1,0 +1,1015 @@
+{
+  "sim_date": "2026-06-04",
+  "day_number": 4,
+  "agent_id": "d3dea73d-8339-47e2-8b61-6ae81f79d8c7",
+  "agent_name": "Isabella Patel",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-04T14:00:00.000Z",
+      "end_time": "2026-06-04T14:35:00.000Z",
+      "activity": "Wake up with coffee and watch the morning light through the kitchen window, camera nearby.",
+      "activity_type": "home",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Isabella's ritual start—early, deliberate, present. The transit strike means no commute today; she'll need to find alternative plans."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-04T14:35:00.000Z",
+      "end_time": "2026-06-04T15:15:00.000Z",
+      "activity": "Walk to the nearby neighborhood market to pick up groceries and coffee.",
+      "activity_type": "errand",
+      "location_name": "QFC (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "With buses down until 4pm, Isabella can't drive to work. A local errand fills the morning and keeps her in her neighborhood comfort zone."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-04T15:15:00.000Z",
+      "end_time": "2026-06-04T16:00:00.000Z",
+      "activity": "Return home, unpack groceries, and settle into painting prep.",
+      "activity_type": "home",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Back at home, she uses the unexpected day off to ease into creative work. The mild weather and free time from the strike shift her energy toward leisure."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-04T16:00:00.000Z",
+      "end_time": "2026-06-04T18:30:00.000Z",
+      "activity": "Paint in the studio with soft music, exploring blues and grays.",
+      "activity_type": "leisure",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "The transit strike gives her a rare midweek morning free. She leans into painting—one of her core joys—and the mild weather keeps her mood light."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-04T18:30:00.000Z",
+      "end_time": "2026-06-04T19:00:00.000Z",
+      "activity": "Prepare and eat a simple lunch at home.",
+      "activity_type": "meal",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "No commute today means no reason to grab lunch out. She stays grounded at home, eating mindfully."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-04T19:00:00.000Z",
+      "end_time": "2026-06-04T21:00:00.000Z",
+      "activity": "Continue painting and listen to music; enjoy the quiet afternoon.",
+      "activity_type": "leisure",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "The strike extends her creative window. Isabella is most herself when she has unrushed time to make art and be present."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-04T21:00:00.000Z",
+      "end_time": "2026-06-04T21:45:00.000Z",
+      "activity": "Walk to Solstice Wood Fire Pizza for an early tea and a light snack.",
+      "activity_type": "meal",
+      "location_name": "Solstice Wood Fire Pizza (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "A familiar neighborhood spot where she's built a small ritual. The walk breaks up the afternoon and the mild weather makes it pleasant."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-04T21:45:00.000Z",
+      "end_time": "2026-06-04T23:00:00.000Z",
+      "activity": "Walk back home through the neighborhood, camera in hand, noticing light and details.; Organize camera equipment, review today's shots, and check on transit status.",
+      "activity_type": "leisure",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "She carries her camera everywhere and the partly cloudy light is soft and photogenic. The walk home is part of the pleasure."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-04T23:15:00.000Z",
+      "end_time": "2026-06-05T00:15:00.000Z",
+      "activity": "Take a walk to nearby Ravenna Park, camera ready for the late afternoon light.",
+      "activity_type": "exercise",
+      "location_name": "Ravenna Park (U-District, Seattle)",
+      "location": [
+        -122.333722,
+        47.611468
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.330286,
+            47.603243
+          ],
+          [
+            -122.330352,
+            47.603317
+          ],
+          [
+            -122.330278,
+            47.603349
+          ],
+          [
+            -122.330264,
+            47.603367
+          ],
+          [
+            -122.330299,
+            47.603405
+          ],
+          [
+            -122.33068,
+            47.603825
+          ],
+          [
+            -122.330767,
+            47.603918
+          ],
+          [
+            -122.330772,
+            47.603933
+          ],
+          [
+            -122.330764,
+            47.603944
+          ],
+          [
+            -122.330787,
+            47.603954
+          ],
+          [
+            -122.330823,
+            47.60399
+          ],
+          [
+            -122.330887,
+            47.604055
+          ],
+          [
+            -122.330896,
+            47.60407
+          ],
+          [
+            -122.330912,
+            47.604075
+          ],
+          [
+            -122.330935,
+            47.6041
+          ],
+          [
+            -122.33098,
+            47.604148
+          ],
+          [
+            -122.331425,
+            47.604626
+          ],
+          [
+            -122.331437,
+            47.604639
+          ],
+          [
+            -122.331439,
+            47.60465
+          ],
+          [
+            -122.331431,
+            47.604659
+          ],
+          [
+            -122.331442,
+            47.604671
+          ],
+          [
+            -122.331496,
+            47.604717
+          ],
+          [
+            -122.331551,
+            47.604764
+          ],
+          [
+            -122.331568,
+            47.604782
+          ],
+          [
+            -122.33156,
+            47.604786
+          ],
+          [
+            -122.331589,
+            47.604816
+          ],
+          [
+            -122.332078,
+            47.605344
+          ],
+          [
+            -122.332097,
+            47.605364
+          ],
+          [
+            -122.33211,
+            47.605377
+          ],
+          [
+            -122.332142,
+            47.60542
+          ],
+          [
+            -122.332188,
+            47.605482
+          ],
+          [
+            -122.332204,
+            47.605498
+          ],
+          [
+            -122.332216,
+            47.605496
+          ],
+          [
+            -122.332316,
+            47.605606
+          ],
+          [
+            -122.33273,
+            47.606067
+          ],
+          [
+            -122.332742,
+            47.60608
+          ],
+          [
+            -122.332755,
+            47.606094
+          ],
+          [
+            -122.332792,
+            47.606137
+          ],
+          [
+            -122.332845,
+            47.606197
+          ],
+          [
+            -122.332849,
+            47.606218
+          ],
+          [
+            -122.332876,
+            47.606233
+          ],
+          [
+            -122.333017,
+            47.606385
+          ],
+          [
+            -122.333145,
+            47.606524
+          ],
+          [
+            -122.333288,
+            47.606681
+          ],
+          [
+            -122.333367,
+            47.606767
+          ],
+          [
+            -122.333359,
+            47.606795
+          ],
+          [
+            -122.333385,
+            47.606808
+          ],
+          [
+            -122.333437,
+            47.606861
+          ],
+          [
+            -122.333489,
+            47.606913
+          ],
+          [
+            -122.333504,
+            47.606928
+          ],
+          [
+            -122.33353,
+            47.606917
+          ],
+          [
+            -122.334033,
+            47.607469
+          ],
+          [
+            -122.334051,
+            47.607489
+          ],
+          [
+            -122.334051,
+            47.607503
+          ],
+          [
+            -122.334033,
+            47.607513
+          ],
+          [
+            -122.334044,
+            47.607524
+          ],
+          [
+            -122.334093,
+            47.607573
+          ],
+          [
+            -122.334145,
+            47.607625
+          ],
+          [
+            -122.334159,
+            47.607639
+          ],
+          [
+            -122.334192,
+            47.607643
+          ],
+          [
+            -122.33467,
+            47.60818
+          ],
+          [
+            -122.334663,
+            47.608194
+          ],
+          [
+            -122.334691,
+            47.608223
+          ],
+          [
+            -122.334744,
+            47.608274
+          ],
+          [
+            -122.334801,
+            47.60833
+          ],
+          [
+            -122.334829,
+            47.608359
+          ],
+          [
+            -122.334851,
+            47.608382
+          ],
+          [
+            -122.33557,
+            47.609177
+          ],
+          [
+            -122.33558,
+            47.609203
+          ],
+          [
+            -122.335604,
+            47.609227
+          ],
+          [
+            -122.335649,
+            47.609272
+          ],
+          [
+            -122.33571,
+            47.609332
+          ],
+          [
+            -122.335727,
+            47.60935
+          ],
+          [
+            -122.335299,
+            47.609528
+          ],
+          [
+            -122.334891,
+            47.609698
+          ],
+          [
+            -122.334852,
+            47.609714
+          ],
+          [
+            -122.334837,
+            47.609729
+          ],
+          [
+            -122.334839,
+            47.609742
+          ],
+          [
+            -122.33486,
+            47.609766
+          ],
+          [
+            -122.334841,
+            47.609774
+          ],
+          [
+            -122.33477,
+            47.609804
+          ],
+          [
+            -122.334733,
+            47.609819
+          ],
+          [
+            -122.334707,
+            47.60983
+          ],
+          [
+            -122.334976,
+            47.610128
+          ],
+          [
+            -122.335351,
+            47.610541
+          ],
+          [
+            -122.335403,
+            47.610597
+          ],
+          [
+            -122.335419,
+            47.610616
+          ],
+          [
+            -122.335422,
+            47.610639
+          ],
+          [
+            -122.335413,
+            47.610657
+          ],
+          [
+            -122.335392,
+            47.610673
+          ],
+          [
+            -122.335219,
+            47.610747
+          ],
+          [
+            -122.334561,
+            47.611028
+          ],
+          [
+            -122.334582,
+            47.611051
+          ],
+          [
+            -122.334624,
+            47.611092
+          ],
+          [
+            -122.334592,
+            47.611105
+          ],
+          [
+            -122.334482,
+            47.611152
+          ],
+          [
+            -122.334324,
+            47.611217
+          ],
+          [
+            -122.334007,
+            47.611349
+          ],
+          [
+            -122.333913,
+            47.611389
+          ],
+          [
+            -122.333749,
+            47.611457
+          ]
+        ],
+        "duration_minutes": 15
+      },
+      "reasoning": "Mild weather and partly cloudy skies make for good photography. A neighborhood park walk keeps her active and present without requiring transit."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-05T00:30:00.000Z",
+      "end_time": "2026-06-05T01:00:00.000Z",
+      "activity": "Return home and prepare a simple dinner.",
+      "activity_type": "meal",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.333749,
+            47.611457
+          ],
+          [
+            -122.333913,
+            47.611389
+          ],
+          [
+            -122.334007,
+            47.611349
+          ],
+          [
+            -122.334324,
+            47.611217
+          ],
+          [
+            -122.334482,
+            47.611152
+          ],
+          [
+            -122.334592,
+            47.611105
+          ],
+          [
+            -122.334624,
+            47.611092
+          ],
+          [
+            -122.334582,
+            47.611051
+          ],
+          [
+            -122.334561,
+            47.611028
+          ],
+          [
+            -122.335219,
+            47.610747
+          ],
+          [
+            -122.335392,
+            47.610673
+          ],
+          [
+            -122.335413,
+            47.610657
+          ],
+          [
+            -122.335422,
+            47.610639
+          ],
+          [
+            -122.335419,
+            47.610616
+          ],
+          [
+            -122.335403,
+            47.610597
+          ],
+          [
+            -122.335351,
+            47.610541
+          ],
+          [
+            -122.334976,
+            47.610128
+          ],
+          [
+            -122.334707,
+            47.60983
+          ],
+          [
+            -122.334733,
+            47.609819
+          ],
+          [
+            -122.33477,
+            47.609804
+          ],
+          [
+            -122.334841,
+            47.609774
+          ],
+          [
+            -122.33486,
+            47.609766
+          ],
+          [
+            -122.334839,
+            47.609742
+          ],
+          [
+            -122.334837,
+            47.609729
+          ],
+          [
+            -122.334852,
+            47.609714
+          ],
+          [
+            -122.334891,
+            47.609698
+          ],
+          [
+            -122.335299,
+            47.609528
+          ],
+          [
+            -122.335727,
+            47.60935
+          ],
+          [
+            -122.33571,
+            47.609332
+          ],
+          [
+            -122.335649,
+            47.609272
+          ],
+          [
+            -122.335604,
+            47.609227
+          ],
+          [
+            -122.33558,
+            47.609203
+          ],
+          [
+            -122.33557,
+            47.609177
+          ],
+          [
+            -122.334851,
+            47.608382
+          ],
+          [
+            -122.334829,
+            47.608359
+          ],
+          [
+            -122.334801,
+            47.60833
+          ],
+          [
+            -122.334744,
+            47.608274
+          ],
+          [
+            -122.334691,
+            47.608223
+          ],
+          [
+            -122.334663,
+            47.608194
+          ],
+          [
+            -122.33467,
+            47.60818
+          ],
+          [
+            -122.334192,
+            47.607643
+          ],
+          [
+            -122.334159,
+            47.607639
+          ],
+          [
+            -122.334145,
+            47.607625
+          ],
+          [
+            -122.334093,
+            47.607573
+          ],
+          [
+            -122.334044,
+            47.607524
+          ],
+          [
+            -122.334033,
+            47.607513
+          ],
+          [
+            -122.334051,
+            47.607503
+          ],
+          [
+            -122.334051,
+            47.607489
+          ],
+          [
+            -122.334033,
+            47.607469
+          ],
+          [
+            -122.33353,
+            47.606917
+          ],
+          [
+            -122.333504,
+            47.606928
+          ],
+          [
+            -122.333489,
+            47.606913
+          ],
+          [
+            -122.333437,
+            47.606861
+          ],
+          [
+            -122.333385,
+            47.606808
+          ],
+          [
+            -122.333359,
+            47.606795
+          ],
+          [
+            -122.333367,
+            47.606767
+          ],
+          [
+            -122.333288,
+            47.606681
+          ],
+          [
+            -122.333145,
+            47.606524
+          ],
+          [
+            -122.333017,
+            47.606385
+          ],
+          [
+            -122.332876,
+            47.606233
+          ],
+          [
+            -122.332849,
+            47.606218
+          ],
+          [
+            -122.332845,
+            47.606197
+          ],
+          [
+            -122.332792,
+            47.606137
+          ],
+          [
+            -122.332755,
+            47.606094
+          ],
+          [
+            -122.332742,
+            47.60608
+          ],
+          [
+            -122.33273,
+            47.606067
+          ],
+          [
+            -122.332316,
+            47.605606
+          ],
+          [
+            -122.332216,
+            47.605496
+          ],
+          [
+            -122.332204,
+            47.605498
+          ],
+          [
+            -122.332188,
+            47.605482
+          ],
+          [
+            -122.332142,
+            47.60542
+          ],
+          [
+            -122.33211,
+            47.605377
+          ],
+          [
+            -122.332097,
+            47.605364
+          ],
+          [
+            -122.332078,
+            47.605344
+          ],
+          [
+            -122.331589,
+            47.604816
+          ],
+          [
+            -122.33156,
+            47.604786
+          ],
+          [
+            -122.331568,
+            47.604782
+          ],
+          [
+            -122.331551,
+            47.604764
+          ],
+          [
+            -122.331496,
+            47.604717
+          ],
+          [
+            -122.331442,
+            47.604671
+          ],
+          [
+            -122.331431,
+            47.604659
+          ],
+          [
+            -122.331439,
+            47.60465
+          ],
+          [
+            -122.331437,
+            47.604639
+          ],
+          [
+            -122.331425,
+            47.604626
+          ],
+          [
+            -122.33098,
+            47.604148
+          ],
+          [
+            -122.330935,
+            47.6041
+          ],
+          [
+            -122.330912,
+            47.604075
+          ],
+          [
+            -122.330896,
+            47.60407
+          ],
+          [
+            -122.330887,
+            47.604055
+          ],
+          [
+            -122.330823,
+            47.60399
+          ],
+          [
+            -122.330787,
+            47.603954
+          ],
+          [
+            -122.330764,
+            47.603944
+          ],
+          [
+            -122.330772,
+            47.603933
+          ],
+          [
+            -122.330767,
+            47.603918
+          ],
+          [
+            -122.33068,
+            47.603825
+          ],
+          [
+            -122.330299,
+            47.603405
+          ],
+          [
+            -122.330264,
+            47.603367
+          ],
+          [
+            -122.330278,
+            47.603349
+          ],
+          [
+            -122.330352,
+            47.603317
+          ],
+          [
+            -122.330286,
+            47.603243
+          ]
+        ],
+        "duration_minutes": 15
+      },
+      "reasoning": "End-of-day wind-down. She's had a full creative day and now settles into evening rituals at home."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-05T01:00:00.000Z",
+      "end_time": "2026-06-05T06:00:00.000Z",
+      "activity": "Eat dinner, listen to music, and spend time painting or reviewing film from the day.",
+      "activity_type": "leisure",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "A rare midweek evening free from the commute grind. She savors the time to create and reflect on a day that felt genuinely lived."
+    },
+    {
+      "index": 11,
+      "start_time": "2026-06-05T06:00:00.000Z",
+      "end_time": "2026-06-05T13:00:00.000Z",
+      "activity": "Sleep",
+      "activity_type": "sleep",
+      "location_name": "Home (U-District, Seattle)",
+      "location": [
+        -122.330286,
+        47.603243
+      ],
+      "travel_from_prev": null,
+      "reasoning": "(auto) overnight rest at home"
+    }
+  ],
+  "diary": "Woke up to that perfect June light streaming through the kitchen—the kind that reminds me why I love this neighborhood. With the transit strike today, I decided not to fight it. Instead of frustration, I felt almost... relieved? Walked to QFC, picked up fresh groceries, and the morning was mine.\n\nSpent most of the day in the studio. There's something about painting blues and grays on a day like this—the colors seemed to answer the light outside. Lunch was simple, quiet. Mid-afternoon I wandered to Solstice for tea, just needing to be around people without really talking to them.\n\nRavenna Park in the late light was magic. Camera in hand, I caught the way shadows fell through the trees. The strike ended while I was there, but I didn't rush back. Came home and painted some more, then just sat with the day's photos. Felt settled. Sometimes not driving feels like freedom.",
+  "thought_process": "I expected today to feel like a loss—no work, no income—but the strike actually gave me permission to do what I rarely allow myself: a full day of art and wandering. I've been carrying my camera more lately, noticing the visual world differently in my sixties. The mild weather helped; there was no resistance from the day itself. I chose leisure over worry because, honestly, at my age, I know that some days aren't about productivity. The neighborhood walk, the park, the painting—these felt like the real work. I checked the transit status more out of habit than urgency. By evening, I realized the strike had shifted something in me, made space for what actually matters.",
+  "end_state": {
+    "location": [
+      -122.330286,
+      47.603243
+    ],
+    "energy": 40,
+    "notes": ""
+  },
+  "world_event_prompt": "Mild, partly cloudy Thursday, high of 68F. Citywide transit strike: all Metro buses and Link Light Rail suspended until 4pm. Rideshare surge pricing in effect.",
+  "generated_at": "2026-05-30T18:16:51.409Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 1,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 2,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 450,
+    "sleep_beat_synthesized": true,
+    "returned_home_before_sleep": true,
+    "llm_ms": 17094,
+    "mapbox_ms": 91,
+    "total_ms": 22109
+  },
+  "_ok": true
+}

@@ -1,0 +1,401 @@
+{
+  "sim_date": "2026-06-07",
+  "day_number": 7,
+  "agent_id": "6c804f2e-f9d6-47bd-ae7a-5da68c140204",
+  "agent_name": "Fatima Calloway",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-07T15:00:00.000Z",
+      "end_time": "2026-06-07T15:23:57.333Z",
+      "activity": "Wakes up, makes coffee and toast, reads the paper in quiet South Lake Union morning.",
+      "activity_type": "home",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Sunday morning ritual for an introverted person; low energy from yesterday (40/100) means a slow, deliberate start at home before venturing out into the sunny day."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-07T15:23:57.333Z",
+      "end_time": "2026-06-07T15:47:54.666Z",
+      "activity": "Walks to nearby neighborhood bagel shop for fresh Sunday bagel and coffee.",
+      "activity_type": "meal",
+      "location_name": "Dripline Coffee (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Close to home, fits her strong bagel opinions and preference for local haunts; same shop from yesterday, suggesting a favorite routine."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-07T15:47:54.666Z",
+      "end_time": "2026-06-07T16:15:17.333Z",
+      "activity": "Lingers with bagel and coffee, people-watching and journaling.",
+      "activity_type": "leisure",
+      "location_name": "Dripline Coffee (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Introverted and low-energy; Sunday allows for extended idle time at a familiar place without social pressure."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-07T16:15:17.333Z",
+      "end_time": "2026-06-07T16:35:49.333Z",
+      "activity": "Walks home through South Lake Union, enjoying the sunny morning.",
+      "activity_type": "commute",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short walk in good weather; Sunday pace is unhurried and she values time on foot to clear her head."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-07T16:35:49.333Z",
+      "end_time": "2026-06-07T18:04:48.000Z",
+      "activity": "Sets up home brewing equipment and begins a new batch; measures grains, steeps, tests pH like a ritual.",
+      "activity_type": "leisure",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Brewing is a core hobby and meditative practice for her; Sunday afternoon is ideal for the focused, unhurried work she loves."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-07T18:04:48.000Z",
+      "end_time": "2026-06-07T18:28:45.333Z",
+      "activity": "Prepares and eats a simple lunch at home.",
+      "activity_type": "meal",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Frugal and introverted; cooking at home on a Sunday is natural and economical."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-07T18:31:45.333Z",
+      "end_time": "2026-06-07T18:59:08.000Z",
+      "activity": "Takes camera and walks to nearby Lake Union waterfront to photograph the recreational boat traffic and light on the water.",
+      "activity_type": "exercise",
+      "location_name": "Gas Works Park (Wallingford, Seattle)",
+      "location": [
+        -122.3344,
+        47.6457
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.335778,
+            47.64461
+          ],
+          [
+            -122.335729,
+            47.644599
+          ],
+          [
+            -122.335652,
+            47.644595
+          ],
+          [
+            -122.335576,
+            47.644601
+          ],
+          [
+            -122.335504,
+            47.644618
+          ],
+          [
+            -122.335438,
+            47.644645
+          ],
+          [
+            -122.335394,
+            47.644673
+          ],
+          [
+            -122.335356,
+            47.644705
+          ],
+          [
+            -122.335308,
+            47.644755
+          ],
+          [
+            -122.33527,
+            47.644812
+          ],
+          [
+            -122.335219,
+            47.644863
+          ],
+          [
+            -122.335167,
+            47.644914
+          ],
+          [
+            -122.33513,
+            47.644948
+          ],
+          [
+            -122.335084,
+            47.644974
+          ],
+          [
+            -122.335087,
+            47.645075
+          ],
+          [
+            -122.335324,
+            47.645247
+          ],
+          [
+            -122.335327,
+            47.645567
+          ],
+          [
+            -122.335236,
+            47.645562
+          ],
+          [
+            -122.335128,
+            47.645561
+          ],
+          [
+            -122.334958,
+            47.64557
+          ],
+          [
+            -122.334807,
+            47.645582
+          ],
+          [
+            -122.334664,
+            47.645599
+          ],
+          [
+            -122.334585,
+            47.645615
+          ],
+          [
+            -122.334483,
+            47.64564
+          ],
+          [
+            -122.334381,
+            47.645668
+          ]
+        ],
+        "duration_minutes": 3
+      },
+      "reasoning": "Sunny Sunday afternoon with heavy boat traffic on Lake Union is perfect for her film photography hobby; close enough to South Lake Union for a walk."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-07T19:02:08.000Z",
+      "end_time": "2026-06-07T19:29:30.667Z",
+      "activity": "Walks back home through South Lake Union, enjoying the warm weather.",
+      "activity_type": "commute",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.334381,
+            47.645668
+          ],
+          [
+            -122.334483,
+            47.64564
+          ],
+          [
+            -122.334585,
+            47.645615
+          ],
+          [
+            -122.334664,
+            47.645599
+          ],
+          [
+            -122.334807,
+            47.645582
+          ],
+          [
+            -122.334958,
+            47.64557
+          ],
+          [
+            -122.335128,
+            47.645561
+          ],
+          [
+            -122.335236,
+            47.645562
+          ],
+          [
+            -122.335327,
+            47.645567
+          ],
+          [
+            -122.335324,
+            47.645247
+          ],
+          [
+            -122.335087,
+            47.645075
+          ],
+          [
+            -122.335084,
+            47.644974
+          ],
+          [
+            -122.33513,
+            47.644948
+          ],
+          [
+            -122.335167,
+            47.644914
+          ],
+          [
+            -122.335219,
+            47.644863
+          ],
+          [
+            -122.33527,
+            47.644812
+          ],
+          [
+            -122.335308,
+            47.644755
+          ],
+          [
+            -122.335356,
+            47.644705
+          ],
+          [
+            -122.335394,
+            47.644673
+          ],
+          [
+            -122.335438,
+            47.644645
+          ],
+          [
+            -122.335504,
+            47.644618
+          ],
+          [
+            -122.335576,
+            47.644601
+          ],
+          [
+            -122.335652,
+            47.644595
+          ],
+          [
+            -122.335729,
+            47.644599
+          ],
+          [
+            -122.335778,
+            47.64461
+          ]
+        ],
+        "duration_minutes": 3
+      },
+      "reasoning": "Short walk back; the sunny 72F day invites outdoor time without overextending her low energy."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-07T19:29:30.667Z",
+      "end_time": "2026-06-07T22:17:12.000Z",
+      "activity": "Organizes negatives on light table, reviews prints from recent shoots, and sorts film by light and subject.; Checks brewing batch, takes notes, and cleans equipment.; Prepares a simple dinner, then reads a book while the light fades.",
+      "activity_type": "leisure",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Photography darkroom work is solitary, meditative, and matches her stated love of holding negatives up to light; low energy afternoon is ideal for this focused task."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-07T22:17:12.000Z",
+      "end_time": "2026-06-08T00:40:56.000Z",
+      "activity": "Settles in for the evening: more reading, journaling, and light organizing of brewing notes and photography files.",
+      "activity_type": "home",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Final wind-down beat before sleep; introverted Seattleite in her element, letting quiet accumulate as she described yesterday."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-08T00:40:56.000Z",
+      "end_time": "2026-06-08T13:00:00.000Z",
+      "activity": "Sleeps soundly after a quiet, unhurried Sunday.",
+      "activity_type": "sleep",
+      "location_name": "Home (South Lake Union, Seattle)",
+      "location": [
+        -122.3367,
+        47.6427
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Restful 8.5-hour sleep to recover energy for the work week; ends early Monday morning as required."
+    }
+  ],
+  "diary": "Sunday felt like the kind of day I needed without knowing I needed it. Coffee and toast at home, then a walk to Dripline where I lingered longer than planned, watching the neighborhood wake up around me. The bagel was perfect—one of those small things that settles something inside. After, I got lost in my brewing setup, measuring grains like I was conducting an experiment. Maybe that's what it is for me: controlled, knowable, mine. Gas Works Park was stunning this afternoon—all those boats cutting across the water, light bouncing everywhere. I shot half a roll before the sun got too high. Back home, I organized negatives on my light table, checked the batch, read until the evening went soft and blue. It was quiet. Unhurried. Exactly what I didn't know I was asking for.",
+  "thought_process": "I think I chose to stay close to home today because the weather was calling for it, and honestly, after a long week of lesson plans and teenage energy, I needed the opposite. The brewing and photography aren't really separate for me—both are about patience and control and seeing something transform. I lingered at Dripline because the people-watching grounded me; there's something about watching others live their Sunday that makes mine feel more real. The boat traffic at the lake was a gift—the world was busy and beautiful without demanding anything of me. My mood stayed steady and soft all day, never spiking, never dipping. I think I was processing the week without realizing it, and Sunday just held space for that.",
+  "end_state": {
+    "location": [
+      -122.3367,
+      47.6427
+    ],
+    "energy": 45,
+    "notes": ""
+  },
+  "world_event_prompt": "Calm, sunny Sunday, high of 72F. Quiet end-of-week day with no major disruptions. Lake Union sees heavy recreational boat and paddle traffic in the afternoon.",
+  "generated_at": "2026-05-30T18:31:59.773Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 2,
+    "route_misses": 6,
+    "overflow_fixed_by_shift": 2,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 426,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 162893,
+    "mapbox_ms": 922,
+    "total_ms": 20268
+  },
+  "_ok": true
+}

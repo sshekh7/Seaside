@@ -2,174 +2,129 @@
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-02T07:00:00-07:00",
-      "end_time": "2026-06-02T07:30:00-07:00",
-      "activity": "Wake up, shower, and make a quick breakfast",
+      "start_time": "2026-06-05T09:15:00-07:00",
+      "end_time": "2026-06-05T09:45:00-07:00",
+      "activity": "Wakes up, showers, throws on clothes, grabs coffee at home while scrolling his phone.",
       "activity_type": "home",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Start the day at full energy with a relaxed morning routine before the rain picks up."
+      "location_name": "Home (Capitol Hill)",
+      "reasoning": "Jesse sleeps in late on Fridays; full energy at start of day means he's well-rested. Morning routine is quick and chaotic, fitting his restless nature."
     },
     {
       "index": 1,
-      "start_time": "2026-06-02T07:30:00-07:45:00-07:00",
-      "end_time": "2026-06-02T07:45:00-07:55:00-07:00",
-      "activity": "Grab coffee and check messages while packing for work",
-      "activity_type": "errand",
-      "location_name": "Redmond Town Center",
-      "reasoning": "A short pre-work pickup nearby helps keep momentum despite heavy rain."
+      "start_time": "2026-06-05T09:45:00-07:00",
+      "end_time": "2026-06-05T10:05:00-07:00",
+      "activity": "Skateboards down Pine Street to work, weaving through Capitol Hill traffic.",
+      "activity_type": "commute",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "reasoning": "Jesse always skateboards to his barista job; walking distance in same neighborhood, quick 20-min commute fits his style."
     },
     {
       "index": 2,
-      "start_time": "2026-06-02T07:55:00-07:00",
-      "end_time": "2026-06-02T08:35:00-07:00",
-      "activity": "Drive to Microsoft campus and park",
-      "activity_type": "commute",
-      "location_name": "Building 99, Redmond",
-      "reasoning": "Commuting in heavy rain is planned with extra buffer time for traffic and visibility."
+      "start_time": "2026-06-05T10:05:00-07:00",
+      "end_time": "2026-06-05T11:00:00-07:00",
+      "activity": "Works the morning shift at the coffee shop, steaming milk and chatting with regulars.",
+      "activity_type": "work",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "reasoning": "Part-time shift work; Jesse is reliable enough to show up on time, though he'd rather be elsewhere."
     },
     {
       "index": 3,
-      "start_time": "2026-06-02T08:35:00-07:00",
-      "end_time": "2026-06-02T09:00:00-07:00",
-      "activity": "Settle in, review tickets, and attend standup prep",
-      "activity_type": "work",
-      "location_name": "Building 99, Redmond",
-      "reasoning": "A focused start before deep work helps Priyanshu ramp up quickly on a rainy Tuesday."
+      "start_time": "2026-06-05T11:00:00-07:00",
+      "end_time": "2026-06-05T12:30:00-07:00",
+      "activity": "Takes a break and watches the USA vs Wales FIFA match on the shop's TV with coworkers and customers.",
+      "activity_type": "leisure",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill)",
+      "reasoning": "The 11am FIFA match is live and Jesse loves the energy and crowd; he'd stay at work to catch it rather than miss it. Fits his need for noise and social stimulation."
     },
     {
       "index": 4,
-      "start_time": "2026-06-02T09:00:00-07:00",
-      "end_time": "2026-06-02T10:30:00-07:00",
-      "activity": "Deep work: implement and test a feature change",
-      "activity_type": "work",
-      "location_name": "Building 99, Redmond",
-      "reasoning": "Morning productivity slot while SR-520 closures could complicate later travel if he needs to go out."
+      "start_time": "2026-06-05T12:30:00-07:00",
+      "end_time": "2026-06-05T13:00:00-07:00",
+      "activity": "Finishes his shift, clocks out, and grabs a greasy burger from a nearby fast-food spot.",
+      "activity_type": "meal",
+      "location_name": "Dick's Drive-In (Capitol Hill)",
+      "reasoning": "Jesse loves fast food and the casual vibe; end-of-shift meal before heading out. Walking distance in Capitol Hill."
     },
     {
       "index": 5,
-      "start_time": "2026-06-02T10:30:00-07:00",
-      "end_time": "2026-06-02T10:45:00-07:00",
-      "activity": "Coffee run inside campus and quick snack",
-      "activity_type": "errand",
-      "location_name": "Starbucks (Microsoft Campus)",
-      "reasoning": "He stays on-site to avoid the worst of the 7am–2pm heavy rain."
+      "start_time": "2026-06-05T13:00:00-07:00",
+      "end_time": "2026-06-05T13:45:00-07:00",
+      "activity": "Skateboards to the Capitol Hill Youth Center to volunteer for the afternoon.",
+      "activity_type": "commute",
+      "location_name": "Capitol Hill Youth Center (Capitol Hill)",
+      "reasoning": "Friday volunteer shift; Jesse is loyal to the kids and uses this as an outlet for his restless energy. Same neighborhood, short skateboard ride."
     },
     {
       "index": 6,
-      "start_time": "2026-06-02T10:45:00-07:00",
-      "end_time": "2026-06-02T12:10:00-07:00",
-      "activity": "Pair/debug session with teammates and code review",
-      "activity_type": "work",
-      "location_name": "Building 99, Redmond",
-      "reasoning": "Collaboration fits Priyanshu’s nice, fun-loving style while staying productive during bad weather."
+      "start_time": "2026-06-05T13:45:00-07:00",
+      "end_time": "2026-06-05T17:00:00-07:00",
+      "activity": "Volunteers at the youth center, helping with art projects, skateboard tricks, and mentoring kids.",
+      "activity_type": "social",
+      "location_name": "Capitol Hill Youth Center (Capitol Hill)",
+      "reasoning": "Jesse's weekend volunteer gig; he's good with kids despite his rough exterior. The environment is loud and active, which suits him. Sunny weather means outdoor activities possible."
     },
     {
       "index": 7,
-      "start_time": "2026-06-02T12:10:00-07:00",
-      "end_time": "2026-06-02T12:55:00-07:00",
-      "activity": "Lunch at the campus food court",
-      "activity_type": "meal",
-      "location_name": "Microsoft Commons Cafe",
-      "reasoning": "Keeping lunch on-campus avoids commuting issues during ongoing heavy rain."
+      "start_time": "2026-06-05T17:00:00-07:00",
+      "end_time": "2026-06-05T17:30:00-07:00",
+      "activity": "Skateboards home from the youth center, cruising through Capitol Hill as the sun stays high.",
+      "activity_type": "commute",
+      "location_name": "Home (Capitol Hill)",
+      "reasoning": "Heading home to rest before evening plans; good weather means he takes his time on the skateboard."
     },
     {
       "index": 8,
-      "start_time": "2026-06-02T12:55:00-07:00",
-      "end_time": "2026-06-02T14:20:00-07:00",
-      "activity": "Continue building and wrap up the ticket set",
-      "activity_type": "work",
-      "location_name": "Building 99, Redmond",
-      "reasoning": "After 2pm the rain eases, so he uses the remaining afternoon work block to finish strong."
+      "start_time": "2026-06-05T17:30:00-07:00",
+      "end_time": "2026-06-05T18:30:00-07:00",
+      "activity": "Grabs pizza and sodas from a nearby spot, brings them back to his apartment.",
+      "activity_type": "meal",
+      "location_name": "Serious Pie (Capitol Hill)",
+      "reasoning": "Jesse fuels up before a night out; pizza is his go-to casual dinner. Close to home in Capitol Hill."
     },
     {
       "index": 9,
-      "start_time": "2026-06-02T14:20:00-07:00",
-      "end_time": "2026-06-02T15:10:00-07:00",
-      "activity": "Drive back toward Redmond downtown and stop for groceries",
-      "activity_type": "commute",
-      "location_name": "Metropolitan Market (Redmond)",
-      "reasoning": "The SR-520 eastbound closure is time-limited, and groceries are easier once he can leave campus safely."
+      "start_time": "2026-06-05T18:30:00-07:00",
+      "end_time": "2026-06-05T20:00:00-07:00",
+      "activity": "Chills at home, eating pizza, listening to loud music, and sketching graffiti-style designs in his notebook.",
+      "activity_type": "leisure",
+      "location_name": "Home (Capitol Hill)",
+      "reasoning": "Jesse needs background noise and creative outlet; sketching calms his restlessness. Friday night, no rush to go out yet."
     },
     {
       "index": 10,
-      "start_time": "2026-06-02T15:10:00-07:00",
-      "end_time": "2026-06-02T15:55:00-07:00",
-      "activity": "Pick up dinner items and household supplies",
-      "activity_type": "errand",
-      "location_name": "Metropolitan Market (Redmond)",
-      "reasoning": "A quick shopping run keeps his evening relaxed and avoids another trip later."
+      "start_time": "2026-06-05T20:00:00-07:00",
+      "end_time": "2026-06-05T20:35:00-07:00",
+      "activity": "Skateboards to an arcade bar on Capitol Hill to meet up with friends for drinks and games.",
+      "activity_type": "commute",
+      "location_name": "Monkey Loft (Capitol Hill)",
+      "reasoning": "Friday night social scene; Jesse loves arcade bars for the energy, noise, and people. Skateboard ride within Capitol Hill."
     },
     {
       "index": 11,
-      "start_time": "2026-06-02T15:55:00-07:00",
-      "end_time": "2026-06-02T16:25:00-07:00",
-      "activity": "Drive home and change into comfy clothes",
-      "activity_type": "commute",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "He gets home soon after shopping so the rest of the evening isn’t rushed."
+      "start_time": "2026-06-05T20:35:00-07:00",
+      "end_time": "2026-06-05T23:15:00-07:00",
+      "activity": "Hangs at the arcade bar playing games, drinking beer, and talking loud with friends.",
+      "activity_type": "social",
+      "location_name": "Monkey Loft (Capitol Hill)",
+      "reasoning": "Jesse thrives in loud, social settings; arcade bars are his natural habitat. Stays out late on Friday but heads home before midnight."
     },
     {
       "index": 12,
-      "start_time": "2026-06-02T16:25:00-07:00",
-      "end_time": "2026-06-02T17:15:00-07:00",
-      "activity": "Light workout and stretch at the gym",
-      "activity_type": "exercise",
-      "location_name": "Downtown Redmond Fitness Center",
-      "reasoning": "A post-work sweat helps him shake off a long rainy workday."
+      "start_time": "2026-06-05T23:15:00-07:00",
+      "end_time": "2026-06-05T23:45:00-07:00",
+      "activity": "Skateboards home from the arcade bar, a little tipsy but grinning.",
+      "activity_type": "commute",
+      "location_name": "Home (Capitol Hill)",
+      "reasoning": "Late-night commute back to Capitol Hill; Jesse is wired but tired, ready to crash."
     },
     {
       "index": 13,
-      "start_time": "2026-06-02T17:15:00-07:00",
-      "end_time": "2026-06-02T18:05:00-07:00",
-      "activity": "Relax with a shower and unwind at home",
-      "activity_type": "home",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "A decompression block keeps the day fun and low-stress after intense coding time."
-    },
-    {
-      "index": 14,
-      "start_time": "2026-06-02T18:05:00-07:00",
-      "end_time": "2026-06-02T19:00:00-07:00",
-      "activity": "Cook dinner and enjoy music while eating",
-      "activity_type": "meal",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "He’s a nice, fun-loving guy, so an easy homemade meal feels right for a Tuesday."
-    },
-    {
-      "index": 15,
-      "start_time": "2026-06-02T19:00:00-07:00",
-      "end_time": "2026-06-02T20:15:00-07:00",
-      "activity": "Casual leisure: gaming or browsing tech videos",
-      "activity_type": "leisure",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "A light evening hobby helps him recharge without adding travel."
-    },
-    {
-      "index": 16,
-      "start_time": "2026-06-02T20:15:00-07:00",
-      "end_time": "2026-06-02T21:00:00-07:00",
-      "activity": "Plan tomorrow’s priorities and tidy up",
-      "activity_type": "home",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Quick prep reduces morning friction and keeps the schedule smooth."
-    },
-    {
-      "index": 17,
-      "start_time": "2026-06-02T21:00:00-07:00",
-      "end_time": "2026-06-02T23:20:00-07:00",
-      "activity": "Wind down: read, relax, and get ready for bed",
-      "activity_type": "leisure",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "A calm wind-down period fits a sustainable routine after a full first simulation day."
-    },
-    {
-      "index": 18,
-      "start_time": "2026-06-02T23:20:00-07:00",
-      "end_time": "2026-06-02T23:30:00-07:00",
-      "activity": "Sleep",
+      "start_time": "2026-06-05T23:45:00-07:00",
+      "end_time": "2026-06-06T07:30:00-07:00",
+      "activity": "Collapses into bed, sleeps through the early morning.",
       "activity_type": "sleep",
-      "location_name": "Home (Downtown Redmond)",
-      "reasoning": "Go to sleep before 23:30 to keep the day within the required calendar window."
+      "location_name": "Home (Capitol Hill)",
+      "reasoning": "Jesse crashes hard after a full, social day; 7 hours 45 minutes of sleep fits his late-sleeping pattern. Sleep beat spans overnight as required."
     }
   ]
 }

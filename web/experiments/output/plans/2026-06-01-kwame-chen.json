@@ -1,0 +1,191 @@
+{
+  "sim_date": "2026-06-01",
+  "day_number": 1,
+  "agent_id": "673ce9f7-57e1-4901-8d96-62335428ff1c",
+  "agent_name": "Kwame Chen",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-01T14:30:00.000Z",
+      "end_time": "2026-06-01T14:51:20.000Z",
+      "activity": "Wake up, shower, coffee at home.",
+      "activity_type": "home",
+      "location_name": "Home (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame starts the day well-rested with full energy; a quick 30-min morning routine sets a relaxed tone for the sunny Monday ahead."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-01T14:51:20.000Z",
+      "end_time": "2026-06-01T15:23:20.000Z",
+      "activity": "Walk to work through Georgetown neighborhood.",
+      "activity_type": "commute",
+      "location_name": "Georgetown, Seattle",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Both home and workplace are in Georgetown; a short 10–15 min walk on a sunny morning fits his spontaneous, neighborhood-focused lifestyle. Leaving early gives buffer before the 11am FIFA match."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-01T15:23:20.000Z",
+      "end_time": "2026-06-01T16:52:13.333Z",
+      "activity": "Design work and team standup at the office.",
+      "activity_type": "work",
+      "location_name": "SaaS Company Office (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame settles into focused design work before the 11am FIFA match; he's energized and this gives him a productive 2-hour block before his planned distraction."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-01T16:52:13.333Z",
+      "end_time": "2026-06-01T17:06:26.666Z",
+      "activity": "Walk to nearby bar to catch USA vs Wales FIFA match.",
+      "activity_type": "commute",
+      "location_name": "Monkey Loft (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame is spontaneous and easily distracted; the sunny weather and early-opening bar for the 11am match are irresistible. A 20-min walk from Georgetown office is feasible."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-01T17:06:26.666Z",
+      "end_time": "2026-06-01T18:24:39.999Z",
+      "activity": "Watch USA vs Wales FIFA match, grab lunch and drinks.",
+      "activity_type": "social",
+      "location_name": "Monkey Loft (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame values close friends over big crowds; a local bar in his neighborhood lets him enjoy the match without the downtown chaos. Covers lunch and the full 90-min match."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-01T18:24:39.999Z",
+      "end_time": "2026-06-01T18:38:53.332Z",
+      "activity": "Walk back to office.",
+      "activity_type": "commute",
+      "location_name": "SaaS Company Office (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame heads back to finish the work day; a 20-min walk in sunshine is energizing after the match excitement."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-01T18:38:53.332Z",
+      "end_time": "2026-06-01T21:36:39.999Z",
+      "activity": "Focused design work and project reviews.",
+      "activity_type": "work",
+      "location_name": "SaaS Company Office (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame re-engages after lunch; a solid 4-hour afternoon block shows commitment despite the morning distraction. Light Rail closure between Westlake and U-District doesn't affect Georgetown commute."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-01T21:36:39.999Z",
+      "end_time": "2026-06-01T21:50:53.332Z",
+      "activity": "Walk home from work.",
+      "activity_type": "commute",
+      "location_name": "Home (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame leaves work at a reasonable hour on a sunny evening; the 20-min walk home through Georgetown is a natural decompression before evening leisure time."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-01T21:50:53.332Z",
+      "end_time": "2026-06-01T22:19:19.999Z",
+      "activity": "Grab ingredients and cook dinner at home.",
+      "activity_type": "meal",
+      "location_name": "Home (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame values routine and expense tracking; cooking at home on a sunny evening aligns with his meticulous nature and keeps the day grounded in his neighborhood."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-01T22:19:19.999Z",
+      "end_time": "2026-06-02T00:27:19.999Z",
+      "activity": "Eat dinner and browse vinyl records online, update expense spreadsheet.; Play chess online and wind down.",
+      "activity_type": "leisure",
+      "location_name": "Home (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame unwinds with his hobbies—vinyl collecting and spreadsheet management—after a full day; this quiet evening leisure is typical for someone who values close friends over crowds."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-02T00:27:19.999Z",
+      "end_time": "2026-06-02T06:29:59.999Z",
+      "activity": "Sleep.",
+      "activity_type": "sleep",
+      "location_name": "Home (Georgetown, Seattle)",
+      "location": [
+        -122.32959,
+        47.548008
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Kwame gets a solid 8.5 hours of rest after a full day of work, spontaneous fun, and home leisure; the overnight beat ends early enough to show a complete night's sleep."
+    }
+  ],
+  "diary": "Woke up to perfect weather and couldn't resist the pull of the World Cup. Had my usual coffee routine, then headed to the office for standup—nothing urgent, just the typical Monday grind. But around 9:50, I realized USA vs Wales was kicking off, and honestly, the thought of sitting in the office while everyone downtown was at the bars felt ridiculous. Slipped over to Monkey Loft, grabbed a beer and some food, and caught the first half with a decent crowd. The energy was infectious, even if the match was pretty tense. Got back to work refreshed, knocked through some design reviews until mid-afternoon. Cooked a simple dinner at home, then lost an hour scrolling vinyl listings online—nothing I could afford, but it's a good escape. Played some chess, felt my shoulders relax for the first time all day.",
+  "thought_process": "I almost didn't go to the bar. Part of me wanted to stay professional, power through the morning at my desk. But the combination of perfect weather, the World Cup energy, and the fact that my team wasn't underwater with deadlines made me realize I was being unnecessarily rigid. Georgetown's walkable enough that the detour cost me nothing but gained me a real break. The Light Rail closure didn't matter since I stay local anyway. By afternoon, I felt recharged—sometimes you need permission to blur the line between work and living. The evening at home was intentional decompression; I needed quiet after the morning's social buzz.",
+  "end_state": {
+    "location": [
+      -122.32959,
+      47.548008
+    ],
+    "energy": 45,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June, high of 74F. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT — bars downtown open early. Light Rail closed between Westlake and University District 9am-3pm for maintenance.",
+  "generated_at": "2026-05-30T18:05:50.436Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 390,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 4966,
+    "mapbox_ms": 0,
+    "total_ms": 16173
+  },
+  "_ok": true
+}

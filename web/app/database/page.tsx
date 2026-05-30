@@ -68,6 +68,7 @@ export default function DatabasePage() {
       .from("agents")
       .select("*", { count: "exact" })
       .order("created_at", { ascending: false })
+      .order("id", { ascending: false })
       .range(from, from + PAGE_SIZE - 1)
     if (query) {
       const pattern = `%${query.replace(/[%_]/g, (m) => `\\${m}`)}%`

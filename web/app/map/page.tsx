@@ -22,6 +22,7 @@ import {
   Crosshair,
   Cube,
   Fire,
+  MagnifyingGlass,
   Pause,
   Play,
   Snowflake,
@@ -413,6 +414,12 @@ function DayReplay({
   const [timelineOpen, setTimelineOpen] = useState(false)
   const [eventOpen, setEventOpen] = useState(false)
 
+  // Find-an-agent search box (top bar).
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [query, setQuery] = useState("")
+  const [activeMatch, setActiveMatch] = useState(0)
+  const searchBoxRef = useRef<HTMLDivElement | null>(null)
+  const searchInputRef = useRef<HTMLInputElement | null>(null)
   const worldEvent = day.plans[0]?.world_event_prompt ?? "—"
   const weather = useMemo(() => parseWeather(worldEvent), [worldEvent])
 
@@ -815,6 +822,63 @@ function DayReplay({
     })
   }, [selectedPlan, dayStartMs])
 
+  // Select an agent by id (used by the find box): flag it, fly the camera to
+  // its current position, and start following — mirrors clicking its dot.
+  const selectAgent = useCallback((id: string) => {
+    setSelectedId(id)
+    followingRef.current = true
+    setFollowing(true)
+    setIs3D(true)
+    const map = mapRef.current
+    const plan = dayRef.current.plans.find((p) => p.agent_id === id)
+    if (map && mapLoadedRef.current && plan) {
+      const cur = resolveCursor(plan, dayStartRef.current, offsetRef.current)
+      map.flyTo({
+        center: cur.pos,
+        zoom: 16.5,
+        pitch: 55,
+        speed: 1.2,
+        curve: 1.4,
+        essential: true,
+      })
+    }
+    setSearchOpen(false)
+    setQuery("")
+  }, [])
+
+  // Agents on the current day matching the search query (by name), ranked so
+  // prefix matches come first. Capped to keep the dropdown small.
+  const matches = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    if (!q) return [] as Plan[]
+    return day.plans
+      .filter((p) => p.agent_name.toLowerCase().includes(q))
+      .sort((a, b) => {
+        const ap = a.agent_name.toLowerCase().startsWith(q) ? 0 : 1
+        const bp = b.agent_name.toLowerCase().startsWith(q) ? 0 : 1
+        if (ap !== bp) return ap - bp
+        return a.agent_name.localeCompare(b.agent_name)
+      })
+      .slice(0, 8)
+  }, [query, day])
+
+  // Keep the highlighted row reset as the query changes.
+  useEffect(() => {
+    setActiveMatch(0)
+  }, [query])
+
+  // Close the find dropdown on outside click.
+  useEffect(() => {
+    if (!searchOpen) return
+    const onDown = (e: MouseEvent) => {
+      if (!searchBoxRef.current?.contains(e.target as Node)) {
+        setSearchOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", onDown)
+    return () => document.removeEventListener("mousedown", onDown)
+  }, [searchOpen])
+
   const selBeat = selectedPlan && selInfo ? selectedPlan.beats[selInfo.idx] : null
 
   return (
@@ -859,6 +923,98 @@ function DayReplay({
           </div>
         </div>
         <div className="flex items-center gap-3">
+          <div ref={searchBoxRef} className="relative">
+            {searchOpen ? (
+              <div className="relative">
+                <MagnifyingGlass
+                  size={12}
+                  weight="bold"
+                  className="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground/70"
+                />
+                <input
+                  ref={searchInputRef}
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  autoFocus
+                  placeholder="Find agent…"
+                  className="h-6 w-48 rounded-sm border border-border/40 bg-[#08080b] pl-6 pr-6 font-mono text-[11px] normal-case tracking-normal text-foreground placeholder:text-muted-foreground/50 focus:border-amber-400/60 focus:outline-none"
+                  onKeyDown={(e) => {
+                    if (e.key === "ArrowDown") {
+                      e.preventDefault()
+                      setActiveMatch((i) => Math.min(matches.length - 1, i + 1))
+                    } else if (e.key === "ArrowUp") {
+                      e.preventDefault()
+                      setActiveMatch((i) => Math.max(0, i - 1))
+                    } else if (e.key === "Enter") {
+                      e.preventDefault()
+                      const pick = matches[activeMatch]
+                      if (pick) selectAgent(pick.agent_id)
+                    } else if (e.key === "Escape") {
+                      e.preventDefault()
+                      setSearchOpen(false)
+                      setQuery("")
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchOpen(false)
+                    setQuery("")
+                  }}
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 text-muted-foreground/70 transition hover:text-foreground"
+                  aria-label="Close search"
+                >
+                  <X size={11} weight="bold" />
+                </button>
+                {query.trim() && (
+                  <div className="absolute left-0 top-7 z-20 max-h-72 w-56 overflow-y-auto rounded-md border border-border/40 bg-[#0a0a0d]/95 py-1 shadow-lg backdrop-blur">
+                    {matches.length === 0 ? (
+                      <div className="px-2.5 py-1.5 text-[10px] normal-case tracking-normal text-muted-foreground/60">
+                        No agents found
+                      </div>
+                    ) : (
+                      matches.map((p, i) => (
+                        <button
+                          key={p.agent_id}
+                          type="button"
+                          onMouseEnter={() => setActiveMatch(i)}
+                          onClick={() => selectAgent(p.agent_id)}
+                          className={cn(
+                            "flex w-full items-center gap-2 px-2.5 py-1.5 text-left transition",
+                            i === activeMatch
+                              ? "bg-secondary/60"
+                              : "hover:bg-secondary/30",
+                          )}
+                        >
+                          <span
+                            className="size-2 shrink-0 rounded-full"
+                            style={{
+                              backgroundColor: colorForAgent(p.agent_id),
+                            }}
+                          />
+                          <span className="truncate font-mono text-[11px] normal-case tracking-normal text-foreground">
+                            {p.agent_name}
+                          </span>
+                        </button>
+                      ))
+                    )}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setSearchOpen(true)}
+                className="flex h-6 items-center gap-1.5 rounded-sm border border-border/40 bg-[#08080b] px-2 text-[9px] uppercase tracking-[0.18em] text-muted-foreground transition hover:border-amber-400/40 hover:text-foreground"
+                aria-label="Find agent"
+              >
+                <MagnifyingGlass size={11} weight="bold" />
+                Find
+              </button>
+            )}
+          </div>
           <span className="font-mono tabular-nums normal-case tracking-normal text-foreground/90">
             {fmtClockFromOffset(offsetMs, dayStartMs)}
           </span>

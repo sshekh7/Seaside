@@ -256,7 +256,7 @@ export default function ExperimentsPage() {
   const [error, setError] = useState<string | null>(null)
   const [style, setStyle] = useState<StyleKey>("Dark")
   const [is3D, setIs3D] = useState(false)
-  const [timelineOpen, setTimelineOpen] = useState(true)
+  const [timelineOpen, setTimelineOpen] = useState(false)
   const [showPaths, setShowPaths] = useState(false)
   const [following, setFollowing] = useState(false)
   const [slowTransit, setSlowTransit] = useState(true)
@@ -456,6 +456,20 @@ function PlanReplay(props: {
         setIs3D(true)
       })
       fitToPlan(map, plan)
+      // Apply the initial path visibility (paths default to off). The
+      // showPaths effect bails while the map is still loading, so without
+      // this the freshly-installed routes/markers would stay visible.
+      if (map.getLayer("routes-line")) {
+        map.setLayoutProperty(
+          "routes-line",
+          "visibility",
+          showPaths ? "visible" : "none",
+        )
+      }
+      for (const m of markersRef.current) {
+        const el = m.getElement()
+        if (el) el.style.display = showPaths ? "" : "none"
+      }
       // Beat-marker layer click (handled by DOM markers above, but also
       // listen for clicks on the cursor dot to toggle follow).
       map.on("click", "cursor-dot", () => {
@@ -1746,14 +1760,20 @@ function installMarkers(
   plan.beats.forEach((beat) => {
     const color =
       ACTIVITY_COLORS[beat.activity_type] ?? ACTIVITY_COLORS.other
+    // Outer element is owned by mapbox for positioning (it writes an inline
+    // `transform: translate(...)` here). We must NOT put scale/transition
+    // classes on it or hover fights the positioning transform and the marker
+    // jumps. All visual styling + hover lives on an inner child instead.
     const el = document.createElement("div")
-    el.className =
+    const inner = document.createElement("div")
+    inner.className =
       "flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border-2 text-[10px] font-bold text-zinc-950 transition-transform hover:scale-110"
-    el.style.backgroundColor = color
-    el.style.borderColor = "#0a0a0d"
-    el.style.boxShadow = `0 0 0 1px ${color}66, 0 0 8px 0 ${color}55`
-    el.textContent = String(beat.index + 1)
-    el.title = `${beat.index + 1}. ${beat.activity_type} — ${beat.location_name}`
+    inner.style.backgroundColor = color
+    inner.style.borderColor = "#0a0a0d"
+    inner.style.boxShadow = `0 0 0 1px ${color}66, 0 0 8px 0 ${color}55`
+    inner.textContent = String(beat.index + 1)
+    inner.title = `${beat.index + 1}. ${beat.activity_type} — ${beat.location_name}`
+    el.appendChild(inner)
     el.addEventListener("click", (e) => {
       e.stopPropagation()
       onClick(beat.index)

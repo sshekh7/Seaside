@@ -1,0 +1,1273 @@
+{
+  "sim_date": "2026-06-02",
+  "day_number": 2,
+  "agent_id": "70f4f45e-5845-44ca-8dd6-27338617adeb",
+  "agent_name": "Abigail Novak",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-02T13:45:00.000Z",
+      "end_time": "2026-06-02T14:05:24.000Z",
+      "activity": "Wake up, coffee, check weather and hive status from home",
+      "activity_type": "home",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Early riser habit, especially in early summer; drizzly forecast means she'll want to assess hive conditions before heading out. Energy 45/100 yesterday suggests a moderate pace today."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-02T14:05:24.000Z",
+      "end_time": "2026-06-02T14:25:48.000Z",
+      "activity": "Walk to the backyard hives and do morning inspection and feeding",
+      "activity_type": "exercise",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Part of daily routine; rain is light enough for a quick hive check, and it grounds her before the day. She tends to prioritize bee welfare over weather."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-02T14:43:48.000Z",
+      "end_time": "2026-06-02T15:11:00.000Z",
+      "activity": "Commute to First Hill workplace via bus, avoiding Light Rail mess",
+      "activity_type": "commute",
+      "location_name": "First Hill, Seattle",
+      "location": [
+        -122.32083,
+        47.614085
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.302581,
+            47.616946
+          ],
+          [
+            -122.302577,
+            47.617046
+          ],
+          [
+            -122.302695,
+            47.617041
+          ],
+          [
+            -122.302718,
+            47.617032
+          ],
+          [
+            -122.302738,
+            47.617036
+          ],
+          [
+            -122.30277,
+            47.617036
+          ],
+          [
+            -122.303445,
+            47.617038
+          ],
+          [
+            -122.303467,
+            47.617047
+          ],
+          [
+            -122.303479,
+            47.617056
+          ],
+          [
+            -122.303549,
+            47.617049
+          ],
+          [
+            -122.303608,
+            47.617042
+          ],
+          [
+            -122.303629,
+            47.617035
+          ],
+          [
+            -122.303663,
+            47.617039
+          ],
+          [
+            -122.303674,
+            47.617039
+          ],
+          [
+            -122.304751,
+            47.617041
+          ],
+          [
+            -122.30481,
+            47.61704
+          ],
+          [
+            -122.304881,
+            47.617041
+          ],
+          [
+            -122.304917,
+            47.617041
+          ],
+          [
+            -122.304968,
+            47.617042
+          ],
+          [
+            -122.304977,
+            47.617042
+          ],
+          [
+            -122.305708,
+            47.617045
+          ],
+          [
+            -122.306038,
+            47.617046
+          ],
+          [
+            -122.306073,
+            47.617054
+          ],
+          [
+            -122.306089,
+            47.617054
+          ],
+          [
+            -122.306112,
+            47.617054
+          ],
+          [
+            -122.306159,
+            47.617054
+          ],
+          [
+            -122.306197,
+            47.617054
+          ],
+          [
+            -122.306218,
+            47.617054
+          ],
+          [
+            -122.306282,
+            47.617054
+          ],
+          [
+            -122.306445,
+            47.617054
+          ],
+          [
+            -122.306568,
+            47.617003
+          ],
+          [
+            -122.306808,
+            47.616903
+          ],
+          [
+            -122.307311,
+            47.616693
+          ],
+          [
+            -122.307319,
+            47.616686
+          ],
+          [
+            -122.30732,
+            47.616665
+          ],
+          [
+            -122.307344,
+            47.616665
+          ],
+          [
+            -122.30742,
+            47.616644
+          ],
+          [
+            -122.307561,
+            47.616606
+          ],
+          [
+            -122.307561,
+            47.616589
+          ],
+          [
+            -122.308741,
+            47.616094
+          ],
+          [
+            -122.308745,
+            47.616092
+          ],
+          [
+            -122.308783,
+            47.616076
+          ],
+          [
+            -122.308805,
+            47.616067
+          ],
+          [
+            -122.308876,
+            47.616039
+          ],
+          [
+            -122.308952,
+            47.616009
+          ],
+          [
+            -122.308979,
+            47.61599
+          ],
+          [
+            -122.308991,
+            47.615992
+          ],
+          [
+            -122.309887,
+            47.615624
+          ],
+          [
+            -122.310041,
+            47.615556
+          ],
+          [
+            -122.310052,
+            47.615551
+          ],
+          [
+            -122.310059,
+            47.615543
+          ],
+          [
+            -122.31006,
+            47.615513
+          ],
+          [
+            -122.310122,
+            47.615513
+          ],
+          [
+            -122.310145,
+            47.615504
+          ],
+          [
+            -122.310294,
+            47.615446
+          ],
+          [
+            -122.310298,
+            47.615434
+          ],
+          [
+            -122.310327,
+            47.615439
+          ],
+          [
+            -122.310335,
+            47.615438
+          ],
+          [
+            -122.310975,
+            47.615166
+          ],
+          [
+            -122.31099,
+            47.615167
+          ],
+          [
+            -122.311094,
+            47.615122
+          ],
+          [
+            -122.31136,
+            47.615007
+          ],
+          [
+            -122.31137,
+            47.615026
+          ],
+          [
+            -122.311414,
+            47.615068
+          ],
+          [
+            -122.31147,
+            47.615119
+          ],
+          [
+            -122.311489,
+            47.615143
+          ],
+          [
+            -122.312014,
+            47.61492
+          ],
+          [
+            -122.312667,
+            47.614652
+          ],
+          [
+            -122.312701,
+            47.614651
+          ],
+          [
+            -122.312798,
+            47.614602
+          ],
+          [
+            -122.312859,
+            47.614571
+          ],
+          [
+            -122.312904,
+            47.614571
+          ],
+          [
+            -122.312904,
+            47.614557
+          ],
+          [
+            -122.312913,
+            47.614547
+          ],
+          [
+            -122.313242,
+            47.614408
+          ],
+          [
+            -122.313246,
+            47.6144
+          ],
+          [
+            -122.31353,
+            47.614283
+          ],
+          [
+            -122.313549,
+            47.614275
+          ],
+          [
+            -122.313599,
+            47.614255
+          ],
+          [
+            -122.313665,
+            47.614228
+          ],
+          [
+            -122.313683,
+            47.614221
+          ],
+          [
+            -122.313701,
+            47.614217
+          ],
+          [
+            -122.31375,
+            47.614217
+          ],
+          [
+            -122.313872,
+            47.614217
+          ],
+          [
+            -122.31411,
+            47.614217
+          ],
+          [
+            -122.314118,
+            47.61422
+          ],
+          [
+            -122.314123,
+            47.614223
+          ],
+          [
+            -122.314126,
+            47.614227
+          ],
+          [
+            -122.314128,
+            47.614232
+          ],
+          [
+            -122.314167,
+            47.61423
+          ],
+          [
+            -122.314241,
+            47.614233
+          ],
+          [
+            -122.314324,
+            47.614235
+          ],
+          [
+            -122.314355,
+            47.614247
+          ],
+          [
+            -122.314355,
+            47.614232
+          ],
+          [
+            -122.314359,
+            47.614226
+          ],
+          [
+            -122.314369,
+            47.61422
+          ],
+          [
+            -122.314383,
+            47.614218
+          ],
+          [
+            -122.3144,
+            47.614218
+          ],
+          [
+            -122.314841,
+            47.614217
+          ],
+          [
+            -122.315439,
+            47.614216
+          ],
+          [
+            -122.315493,
+            47.61421
+          ],
+          [
+            -122.31555,
+            47.61421
+          ],
+          [
+            -122.315607,
+            47.61421
+          ],
+          [
+            -122.315644,
+            47.61421
+          ],
+          [
+            -122.316702,
+            47.614206
+          ],
+          [
+            -122.316707,
+            47.614209
+          ],
+          [
+            -122.316735,
+            47.614188
+          ],
+          [
+            -122.31682,
+            47.614184
+          ],
+          [
+            -122.316999,
+            47.614178
+          ],
+          [
+            -122.316999,
+            47.614196
+          ],
+          [
+            -122.318028,
+            47.61419
+          ],
+          [
+            -122.318038,
+            47.614193
+          ],
+          [
+            -122.318043,
+            47.6142
+          ],
+          [
+            -122.318099,
+            47.6142
+          ],
+          [
+            -122.318146,
+            47.614199
+          ],
+          [
+            -122.318202,
+            47.614199
+          ],
+          [
+            -122.318264,
+            47.614199
+          ],
+          [
+            -122.318269,
+            47.614189
+          ],
+          [
+            -122.318283,
+            47.614185
+          ],
+          [
+            -122.318927,
+            47.614181
+          ],
+          [
+            -122.319321,
+            47.614179
+          ],
+          [
+            -122.319344,
+            47.614179
+          ],
+          [
+            -122.319351,
+            47.614183
+          ],
+          [
+            -122.319397,
+            47.614182
+          ],
+          [
+            -122.319466,
+            47.614182
+          ],
+          [
+            -122.319531,
+            47.614182
+          ],
+          [
+            -122.319572,
+            47.614182
+          ],
+          [
+            -122.319585,
+            47.614178
+          ],
+          [
+            -122.3206,
+            47.614174
+          ],
+          [
+            -122.320599,
+            47.61415
+          ],
+          [
+            -122.320616,
+            47.614091
+          ],
+          [
+            -122.320716,
+            47.614091
+          ],
+          [
+            -122.320782,
+            47.61409
+          ],
+          [
+            -122.320828,
+            47.61409
+          ]
+        ],
+        "duration_minutes": 18
+      },
+      "reasoning": "She established a bus-commute preference yesterday due to Light Rail issues; SR-520 closure won't affect her Seattle-to-Seattle route. Rain suggests she'll stick to transit."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-02T15:11:00.000Z",
+      "end_time": "2026-06-02T17:57:36.000Z",
+      "activity": "Tend rooftop urban farm beds, water management during rain, check bee-friendly plantings",
+      "activity_type": "work",
+      "location_name": "First Hill, Seattle",
+      "location": [
+        -122.32083,
+        47.614085
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Core job; drizzly weather means careful watering/drainage work and checking that hive placements are secure. Rain window ends at 2pm, so she's working through the wet period."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-02T17:57:36.000Z",
+      "end_time": "2026-06-02T18:18:00.000Z",
+      "activity": "Grab lunch from a nearby food truck or café",
+      "activity_type": "meal",
+      "location_name": "First Hill, Seattle",
+      "location": [
+        -122.32083,
+        47.614085
+      ],
+      "travel_from_prev": null,
+      "reasoning": "She knows every food truck rotation; even in drizzle, she'll seek out a reliable lunch spot near work. Rain is easing by early afternoon."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-02T18:18:00.000Z",
+      "end_time": "2026-06-02T20:51:00.000Z",
+      "activity": "Afternoon farm work and administrative tasks; rain has cleared",
+      "activity_type": "work",
+      "location_name": "First Hill, Seattle",
+      "location": [
+        -122.32083,
+        47.614085
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Afternoon shift after lunch; rain clears by 2pm, so she can do outdoor planting or bed maintenance. She's competitive and thorough about her work."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-02T21:09:00.000Z",
+      "end_time": "2026-06-02T21:36:12.000Z",
+      "activity": "Commute home via bus",
+      "activity_type": "commute",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": {
+        "mode": "walking",
+        "polyline": [
+          [
+            -122.320828,
+            47.61409
+          ],
+          [
+            -122.320782,
+            47.61409
+          ],
+          [
+            -122.320716,
+            47.614091
+          ],
+          [
+            -122.320616,
+            47.614091
+          ],
+          [
+            -122.320599,
+            47.61415
+          ],
+          [
+            -122.3206,
+            47.614174
+          ],
+          [
+            -122.319585,
+            47.614178
+          ],
+          [
+            -122.319572,
+            47.614182
+          ],
+          [
+            -122.319531,
+            47.614182
+          ],
+          [
+            -122.319466,
+            47.614182
+          ],
+          [
+            -122.319397,
+            47.614182
+          ],
+          [
+            -122.319351,
+            47.614183
+          ],
+          [
+            -122.319344,
+            47.614179
+          ],
+          [
+            -122.319321,
+            47.614179
+          ],
+          [
+            -122.318927,
+            47.614181
+          ],
+          [
+            -122.318283,
+            47.614185
+          ],
+          [
+            -122.318269,
+            47.614189
+          ],
+          [
+            -122.318264,
+            47.614199
+          ],
+          [
+            -122.318202,
+            47.614199
+          ],
+          [
+            -122.318146,
+            47.614199
+          ],
+          [
+            -122.318099,
+            47.6142
+          ],
+          [
+            -122.318043,
+            47.6142
+          ],
+          [
+            -122.318038,
+            47.614193
+          ],
+          [
+            -122.318028,
+            47.61419
+          ],
+          [
+            -122.316999,
+            47.614196
+          ],
+          [
+            -122.316999,
+            47.614178
+          ],
+          [
+            -122.31682,
+            47.614184
+          ],
+          [
+            -122.316735,
+            47.614188
+          ],
+          [
+            -122.316707,
+            47.614209
+          ],
+          [
+            -122.316702,
+            47.614206
+          ],
+          [
+            -122.315644,
+            47.61421
+          ],
+          [
+            -122.315607,
+            47.61421
+          ],
+          [
+            -122.31555,
+            47.61421
+          ],
+          [
+            -122.315493,
+            47.61421
+          ],
+          [
+            -122.315439,
+            47.614216
+          ],
+          [
+            -122.314841,
+            47.614217
+          ],
+          [
+            -122.3144,
+            47.614218
+          ],
+          [
+            -122.314383,
+            47.614218
+          ],
+          [
+            -122.314369,
+            47.61422
+          ],
+          [
+            -122.314359,
+            47.614226
+          ],
+          [
+            -122.314355,
+            47.614232
+          ],
+          [
+            -122.314355,
+            47.614247
+          ],
+          [
+            -122.314324,
+            47.614235
+          ],
+          [
+            -122.314241,
+            47.614233
+          ],
+          [
+            -122.314167,
+            47.61423
+          ],
+          [
+            -122.314128,
+            47.614232
+          ],
+          [
+            -122.314126,
+            47.614227
+          ],
+          [
+            -122.314123,
+            47.614223
+          ],
+          [
+            -122.314118,
+            47.61422
+          ],
+          [
+            -122.31411,
+            47.614217
+          ],
+          [
+            -122.313872,
+            47.614217
+          ],
+          [
+            -122.31375,
+            47.614217
+          ],
+          [
+            -122.313701,
+            47.614217
+          ],
+          [
+            -122.313683,
+            47.614221
+          ],
+          [
+            -122.313665,
+            47.614228
+          ],
+          [
+            -122.313599,
+            47.614255
+          ],
+          [
+            -122.313549,
+            47.614275
+          ],
+          [
+            -122.31353,
+            47.614283
+          ],
+          [
+            -122.313246,
+            47.6144
+          ],
+          [
+            -122.313242,
+            47.614408
+          ],
+          [
+            -122.312913,
+            47.614547
+          ],
+          [
+            -122.312904,
+            47.614557
+          ],
+          [
+            -122.312904,
+            47.614571
+          ],
+          [
+            -122.312859,
+            47.614571
+          ],
+          [
+            -122.312798,
+            47.614602
+          ],
+          [
+            -122.312701,
+            47.614651
+          ],
+          [
+            -122.312667,
+            47.614652
+          ],
+          [
+            -122.312014,
+            47.61492
+          ],
+          [
+            -122.311489,
+            47.615143
+          ],
+          [
+            -122.31147,
+            47.615119
+          ],
+          [
+            -122.311414,
+            47.615068
+          ],
+          [
+            -122.31137,
+            47.615026
+          ],
+          [
+            -122.31136,
+            47.615007
+          ],
+          [
+            -122.311094,
+            47.615122
+          ],
+          [
+            -122.31099,
+            47.615167
+          ],
+          [
+            -122.310975,
+            47.615166
+          ],
+          [
+            -122.310335,
+            47.615438
+          ],
+          [
+            -122.310327,
+            47.615439
+          ],
+          [
+            -122.310298,
+            47.615434
+          ],
+          [
+            -122.310294,
+            47.615446
+          ],
+          [
+            -122.310145,
+            47.615504
+          ],
+          [
+            -122.310122,
+            47.615513
+          ],
+          [
+            -122.31006,
+            47.615513
+          ],
+          [
+            -122.310059,
+            47.615543
+          ],
+          [
+            -122.310052,
+            47.615551
+          ],
+          [
+            -122.310041,
+            47.615556
+          ],
+          [
+            -122.309887,
+            47.615624
+          ],
+          [
+            -122.308991,
+            47.615992
+          ],
+          [
+            -122.308979,
+            47.61599
+          ],
+          [
+            -122.308952,
+            47.616009
+          ],
+          [
+            -122.308876,
+            47.616039
+          ],
+          [
+            -122.308805,
+            47.616067
+          ],
+          [
+            -122.308783,
+            47.616076
+          ],
+          [
+            -122.308745,
+            47.616092
+          ],
+          [
+            -122.308741,
+            47.616094
+          ],
+          [
+            -122.307561,
+            47.616589
+          ],
+          [
+            -122.307561,
+            47.616606
+          ],
+          [
+            -122.30742,
+            47.616644
+          ],
+          [
+            -122.307344,
+            47.616665
+          ],
+          [
+            -122.30732,
+            47.616665
+          ],
+          [
+            -122.307319,
+            47.616686
+          ],
+          [
+            -122.307311,
+            47.616693
+          ],
+          [
+            -122.306808,
+            47.616903
+          ],
+          [
+            -122.306568,
+            47.617003
+          ],
+          [
+            -122.306445,
+            47.617054
+          ],
+          [
+            -122.306282,
+            47.617054
+          ],
+          [
+            -122.306218,
+            47.617054
+          ],
+          [
+            -122.306197,
+            47.617054
+          ],
+          [
+            -122.306159,
+            47.617054
+          ],
+          [
+            -122.306112,
+            47.617054
+          ],
+          [
+            -122.306089,
+            47.617054
+          ],
+          [
+            -122.306073,
+            47.617054
+          ],
+          [
+            -122.306038,
+            47.617046
+          ],
+          [
+            -122.305708,
+            47.617045
+          ],
+          [
+            -122.304977,
+            47.617042
+          ],
+          [
+            -122.304968,
+            47.617042
+          ],
+          [
+            -122.304917,
+            47.617041
+          ],
+          [
+            -122.304881,
+            47.617041
+          ],
+          [
+            -122.30481,
+            47.61704
+          ],
+          [
+            -122.304751,
+            47.617041
+          ],
+          [
+            -122.303674,
+            47.617039
+          ],
+          [
+            -122.303663,
+            47.617039
+          ],
+          [
+            -122.303629,
+            47.617035
+          ],
+          [
+            -122.303608,
+            47.617042
+          ],
+          [
+            -122.303549,
+            47.617049
+          ],
+          [
+            -122.303479,
+            47.617056
+          ],
+          [
+            -122.303467,
+            47.617047
+          ],
+          [
+            -122.303445,
+            47.617038
+          ],
+          [
+            -122.30277,
+            47.617036
+          ],
+          [
+            -122.302738,
+            47.617036
+          ],
+          [
+            -122.302718,
+            47.617032
+          ],
+          [
+            -122.302695,
+            47.617041
+          ],
+          [
+            -122.302577,
+            47.617046
+          ],
+          [
+            -122.302581,
+            47.616946
+          ]
+        ],
+        "duration_minutes": 18
+      },
+      "reasoning": "End of work shift; bus avoids any lingering traffic. She'll want to be home before evening to tend hives and prep dinner."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-02T21:36:12.000Z",
+      "end_time": "2026-06-02T22:10:12.000Z",
+      "activity": "Evening hive inspection and feeding, check on bees after the drizzly day",
+      "activity_type": "exercise",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Daily ritual; post-rain hive check is important to ensure colony health. Grounding activity that she values."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-02T22:10:12.000Z",
+      "end_time": "2026-06-02T23:01:12.000Z",
+      "activity": "Prepare and eat dinner at home, using fresh ingredients (likely yesterday's heirloom tomatoes)",
+      "activity_type": "meal",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": null,
+      "reasoning": "She values grounding rituals; cooking with her own produce or market finds is part of her daily rhythm. Moderate energy suggests a quiet evening in."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-02T23:01:12.000Z",
+      "end_time": "2026-06-03T00:43:12.000Z",
+      "activity": "Relax at home, board games with close friends or reading",
+      "activity_type": "leisure",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Values close friends over crowds; a quiet Tuesday after a drizzly day suggests low-key leisure at home rather than heading out. Fits her gregarious-but-selective nature."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-03T00:43:12.000Z",
+      "end_time": "2026-06-03T13:00:00.000Z",
+      "activity": "Sleep",
+      "activity_type": "sleep",
+      "location_name": "Home (Fremont)",
+      "location": [
+        -122.302581,
+        47.616946
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Wind down and sleep; 8.5 hours of rest prepares her for another early-riser day tending bees and the farm."
+    }
+  ],
+  "diary": "Woke to that familiar grey Seattle drizzle—the kind that makes you want to stay wrapped in your coffee mug. Checked the rooftop hives from the kitchen window first; they seemed settled despite the rain. The backyard girls looked fine too during morning rounds, though I kept it brief. The bus ride downtown was mercifully quiet; everyone seemed resigned to the weather. At the First Hill beds, the rain actually helped—less hand-watering, more time fussing over the pollinator strips. Grabbed a mediocre burrito around noon and watched the clouds thin out. By afternoon the sun was winning. Came home to find the bees had weathered the day beautifully. Made a simple dinner with yesterday's tomatoes, their taste still bright and alive. Played Ticket to Ride with Maya and Chen later; we laughed way too hard at some terrible strategy moves. Feeling settled. Tired, but the good kind.",
+  "thought_process": "The grey morning almost pulled me into a sluggish mood, but routine saved me—inspecting the hives grounded me before everything else. I chose the bus to avoid the bridge chaos; everyone was talking about SR-520, and I figured I'd spend my energy on the farm instead of traffic stress. During work, I let the rain guide my priorities: less watering urgency meant I could actually sit with the plants and think about next month's plantings. The afternoon shift felt lighter once the clouds broke. Coming home, I was conscious of wanting connection after a damp, quiet day—friends, games, laughter. It wasn't planned, but it felt necessary. The tomatoes tasted like summer promise, which I needed today.",
+  "end_state": {
+    "location": [
+      -122.302581,
+      47.616946
+    ],
+    "energy": 45,
+    "notes": ""
+  },
+  "world_event_prompt": "Grey, drizzly Tuesday with steady rain from 7am to 2pm, high of 58F. SR-520 bridge closed eastbound 9am-noon for emergency repair, snarling cross-lake traffic.",
+  "generated_at": "2026-05-30T19:12:57.216Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 2,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 456,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 5558,
+    "mapbox_ms": 0,
+    "total_ms": 16890
+  },
+  "_ok": true
+}

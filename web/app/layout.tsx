@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
@@ -6,6 +7,10 @@ import { FixedSidebarProvider } from "@/components/fixed-sidebar-provider"
 import { SidebarInset } from "@/components/ui/sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
+
+export const metadata: Metadata = {
+  title: "Seaside",
+}
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],

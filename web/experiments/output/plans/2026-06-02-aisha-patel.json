@@ -1,0 +1,218 @@
+{
+  "sim_date": "2026-06-02",
+  "day_number": 2,
+  "agent_id": "4755b604-3d9d-4003-9d8a-dae57eca5998",
+  "agent_name": "Aisha Patel",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-02T15:00:00.000Z",
+      "end_time": "2026-06-02T15:24:39.545Z",
+      "activity": "Wake up, shower, and make coffee at home.",
+      "activity_type": "home",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Day off after night shifts; Aisha wakes refreshed and takes time for a proper morning routine in her neighborhood."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-02T15:24:39.545Z",
+      "end_time": "2026-06-02T15:49:19.090Z",
+      "activity": "Walk to local café for breakfast.",
+      "activity_type": "commute",
+      "location_name": "Caffeine Sanctuary (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short neighborhood walk; she's energized and wants fresh pastry and espresso to ease into her day off."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-02T15:49:19.090Z",
+      "end_time": "2026-06-02T16:24:32.726Z",
+      "activity": "Sit outside with breakfast, people-watching.",
+      "activity_type": "leisure",
+      "location_name": "Caffeine Sanctuary (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Gorgeous sunny morning; she lingers over coffee and a pastry, enjoying the rare daylight and social energy."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-02T16:24:32.726Z",
+      "end_time": "2026-06-02T16:59:46.362Z",
+      "activity": "Walk home, settle in for the FIFA match.",
+      "activity_type": "commute",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Light Rail is down until 3pm, so she stays local; returns home to catch the 11am USA vs Wales match on TV."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-02T16:59:46.362Z",
+      "end_time": "2026-06-02T18:20:47.726Z",
+      "activity": "Watch USA vs Wales FIFA World Cup match.",
+      "activity_type": "leisure",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Aisha is social and enjoys the excitement; she settles in with snacks and follows the 11am kickoff live."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-02T18:20:47.726Z",
+      "end_time": "2026-06-02T18:41:55.908Z",
+      "activity": "Make a fresh lunch at home.",
+      "activity_type": "meal",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Post-match, she's hungry; she preps a healthy lunch at home while waiting for Light Rail to reopen at 3pm."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-02T18:41:55.908Z",
+      "end_time": "2026-06-02T19:13:38.181Z",
+      "activity": "Eat lunch and check social media.",
+      "activity_type": "leisure",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Relaxed pace; she's not in a rush and enjoys a slow afternoon at home on her day off."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-02T19:13:38.181Z",
+      "end_time": "2026-06-02T19:41:49.090Z",
+      "activity": "Walk to nearby grocery store for dinner ingredients and bath supplies.",
+      "activity_type": "errand",
+      "location_name": "Safeway (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Light Rail is now open; she stays in Columbia City and picks up groceries and luxe bath products for tonight's soak."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-02T19:41:49.090Z",
+      "end_time": "2026-06-02T20:06:28.635Z",
+      "activity": "Walk home with groceries.",
+      "activity_type": "commute",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short neighborhood commute back; she's carrying bags and enjoying the sunny afternoon."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-02T20:06:28.635Z",
+      "end_time": "2026-06-02T20:59:19.090Z",
+      "activity": "Prep dinner ingredients and tidy up the house.",
+      "activity_type": "home",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "She's in a leisurely mood; she chops vegetables for tonight's meal and does light tidying while listening to a podcast."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-02T20:59:19.090Z",
+      "end_time": "2026-06-02T21:52:09.545Z",
+      "activity": "Cook and eat a nice dinner at home.",
+      "activity_type": "meal",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "She loves trying new recipes; she makes a fresh, thoughtful dinner and savors it at her own table."
+    },
+    {
+      "index": 11,
+      "start_time": "2026-06-02T21:52:09.545Z",
+      "end_time": "2026-06-03T01:12:57.272Z",
+      "activity": "Long bath with music, then binge-watch true crime documentary.",
+      "activity_type": "leisure",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Her favorite wind-down ritual after night shifts; she luxuriates in the bath and settles in for a true crime binge to unwind."
+    },
+    {
+      "index": 12,
+      "start_time": "2026-06-03T01:12:57.272Z",
+      "end_time": "2026-06-03T13:00:00.000Z",
+      "activity": "Sleep.",
+      "activity_type": "sleep",
+      "location_name": "Home (Columbia City, Seattle)",
+      "location": [
+        -122.28506,
+        47.55785
+      ],
+      "travel_from_prev": null,
+      "reasoning": "After a full day off and evening of relaxation, she heads to bed for a restorative 7.5-hour sleep before returning to night shifts."
+    }
+  ],
+  "diary": "Woke up feeling surprisingly rested for a Monday. The coffee at Caffeine Sanctuary hit different this morning—I sat outside for nearly half an hour just watching the neighborhood come alive. Columbia City was buzzing with that early June energy. Got home in time to catch the USA vs Wales match, which was a nice treat since I rarely get to just... sit and watch sports without thinking about shift rotations. Made myself a proper lunch instead of the usual sad desk situation. Grabbed groceries at Safeway, prepped a decent dinner—nothing fancy, but it felt grounding after the morning's laziness. Spent the evening soaking in the bath with my playlist going, then got sucked into some true crime thing. By the time I realized how late it was, I was already half-asleep. Felt like the kind of day I needed: small, quiet, mine.",
+  "thought_process": "I think I needed this one. Working ER shifts means my days off can feel chaotic if I don't protect them, so I deliberately kept today low-key and local. The FIFA match was spontaneous—I saw it on my phone and thought, why not? It's rare I get to be a casual fan of anything. The Light Rail closure didn't affect me since I was staying in Columbia City anyway, which honestly felt lucky. My mood shifted from that sleepy morning energy into something more grounded as I moved through the day. The grocery run and dinner prep felt almost meditative after weeks of grab-and-go living. By evening, I was ready to fully decompress. Sometimes the best days aren't the exciting ones; they're the ones where nothing demands anything from you.",
+  "end_state": {
+    "location": [
+      -122.28506,
+      47.55785
+    ],
+    "energy": 35,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
+  "generated_at": "2026-05-30T17:30:42.101Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 2,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 390,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 16436,
+    "mapbox_ms": 149,
+    "total_ms": 17355
+  }
+}

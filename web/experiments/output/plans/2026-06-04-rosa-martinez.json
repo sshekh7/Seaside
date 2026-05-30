@@ -1,0 +1,232 @@
+{
+  "sim_date": "2026-06-04",
+  "day_number": 4,
+  "agent_id": "f90287fe-d8f8-4d85-8b01-f100b576e58f",
+  "agent_name": "Rosa Martinez",
+  "status": "ready",
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-04T14:00:00.000Z",
+      "end_time": "2026-06-04T14:25:06.522Z",
+      "activity": "Wake up, make tea, feed the cat, and review the day ahead.",
+      "activity_type": "home",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Rosa's gentle morning routine; early riser who values ritual and calm starts."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-04T14:25:06.522Z",
+      "end_time": "2026-06-04T14:46:37.826Z",
+      "activity": "Walk to the nearby park to feed birds and enjoy the morning sun.",
+      "activity_type": "leisure",
+      "location_name": "Wallingford Park (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Daily bird-feeding ritual is central to Rosa's routine; sunny weather makes this especially pleasant."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-04T14:46:37.826Z",
+      "end_time": "2026-06-04T15:00:58.696Z",
+      "activity": "Walk home from the park.",
+      "activity_type": "commute",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short walk back to Wallingford home after morning outing."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-04T15:00:58.696Z",
+      "end_time": "2026-06-04T15:26:05.218Z",
+      "activity": "Have breakfast and prepare for the day; check library for any updates.",
+      "activity_type": "home",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Retired schedule allows leisurely breakfast; Rosa enjoys staying informed about library events."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-04T15:26:05.218Z",
+      "end_time": "2026-06-04T15:54:46.957Z",
+      "activity": "Take bus to the Wallingford Library branch.",
+      "activity_type": "commute",
+      "location_name": "Wallingford Branch Library (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Rosa volunteers at the food bank on Wednesdays, but today (Thursday) she visits the library for reading and leisure; staying local saves time."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-04T15:54:46.957Z",
+      "end_time": "2026-06-04T16:45:00.000Z",
+      "activity": "Read and browse new arrivals at the library.",
+      "activity_type": "leisure",
+      "location_name": "Wallingford Branch Library (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Core activity for a retired librarian; Rosa enjoys her second home and time with books."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-04T16:45:00.000Z",
+      "end_time": "2026-06-04T17:06:31.304Z",
+      "activity": "Return home by bus.",
+      "activity_type": "commute",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short commute back to Wallingford to settle in for lunch and midday rest."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-04T17:06:31.304Z",
+      "end_time": "2026-06-04T17:56:44.347Z",
+      "activity": "Make a light lunch and relax; not interested in the FIFA match, prefers quiet time.",
+      "activity_type": "meal",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Rosa is not a sports fan; she opts for a peaceful lunch at home during the 11am USA vs Wales match, staying true to her gentle routine."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-04T17:56:44.347Z",
+      "end_time": "2026-06-04T18:25:26.086Z",
+      "activity": "Walk to QFC for groceries and supplies.",
+      "activity_type": "errand",
+      "location_name": "QFC (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Thursday afternoon errand; staying in neighborhood keeps the day grounded and avoids the Light Rail closure affecting Downtown and U-District."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-04T18:25:26.086Z",
+      "end_time": "2026-06-04T18:46:57.390Z",
+      "activity": "Return home with groceries.",
+      "activity_type": "commute",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Short walk home from QFC; Rosa settles in for the afternoon."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-04T18:46:57.390Z",
+      "end_time": "2026-06-04T20:48:54.781Z",
+      "activity": "Organize groceries, nap, and read in the afternoon sun.",
+      "activity_type": "leisure",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Retired pace; Rosa enjoys a quiet afternoon with rest and reading, taking full advantage of the sunny weather indoors."
+    },
+    {
+      "index": 11,
+      "start_time": "2026-06-04T20:48:54.781Z",
+      "end_time": "2026-06-04T21:42:43.042Z",
+      "activity": "Prepare and eat an early dinner.",
+      "activity_type": "meal",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Rosa eats dinner early, consistent with her gentle routine and early bedtime habits."
+    },
+    {
+      "index": 12,
+      "start_time": "2026-06-04T21:42:43.042Z",
+      "end_time": "2026-06-05T00:02:36.520Z",
+      "activity": "Wind down with tea, light reading, and evening TV.",
+      "activity_type": "leisure",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Rosa's evening routine: relaxation and preparation for bed; she values calm evenings before sleep."
+    },
+    {
+      "index": 13,
+      "start_time": "2026-06-05T00:02:36.520Z",
+      "end_time": "2026-06-05T06:29:59.998Z",
+      "activity": "Sleep.",
+      "activity_type": "sleep",
+      "location_name": "Home (Wallingford)",
+      "location": [
+        -122.332,
+        47.6605
+      ],
+      "travel_from_prev": null,
+      "reasoning": "Rosa retires early (9pm) for a full 9-hour sleep, consistent with her age and gentle lifestyle; sleep spans overnight as required."
+    }
+  ],
+  "diary": "Monday turned out to be exactly what I needed—quiet and unhurried. I was up early with my tea and the cat, then caught the sunrise at Wallingford Park feeding the birds. There's something about those morning moments that settles me. Stopped by the library branch afterward, just to see what came in. Found a new mystery novel that looked promising. The light rail closure didn't bother me; I stuck to the bus and my feet, which suited me fine. Made a simple lunch at home while everyone else was probably glued to that World Cup match—not my scene. Grabbed groceries at QFC, organized everything, then spent the afternoon reading in that beautiful June sun coming through the living room window. By evening I was content, tea in hand, watching the light fade. It was one of those days that reminds me why I love retirement.",
+  "thought_process": "I approached today with an appreciation for simplicity. At my age, I've learned that the best days aren't about doing much—they're about doing the right things slowly. The World Cup didn't call to me; I knew I'd rather have solitude and my books. The light rail closure was actually liberating; it gave me permission to move at my own pace, walking and taking the bus without any rush. I chose the library branch because it still feels like home after all those years, and browsing new arrivals is a genuine pleasure now instead of work. My mood stayed steady and content throughout—no peaks or valleys, just a gentle rhythm. The weather helped too; that sunshine made everything feel golden and unhurried.",
+  "end_state": {
+    "location": [
+      -122.332,
+      47.6605
+    ],
+    "energy": 30,
+    "notes": ""
+  },
+  "world_event_prompt": "Sunny Monday in early June. FIFA World Cup group stage match (USA vs Wales) airs at 11am PDT. Light Rail closed between Westlake and University District for maintenance until 3pm.",
+  "generated_at": "2026-05-30T17:32:18.616Z",
+  "stats": {
+    "skeleton_attempts": 1,
+    "repair_used": false,
+    "geocode_misses": 0,
+    "route_misses": 0,
+    "overflow_fixed_by_shift": 0,
+    "overflow_remaining": 0,
+    "compressed_to_fit_day": true,
+    "compressed_minutes_saved": 390,
+    "sleep_beat_synthesized": false,
+    "returned_home_before_sleep": true,
+    "llm_ms": 16600,
+    "mapbox_ms": 0,
+    "total_ms": 16924
+  }
+}

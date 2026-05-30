@@ -2,120 +2,120 @@
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-01T07:00:00-07:00",
-      "end_time": "2026-06-01T07:25:00-07:00",
-      "activity": "Wake up, shower, coffee, and quick breakfast at home.",
+      "start_time": "2026-06-07T07:00:00-07:00",
+      "end_time": "2026-06-07T07:35:00-07:00",
+      "activity": "Wake up, coffee, check emails and client messages on phone.",
       "activity_type": "home",
-      "location_name": "Home (South Lake Union, Seattle)",
-      "reasoning": "Tyler is a workaholic SDE3 who targets 7:30 office arrival; waking at 7:00 gives him 25 min for routine before commute."
+      "location_name": "Home (Mercer Island)",
+      "reasoning": "Linda wakes early on Sunday with full energy; real estate agents work weekends for open houses. Quick morning routine to prep for a busy day of showings and networking."
     },
     {
       "index": 1,
-      "start_time": "2026-06-01T07:25:00-07:00",
-      "end_time": "2026-06-01T07:45:00-07:00",
-      "activity": "Drive to Amazon HQ.",
-      "activity_type": "commute",
-      "location_name": "Amazon HQ (Downtown Seattle)",
-      "reasoning": "Short drive from South Lake Union to Downtown; 20 min covers traffic and parking, landing him at desk by 7:45."
+      "start_time": "2026-06-07T07:35:00-07:00",
+      "end_time": "2026-06-07T08:15:00-07:00",
+      "activity": "Power walk around Mercer Island Park loop to clear head and stay energized.",
+      "activity_type": "exercise",
+      "location_name": "Mercer Island Park (Mercer Island)",
+      "reasoning": "Linda is a power walker; a sunny Sunday morning is perfect for her routine exercise before a full day of client interactions and open house viewings."
     },
     {
       "index": 2,
-      "start_time": "2026-06-01T07:45:00-07:00",
-      "end_time": "2026-06-01T11:00:00-07:00",
-      "activity": "Deep work on SDE3 architecture review and code sprint.",
-      "activity_type": "work",
-      "location_name": "Amazon HQ (Downtown Seattle)",
-      "reasoning": "Tyler is intense and methodical; 3+ hours of uninterrupted morning work aligns with his workaholic profile before the 11am FIFA match."
+      "start_time": "2026-06-07T08:15:00-07:00",
+      "end_time": "2026-06-07T08:50:00-07:00",
+      "activity": "Drive to Bellevue office, calls with clients en route.",
+      "activity_type": "commute",
+      "location_name": "Windermere Real Estate Office (Bellevue)",
+      "reasoning": "Linda drives everywhere and is obsessed with open houses; Sunday morning commute to Bellevue office to prepare for a day of property showings and client calls."
     },
     {
       "index": 3,
-      "start_time": "2026-06-01T11:00:00-07:00",
-      "end_time": "2026-06-01T12:30:00-07:00",
-      "activity": "Watch USA vs Wales FIFA World Cup match in office break room or at desk.",
-      "activity_type": "leisure",
-      "location_name": "Amazon HQ (Downtown Seattle)",
-      "reasoning": "The 11am PDT match is unmissable; Tyler takes a break to watch, likely grabbing lunch at his desk during halftime or post-match."
+      "start_time": "2026-06-07T08:50:00-07:00",
+      "end_time": "2026-06-07T10:30:00-07:00",
+      "activity": "Prepare open house materials, review new listings, make networking calls from office.",
+      "activity_type": "work",
+      "location_name": "Windermere Real Estate Office (Bellevue)",
+      "reasoning": "Real estate work on Sunday morning: prepping open houses, organizing client portfolios, and networking calls—core to Linda's always-networking personality."
     },
     {
       "index": 4,
-      "start_time": "2026-06-01T12:30:00-07:00",
-      "end_time": "2026-06-01T17:30:00-07:00",
-      "activity": "Resume work; eat prepped meal at desk and handle afternoon meetings and code reviews.",
-      "activity_type": "work",
-      "location_name": "Amazon HQ (Downtown Seattle)",
-      "reasoning": "Tyler eats lunch at his desk as habit; he works through the afternoon until 5:30 to make his 6pm gym commitment."
+      "start_time": "2026-06-07T10:30:00-07:00",
+      "end_time": "2026-06-07T10:50:00-07:00",
+      "activity": "Drive to first open house showing in Bellevue.",
+      "activity_type": "commute",
+      "location_name": "Bellevue Downtown (Bellevue)",
+      "reasoning": "Short drive within Bellevue to reach the first open house of the day; Linda is obsessed with open houses and Sundays are prime showing time."
     },
     {
       "index": 5,
-      "start_time": "2026-06-01T17:30:00-07:00",
-      "end_time": "2026-06-01T17:50:00-07:00",
-      "activity": "Drive to gym from Amazon HQ.",
-      "activity_type": "commute",
-      "location_name": "Seattle Athletic Club (Downtown Seattle)",
-      "reasoning": "Quick drive across Downtown to reach gym; 20 min buffer ensures he arrives by 6pm sharp as per his rigid routine."
+      "start_time": "2026-06-07T10:50:00-07:00",
+      "end_time": "2026-06-07T12:15:00-07:00",
+      "activity": "Host open house showing, greet potential buyers, discuss property features and market trends.",
+      "activity_type": "work",
+      "location_name": "Bellevue Downtown (Bellevue)",
+      "reasoning": "Linda loves open houses; Sunday mid-morning is peak traffic for showings. She networks and engages deeply with each prospect, consistent with her personality."
     },
     {
       "index": 6,
-      "start_time": "2026-06-01T17:50:00-07:00",
-      "end_time": "2026-06-01T18:00:00-07:00",
-      "activity": "Check in and change into workout gear.",
-      "activity_type": "exercise",
-      "location_name": "Seattle Athletic Club (Downtown Seattle)",
-      "reasoning": "10 min to settle in before starting his 6pm workout block."
+      "start_time": "2026-06-07T12:15:00-07:00",
+      "end_time": "2026-06-07T12:45:00-07:00",
+      "activity": "Drive to upscale lunch spot in Bellevue, calls with clients.",
+      "activity_type": "commute",
+      "location_name": "The Herbfarm (Bellevue)",
+      "reasoning": "Linda lunches at upscale spots and drives everywhere; she takes a brief networking-friendly lunch break between open house showings."
     },
     {
       "index": 7,
-      "start_time": "2026-06-01T18:00:00-07:00",
-      "end_time": "2026-06-01T19:15:00-07:00",
-      "activity": "Intense 75-minute strength and cardio workout; tracks reps and heart rate.",
-      "activity_type": "exercise",
-      "location_name": "Seattle Athletic Club (Downtown Seattle)",
-      "reasoning": "Tyler's disciplined gym session; 75 min aligns with someone who tracks everything and maintains a rigorous fitness regimen."
+      "start_time": "2026-06-07T12:45:00-07:00",
+      "end_time": "2026-06-07T13:45:00-07:00",
+      "activity": "Upscale lunch, take client call mid-meal, discuss new listings and market updates.",
+      "activity_type": "meal",
+      "location_name": "The Herbfarm (Bellevue)",
+      "reasoning": "Linda lunches at upscale spots and is always networking; she works through lunch, handling client calls and market talk—never truly off the clock."
     },
     {
       "index": 8,
-      "start_time": "2026-06-01T19:15:00-07:00",
-      "end_time": "2026-06-01T19:40:00-07:00",
-      "activity": "Shower and change at gym.",
-      "activity_type": "exercise",
-      "location_name": "Seattle Athletic Club (Downtown Seattle)",
-      "reasoning": "25 min to clean up and prepare for evening commute home."
+      "start_time": "2026-06-07T13:45:00-07:00",
+      "end_time": "2026-06-07T14:15:00-07:00",
+      "activity": "Drive to second open house on the Eastside, calls with potential buyers.",
+      "activity_type": "commute",
+      "location_name": "Redmond (Redmond)",
+      "reasoning": "Sunday afternoon is prime real estate time; Linda heads east to Redmond for a second showing, staying in motion and networking throughout the drive."
     },
     {
       "index": 9,
-      "start_time": "2026-06-01T19:40:00-07:00",
-      "end_time": "2026-06-01T20:10:00-07:00",
-      "activity": "Drive home from gym.",
-      "activity_type": "commute",
-      "location_name": "Home (South Lake Union, Seattle)",
-      "reasoning": "30 min drive back to South Lake Union from Downtown, accounting for early evening traffic."
+      "start_time": "2026-06-07T14:15:00-07:00",
+      "end_time": "2026-06-07T15:45:00-07:00",
+      "activity": "Host second open house, show property, answer buyer questions, hand out business cards.",
+      "activity_type": "work",
+      "location_name": "Redmond (Redmond)",
+      "reasoning": "Second open house of the day; Linda is in her element networking with prospective buyers and showcasing properties—core to her obsession with open houses."
     },
     {
       "index": 10,
-      "start_time": "2026-06-01T20:10:00-07:00",
-      "end_time": "2026-06-01T21:00:00-07:00",
-      "activity": "Prepare dinner, eat, and update fitness tracking spreadsheet.",
-      "activity_type": "leisure",
-      "location_name": "Home (South Lake Union, Seattle)",
-      "reasoning": "Tyler is methodical and data-driven; he logs his workout metrics and meal prep for the week ahead while relaxing at home."
+      "start_time": "2026-06-07T15:45:00-07:00",
+      "end_time": "2026-06-07T16:30:00-07:00",
+      "activity": "Drive home to Mercer Island, listening to real estate podcasts and taking client calls.",
+      "activity_type": "commute",
+      "location_name": "Home (Mercer Island)",
+      "reasoning": "End of Sunday showings; Linda heads home, using the drive time productively for client calls and professional development—she's always working."
     },
     {
       "index": 11,
-      "start_time": "2026-06-01T21:00:00-07:00",
-      "end_time": "2026-06-01T22:30:00-07:00",
-      "activity": "Wind down; read tech articles, check work Slack, and prep for tomorrow.",
-      "activity_type": "home",
-      "location_name": "Home (South Lake Union, Seattle)",
-      "reasoning": "Final wind-down at home before sleep; even workaholics need mental decompression, though Tyler likely reviews tomorrow's agenda."
+      "start_time": "2026-06-07T16:30:00-07:00",
+      "end_time": "2026-06-07T18:00:00-07:00",
+      "activity": "Relax on patio, review photos from open houses, light dinner prep, answer non-urgent emails.",
+      "activity_type": "leisure",
+      "location_name": "Home (Mercer Island)",
+      "reasoning": "Wind-down evening at home on Mercer Island; sunny weather makes the patio appealing. Linda reviews the day's work and preps for tomorrow while staying at home before sleep."
     },
     {
       "index": 12,
-      "start_time": "2026-06-01T22:30:00-07:00",
-      "end_time": "2026-06-02T06:00:00-07:00",
-      "activity": "Sleep.",
+      "start_time": "2026-06-07T18:00:00-07:00",
+      "end_time": "2026-06-08T06:00:00-07:00",
+      "activity": "Dinner, evening leisure, wind down, and sleep.",
       "activity_type": "sleep",
-      "location_name": "Home (South Lake Union, Seattle)",
-      "reasoning": "7.5-hour sleep; Tyler maintains discipline in sleep hygiene to support his intense work and gym schedule, waking at 7am for next day's 7:30 office arrival."
+      "location_name": "Home (Mercer Island)",
+      "reasoning": "Full night's sleep at home, ending early Monday morning—Linda needs recovery after a full day of open houses, showings, and constant networking."
     }
   ]
 }

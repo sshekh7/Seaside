@@ -214,5 +214,101 @@
   "amazon hq (downtown seattle)": [
     -122.33449,
     47.604458
+  ],
+  "caffeine sanctuary (columbia city, seattle)": [
+    -122.28506,
+    47.55785
+  ],
+  "safeway (columbia city, seattle)": [
+    -122.28506,
+    47.55785
+  ],
+  "espresso vivace (u-district, seattle)": [
+    -122.330286,
+    47.603243
+  ],
+  "taneda ramen (u-district, seattle)": [
+    -122.330286,
+    47.603243
+  ],
+  "fuel coffee (columbia city, seattle)": [
+    -122.28506,
+    47.55785
+  ],
+  "windermere real estate office (bellevue)": [
+    -122.26214,
+    47.66994
+  ],
+  "open house listing (medina)": [
+    -122.228764,
+    47.634209
+  ],
+  "safeway (renton)": [
+    -122.296605,
+    47.572434
+  ],
+  "windermere real estate (bellevue)": [
+    -122.26214,
+    47.66994
+  ],
+  "cafe solstice (columbia city, seattle)": [
+    -122.28506,
+    47.55785
+  ],
+  "qfc (columbia city, seattle)": [
+    -122.28506,
+    47.55785
+  ],
+  "solstice wood fired pizza (u-district, seattle)": [
+    -122.330286,
+    47.603243
+  ],
+  "duthie hill climb / ima court (u-district, seattle)": [
+    -122.329684,
+    47.618096
+  ],
+  "gene's family restaurant (renton)": [
+    -122.296605,
+    47.572434
+  ],
+  "gene coulon beach park (renton)": [
+    -122.205452,
+    47.479682
+  ],
+  "bellevue, wa": [
+    -122.200173,
+    47.613846
+  ],
+  "bellevue (bellevue)": [
+    -122.201755,
+    47.615293
+  ],
+  "redmond, wa": [
+    -122.121527,
+    47.673904
+  ],
+  "the herbfarm restaurant (woodinville/redmond area)": [
+    -122.121527,
+    47.673904
+  ],
+  "windermere bellevue office (bellevue)": [
+    -122.201759,
+    47.615456
+  ],
+  "starbucks (magnolia)": [
+    -122.374119,
+    47.632029
+  ],
+  "bellevue downtown (bellevue)": [
+    -122.201755,
+    47.615293
+  ],
+  "the herbfarm (bellevue)": [
+    -122.326795,
+    47.61593
+  ],
+  "redmond (redmond)": [
+    -122.0326,
+    47.687195
   ]
 }

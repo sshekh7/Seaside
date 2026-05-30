@@ -7,6 +7,7 @@ import type { Icon as PhosphorIcon } from "@phosphor-icons/react"
 import {
   ArrowsCounterClockwise,
   CaretDown,
+  CaretRight,
   CaretUp,
   Clock,
   Cloud,
@@ -20,6 +21,7 @@ import {
   FastForward,
   Fire,
   Gauge,
+  MagnifyingGlass,
   Path,
   Pause,
   Play,
@@ -27,6 +29,7 @@ import {
   Snowflake,
   Sun,
   Wind,
+  X,
 } from "@phosphor-icons/react/dist/ssr"
 
 import { cn } from "@/lib/utils"
@@ -900,63 +903,12 @@ function PlanReplay(props: {
       {/* BODY: left rail + map + right rail */}
       <div className="relative flex min-h-0 flex-1 overflow-hidden">
         {/* LEFT RAIL */}
-        <aside className="hidden min-h-0 w-56 shrink-0 flex-col overflow-hidden border-r border-border/40 bg-[#0a0a0d] md:flex">
-          <div className="flex items-center justify-between border-b border-border/40 px-3 py-2.5 text-[10px] uppercase tracking-[0.22em]">
-            <span className="text-muted-foreground/80">Plans</span>
-            <span className="font-mono normal-case tracking-normal text-muted-foreground/60">
-              {plans.length}
-            </span>
-          </div>
-          <div className="min-h-0 flex-1 overflow-y-auto py-2">
-            {Array.from(new Set(plans.map((p) => p.data.agent_name))).map(
-              (agent) => {
-                const items = plans.filter((p) => p.data.agent_name === agent)
-                return (
-                  <div key={agent} className="mb-3">
-                    <div className="px-3 py-1 text-[9px] uppercase tracking-[0.22em] text-muted-foreground/60">
-                      {agent}
-                    </div>
-                    {items.map((p) => {
-                      const active = p.file === selectedFile
-                      return (
-                        <button
-                          key={p.file}
-                          type="button"
-                          onClick={() => setSelectedFile(p.file)}
-                          className={cn(
-                            "flex w-full items-center justify-between gap-2 border-l-2 px-3 py-1.5 text-[11px] transition",
-                            active
-                              ? "border-amber-400 bg-amber-500/10 text-amber-100"
-                              : "border-transparent text-muted-foreground hover:bg-secondary/30 hover:text-foreground",
-                          )}
-                        >
-                          <span className="flex items-center gap-2 truncate font-mono">
-                            <span
-                              className={cn(
-                                "size-1.5 rounded-full transition",
-                                active
-                                  ? "bg-amber-400 shadow-[0_0_6px_0_rgb(245,158,11)]"
-                                  : "bg-zinc-600",
-                              )}
-                            />
-                            <span className="truncate">{p.data.sim_date}</span>
-                          </span>
-                          <span className="font-mono text-[9px] tracking-[0.18em] text-muted-foreground/60">
-                            D{p.data.day_number} · {p.data.beats.length}b
-                          </span>
-                        </button>
-                      )
-                    })}
-                  </div>
-                )
-              },
-            )}
-            {plans.length === 0 && (
-              <div className="px-3 py-3 text-[11px] text-muted-foreground">
-                {loading ? "loading…" : "no plans"}
-              </div>
-            )}
-          </div>
+        <PlansRail
+          plans={plans}
+          selectedFile={selectedFile}
+          setSelectedFile={setSelectedFile}
+          loading={loading}
+        >
 
           {/* Layer / control toggles */}
           <div className="border-t border-border/40 px-2 py-2">
@@ -1007,7 +959,7 @@ function PlanReplay(props: {
               ))}
             </div>
           </div>
-        </aside>
+        </PlansRail>
 
         {/* MAP */}
         <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden">
@@ -1573,6 +1525,163 @@ function BeatRow({
         @ {beat.location_name}
       </div>
     </button>
+  )
+}
+
+function PlansRail({
+  plans,
+  selectedFile,
+  setSelectedFile,
+  loading,
+  children,
+}: {
+  plans: PlanFile[]
+  selectedFile: string | null
+  setSelectedFile: (v: string) => void
+  loading: boolean
+  children: React.ReactNode
+}) {
+  const [search, setSearch] = useState("")
+  // Track which agent groups the user has explicitly expanded. Groups are
+  // collapsed by default so the rail stays scannable as the roster grows;
+  // an active search overrides and shows matches regardless.
+  const [expanded, setExpanded] = useState<Set<string>>(() => new Set())
+
+  const grouped = useMemo(() => {
+    const map = new Map<string, PlanFile[]>()
+    for (const p of plans) {
+      const list = map.get(p.data.agent_name) ?? []
+      list.push(p)
+      map.set(p.data.agent_name, list)
+    }
+    return Array.from(map.entries())
+  }, [plans])
+
+  const q = search.trim().toLowerCase()
+  const filtered = useMemo(() => {
+    if (!q) return grouped
+    return grouped
+      .map(([name, items]) => {
+        const nameMatch = name.toLowerCase().includes(q)
+        const matched = nameMatch
+          ? items
+          : items.filter((p) =>
+              p.data.sim_date.toLowerCase().includes(q),
+            )
+        return [name, matched] as const
+      })
+      .filter(([, items]) => items.length > 0)
+  }, [grouped, q])
+
+  const toggleAgent = (name: string) =>
+    setExpanded((prev) => {
+      const next = new Set(prev)
+      if (next.has(name)) next.delete(name)
+      else next.add(name)
+      return next
+    })
+
+  const totalShown = filtered.reduce((n, [, items]) => n + items.length, 0)
+
+  return (
+    <aside className="hidden min-h-0 w-56 shrink-0 flex-col overflow-hidden border-r border-border/40 bg-[#0a0a0d] md:flex">
+      <div className="flex items-center justify-between border-b border-border/40 px-3 py-2.5 text-[10px] uppercase tracking-[0.22em]">
+        <span className="text-muted-foreground/80">Plans</span>
+        <span className="font-mono normal-case tracking-normal text-muted-foreground/60">
+          {q ? `${totalShown}/${plans.length}` : plans.length}
+        </span>
+      </div>
+      <div className="relative border-b border-border/40 px-2 py-2">
+        <MagnifyingGlass
+          size={11}
+          className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground/60"
+        />
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search people…"
+          className="h-7 w-full rounded-sm border border-border/40 bg-[#08080b] pl-6 pr-6 font-mono text-[11px] text-foreground placeholder:text-muted-foreground/50 focus:border-amber-400/60 focus:outline-none"
+        />
+        {search && (
+          <button
+            type="button"
+            onClick={() => setSearch("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/60 hover:text-foreground"
+            aria-label="Clear search"
+          >
+            <X size={10} weight="bold" />
+          </button>
+        )}
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto py-1">
+        {filtered.map(([agent, items]) => {
+          const isCollapsed = !q && !expanded.has(agent)
+          return (
+            <div key={agent} className="mb-1">
+              <button
+                type="button"
+                onClick={() => toggleAgent(agent)}
+                className="flex w-full items-center gap-1.5 px-2 py-1 text-[9px] uppercase tracking-[0.22em] text-muted-foreground/70 transition hover:text-foreground"
+              >
+                {isCollapsed ? (
+                  <CaretRight size={9} weight="bold" />
+                ) : (
+                  <CaretDown size={9} weight="bold" />
+                )}
+                <span className="flex-1 truncate text-left">{agent}</span>
+                <span className="font-mono normal-case tracking-normal text-muted-foreground/50">
+                  {items.length}
+                </span>
+              </button>
+              {!isCollapsed &&
+                items.map((p) => {
+                  const active = p.file === selectedFile
+                  return (
+                    <button
+                      key={p.file}
+                      type="button"
+                      onClick={() => setSelectedFile(p.file)}
+                      className={cn(
+                        "flex w-full items-center justify-between gap-2 border-l-2 px-3 py-1.5 text-[11px] transition",
+                        active
+                          ? "border-amber-400 bg-amber-500/10 text-amber-100"
+                          : "border-transparent text-muted-foreground hover:bg-secondary/30 hover:text-foreground",
+                      )}
+                    >
+                      <span className="flex items-center gap-2 truncate font-mono">
+                        <span
+                          className={cn(
+                            "size-1.5 rounded-full transition",
+                            active
+                              ? "bg-amber-400 shadow-[0_0_6px_0_rgb(245,158,11)]"
+                              : "bg-zinc-600",
+                          )}
+                        />
+                        <span className="truncate">{p.data.sim_date}</span>
+                      </span>
+                      <span className="font-mono text-[9px] tracking-[0.18em] text-muted-foreground/60">
+                        D{p.data.day_number} · {p.data.beats.length}b
+                      </span>
+                    </button>
+                  )
+                })}
+            </div>
+          )
+        })}
+        {plans.length === 0 && (
+          <div className="px-3 py-3 text-[11px] text-muted-foreground">
+            {loading ? "loading…" : "no plans"}
+          </div>
+        )}
+        {plans.length > 0 && filtered.length === 0 && (
+          <div className="px-3 py-3 text-[11px] text-muted-foreground">
+            no matches for &ldquo;{search}&rdquo;
+          </div>
+        )}
+      </div>
+      {children}
+    </aside>
   )
 }
 

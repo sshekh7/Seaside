@@ -1,19 +1,19 @@
-// LLM provider abstraction. Azure OpenAI for now; Bedrock later. Handles:
+// LLM provider abstraction. Uses AWS Bedrock (Claude Haiku 4.5).
 //   - chat completion w/ retry
 //   - JSON object response_format
 //   - cumulative latency tracking
 
-import OpenAI from "openai"
+import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime"
 
-const ENDPOINT = process.env.AZURE_OPENAI_ENDPOINT!
-const API_KEY = process.env.AZURE_OPENAI_API_KEY!
-const MODEL = process.env.AZURE_OPENAI_DEPLOYMENT!
+const client = new BedrockRuntimeClient({
+  region: process.env.BEDROCK_REGION || process.env.AWS_REGION || "us-west-2",
+  credentials: {
+    accessKeyId: process.env.BEDROCK_ACCESS_KEY_ID || process.env.AWS_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.BEDROCK_SECRET_ACCESS_KEY || process.env.AWS_SECRET_ACCESS_KEY!,
+  },
+})
 
-if (!ENDPOINT || !API_KEY || !MODEL) {
-  throw new Error("AZURE_OPENAI_ENDPOINT / API_KEY / DEPLOYMENT missing")
-}
-
-const client = new OpenAI({ baseURL: ENDPOINT, apiKey: API_KEY })
+const MODEL = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
 
 let totalMs = 0
 export function getLlmMs() {
@@ -42,18 +42,24 @@ export async function complete(opts: Opts): Promise<string> {
   for (let i = 0; i < max; i++) {
     try {
       const t0 = Date.now()
-      const res = await client.chat.completions.create({
-        model: MODEL,
-        messages: [
-          { role: "system", content: opts.system },
-          { role: "user", content: opts.user },
-        ],
-        ...(opts.jsonMode ? { response_format: { type: "json_object" } } : {}),
-        ...(opts.maxTokens ? { max_completion_tokens: opts.maxTokens } : {}),
-        ...(opts.temperature != null ? { temperature: opts.temperature } : {}),
+      const body = JSON.stringify({
+        anthropic_version: "bedrock-2023-05-31",
+        max_tokens: opts.maxTokens || 4096,
+        temperature: opts.temperature ?? 0.7,
+        system: opts.system,
+        messages: [{ role: "user", content: opts.user }],
       })
+
+      const command = new InvokeModelCommand({
+        modelId: MODEL,
+        contentType: "application/json",
+        body: new TextEncoder().encode(body),
+      })
+
+      const response = await client.send(command)
+      const result = JSON.parse(new TextDecoder().decode(response.body))
       totalMs += Date.now() - t0
-      const text = res.choices[0]?.message?.content
+      const text = result.content?.[0]?.text
       if (!text) throw new Error("empty completion")
       return text
     } catch (err) {
@@ -71,8 +77,9 @@ export async function completeJson<T>(opts: Opts): Promise<T> {
   try {
     return JSON.parse(text) as T
   } catch (err) {
-    // Recovery: extract the largest {...} or [...] block
-    const m = text.match(/[\[{][\s\S]*[\]}]/)
+    // Recovery: strip markdown and extract JSON block
+    const cleaned = text.replace(/```json?\s*/g, "").replace(/```/g, "").trim()
+    const m = cleaned.match(/[\[{][\s\S]*[\]}]/)
     if (m) {
       try {
         return JSON.parse(m[0]) as T

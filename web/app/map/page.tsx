@@ -291,7 +291,18 @@ export default function MapPage() {
     const durationMin = Math.min(decision.duration_minutes || 5, 60)
     const stayDuration = (durationMin * 1000) / (speedRef.current / 200 || 1)
 
-    setActivities((prev) => [{ name: agent.name, activity: `${decision.activity} (${durationMin}min)`, reasoning: decision.reasoning }, ...prev].slice(0, 50))
+    setActivities((prev) => {
+      let actText = decision.activity || ""
+      // If LLM leaked raw JSON, extract the activity field
+      if (actText.includes('"activity"') || actText.startsWith("{") || actText.startsWith("```")) {
+        try {
+          const cleaned = actText.replace(/```json\s*/g, "").replace(/```/g, "").trim()
+          const parsed = JSON.parse(cleaned.match(/\{[\s\S]*\}/)?.[0] || "{}")
+          actText = parsed.activity || actText
+        } catch { /* keep original */ }
+      }
+      return [{ name: agent.name, activity: `${actText} (${durationMin}min)`, reasoning: decision.reasoning || "" }, ...prev].slice(0, 50)
+    })
 
     const dest = await geocode(decision.destination)
     const end = dest || agent.end

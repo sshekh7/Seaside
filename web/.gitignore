@@ -34,3 +34,7 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# experiment runtime artifacts (machine-local, high churn)
+experiments/output/*-cache.json
+experiments/output/*.log

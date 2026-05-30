@@ -554,9 +554,11 @@ export default function MapPage() {
                 </div>
               ) : (
                 activities.map((a, i) => (
-                  <div key={i} className="rounded border border-border/40 px-2 py-1.5">
-                    <p className="text-[11px] font-medium text-foreground">{a.name}</p>
-                    <p className="text-[10px] text-muted-foreground">{a.activity}</p>
+                  <div key={i} className="rounded border border-border/40 px-2.5 py-2">
+                    <div className="flex items-center justify-between">
+                      <p className="text-[11px] font-medium text-foreground">{a.name}</p>
+                    </div>
+                    <p className="mt-0.5 text-[10px] leading-relaxed text-muted-foreground">{a.activity}</p>
                   </div>
                 ))
               )}

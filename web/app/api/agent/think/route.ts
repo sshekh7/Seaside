@@ -34,7 +34,7 @@ What do YOU do next? Be unique to your character — not everyone does the same 
 
 Pick a REAL specific place in Seattle/Bellevue/Redmond (actual business names, parks, neighborhoods).
 
-Respond ONLY with valid JSON, no markdown:
+Respond ONLY with valid JSON, no markdown, no code blocks, no explanation:
 {"activity": "specific personal action", "destination": "real place name", "duration_minutes": <number 10-45>, "reasoning": "why this fits you"}`
 
     const body = JSON.stringify({
@@ -55,9 +55,9 @@ Respond ONLY with valid JSON, no markdown:
     const text = result.content[0].text
 
     try {
-      const match = text.match(/\{[\s\S]*\}/)
+      const cleaned = text.replace(/```json\s*/g, "").replace(/```\s*/g, "").trim()
+      const match = cleaned.match(/\{[\s\S]*\}/)
       const decision = match ? JSON.parse(match[0]) : { activity: text, destination: "Pike Place Market", duration_minutes: 15, reasoning: "default" }
-      // Cap duration to keep simulation moving
       decision.duration_minutes = Math.min(Math.max(decision.duration_minutes || 15, 5), 45)
       return NextResponse.json(decision)
     } catch {

@@ -37,7 +37,6 @@ const STYLES = {
   Dark: "mapbox://styles/mapbox/dark-v11",
   Light: "mapbox://styles/mapbox/light-v11",
   Streets: "mapbox://styles/mapbox/streets-v12",
-  Satellite: "mapbox://styles/mapbox/satellite-streets-v12",
 } as const
 
 type StyleKey = keyof typeof STYLES
@@ -258,7 +257,7 @@ export default function ExperimentsPage() {
   const [style, setStyle] = useState<StyleKey>("Dark")
   const [is3D, setIs3D] = useState(false)
   const [timelineOpen, setTimelineOpen] = useState(true)
-  const [showPaths, setShowPaths] = useState(true)
+  const [showPaths, setShowPaths] = useState(false)
   const [following, setFollowing] = useState(false)
   const [slowTransit, setSlowTransit] = useState(true)
 
@@ -276,7 +275,7 @@ export default function ExperimentsPage() {
   const selected = plans.find((p) => p.file === selectedFile) ?? null
 
   return (
-    <div className="flex h-svh w-full flex-1 flex-col overflow-hidden bg-background text-foreground">
+    <div className="flex h-svh max-h-svh w-full flex-col overflow-hidden bg-background text-foreground">
       {selected ? (
         <PlanReplay
           key={selected.file}
@@ -378,6 +377,13 @@ function PlanReplay(props: {
   const is3DRef = useRef(is3D)
   // Smoothed camera bearing (degrees). Updated each RAF when following.
   const bearingRef = useRef(0)
+  // Tight 3D chase target — mirrors the live `/map` follow camera so the
+  // experiment replay tracks the agent just as closely (fixed close zoom +
+  // 55° pitch) instead of a loose top-down pan.
+  const followTargetRef = useRef<{ zoom: number; pitch: number }>({
+    zoom: 16.5,
+    pitch: 55,
+  })
   // Last-committed active-beat identity (used to avoid React churn).
   const activeBeatRef = useRef<{ idx: number; phase: "travel" | "stay" }>({
     idx: 0,
@@ -447,6 +453,7 @@ function PlanReplay(props: {
         followingRef.current = true
         bearingRef.current = map.getBearing()
         setFollowing(true)
+        setIs3D(true)
       })
       fitToPlan(map, plan)
       // Beat-marker layer click (handled by DOM markers above, but also
@@ -456,6 +463,7 @@ function PlanReplay(props: {
         followingRef.current = true
         bearingRef.current = map.getBearing()
         setFollowing(true)
+        setIs3D(true)
       })
       map.on("mouseenter", "cursor-dot", () => {
         map.getCanvas().style.cursor = "pointer"
@@ -651,6 +659,9 @@ function PlanReplay(props: {
         }
 
         // Follow camera — throttled easeTo with look-ahead bearing smoothing.
+        // Mirrors the live `/map` follow: a fixed close zoom + 55° pitch 3D
+        // chase with a heading averaged over the look-ahead so turns read as
+        // a curve rather than per-frame jitter.
         if (followingRef.current && now - lastCamMs >= CAM_INTERVAL) {
           lastCamMs = now
           const ahead = resolveCursor(
@@ -662,16 +673,17 @@ function PlanReplay(props: {
           const dy = ahead.pos[1] - cur.pos[1]
           const curBearing = map.getBearing()
           let bearing = curBearing
-          if (cur.phase === "travel" && dx * dx + dy * dy > 1e-12) {
+          if (dx * dx + dy * dy > 1e-12) {
             const desired = (Math.atan2(dx, dy) * 180) / Math.PI
             const delta = ((desired - curBearing + 540) % 360) - 180
             bearing = curBearing + delta * 0.18
             bearingRef.current = bearing
           }
+          const target = followTargetRef.current
           map.easeTo({
             center: cur.pos,
-            zoom: Math.max(map.getZoom(), 15.5),
-            pitch: is3DRef.current ? 55 : map.getPitch(),
+            zoom: target.zoom,
+            pitch: target.pitch,
             bearing,
             duration: CAM_DURATION,
             easing: (t) => t * (2 - t),
@@ -731,15 +743,17 @@ function PlanReplay(props: {
     followingRef.current = true
     bearingRef.current = map.getBearing()
     setFollowing(true)
+    setIs3D(true)
+    const target = followTargetRef.current
     map.flyTo({
       center: cur.pos,
-      zoom: 15.5,
-      pitch: is3D ? 55 : 0,
+      zoom: target.zoom,
+      pitch: target.pitch,
       speed: 1.2,
       curve: 1.4,
       essential: true,
     })
-  }, [plan, dayStartMs, is3D, setFollowing])
+  }, [plan, dayStartMs, setFollowing, setIs3D])
 
   const weather = useMemo(
     () => parseWeather(plan.world_event_prompt),
@@ -870,9 +884,9 @@ function PlanReplay(props: {
       </header>
 
       {/* BODY: left rail + map + right rail */}
-      <div className="relative flex min-h-0 flex-1">
+      <div className="relative flex min-h-0 flex-1 overflow-hidden">
         {/* LEFT RAIL */}
-        <aside className="hidden w-56 shrink-0 flex-col border-r border-border/40 bg-[#0a0a0d] md:flex">
+        <aside className="hidden min-h-0 w-56 shrink-0 flex-col overflow-hidden border-r border-border/40 bg-[#0a0a0d] md:flex">
           <div className="flex items-center justify-between border-b border-border/40 px-3 py-2.5 text-[10px] uppercase tracking-[0.22em]">
             <span className="text-muted-foreground/80">Plans</span>
             <span className="font-mono normal-case tracking-normal text-muted-foreground/60">
@@ -982,7 +996,7 @@ function PlanReplay(props: {
         </aside>
 
         {/* MAP */}
-        <div className="relative min-w-0 flex-1">
+        <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden">
           <div
             ref={containerRef}
             className="absolute inset-0 h-full w-full"
@@ -1026,10 +1040,13 @@ function PlanReplay(props: {
           </div>
         </div>
 
-        {/* RIGHT RAIL */}
-        <aside className="hidden w-72 shrink-0 flex-col border-l border-border/40 bg-[#0a0a0d] lg:flex">
+        {/* RIGHT RAIL — single scroll region. Everything inside flows
+            naturally; the aside itself is the only scrollbar so diary /
+            CoT expansion can grow as tall as it needs without ever
+            pushing the map, footer, or timeline drawer. */}
+        <aside className="hidden min-h-0 w-72 shrink-0 flex-col overflow-y-auto border-l border-border/40 bg-[#0a0a0d] lg:flex">
           {/* Active beat detail */}
-          <div className="border-b border-border/40 px-3 py-2.5">
+          <div className="shrink-0 border-b border-border/40 px-3 py-2.5">
             <div className="flex items-center justify-between text-[9px] uppercase tracking-[0.22em] text-muted-foreground/80">
               <span>Active beat</span>
               <span className="font-mono normal-case tracking-normal text-muted-foreground/60">
@@ -1072,8 +1089,10 @@ function PlanReplay(props: {
             </div>
           </div>
 
-          {/* Activity stream */}
-          <div className="border-b border-border/40">
+          {/* Activity stream — capped height with its own scroll because
+              entries prepend in real time; we don't want it pushing the
+              sections list far down the aside. */}
+          <div className="shrink-0 border-b border-border/40">
             <div className="flex items-center justify-between px-3 py-2 text-[9px] uppercase tracking-[0.22em] text-muted-foreground/80">
               <span>Activity stream</span>
               <span className="font-mono normal-case tracking-normal text-muted-foreground/60">
@@ -1082,8 +1101,8 @@ function PlanReplay(props: {
             </div>
             <div
               className={cn(
-                "overflow-y-auto px-2 pb-2 font-mono text-[10px] transition-[height] duration-300 ease-out",
-                timelineOpen ? "h-20" : "h-44",
+                "overflow-y-auto px-2 pb-2 font-mono text-[10px] transition-[max-height] duration-300 ease-out",
+                timelineOpen ? "max-h-20" : "max-h-44",
               )}
             >
               {stream.length === 0 && (
@@ -1106,8 +1125,9 @@ function PlanReplay(props: {
             </div>
           </div>
 
-          {/* Diary + beats list + stats */}
-          <div className="min-h-0 flex-1 overflow-y-auto">
+          {/* Diary + beats list + stats — natural flow; the parent aside
+              owns the scroll, so any section can be as long as it wants. */}
+          <div className="shrink-0">
             <Section title="diary" defaultOpen>
               <div className="px-3 pb-3 text-[11px] leading-relaxed text-foreground/85">
                 {plan.diary || (
@@ -1320,7 +1340,7 @@ function BeatTimeline({
   return (
     <div
       ref={wrapRef}
-      className="relative h-64 w-full overflow-hidden rounded-md border border-border/60 bg-[#0a0a0c]/70"
+      className="relative h-40 w-full overflow-hidden rounded-md border border-border/60 bg-[#0a0a0c]/70"
     >
       {/* Hour ticks */}
       <div className="absolute inset-x-0 top-0 h-6 border-b border-border/40">
@@ -1370,7 +1390,7 @@ function BeatTimeline({
 
       {/* Beats track */}
       <div
-        className="absolute inset-x-0 top-10 h-[10rem] cursor-pointer"
+        className="absolute inset-x-0 top-10 h-24 cursor-pointer"
         onClick={handleClick}
       >
         {plan.beats.map((b, i) => {
@@ -1391,7 +1411,7 @@ function BeatTimeline({
                 onScrub(tStart)
               }}
               className={cn(
-                "absolute top-0 flex h-[10rem] cursor-pointer flex-col justify-between overflow-hidden rounded-sm px-2 py-1.5 text-[10px] transition",
+                "absolute top-0 flex h-24 cursor-pointer flex-col justify-between overflow-hidden rounded-sm px-2 py-1.5 text-[10px] transition",
                 active && "ring-2 ring-amber-400/80",
               )}
               style={{
@@ -1422,13 +1442,13 @@ function BeatTimeline({
 
       {/* Hour gridlines (subtle) */}
       <div
-        className="pointer-events-none absolute inset-x-0 top-10 h-[10rem]"
+        className="pointer-events-none absolute inset-x-0 top-10 h-24"
         aria-hidden
       >
         {ticks.map((t, i) => (
           <div
             key={i}
-            className="absolute top-0 h-[10rem] w-px"
+            className="absolute top-0 h-24 w-px"
             style={{ left: t.x, backgroundColor: "rgba(255,255,255,0.05)" }}
           />
         ))}
@@ -1436,7 +1456,7 @@ function BeatTimeline({
 
       {/* Current-time marker */}
       <div
-        className="pointer-events-none absolute top-6 h-[10.875rem] w-px bg-amber-400 shadow-[0_0_8px_0_rgb(245,158,11)]"
+        className="pointer-events-none absolute top-6 h-28 w-px bg-amber-400 shadow-[0_0_8px_0_rgb(245,158,11)]"
         style={{ left: (offsetMs / dayLen) * w }}
       >
         <div className="absolute -left-1.5 top-0 size-3 rounded-full bg-amber-400 shadow-[0_0_8px_0_rgb(245,158,11)]" />

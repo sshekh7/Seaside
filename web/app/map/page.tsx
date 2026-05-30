@@ -289,7 +289,9 @@ export default function MapPage() {
     if (!decision || !runningRef.current) return
 
     const durationMin = Math.min(decision.duration_minutes || 5, 60)
-    const stayDuration = (durationMin * 1000) / (speedRef.current / 200 || 1)
+    // Stay duration: scale sim minutes to real seconds, cap at 5s real time
+    const speed = 200 / (speedRef.current || 200)
+    const stayDuration = Math.min((durationMin * 1000) / (speed * 10), 5000)
 
     setActivities((prev) => {
       let actText = decision.activity || ""

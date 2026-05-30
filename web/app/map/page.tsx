@@ -141,7 +141,7 @@ export default function MapPage() {
   const [style, setStyle] = useState<StyleKey>("Dark")
   const [is3D, setIs3D] = useState(false)
   const [time, setTime] = useState("--:--:--")
-  const [activityOpen, setActivityOpen] = useState(true)
+  const [activityOpen, setActivityOpen] = useState(false)
   const [timelineOpen, setTimelineOpen] = useState(false)
   const [agentRunning, setAgentRunning] = useState(false)
   const [speed, setSpeed] = useState(1)
@@ -349,16 +349,46 @@ export default function MapPage() {
         return
       }
       positionsRef.current[agentIdx] = smooth[i]
+
+      // Camera follow: if this agent is being followed, smoothly track it with
+      // a bearing averaged over the next ~12 steps so the heading reads as a
+      // curve rather than per-step jitter.
+      if (followingIndexRef.current === agentIdx && mapRef.current) {
+        const map = mapRef.current
+        const here = smooth[i]
+        const ahead = smooth[Math.min(smooth.length - 1, i + 12)]
+        const dx = ahead[0] - here[0]
+        const dy = ahead[1] - here[1]
+        let desiredBearing = map.getBearing()
+        if (dx * dx + dy * dy > 1e-12) {
+          desiredBearing = (Math.atan2(dx, dy) * 180) / Math.PI
+        }
+        const current = map.getBearing()
+        const delta = ((desiredBearing - current + 540) % 360) - 180
+        const bearing = current + delta * 0.18
+        const target = followTargetRef.current
+        map.easeTo({
+          center: here,
+          zoom: target.zoom,
+          pitch: target.pitch,
+          bearing,
+          duration: speedRef.current * 3,
+          easing: (t) => t * (2 - t),
+          essential: true,
+        })
+      }
+
       i++
       const t = setTimeout(step, speedRef.current)
       timersRef.current.push(t)
     }
     step()
-  }, [])
+  }, [updateRouteSource])
 
   // Render loop for autonomous mode
   useEffect(() => {
     if (!agentRunning || !runningRef.current) return
+    let prev: [number, number][] = positionsRef.current.map((p) => [p[0], p[1]])
     const interval = setInterval(() => {
       const map = mapRef.current
       const currentAgents = agentsRef.current
@@ -372,6 +402,29 @@ export default function MapPage() {
         })),
       };
       (map.getSource("agents-src") as mapboxgl.GeoJSONSource).setData(collection)
+
+      // Record a timeline frame: per-agent displacement since last tick + total.
+      const frame: TimelineFrame = { total: 0, perAgent: {} }
+      for (let i = 0; i < currentAgents.length; i++) {
+        const a = currentAgents[i]
+        const cur = positionsRef.current[i]
+        const old = prev[i]
+        if (cur && old) {
+          const dx = cur[0] - old[0]
+          const dy = cur[1] - old[1]
+          const d = Math.sqrt(dx * dx + dy * dy)
+          frame.perAgent[a.id] = d
+          frame.total += d
+        } else {
+          frame.perAgent[a.id] = 0
+        }
+      }
+      prev = positionsRef.current.map((p) => [p[0], p[1]])
+      const next = framesRef.current.length >= MAX_FRAMES
+        ? [...framesRef.current.slice(framesRef.current.length - MAX_FRAMES + 1), frame]
+        : [...framesRef.current, frame]
+      framesRef.current = next
+      setFrames(next)
     }, 33)
     return () => clearInterval(interval)
   }, [agentRunning])

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Database, Flask, MapTrifold, Robot } from "@phosphor-icons/react/dist/ssr"
+import { Database, Flask, Globe, MapTrifold, Robot } from "@phosphor-icons/react/dist/ssr"
 
 import { Logo } from "@/components/logo"
 import {
@@ -18,6 +18,7 @@ const navItems = [
   { title: "Map", href: "/map", icon: MapTrifold },
   { title: "Database", href: "/database", icon: Database },
   { title: "Experiments", href: "/experiments", icon: Flask },
+  { title: "World Events", href: "/world-events", icon: Globe },
   { title: "Create agent", href: "/agents/new", icon: Robot },
 ] as const
 

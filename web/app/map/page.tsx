@@ -486,6 +486,23 @@ function DayReplay({
   autoplayRef.current = autoplay
   const dayIdxRef = useRef(dayIdx)
   dayIdxRef.current = dayIdx
+
+  // DEMO: swarm target polling
+  const swarmTargetRef = useRef<{ lng: number; lat: number; label: string } | null>(null)
+  const swarmStartRef = useRef(0)
+  useEffect(() => {
+    const poll = setInterval(async () => {
+      try {
+        const res = await fetch("/api/swarm")
+        const { target } = await res.json()
+        if (target && !swarmTargetRef.current) {
+          swarmStartRef.current = Date.now()
+        }
+        swarmTargetRef.current = target
+      } catch { /* ignore */ }
+    }, 2000)
+    return () => clearInterval(poll)
+  }, [])
   const daysLenRef = useRef(days.length)
   daysLenRef.current = days.length
   const selectedPlan = selectedId
@@ -781,7 +798,22 @@ function DayReplay({
         const src = map.getSource("agents-src") as
           | mapboxgl.GeoJSONSource
           | undefined
-        if (src) src.setData({ type: "FeatureCollection", features })
+        if (src) {
+          // DEMO: swarm override — lerp agents toward target
+          const st = swarmTargetRef.current
+          if (st) {
+            const progress = Math.min((Date.now() - swarmStartRef.current) / 15000, 1) // 15s to converge
+            for (const f of features) {
+              const coords = (f.geometry as GeoJSON.Point).coordinates
+              // Add slight randomness so they don't all land on exact same spot
+              const jitter = 0.002 * (1 - progress)
+              const hash = (f.properties?.name || "").length * 0.1
+              coords[0] = coords[0] + (st.lng + Math.sin(hash) * jitter - coords[0]) * progress
+              coords[1] = coords[1] + (st.lat + Math.cos(hash) * jitter - coords[1]) * progress
+            }
+          }
+          src.setData({ type: "FeatureCollection", features })
+        }
 
         // Heatmap trails: every ~80ms sample the current positions into a
         // decaying buffer and feed the dedicated heat source. Older samples

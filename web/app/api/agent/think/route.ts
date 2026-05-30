@@ -13,9 +13,16 @@ export async function POST(req: NextRequest) {
   try {
     const { agent, currentLocation, memories, simTime } = await req.json()
     const time = simTime ? new Date(simTime) : new Date()
-    // Add ±10 min variance so agents don't all see identical time
     const offset = Math.floor(Math.random() * 20) - 10
     const agentTime = new Date(time.getTime() + offset * 60000)
+
+    // Fetch world events context
+    let worldContext = ""
+    try {
+      const { getWorldEvents } = await import("@/lib/world-events")
+      const events = getWorldEvents()
+      if (events?.length) worldContext = `\nToday's news/events you're aware of:\n${events.map((e: string) => `- ${e}`).join("\n")}\nConsider these events when deciding what to do. If something is closed or an event is happening, react to it naturally.\n`
+    } catch { /* ignore */ }
 
     const prompt = `You are ${agent.name}, a real human in the Seattle metro area. You have unique habits, moods, and a daily rhythm.
 
@@ -29,7 +36,7 @@ Time: ${agentTime.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digi
 
 Recent activities:
 ${memories?.length ? memories.map((m: { activity: string }) => `- ${m.activity}`).join("\n") : "- Just woke up / starting my day"}
-
+${worldContext}
 What do YOU do next? Be unique to your character — not everyone does the same thing at the same time. Some people gym at dawn, some skip breakfast, some walk their dog, some meditate, some scroll their phone at a cafe. Pick something that fits YOUR specific personality and habits.
 
 IMPORTANT: Do NOT repeat your recent activities. If you already had coffee, don't get more coffee. If you already ate, don't eat again. Move on to something different. A real day has variety: commuting, working, exercising, shopping, socializing, cooking, reading, walking, errands, hobbies.

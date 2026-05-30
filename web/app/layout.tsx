@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import { JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
 import { AppSidebar } from "@/components/app-sidebar"
@@ -7,9 +7,12 @@ import { SidebarInset } from "@/components/ui/sidebar"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
-const fontMono = Geist_Mono({
+const jetbrainsMonoCode = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
@@ -24,9 +27,9 @@ export default function RootLayout({
       lang="en"
       className={cn(
         "dark antialiased",
-        fontMono.variable,
-        "font-sans",
-        geist.variable
+        jetbrainsMono.variable,
+        jetbrainsMonoCode.variable,
+        "font-sans"
       )}
       style={{ colorScheme: "dark" }}
     >

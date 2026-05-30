@@ -1016,7 +1016,7 @@ function DayReplay({
             )}
           </div>
           <span className="font-mono tabular-nums normal-case tracking-normal text-foreground/90">
-            {fmtClockFromOffset(offsetMs, dayStartMs)}
+            {fmtDate(day.sim_date)} · {fmtClockFromOffset(offsetMs, dayStartMs)}
           </span>
           <span className="text-muted-foreground/60">
             {day.plans.length} agents
@@ -1032,6 +1032,10 @@ function DayReplay({
           {/* Time · weather · world-event accordion (top-left) */}
           <div className="absolute left-3 top-3 z-10 w-72 max-w-[calc(100%-1.5rem)] rounded-md border border-border/40 bg-[#0a0a0d]/85 backdrop-blur">
             <div className="px-3 py-2.5">
+              {/* Date (weekday) */}
+              <div className="mb-1 text-[10px] uppercase tracking-[0.18em] text-amber-400/80">
+                {fmtDate(day.sim_date)}
+              </div>
               {/* Time (large) */}
               <div className="font-mono text-2xl font-semibold tabular-nums leading-none tracking-tight text-foreground">
                 {fmtClockFromOffset(offsetMs, dayStartMs)}

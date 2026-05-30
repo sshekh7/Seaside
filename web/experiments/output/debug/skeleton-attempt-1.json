@@ -2,120 +2,129 @@
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-06T09:15:00-07:00",
-      "end_time": "2026-06-06T09:45:00-07:00",
-      "activity": "Wake up, shower, throw on clothes, make coffee at home.",
+      "start_time": "2026-06-05T08:30:00-07:00",
+      "end_time": "2026-06-05T09:00:00-07:00",
+      "activity": "Wakes up, showers, makes coffee at home.",
       "activity_type": "home",
-      "location_name": "Home (Capitol Hill, Seattle)",
-      "reasoning": "Jesse sleeps in late on weekends; Saturday morning wake at 9:15 feels natural for his restless schedule. Quick 30 min to get moving."
+      "location_name": "Home (Sammamish)",
+      "reasoning": "Full energy wake-up on a Friday; morning routine folded into one beat. Night owl, so moderate wake time."
     },
     {
       "index": 1,
-      "start_time": "2026-06-06T09:45:00-07:00",
-      "end_time": "2026-06-06T10:05:00-07:00",
-      "activity": "Skateboard to Victrola Coffee Roasters for a short morning shift.",
+      "start_time": "2026-06-05T09:00:00-07:00",
+      "end_time": "2026-06-05T09:40:00-07:00",
+      "activity": "Skateboards from home toward Downtown Seattle.",
       "activity_type": "commute",
-      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
-      "reasoning": "Jesse skateboards to work; Capitol Hill is compact, so 20 min covers the ride and getting settled."
+      "location_name": "Downtown Seattle",
+      "reasoning": "Commute from Sammamish to Downtown; agent skateboards or bikes everywhere, so plausible for part of journey; budget 40 min for cross-town travel."
     },
     {
       "index": 2,
-      "start_time": "2026-06-06T10:05:00-07:00",
-      "end_time": "2026-06-06T11:00:00-07:00",
-      "activity": "Work barista shift: take orders, make espresso drinks, chat with regulars.",
+      "start_time": "2026-06-05T09:40:00-07:00",
+      "end_time": "2026-06-05T10:50:00-07:00",
+      "activity": "Works on art projects and sketches at a coffee shop.",
       "activity_type": "work",
-      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
-      "reasoning": "Saturday morning coffee rush; Jesse works part-time and needs the hours. Shift starts right away."
+      "location_name": "Analog Coffee (Capitol Hill)",
+      "reasoning": "Artist who works from coffee shops; arrives early to settle in before the 11am FIFA match. Capitol Hill is a creative hub with good coffee and vibes."
     },
     {
       "index": 3,
-      "start_time": "2026-06-06T11:00:00-07:00",
-      "end_time": "2026-06-06T12:30:00-07:00",
-      "activity": "Watch USA vs Wales FIFA World Cup match on the shop TV, chat with coworkers and customers.",
-      "activity_type": "leisure",
-      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
-      "reasoning": "The 11am match is a big draw; Jesse loves sports and hanging with people. He likely stays at work to watch with the crowd and vibe, rather than leaving early or skipping it."
+      "start_time": "2026-06-05T10:50:00-07:00",
+      "end_time": "2026-06-05T11:00:00-07:00",
+      "activity": "Quick walk to a nearby bar or cafe to catch the FIFA match.",
+      "activity_type": "commute",
+      "location_name": "Kremwerk (Capitol Hill)",
+      "reasoning": "Short walk within Capitol Hill; timing arrives just before 11am kickoff. Kremwerk is a Capitol Hill venue that shows sports."
     },
     {
       "index": 4,
-      "start_time": "2026-06-06T12:30:00-07:00",
-      "end_time": "2026-06-06T13:00:00-07:00",
-      "activity": "Finish barista shift, clean up, grab a quick snack.",
-      "activity_type": "work",
-      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
-      "reasoning": "End of morning shift; Jesse wraps up and takes a break from the counter."
+      "start_time": "2026-06-05T11:00:00-07:00",
+      "end_time": "2026-06-05T13:00:00-07:00",
+      "activity": "Watches USA vs Wales FIFA match, hangs out.",
+      "activity_type": "social",
+      "location_name": "Kremwerk (Capitol Hill)",
+      "reasoning": "Catches the 11am match as scheduled; free-spirited personality fits the casual venue scene. Two hours covers the match plus social time."
     },
     {
       "index": 5,
-      "start_time": "2026-06-06T13:00:00-07:00",
-      "end_time": "2026-06-06T13:30:00-07:00",
-      "activity": "Skateboard to Capitol Hill neighborhood, grab cheap pizza and a soda at a local spot.",
+      "start_time": "2026-06-05T13:00:00-07:00",
+      "end_time": "2026-06-05T13:35:00-07:00",
+      "activity": "Grabs lunch and browses a nearby record shop.",
       "activity_type": "meal",
-      "location_name": "Serious Pie (Capitol Hill, Seattle)",
-      "reasoning": "Sunny Saturday; Jesse loves fast food and staying in his neighborhood. Short ride, quick lunch."
+      "location_name": "Molly Moon's (Capitol Hill)",
+      "reasoning": "Sunny Friday; light meal in Capitol Hill. Nearby vinyl shops satisfy collector hobby; 35 min for lunch and casual shopping."
     },
     {
       "index": 6,
-      "start_time": "2026-06-06T13:30:00-07:00",
-      "end_time": "2026-06-06T15:00:00-07:00",
-      "activity": "Volunteer at the Capitol Hill Youth Center: help with afternoon drop-in art class and chat with kids.",
-      "activity_type": "social",
-      "location_name": "Capitol Hill Youth Center (Capitol Hill, Seattle)",
-      "reasoning": "Jesse volunteers on weekends; this Saturday slot fits his routine and his good heart, even if he plays it cool. Gives him purpose and community."
+      "start_time": "2026-06-05T13:35:00-07:00",
+      "end_time": "2026-06-05T14:15:00-07:00",
+      "activity": "Browses vinyl records at a local shop.",
+      "activity_type": "leisure",
+      "location_name": "Everyday Music (Capitol Hill)",
+      "reasoning": "Collects vinyl; Everyday Music is a Capitol Hill institution. Sunny day keeps agent engaged in the neighborhood."
     },
     {
       "index": 7,
-      "start_time": "2026-06-06T15:00:00-07:00",
-      "end_time": "2026-06-06T15:45:00-07:00",
-      "activity": "Skateboard home to Capitol Hill; light rail closure doesn't affect him since he doesn't use transit.",
+      "start_time": "2026-06-05T14:15:00-07:00",
+      "end_time": "2026-06-05T14:50:00-07:00",
+      "activity": "Bikes back toward Downtown to avoid Light Rail closure; light work at another coffee shop.",
       "activity_type": "commute",
-      "location_name": "Home (Capitol Hill, Seattle)",
-      "reasoning": "Light rail closure between Westlake and U-District is irrelevant to Jesse's Capitol Hill skateboard lifestyle. Easy 15 min ride home on a sunny day."
+      "location_name": "Victrola Coffee Roasters (Downtown Seattle)",
+      "reasoning": "Light Rail closed Westlake–U-District until 3pm; biking avoids transit issues. Downtown Victrola is a working coffee spot; 35 min accounts for bike ride and route flexibility."
     },
     {
       "index": 8,
-      "start_time": "2026-06-06T15:45:00-07:00",
-      "end_time": "2026-06-06T17:30:00-07:00",
-      "activity": "Hang out at home, draw graffiti-style art, sketch designs, listen to loud music.",
-      "activity_type": "leisure",
-      "location_name": "Home (Capitol Hill, Seattle)",
-      "reasoning": "Jesse needs background noise and creative outlet. Afternoon art session at home is his sweet spot—impulsive energy channeled into sketchbooks and spray paint designs."
+      "start_time": "2026-06-05T14:50:00-07:00",
+      "end_time": "2026-06-05T17:30:00-07:00",
+      "activity": "Works on art and designs; experiments with new sketches.",
+      "activity_type": "work",
+      "location_name": "Victrola Coffee Roasters (Downtown Seattle)",
+      "reasoning": "Artist work mode; afternoon productivity push. Sunny weather keeps energy high. Light Rail restriction no longer matters after 3pm."
     },
     {
       "index": 9,
-      "start_time": "2026-06-06T17:30:00-07:00",
-      "end_time": "2026-06-06T18:15:00-07:00",
-      "activity": "Skateboard to arcade bar in Capitol Hill for evening drinks and games with friends.",
-      "activity_type": "commute",
-      "location_name": "Shorty's (Capitol Hill, Seattle)",
-      "reasoning": "Saturday night; Jesse loves arcade bars and hanging with people. Shorty's is a Capitol Hill staple perfect for his vibe."
+      "start_time": "2026-06-05T17:30:00-07:00",
+      "end_time": "2026-06-05T18:10:00-07:00",
+      "activity": "Grabs an early dinner at a nearby restaurant.",
+      "activity_type": "meal",
+      "location_name": "Piroshky Piroshky (Pike Place Market)",
+      "reasoning": "Pike Place Market is iconic Downtown and fits free-spirited vibe; quick casual dinner. 40 min covers walk and meal."
     },
     {
       "index": 10,
-      "start_time": "2026-06-06T18:15:00-07:00",
-      "end_time": "2026-06-06T22:30:00-07:00",
-      "activity": "Play arcade games, drink beer, socialize with friends, soak up the loud atmosphere.",
-      "activity_type": "social",
-      "location_name": "Shorty's (Capitol Hill, Seattle)",
-      "reasoning": "Jesse thrives on noise and company; a 4+ hour arcade bar session on a Saturday night is peak Jesse behavior—loyal, impulsive, and fully present with his crew."
+      "start_time": "2026-06-05T18:10:00-07:00",
+      "end_time": "2026-06-05T19:00:00-07:00",
+      "activity": "Walks through Pike Place Market, enjoys the sunny evening.",
+      "activity_type": "leisure",
+      "location_name": "Pike Place Market (Downtown Seattle)",
+      "reasoning": "Sunny Friday evening; soaking in the atmosphere and energy. Night owl, so evening is still prime time for agent."
     },
     {
       "index": 11,
-      "start_time": "2026-06-06T22:30:00-07:00",
-      "end_time": "2026-06-06T23:15:00-07:00",
-      "activity": "Skateboard home to Capitol Hill, wind down with some chill music and sketching.",
+      "start_time": "2026-06-05T19:00:00-07:00",
+      "end_time": "2026-06-05T19:45:00-07:00",
+      "activity": "Bikes back toward Sammamish; heads home.",
       "activity_type": "commute",
-      "location_name": "Home (Capitol Hill, Seattle)",
-      "reasoning": "Night ride home; Jesse is buzzed but safe on his board. Needs to get home before midnight to settle."
+      "location_name": "Home (Sammamish)",
+      "reasoning": "Cross-town bike/transit commute from Downtown to Sammamish; 45 min is generous for evening return. Agent is home before wind-down."
     },
     {
       "index": 12,
-      "start_time": "2026-06-06T23:15:00-07:00",
-      "end_time": "2026-06-07T06:30:00-07:00",
-      "activity": "Final wind-down: put on headphones, listen to music, crash into bed and sleep deeply.",
+      "start_time": "2026-06-05T19:45:00-07:00",
+      "end_time": "2026-06-05T23:00:00-07:00",
+      "activity": "Listens to vinyl records, sketches, and relaxes at home.",
+      "activity_type": "leisure",
+      "location_name": "Home (Sammamish)",
+      "reasoning": "Night owl wind-down: vinyl collection, creative sketching, and chill vibes. Fits personality and provides wind-down before sleep."
+    },
+    {
+      "index": 13,
+      "start_time": "2026-06-05T23:00:00-07:00",
+      "end_time": "2026-06-06T06:00:00-07:00",
+      "activity": "Sleeps.",
       "activity_type": "sleep",
-      "location_name": "Home (Capitol Hill, Seattle)",
-      "reasoning": "Jesse needs sound to sleep; headphones with lo-fi or ambient music keep him from the anxiety of silence. 7.25 hours gets him to mid-morning Sunday, fitting his sleep-in lifestyle."
+      "location_name": "Home (Sammamish)",
+      "reasoning": "7-hour sleep; ends at 6am next day as required. Night owl gets solid rest before next day."
     }
   ]
 }

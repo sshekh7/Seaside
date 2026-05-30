@@ -33,6 +33,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr"
 
 import { cn } from "@/lib/utils"
+import { SpherePulse } from "@/components/sphere-pulse"
 
 const TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -304,7 +305,7 @@ export default function ExperimentsPage() {
       ) : (
         <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
           {loading
-            ? "loading plans..."
+            ? <SpherePulse label="loading plans..." />
             : error
               ? error
               : "no plans found in experiments/output/plans/"}

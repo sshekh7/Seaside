@@ -17,12 +17,26 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { cn } from "@/lib/utils"
 import { supabase } from "@/lib/supabase"
-import { TerrainHero } from "@/components/terrain-hero"
 
 const Avatar = dynamic(() => import("react-nice-avatar"), {
   ssr: false,
   loading: () => <div className="size-full animate-pulse bg-muted/40" />,
 }) as React.ComponentType<NiceAvatarProps>
+
+const PERSONALITY_PRESETS = [
+  { label: "☕ Workaholic", value: "Intense and driven. In the office early, eats lunch at desk, gym after work. Tracks everything, optimizes routines. Rarely socializes on weekdays." },
+  { label: "🎨 Creative", value: "Free-spirited night owl. Works from coffee shops, collects vinyl, goes to art shows and underground music venues. Skateboards or bikes everywhere." },
+  { label: "🧘 Mindful", value: "Calm and intentional. Early riser, morning yoga or meditation, smoothie bowls, nature walks. Avoids screens before noon. Journals daily." },
+  { label: "🎉 Social", value: "Extroverted and energetic. Always meeting friends, trying new restaurants, attending events. Knows every bartender in the neighborhood." },
+  { label: "📚 Homebody", value: "Quiet and routine-oriented. Prefers staying in, cooking meals, reading, gardening. Goes to the library and farmers market on weekends." },
+  { label: "🏃 Fitness", value: "Disciplined athlete. 5 AM runs, meal prep Sundays, tracks macros. Spends evenings at the gym or on trails. Early to bed." },
+  { label: "🎮 Night Owl", value: "Sleeps late, stays up gaming or coding side projects. Lives on energy drinks and takeout. Skips morning classes/meetings when possible." },
+  { label: "💼 Networker", value: "Always hustling. Power walks between meetings, lunches at upscale spots, calls clients constantly. Drives everywhere, never sits still." },
+  { label: "🎓 Broke Student", value: "Perpetually broke college student. Survives on ramen and free campus food. Studies at the library until late, takes the bus everywhere. Works part-time shifts between classes. Splurges only on boba." },
+  { label: "🛒 Gig Worker", value: "Hustles between DoorDash, Uber, and odd jobs. No fixed schedule — works when the surge pricing hits. Eats at gas stations, sleeps in late, always on the phone checking earnings." },
+  { label: "🏕️ Unhoused", value: "Lives in a tent near the freeway. Wakes early to get to the shelter for breakfast. Spends days at the library for warmth and wifi. Visits the food bank, collects cans. Avoids certain streets at night." },
+  { label: "👶 Single Parent", value: "Exhausted but loving. Drops kids at school, works a shift, picks them up, cooks dinner, helps with homework. No time for self. Grocery shops on a tight budget. Falls asleep on the couch." },
+]
 
 export default function NewAgentPage() {
   const router = useRouter()
@@ -36,6 +50,53 @@ export default function NewAgentPage() {
   const [saving, setSaving] = React.useState(false)
   const [generating, setGenerating] = React.useState(false)
   const [genStep, setGenStep] = React.useState(0)
+  const canvasRef = React.useRef<HTMLCanvasElement>(null)
+
+  // Three.js pulsating sphere
+  React.useEffect(() => {
+    if (!generating || !canvasRef.current) return
+    const THREE = require("three")
+    const canvas = canvasRef.current
+    const scene = new THREE.Scene()
+    const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100)
+    camera.position.z = 3
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
+    renderer.setSize(256, 256)
+    renderer.setPixelRatio(2)
+
+    const geo = new THREE.SphereGeometry(1, 64, 64)
+    const positions = geo.attributes.position
+    const mat = new THREE.PointsMaterial({ color: 0xffffff, size: 0.015, sizeAttenuation: true })
+    const points = new THREE.Points(geo, mat)
+    scene.add(points)
+
+    const basePositions = Float32Array.from(positions.array)
+    let t = 0
+    let raf = 0
+    const animate = () => {
+      t += 0.012
+      const pulse = 1 + Math.sin(t * 1.2) * 0.15
+      const arr = positions.array as Float32Array
+      for (let i = 0; i < arr.length; i += 3) {
+        const bx = basePositions[i], by = basePositions[i+1], bz = basePositions[i+2]
+        // Sharp spiky noise
+        const n1 = Math.sin(bx * 8 + t * 2) * Math.cos(by * 6 + t * 1.5) * Math.sin(bz * 7 + t * 1.8)
+        const n2 = Math.sin(bx * 12 + t * 3) * Math.sin(bz * 10 - t * 2)
+        const spike = Math.max(0, n1 * 0.4 + n2 * 0.2)
+        const scale = pulse + spike
+        arr[i] = bx * scale
+        arr[i+1] = by * scale
+        arr[i+2] = bz * scale
+      }
+      positions.needsUpdate = true
+      points.rotation.y = t * 0.3
+      points.rotation.x = Math.sin(t * 0.15) * 0.15
+      renderer.render(scene, camera)
+      raf = requestAnimationFrame(animate)
+    }
+    animate()
+    return () => { cancelAnimationFrame(raf); renderer.dispose() }
+  }, [generating])
 
   const reroll = React.useCallback(() => {
     setConfig(genConfig())
@@ -106,26 +167,17 @@ export default function NewAgentPage() {
   if (generating) {
     return (
       <main className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-[#05060a] text-foreground">
-        {/* Same terrain as homepage */}
-        <TerrainHero />
+        {/* Pulsating sphere using same point-cloud aesthetic */}
+        <div className="relative flex items-center justify-center">
+          <canvas ref={canvasRef} className="size-64" />
+        </div>
 
-        {/* Content overlay */}
-        <div className="relative z-10 flex flex-col items-center gap-8">
-          {/* Bright pulsating core */}
-          <div className="relative flex items-center justify-center">
-            <div className="absolute size-40 rounded-full bg-white/[0.03] animate-[ping_3s_ease-in-out_infinite]" />
-            <div className="absolute size-24 rounded-full bg-white/[0.06] animate-[pulse_2s_ease-in-out_infinite]" />
-            <div className="absolute size-10 rounded-full bg-white/30 animate-[pulse_1.5s_ease-in-out_infinite] shadow-[0_0_60px_20px_rgba(255,255,255,0.15)]" />
-            <div className="size-3 rounded-full bg-white shadow-[0_0_20px_8px_rgba(255,255,255,0.4)]" />
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <p className="text-sm font-medium tracking-wide text-white/80">{genSteps[genStep]}</p>
+          <div className="h-[2px] w-40 overflow-hidden rounded-full bg-white/10">
+            <div className="h-full rounded-full bg-white/70 transition-all duration-1000 ease-out" style={{ width: `${((genStep + 1) / genSteps.length) * 100}%` }} />
           </div>
-
-          <div className="flex flex-col items-center gap-3">
-            <p className="text-sm font-medium tracking-wide text-white/80">{genSteps[genStep]}</p>
-            <div className="h-[2px] w-40 overflow-hidden rounded-full bg-white/10">
-              <div className="h-full rounded-full bg-white/70 transition-all duration-1000 ease-out" style={{ width: `${((genStep + 1) / genSteps.length) * 100}%` }} />
-            </div>
-            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/30">{name}</p>
-          </div>
+          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/30">{name}</p>
         </div>
       </main>
     )
@@ -213,14 +265,31 @@ export default function NewAgentPage() {
 
             <Field>
               <FieldLabel>Personality</FieldLabel>
+              <div className="mb-2 flex flex-wrap gap-1.5">
+                {PERSONALITY_PRESETS.map((p) => (
+                  <button
+                    key={p.label}
+                    type="button"
+                    onClick={() => setPersonality(p.value)}
+                    className={cn(
+                      "rounded-md border px-2 py-1 text-[11px] transition",
+                      personality === p.value
+                        ? "border-primary bg-primary/10 text-primary"
+                        : "border-border/60 text-muted-foreground hover:border-foreground/30 hover:text-foreground"
+                    )}
+                  >
+                    {p.label}
+                  </button>
+                ))}
+              </div>
               <Textarea
                 value={personality}
                 onChange={(e) => setPersonality(e.target.value)}
-                placeholder="Describe how this agent should behave."
+                placeholder="Or write your own personality description..."
                 rows={4}
               />
               <FieldDescription>
-                Used as the system prompt for this agent.
+                Pick a preset or write your own. Used as the system prompt for this agent.
               </FieldDescription>
             </Field>
 

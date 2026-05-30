@@ -12,6 +12,7 @@ import {
   CaretUp,
   Crosshair,
   Cube,
+  Export,
   Play,
   WaveSine,
   X,
@@ -160,6 +161,8 @@ export default function MapPage() {
   const simTimeRef = useRef(new Date(new Date().setHours(8, 0, 0, 0)))
   const [simTime, setSimTime] = useState("08:00 AM")
   const [activities, setActivities] = useState<{ name: string; activity: string; reasoning: string }[]>([])
+  const [exporting, setExporting] = useState(false)
+  const [exportResult, setExportResult] = useState<{ boxUrl: string; fileName: string; aiSummary: string | null } | null>(null)
 
   // Fetch agents from Supabase
   useEffect(() => {
@@ -487,6 +490,30 @@ export default function MapPage() {
     stopFollowing()
   }, [stopFollowing])
 
+  const exportSimulation = useCallback(async () => {
+    if (activities.length === 0) return
+    setExporting(true)
+    setExportResult(null)
+    try {
+      const res = await fetch("/api/export", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          activities,
+          agentCount: agentsRef.current.length,
+          simTime,
+        }),
+      })
+      const data = await res.json()
+      if (data.error) throw new Error(data.error)
+      setExportResult({ boxUrl: data.boxUrl, fileName: data.fileName, aiSummary: data.aiSummary ?? null })
+    } catch (err) {
+      alert("Export failed: " + (err instanceof Error ? err.message : "Unknown error"))
+    } finally {
+      setExporting(false)
+    }
+  }, [activities, simTime])
+
   const resetView = () => {
     stopFollowing()
     setSelectedAgent(null)
@@ -544,7 +571,64 @@ export default function MapPage() {
             className={cn("flex items-center gap-2 rounded-md border border-border/60 bg-card/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] backdrop-blur transition",
               activityOpen ? "text-foreground" : "text-muted-foreground hover:text-foreground"
             )}><WaveSine size={12} /> Activity</button>
+          <button
+            type="button"
+            onClick={exportSimulation}
+            disabled={exporting || activities.length === 0}
+            className={cn(
+              "flex items-center gap-2 rounded-md border border-border/60 bg-card/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] backdrop-blur transition",
+              exporting || activities.length === 0
+                ? "cursor-not-allowed text-muted-foreground/50"
+                : "text-foreground hover:bg-card",
+            )}
+          >
+            <Export size={12} />
+            {exporting ? "Exporting…" : "Export"}
+          </button>
         </div>
+
+        {/* Box export success — AI debrief panel */}
+        {exportResult && (
+          <div className="absolute bottom-20 left-1/2 z-50 w-96 -translate-x-1/2 animate-in fade-in slide-in-from-bottom-2 duration-200">
+            <div className="rounded-md border border-border/60 bg-card/95 shadow-lg backdrop-blur">
+              <div className="flex items-center justify-between border-b border-border/60 px-4 py-2.5">
+                <div className="flex items-center gap-2">
+                  <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_0_var(--color-emerald-400,#34d399)]" />
+                  <span className="text-[10px] uppercase tracking-[0.18em] text-foreground">Box AI Debrief</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={exportResult.boxUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground underline underline-offset-2 hover:text-foreground"
+                  >
+                    View file
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setExportResult(null)}
+                    className="rounded p-0.5 text-muted-foreground hover:text-foreground"
+                    aria-label="Dismiss"
+                  >
+                    <X size={10} />
+                  </button>
+                </div>
+              </div>
+              <div className="px-4 py-3">
+                {exportResult.aiSummary ? (
+                  <p className="text-xs leading-relaxed text-foreground/85">{exportResult.aiSummary}</p>
+                ) : (
+                  <p className="text-xs text-muted-foreground">
+                    Saved to Box as{" "}
+                    <span className="font-medium text-foreground">{exportResult.fileName}</span>.
+                    Box AI analysis unavailable.
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Right rail: activity stream + agent profile */}
         <aside

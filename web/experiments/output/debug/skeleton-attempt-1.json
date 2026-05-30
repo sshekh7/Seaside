@@ -2,120 +2,120 @@
   "beats": [
     {
       "index": 0,
-      "start_time": "2026-06-07T07:00:00-07:00",
-      "end_time": "2026-06-07T07:35:00-07:00",
-      "activity": "Wake up, coffee, check emails and client messages on phone.",
+      "start_time": "2026-06-06T09:15:00-07:00",
+      "end_time": "2026-06-06T09:45:00-07:00",
+      "activity": "Wake up, shower, throw on clothes, make coffee at home.",
       "activity_type": "home",
-      "location_name": "Home (Mercer Island)",
-      "reasoning": "Linda wakes early on Sunday with full energy; real estate agents work weekends for open houses. Quick morning routine to prep for a busy day of showings and networking."
+      "location_name": "Home (Capitol Hill, Seattle)",
+      "reasoning": "Jesse sleeps in late on weekends; Saturday morning wake at 9:15 feels natural for his restless schedule. Quick 30 min to get moving."
     },
     {
       "index": 1,
-      "start_time": "2026-06-07T07:35:00-07:00",
-      "end_time": "2026-06-07T08:15:00-07:00",
-      "activity": "Power walk around Mercer Island Park loop to clear head and stay energized.",
-      "activity_type": "exercise",
-      "location_name": "Mercer Island Park (Mercer Island)",
-      "reasoning": "Linda is a power walker; a sunny Sunday morning is perfect for her routine exercise before a full day of client interactions and open house viewings."
+      "start_time": "2026-06-06T09:45:00-07:00",
+      "end_time": "2026-06-06T10:05:00-07:00",
+      "activity": "Skateboard to Victrola Coffee Roasters for a short morning shift.",
+      "activity_type": "commute",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "reasoning": "Jesse skateboards to work; Capitol Hill is compact, so 20 min covers the ride and getting settled."
     },
     {
       "index": 2,
-      "start_time": "2026-06-07T08:15:00-07:00",
-      "end_time": "2026-06-07T08:50:00-07:00",
-      "activity": "Drive to Bellevue office, calls with clients en route.",
-      "activity_type": "commute",
-      "location_name": "Windermere Real Estate Office (Bellevue)",
-      "reasoning": "Linda drives everywhere and is obsessed with open houses; Sunday morning commute to Bellevue office to prepare for a day of property showings and client calls."
+      "start_time": "2026-06-06T10:05:00-07:00",
+      "end_time": "2026-06-06T11:00:00-07:00",
+      "activity": "Work barista shift: take orders, make espresso drinks, chat with regulars.",
+      "activity_type": "work",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "reasoning": "Saturday morning coffee rush; Jesse works part-time and needs the hours. Shift starts right away."
     },
     {
       "index": 3,
-      "start_time": "2026-06-07T08:50:00-07:00",
-      "end_time": "2026-06-07T10:30:00-07:00",
-      "activity": "Prepare open house materials, review new listings, make networking calls from office.",
-      "activity_type": "work",
-      "location_name": "Windermere Real Estate Office (Bellevue)",
-      "reasoning": "Real estate work on Sunday morning: prepping open houses, organizing client portfolios, and networking calls—core to Linda's always-networking personality."
+      "start_time": "2026-06-06T11:00:00-07:00",
+      "end_time": "2026-06-06T12:30:00-07:00",
+      "activity": "Watch USA vs Wales FIFA World Cup match on the shop TV, chat with coworkers and customers.",
+      "activity_type": "leisure",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "reasoning": "The 11am match is a big draw; Jesse loves sports and hanging with people. He likely stays at work to watch with the crowd and vibe, rather than leaving early or skipping it."
     },
     {
       "index": 4,
-      "start_time": "2026-06-07T10:30:00-07:00",
-      "end_time": "2026-06-07T10:50:00-07:00",
-      "activity": "Drive to first open house showing in Bellevue.",
-      "activity_type": "commute",
-      "location_name": "Bellevue Downtown (Bellevue)",
-      "reasoning": "Short drive within Bellevue to reach the first open house of the day; Linda is obsessed with open houses and Sundays are prime showing time."
+      "start_time": "2026-06-06T12:30:00-07:00",
+      "end_time": "2026-06-06T13:00:00-07:00",
+      "activity": "Finish barista shift, clean up, grab a quick snack.",
+      "activity_type": "work",
+      "location_name": "Victrola Coffee Roasters (Capitol Hill, Seattle)",
+      "reasoning": "End of morning shift; Jesse wraps up and takes a break from the counter."
     },
     {
       "index": 5,
-      "start_time": "2026-06-07T10:50:00-07:00",
-      "end_time": "2026-06-07T12:15:00-07:00",
-      "activity": "Host open house showing, greet potential buyers, discuss property features and market trends.",
-      "activity_type": "work",
-      "location_name": "Bellevue Downtown (Bellevue)",
-      "reasoning": "Linda loves open houses; Sunday mid-morning is peak traffic for showings. She networks and engages deeply with each prospect, consistent with her personality."
+      "start_time": "2026-06-06T13:00:00-07:00",
+      "end_time": "2026-06-06T13:30:00-07:00",
+      "activity": "Skateboard to Capitol Hill neighborhood, grab cheap pizza and a soda at a local spot.",
+      "activity_type": "meal",
+      "location_name": "Serious Pie (Capitol Hill, Seattle)",
+      "reasoning": "Sunny Saturday; Jesse loves fast food and staying in his neighborhood. Short ride, quick lunch."
     },
     {
       "index": 6,
-      "start_time": "2026-06-07T12:15:00-07:00",
-      "end_time": "2026-06-07T12:45:00-07:00",
-      "activity": "Drive to upscale lunch spot in Bellevue, calls with clients.",
-      "activity_type": "commute",
-      "location_name": "The Herbfarm (Bellevue)",
-      "reasoning": "Linda lunches at upscale spots and drives everywhere; she takes a brief networking-friendly lunch break between open house showings."
+      "start_time": "2026-06-06T13:30:00-07:00",
+      "end_time": "2026-06-06T15:00:00-07:00",
+      "activity": "Volunteer at the Capitol Hill Youth Center: help with afternoon drop-in art class and chat with kids.",
+      "activity_type": "social",
+      "location_name": "Capitol Hill Youth Center (Capitol Hill, Seattle)",
+      "reasoning": "Jesse volunteers on weekends; this Saturday slot fits his routine and his good heart, even if he plays it cool. Gives him purpose and community."
     },
     {
       "index": 7,
-      "start_time": "2026-06-07T12:45:00-07:00",
-      "end_time": "2026-06-07T13:45:00-07:00",
-      "activity": "Upscale lunch, take client call mid-meal, discuss new listings and market updates.",
-      "activity_type": "meal",
-      "location_name": "The Herbfarm (Bellevue)",
-      "reasoning": "Linda lunches at upscale spots and is always networking; she works through lunch, handling client calls and market talk—never truly off the clock."
+      "start_time": "2026-06-06T15:00:00-07:00",
+      "end_time": "2026-06-06T15:45:00-07:00",
+      "activity": "Skateboard home to Capitol Hill; light rail closure doesn't affect him since he doesn't use transit.",
+      "activity_type": "commute",
+      "location_name": "Home (Capitol Hill, Seattle)",
+      "reasoning": "Light rail closure between Westlake and U-District is irrelevant to Jesse's Capitol Hill skateboard lifestyle. Easy 15 min ride home on a sunny day."
     },
     {
       "index": 8,
-      "start_time": "2026-06-07T13:45:00-07:00",
-      "end_time": "2026-06-07T14:15:00-07:00",
-      "activity": "Drive to second open house on the Eastside, calls with potential buyers.",
-      "activity_type": "commute",
-      "location_name": "Redmond (Redmond)",
-      "reasoning": "Sunday afternoon is prime real estate time; Linda heads east to Redmond for a second showing, staying in motion and networking throughout the drive."
+      "start_time": "2026-06-06T15:45:00-07:00",
+      "end_time": "2026-06-06T17:30:00-07:00",
+      "activity": "Hang out at home, draw graffiti-style art, sketch designs, listen to loud music.",
+      "activity_type": "leisure",
+      "location_name": "Home (Capitol Hill, Seattle)",
+      "reasoning": "Jesse needs background noise and creative outlet. Afternoon art session at home is his sweet spot—impulsive energy channeled into sketchbooks and spray paint designs."
     },
     {
       "index": 9,
-      "start_time": "2026-06-07T14:15:00-07:00",
-      "end_time": "2026-06-07T15:45:00-07:00",
-      "activity": "Host second open house, show property, answer buyer questions, hand out business cards.",
-      "activity_type": "work",
-      "location_name": "Redmond (Redmond)",
-      "reasoning": "Second open house of the day; Linda is in her element networking with prospective buyers and showcasing properties—core to her obsession with open houses."
+      "start_time": "2026-06-06T17:30:00-07:00",
+      "end_time": "2026-06-06T18:15:00-07:00",
+      "activity": "Skateboard to arcade bar in Capitol Hill for evening drinks and games with friends.",
+      "activity_type": "commute",
+      "location_name": "Shorty's (Capitol Hill, Seattle)",
+      "reasoning": "Saturday night; Jesse loves arcade bars and hanging with people. Shorty's is a Capitol Hill staple perfect for his vibe."
     },
     {
       "index": 10,
-      "start_time": "2026-06-07T15:45:00-07:00",
-      "end_time": "2026-06-07T16:30:00-07:00",
-      "activity": "Drive home to Mercer Island, listening to real estate podcasts and taking client calls.",
-      "activity_type": "commute",
-      "location_name": "Home (Mercer Island)",
-      "reasoning": "End of Sunday showings; Linda heads home, using the drive time productively for client calls and professional development—she's always working."
+      "start_time": "2026-06-06T18:15:00-07:00",
+      "end_time": "2026-06-06T22:30:00-07:00",
+      "activity": "Play arcade games, drink beer, socialize with friends, soak up the loud atmosphere.",
+      "activity_type": "social",
+      "location_name": "Shorty's (Capitol Hill, Seattle)",
+      "reasoning": "Jesse thrives on noise and company; a 4+ hour arcade bar session on a Saturday night is peak Jesse behavior—loyal, impulsive, and fully present with his crew."
     },
     {
       "index": 11,
-      "start_time": "2026-06-07T16:30:00-07:00",
-      "end_time": "2026-06-07T18:00:00-07:00",
-      "activity": "Relax on patio, review photos from open houses, light dinner prep, answer non-urgent emails.",
-      "activity_type": "leisure",
-      "location_name": "Home (Mercer Island)",
-      "reasoning": "Wind-down evening at home on Mercer Island; sunny weather makes the patio appealing. Linda reviews the day's work and preps for tomorrow while staying at home before sleep."
+      "start_time": "2026-06-06T22:30:00-07:00",
+      "end_time": "2026-06-06T23:15:00-07:00",
+      "activity": "Skateboard home to Capitol Hill, wind down with some chill music and sketching.",
+      "activity_type": "commute",
+      "location_name": "Home (Capitol Hill, Seattle)",
+      "reasoning": "Night ride home; Jesse is buzzed but safe on his board. Needs to get home before midnight to settle."
     },
     {
       "index": 12,
-      "start_time": "2026-06-07T18:00:00-07:00",
-      "end_time": "2026-06-08T06:00:00-07:00",
-      "activity": "Dinner, evening leisure, wind down, and sleep.",
+      "start_time": "2026-06-06T23:15:00-07:00",
+      "end_time": "2026-06-07T06:30:00-07:00",
+      "activity": "Final wind-down: put on headphones, listen to music, crash into bed and sleep deeply.",
       "activity_type": "sleep",
-      "location_name": "Home (Mercer Island)",
-      "reasoning": "Full night's sleep at home, ending early Monday morning—Linda needs recovery after a full day of open houses, showings, and constant networking."
+      "location_name": "Home (Capitol Hill, Seattle)",
+      "reasoning": "Jesse needs sound to sleep; headphones with lo-fi or ambient music keep him from the anxiety of silence. 7.25 hours gets him to mid-morning Sunday, fitting his sleep-in lifestyle."
     }
   ]
 }

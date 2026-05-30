@@ -1,0 +1,157 @@
+{
+  "beats": [
+    {
+      "index": 0,
+      "start_time": "2026-06-02T07:00:00-07:00",
+      "end_time": "2026-06-02T07:30:00-07:00",
+      "activity": "Wake up, shower, and make a quick breakfast at home",
+      "activity_type": "home",
+      "location_name": "Home (Downtown Redmond)",
+      "reasoning": "Start the day with energy and get ready for a rainy work commute."
+    },
+    {
+      "index": 1,
+      "start_time": "2026-06-02T07:30:00-07:45:00-07:00",
+      "end_time": "2026-06-02T07:45:00-07:55:00-07:00",
+      "activity": "Grab coffee and pack a small umbrella and rain jacket",
+      "activity_type": "errand",
+      "location_name": "Starbucks (Redmond Town Center)",
+      "reasoning": "Quick grab-and-go to stay comfortable during heavy rain."
+    },
+    {
+      "index": 2,
+      "start_time": "2026-06-02T07:55:00-07:58:00-07:00",
+      "end_time": "2026-06-02T08:15:00-07:00",
+      "activity": "Drive to Microsoft and park near Building 99",
+      "activity_type": "commute",
+      "location_name": "Microsoft Building 99, Redmond",
+      "reasoning": "Short commute while rain is starting, with extra buffer for traffic."
+    },
+    {
+      "index": 3,
+      "start_time": "2026-06-02T08:15:00-07:00",
+      "end_time": "2026-06-02T12:00:00-07:00",
+      "activity": "Deep work: review sprint tickets, implement a feature, and run tests",
+      "activity_type": "work",
+      "location_name": "Microsoft Building 99, Redmond",
+      "reasoning": "Primary focus block for a software engineering day despite weather disruptions."
+    },
+    {
+      "index": 4,
+      "start_time": "2026-06-02T12:00:00-07:00",
+      "end_time": "2026-06-02T12:30:00-07:00",
+      "activity": "Lunch indoors with coworkers (order ahead due to rain)",
+      "activity_type": "meal",
+      "location_name": "Café at Microsoft (One Microsoft Way)",
+      "reasoning": "Heavy rain makes it better to keep lunch on-site and sheltered."
+    },
+    {
+      "index": 5,
+      "start_time": "2026-06-02T12:30:00-07:00",
+      "end_time": "2026-06-02T12:55:00-07:00",
+      "activity": "Light afternoon work: code review, merge changes, and plan next steps",
+      "activity_type": "work",
+      "location_name": "Microsoft Building 99, Redmond",
+      "reasoning": "Wrap up tasks efficiently before the day shifts into evening routines."
+    },
+    {
+      "index": 6,
+      "start_time": "2026-06-02T12:55:00-07:00",
+      "end_time": "2026-06-02T13:25:00-07:00",
+      "activity": "Drive to a nearby grocery to restock snacks for the week",
+      "activity_type": "errand",
+      "location_name": "QFC (Redmond Way)",
+      "reasoning": "As rain continues until 2pm, run a nearby indoor errand without crossing the SR-520 eastbound closure window."
+    },
+    {
+      "index": 7,
+      "start_time": "2026-06-02T13:25:00-07:00",
+      "end_time": "2026-06-02T13:55:00-07:00",
+      "activity": "Head back to work, pick up remaining items, and prepare to wrap up",
+      "activity_type": "commute",
+      "location_name": "Microsoft Building 99, Redmond",
+      "reasoning": "Return to keep a clean transition out of work before evening."
+    },
+    {
+      "index": 8,
+      "start_time": "2026-06-02T13:55:00-07:00",
+      "end_time": "2026-06-02T17:30:00-07:00",
+      "activity": "Finish up: resolve bugs, write a short status update, and close out tickets",
+      "activity_type": "work",
+      "location_name": "Microsoft Building 99, Redmond",
+      "reasoning": "A solid end-of-day work block to land deliverables despite the weather."
+    },
+    {
+      "index": 9,
+      "start_time": "2026-06-02T17:30:00-07:00",
+      "end_time": "2026-06-02T17:50:00-07:00",
+      "activity": "Drive home from campus with a quick stop for dry clothes if needed",
+      "activity_type": "commute",
+      "location_name": "Home (Downtown Redmond)",
+      "reasoning": "Use the post-work window to reset for the evening while staying local."
+    },
+    {
+      "index": 10,
+      "start_time": "2026-06-02T17:50:00-07:00",
+      "end_time": "2026-06-02T18:30:00-07:00",
+      "activity": "Workout at the gym: treadmill + light strength, upbeat playlist",
+      "activity_type": "exercise",
+      "location_name": "Seattle Athletic Club (Redmond)",
+      "reasoning": "Priyanshu is fun-loving and enjoys a positive outlet after a long workday."
+    },
+    {
+      "index": 11,
+      "start_time": "2026-06-02T18:30:00-07:00",
+      "end_time": "2026-06-02T19:10:00-07:00",
+      "activity": "Shower and change, then head out for a casual dinner",
+      "activity_type": "leisure",
+      "location_name": "Home (Downtown Redmond)",
+      "reasoning": "Quick reset time before a social-ish meal with relaxed vibes."
+    },
+    {
+      "index": 12,
+      "start_time": "2026-06-02T19:10:00-07:00",
+      "end_time": "2026-06-02T20:00:00-07:00",
+      "activity": "Dinner: Thai food and a couple of fun non-alcoholic drinks",
+      "activity_type": "meal",
+      "location_name": "Thai Basil (Redmond)",
+      "reasoning": "Enjoy a comforting, tasty meal after work; indoor option suits rainy conditions earlier."
+    },
+    {
+      "index": 13,
+      "start_time": "2026-06-02T20:00:00-07:00",
+      "end_time": "2026-06-02T20:30:00-07:00",
+      "activity": "Walk off dinner with a short, relaxed loop near downtown Redmond",
+      "activity_type": "leisure",
+      "location_name": "Downtown Park (Redmond)",
+      "reasoning": "A low-key evening stroll matches his upbeat personality and keeps it local."
+    },
+    {
+      "index": 14,
+      "start_time": "2026-06-02T20:30:00-07:00",
+      "end_time": "2026-06-02T21:15:00-07:00",
+      "activity": "Come home, cook something simple, and catch up on tech news",
+      "activity_type": "leisure",
+      "location_name": "Home (Downtown Redmond)",
+      "reasoning": "Wind down with comfort food and light browsing after a full day."
+    },
+    {
+      "index": 15,
+      "start_time": "2026-06-02T21:15:00-07:00",
+      "end_time": "2026-06-02T22:15:00-07:00",
+      "activity": "Plan tomorrow lightly, tidy up, and do a short reading session",
+      "activity_type": "leisure",
+      "location_name": "Home (Downtown Redmond)",
+      "reasoning": "A calm routine helps him recharge for another workday."
+    },
+    {
+      "index": 16,
+      "start_time": "2026-06-02T22:15:00-07:00",
+      "end_time": "2026-06-02T23:30:00-07:00",
+      "activity": "Sleep/wind down: dim lights, no screens, and get ready for rest",
+      "activity_type": "sleep",
+      "location_name": "Home (Downtown Redmond)",
+      "reasoning": "Ends the day by 23:30 and supports a healthy schedule after heavy rain disruptions."
+    }
+  ]
+}

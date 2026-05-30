@@ -54,15 +54,37 @@ Respond ONLY with valid JSON, no markdown, no code blocks, no explanation:
     const result = JSON.parse(new TextDecoder().decode(response.body))
     const text = result.content[0].text
 
+    // Aggressively extract JSON from any format
+    let parsed: Record<string, unknown> = {}
     try {
-      const cleaned = text.replace(/```json\s*/g, "").replace(/```\s*/g, "").trim()
-      const match = cleaned.match(/\{[\s\S]*\}/)
-      const decision = match ? JSON.parse(match[0]) : { activity: text, destination: "Pike Place Market", duration_minutes: 15, reasoning: "default" }
-      decision.duration_minutes = Math.min(Math.max(decision.duration_minutes || 15, 5), 45)
-      return NextResponse.json(decision)
+      // Strip all markdown formatting
+      const stripped = text.replace(/```[\s\S]*?```/g, (m: string) => m.replace(/```json?\s*/g, "").replace(/```/g, "")).trim()
+      const jsonMatch = stripped.match(/\{[^{}]*"activity"[^{}]*\}/)
+      if (jsonMatch) {
+        parsed = JSON.parse(jsonMatch[0])
+      } else {
+        // Try parsing the whole thing
+        parsed = JSON.parse(stripped)
+      }
     } catch {
-      return NextResponse.json({ activity: text, destination: "Pike Place Market", duration_minutes: 15, reasoning: "parse fallback" })
+      // Last resort: regex extract fields
+      const actMatch = text.match(/"activity"\s*:\s*"([^"]+)"/)
+      const destMatch = text.match(/"destination"\s*:\s*"([^"]+)"/)
+      const durMatch = text.match(/"duration_minutes"\s*:\s*(\d+)/)
+      parsed = {
+        activity: actMatch?.[1] || "Walking around the neighborhood",
+        destination: destMatch?.[1] || "Pike Place Market",
+        duration_minutes: durMatch ? parseInt(durMatch[1]) : 20,
+        reasoning: "extracted from response",
+      }
     }
+
+    return NextResponse.json({
+      activity: String(parsed.activity || "Exploring the area"),
+      destination: String(parsed.destination || "Pike Place Market"),
+      duration_minutes: Math.min(Math.max(Number(parsed.duration_minutes) || 15, 5), 45),
+      reasoning: String(parsed.reasoning || ""),
+    })
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error"
     return NextResponse.json({ error: message }, { status: 500 })

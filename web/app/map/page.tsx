@@ -96,6 +96,28 @@ async function fetchRoute(start: [number, number], end: [number, number]): Promi
   } catch { return null }
 }
 
+async function geocode(place: string): Promise<[number, number] | null> {
+  try {
+    const res = await fetch(
+      `https://api.mapbox.com/search/geocode/v6/forward?q=${encodeURIComponent(place + ", Seattle WA")}&limit=1&access_token=${TOKEN}`
+    )
+    const data = await res.json()
+    const coords = data.features?.[0]?.geometry?.coordinates
+    return coords ? [coords[0], coords[1]] : null
+  } catch { return null }
+}
+
+async function thinkAgent(agent: Agent, currentLocation: string, memories: { activity: string }[], simTime?: Date): Promise<{ activity: string; destination: string; reasoning: string; duration_minutes?: number } | null> {
+  try {
+    const res = await fetch("/api/agent/think", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ agent, currentLocation, memories, simTime: simTime?.toISOString() }),
+    })
+    return await res.json()
+  } catch { return null }
+}
+
 function interpolateRoute(coords: [number, number][], stepsPerSegment: number): [number, number][] {
   const result: [number, number][] = []
   for (let i = 0; i < coords.length - 1; i++) {
@@ -132,6 +154,10 @@ export default function MapPage() {
   const followingIndexRef = useRef<number | null>(null)
   const followTargetRef = useRef<{ zoom: number; pitch: number }>({ zoom: 16.5, pitch: 55 })
   const [followingIndex, setFollowingIndex] = useState<number | null>(null)
+  const runningRef = useRef(false)
+  const simTimeRef = useRef(new Date(new Date().setHours(8, 0, 0, 0)))
+  const [simTime, setSimTime] = useState("08:00 AM")
+  const [activities, setActivities] = useState<{ name: string; activity: string; reasoning: string }[]>([])
 
   // Fetch agents from Supabase
   useEffect(() => {
@@ -227,6 +253,91 @@ export default function MapPage() {
     return () => clearInterval(id)
   }, [])
 
+  // Simulated clock: 5 sim minutes per real second at 1x
+  useEffect(() => {
+    if (!agentRunning) return
+    const interval = setInterval(() => {
+      simTimeRef.current = new Date(simTimeRef.current.getTime() + 5 * 60 * 1000 * speed)
+      const h = simTimeRef.current.getHours()
+      const m = simTimeRef.current.getMinutes()
+      const ampm = h >= 12 ? "PM" : "AM"
+      const h12 = h % 12 || 12
+      setSimTime(`${h12.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")} ${ampm}`)
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [agentRunning, speed])
+
+  // Autonomous cycle for a single agent
+  const cycleAgent = useCallback(async (agentIdx: number) => {
+    const map = mapRef.current
+    const currentAgents = agentsRef.current
+    if (!map || !runningRef.current || !currentAgents[agentIdx]) return
+
+    const agent = currentAgents[agentIdx]
+    const currentPos = positionsRef.current[agentIdx] || agent.start
+
+    const decision = await thinkAgent(agent, agent.zone, [], simTimeRef.current)
+    if (!decision || !runningRef.current) return
+
+    const durationMin = Math.min(decision.duration_minutes || 5, 60)
+    const stayDuration = (durationMin * 1000) / speed
+
+    setActivities((prev) => [{ name: agent.name, activity: `${decision.activity} (${durationMin}min)`, reasoning: decision.reasoning }, ...prev].slice(0, 50))
+
+    const dest = await geocode(decision.destination)
+    const end = dest || agent.end
+    const route = await fetchRoute(currentPos, end)
+    if (!route || !runningRef.current) {
+      const t = setTimeout(() => cycleAgent(agentIdx), 5000)
+      timersRef.current.push(t)
+      return
+    }
+
+    const smooth = interpolateRoute(route, 3)
+    let i = 0
+    const step = () => {
+      if (!runningRef.current) return
+      if (i >= smooth.length) {
+        positionsRef.current[agentIdx] = smooth[smooth.length - 1]
+        const t = setTimeout(() => cycleAgent(agentIdx), stayDuration)
+        timersRef.current.push(t)
+        return
+      }
+      positionsRef.current[agentIdx] = smooth[i]
+      i++
+      const t = setTimeout(step, speedRef.current)
+      timersRef.current.push(t)
+    }
+    step()
+  }, [speed])
+
+  // Render loop for autonomous mode
+  useEffect(() => {
+    if (!agentRunning || !runningRef.current) return
+    const interval = setInterval(() => {
+      const map = mapRef.current
+      const currentAgents = agentsRef.current
+      if (!map || !map.getSource("agents-src") || currentAgents.length === 0) return
+      const collection: GeoJSON.FeatureCollection = {
+        type: "FeatureCollection",
+        features: positionsRef.current.map((pos, i) => ({
+          type: "Feature" as const,
+          properties: { agentIndex: i, color: currentAgents[i]?.color || "#fff" },
+          geometry: { type: "Point" as const, coordinates: pos },
+        })),
+      };
+      (map.getSource("agents-src") as mapboxgl.GeoJSONSource).setData(collection)
+    }, 33)
+    return () => clearInterval(interval)
+  }, [agentRunning])
+
+  const stopAgents = useCallback(() => {
+    runningRef.current = false
+    timersRef.current.forEach(clearTimeout)
+    timersRef.current = []
+    setAgentRunning(false)
+  }, [])
+
   const startAgents = useCallback(async () => {
     const map = mapRef.current
     const currentAgents = agentsRef.current
@@ -234,6 +345,8 @@ export default function MapPage() {
 
     setAgentRunning(true)
     setLoadingRoutes(true)
+    runningRef.current = true
+    setActivities([])
     framesRef.current = []
     setFrames([])
     timersRef.current.forEach(clearTimeout)
@@ -367,7 +480,16 @@ export default function MapPage() {
           essential: true,
         })
       }
-      if (allDone) { setAgentRunning(false); done = true; return }
+      if (allDone) {
+        // Initial animation done — start autonomous cycles
+        setLoadingRoutes(false)
+        currentAgents.forEach((_, i) => {
+          const delay = i * 1000
+          const t = setTimeout(() => cycleAgent(i), delay)
+          timersRef.current.push(t)
+        })
+        return
+      }
       const t = setTimeout(step, speedRef.current)
       timersRef.current.push(t)
     }
@@ -436,7 +558,7 @@ export default function MapPage() {
         <div className="absolute left-4 top-4 z-20 flex items-center gap-3">
           <div className="flex items-center gap-2 rounded-md border border-border/60 bg-card/80 px-3 py-1.5 backdrop-blur">
             <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_0_var(--color-emerald-400,#34d399)]" />
-            <span className="font-mono text-xs tracking-[0.18em] text-foreground tabular-nums">{time}</span>
+            <span className="font-mono text-xs tracking-[0.18em] text-foreground tabular-nums">{agentRunning ? simTime : time}</span>
           </div>
           <span className="hidden text-[10px] uppercase tracking-[0.2em] text-muted-foreground sm:inline">
             {agents.length} Agents · {ZONES.length} Zones
@@ -465,12 +587,12 @@ export default function MapPage() {
 
         {/* Top-right: launch + activity stream */}
         <div className="absolute right-4 top-4 z-30 flex items-center gap-2">
-          <button type="button" onClick={startAgents} disabled={agentRunning || loadingRoutes || agents.length === 0}
+          <button type="button" onClick={agentRunning ? stopAgents : startAgents} disabled={!agentRunning && (loadingRoutes || agents.length === 0)}
             className={cn("flex items-center gap-2 rounded-md border border-border/60 bg-card/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] backdrop-blur transition",
-              agentRunning || loadingRoutes || agents.length === 0 ? "cursor-not-allowed text-muted-foreground/50" : "text-foreground hover:bg-card"
+              !agentRunning && (loadingRoutes || agents.length === 0) ? "cursor-not-allowed text-muted-foreground/50" : "text-foreground hover:bg-card"
             )}>
             <Play size={12} weight={agentRunning ? "regular" : "fill"} />
-            {loadingRoutes ? "Loading…" : agentRunning ? "Walking…" : agents.length === 0 ? "No Agents" : "Launch"}
+            {loadingRoutes ? "Loading…" : agentRunning ? "Stop" : agents.length === 0 ? "No Agents" : "Launch"}
           </button>
           <button type="button" onClick={() => setActivityOpen((o) => !o)} aria-pressed={activityOpen}
             className={cn("flex items-center gap-2 rounded-md border border-border/60 bg-card/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.18em] backdrop-blur transition",
@@ -496,9 +618,20 @@ export default function MapPage() {
               <span className="text-[10px] uppercase tracking-[0.18em] text-foreground">Activity Stream</span>
               <WaveSine size={12} className="text-muted-foreground" />
             </div>
-            <div className="flex flex-1 flex-col items-center justify-center gap-1 p-4">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">No activity</p>
-              <p className="text-[10px] text-muted-foreground/70">Events will appear here.</p>
+            <div className="flex flex-1 flex-col gap-1 overflow-y-auto p-3">
+              {activities.length === 0 ? (
+                <div className="flex flex-1 flex-col items-center justify-center gap-1">
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">No activity</p>
+                  <p className="text-[10px] text-muted-foreground/70">Launch agents to see decisions.</p>
+                </div>
+              ) : (
+                activities.map((a, i) => (
+                  <div key={i} className="rounded border border-border/40 px-2 py-1.5">
+                    <p className="text-[11px] font-medium text-foreground">{a.name}</p>
+                    <p className="text-[10px] text-muted-foreground">{a.activity}</p>
+                  </div>
+                ))
+              )}
             </div>
           </div>
 

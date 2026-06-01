@@ -96,7 +96,6 @@ type Plan = {
   stats?: Record<string, number | boolean>
 }
 
-type PlanFile = { file: string; data: Plan }
 
 type Day = {
   sim_date: string
@@ -311,36 +310,61 @@ export default function MapPage() {
   const [error, setError] = useState<string | null>(null)
   const [metaById, setMetaById] = useState<Record<string, AgentMeta>>({})
 
+  // Cache of loaded day data keyed by sim_date
+  const dayCache = useRef<Map<string, Plan[]>>(new Map())
+
+  // Load manifest, then load first day
   useEffect(() => {
-    fetch("/plans-bundle.json")
+    fetch("/plans/manifest.json")
       .then((r) => r.json())
-      .then((j: Plan[] | { plans: PlanFile[] }) => {
-        const byDate = new Map<string, Day>()
-        // Support both flat array (bundle) and legacy { plans: [{file,data}] }
-        const items: Plan[] = Array.isArray(j)
-          ? j
-          : (j as { plans: PlanFile[] }).plans.map((p) => p.data)
-        for (const data of items) {
-          if (!data?.beats?.length) continue
-          let day = byDate.get(data.sim_date)
-          if (!day) {
-            day = {
-              sim_date: data.sim_date,
-              day_number: data.day_number,
-              plans: [],
-            }
-            byDate.set(data.sim_date, day)
-          }
-          day.plans.push(data)
+      .then(async (manifest: { sim_date: string; day_number: number; agent_count: number; file: string }[]) => {
+        // Create placeholder days from manifest
+        const placeholders: Day[] = manifest.map((m) => ({
+          sim_date: m.sim_date,
+          day_number: m.day_number,
+          plans: [],
+        }))
+        setDays(placeholders)
+
+        // Load first day immediately
+        if (manifest.length > 0) {
+          const plans = await fetchDay(manifest[0].file)
+          dayCache.current.set(manifest[0].sim_date, plans)
+          setDays((prev) => prev.map((d) =>
+            d.sim_date === manifest[0].sim_date ? { ...d, plans } : d
+          ))
         }
-        const sorted = Array.from(byDate.values()).sort(
-          (a, b) => a.day_number - b.day_number,
-        )
-        setDays(sorted)
+
+        // Prefetch remaining days in background
+        for (let i = 1; i < manifest.length; i++) {
+          fetchDay(manifest[i].file).then((plans) => {
+            dayCache.current.set(manifest[i].sim_date, plans)
+            setDays((prev) => prev.map((d) =>
+              d.sim_date === manifest[i].sim_date ? { ...d, plans } : d
+            ))
+          })
+        }
       })
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false))
   }, [])
+
+  async function fetchDay(file: string): Promise<Plan[]> {
+    // Check browser cache first (persists across sessions)
+    const cache = await caches.open("seaside-plans-v1").catch(() => null)
+    if (cache) {
+      const cached = await cache.match(file)
+      if (cached) {
+        const items: Plan[] = await cached.json()
+        return items.filter((p) => p.beats?.length > 0)
+      }
+    }
+    const r = await fetch(file)
+    // Store in browser cache for next visit
+    if (cache) cache.put(file, r.clone())
+    const items: Plan[] = await r.json()
+    return items.filter((p) => p.beats?.length > 0)
+  }
 
   // Best-effort enrichment from Supabase so the profile card can show the
   // agent's avatar, persona, job, and home/work. Matched by agent id; the

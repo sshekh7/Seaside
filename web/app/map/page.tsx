@@ -492,7 +492,7 @@ function DayReplay({
   dayIdxRef.current = dayIdx
 
   // DEMO: swarm target polling
-  const swarmTargetRef = useRef<{ lng: number; lat: number; label: string } | null>(null)
+  const swarmTargetRef = useRef<{ lng: number; lat: number; label: string; timeHour?: number; agentCount?: number } | null>(null)
   const swarmStartRef = useRef(0)
   useEffect(() => {
     const poll = setInterval(async () => {

@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "bun run scripts/build-plans.ts && next build",
-    "build:plans": "bun run scripts/build-plans.ts",
+    "build": "next build",
+    "build:plans": "npx tsx scripts/build-plans.ts",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",

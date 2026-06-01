@@ -8,10 +8,12 @@
  */
 
 import { readdir, readFile, writeFile } from "node:fs/promises"
-import { join } from "node:path"
+import { join, dirname } from "node:path"
+import { fileURLToPath } from "node:url"
 
-const PLANS_DIR = join(import.meta.dir, "..", "experiments", "output", "plans")
-const OUT_FILE = join(import.meta.dir, "..", "experiments", "output", "plans-bundle.json")
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const PLANS_DIR = join(__dirname, "..", "experiments", "output", "plans")
+const OUT_FILE = join(__dirname, "..", "experiments", "output", "plans-bundle.json")
 
 type LngLat = [number, number]
 

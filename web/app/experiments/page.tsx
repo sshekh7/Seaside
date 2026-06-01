@@ -269,9 +269,13 @@ export default function ExperimentsPage() {
   useEffect(() => {
     fetch("/plans-bundle.json")
       .then((r) => r.json())
-      .then((j: { plans: PlanFile[] }) => {
-        setPlans(j.plans)
-        if (j.plans.length > 0) setSelectedFile(j.plans[0].file)
+      .then((j: Plan[] | { plans: PlanFile[] }) => {
+        // Support both flat array (bundle) and legacy { plans: [{file,data}] }
+        const items: PlanFile[] = Array.isArray(j)
+          ? j.map((d: Plan) => ({ file: `${d.sim_date}-${d.agent_name.toLowerCase().replace(/\s+/g, "-")}.json`, data: d }))
+          : j.plans
+        setPlans(items)
+        if (items.length > 0) setSelectedFile(items[0].file)
       })
       .catch((e) => setError(String(e)))
       .finally(() => setLoading(false))

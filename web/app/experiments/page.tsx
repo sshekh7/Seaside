@@ -267,7 +267,7 @@ export default function ExperimentsPage() {
   const [slowTransit, setSlowTransit] = useState(true)
 
   useEffect(() => {
-    fetch("/api/experiments/plans")
+    fetch("/plans-bundle.json")
       .then((r) => r.json())
       .then((j: { plans: PlanFile[] }) => {
         setPlans(j.plans)

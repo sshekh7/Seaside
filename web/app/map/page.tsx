@@ -312,7 +312,7 @@ export default function MapPage() {
   const [metaById, setMetaById] = useState<Record<string, AgentMeta>>({})
 
   useEffect(() => {
-    fetch("/api/experiments/plans")
+    fetch("/plans-bundle.json")
       .then((r) => r.json())
       .then((j: Plan[] | { plans: PlanFile[] }) => {
         const byDate = new Map<string, Day>()

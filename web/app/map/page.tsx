@@ -86,14 +86,14 @@ type Plan = {
   day_number: number
   agent_id: string
   agent_name: string
-  status: string
+  status?: string
   beats: Beat[]
-  diary: string
-  thought_process: string
-  end_state: { location: LngLat; energy: number; notes: string }
-  world_event_prompt: string
-  generated_at: string
-  stats: Record<string, number | boolean>
+  diary?: string
+  thought_process?: string
+  end_state?: { location: LngLat; energy: number; notes: string }
+  world_event_prompt?: string
+  generated_at?: string
+  stats?: Record<string, number | boolean>
 }
 
 type PlanFile = { file: string; data: Plan }
@@ -314,9 +314,13 @@ export default function MapPage() {
   useEffect(() => {
     fetch("/api/experiments/plans")
       .then((r) => r.json())
-      .then((j: { plans: PlanFile[] }) => {
+      .then((j: Plan[] | { plans: PlanFile[] }) => {
         const byDate = new Map<string, Day>()
-        for (const { data } of j.plans) {
+        // Support both flat array (bundle) and legacy { plans: [{file,data}] }
+        const items: Plan[] = Array.isArray(j)
+          ? j
+          : (j as { plans: PlanFile[] }).plans.map((p) => p.data)
+        for (const data of items) {
           if (!data?.beats?.length) continue
           let day = byDate.get(data.sim_date)
           if (!day) {
@@ -799,31 +803,37 @@ function DayReplay({
           | mapboxgl.GeoJSONSource
           | undefined
         if (src) {
-          // DEMO: subtle swarm — some agents divert toward event over time
+          // DEMO: agents divert to event at the specified sim time
           const st = swarmTargetRef.current
-          if (st) {
-            const elapsed = (Date.now() - swarmStartRef.current) / 1000
-            for (let fi = 0; fi < features.length; fi++) {
-              const f = features[fi]
-              const name = (f.properties?.name || "") as string
-              // Deterministic "interest" score per agent (0-1) based on name hash
-              const hash = name.split("").reduce((a, c) => a + c.charCodeAt(0), 0)
-              const interest = (hash % 100) / 100
-              // Only ~40% of agents are interested enough to go
-              if (interest < 0.6) continue
-              // Each agent has a different "departure delay" (5-60s real time)
-              const delay = 5 + (hash % 55)
-              if (elapsed < delay) continue
-              // Gradual approach after their delay
-              const agentElapsed = elapsed - delay
-              const progress = Math.min(agentElapsed / 30, 1) // 30s to arrive after departing
-              const coords = (f.geometry as GeoJSON.Point).coordinates
-              // Slight spread so they don't all land on same point
-              const spread = 0.003 * (1 - progress * 0.7)
-              const ox = Math.sin(hash * 0.7) * spread
-              const oy = Math.cos(hash * 1.3) * spread
-              coords[0] = coords[0] + (st.lng + ox - coords[0]) * progress
-              coords[1] = coords[1] + (st.lat + oy - coords[1]) * progress
+          if (st && off > 0) {
+            // Convert sim offset to hour of day
+            const simHour = (start + off) / 3600000 % 24
+            // Only activate within 1 hour before event time
+            const eventHour = st.timeHour || 19
+            const hoursUntil = eventHour - simHour
+            if (hoursUntil <= 1 && hoursUntil >= -2) {
+              // Progress: 0 at 1hr before, 1 at event time
+              const progress = Math.min(Math.max((1 - hoursUntil) / 1, 0), 1)
+              const maxAgents = st.agentCount || 50
+              let affected = 0
+              for (let fi = 0; fi < features.length && affected < maxAgents; fi++) {
+                const f = features[fi]
+                const name = (f.properties?.name || "") as string
+                const hash = name.split("").reduce((a, c) => a + c.charCodeAt(0), 0)
+                // Deterministic selection — pick specific agents
+                if (hash % 3 !== 0) continue // ~33% base filter
+                affected++
+                // Stagger: each agent starts moving at different progress thresholds
+                const threshold = (hash % 20) / 20 * 0.6 // 0-0.6
+                if (progress < threshold) continue
+                const agentProgress = Math.min((progress - threshold) / 0.4, 1)
+                const coords = (f.geometry as GeoJSON.Point).coordinates
+                const spread = 0.004 * (1 - agentProgress * 0.6)
+                const ox = Math.sin(hash * 0.7) * spread
+                const oy = Math.cos(hash * 1.3) * spread
+                coords[0] = coords[0] + (st.lng + ox - coords[0]) * agentProgress
+                coords[1] = coords[1] + (st.lat + oy - coords[1]) * agentProgress
+              }
             }
           }
           src.setData({ type: "FeatureCollection", features })

@@ -1,6 +1,6 @@
 // Shared in-memory world events store
 let worldEvents: string[] = ["Sunny day in Seattle, 68°F. Light breeze."]
-let swarmTarget: { lng: number; lat: number; label: string } | null = null
+let swarmTarget: { lng: number; lat: number; label: string; timeHour: number; agentCount: number } | null = null
 
 export function getWorldEvents(): string[] {
   return worldEvents
@@ -19,6 +19,6 @@ export function getSwarmTarget() {
   return swarmTarget
 }
 
-export function setSwarmTarget(target: { lng: number; lat: number; label: string } | null) {
+export function setSwarmTarget(target: { lng: number; lat: number; label: string; timeHour: number; agentCount: number } | null) {
   swarmTarget = target
 }

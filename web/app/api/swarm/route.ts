@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { addWorldEvent, setSwarmTarget } from "@/lib/world-events"
+import { addWorldEvent, setSwarmTarget, getSwarmTarget } from "@/lib/world-events"
 
 const TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -14,34 +14,28 @@ async function geocode(place: string): Promise<{ lng: number; lat: number } | nu
   } catch { return null }
 }
 
-// POST: inject event + set swarm target
 export async function POST(req: NextRequest) {
-  const { event, location } = await req.json()
+  const { event, location, timeHour, agentCount } = await req.json()
   if (!event || !location) {
     return NextResponse.json({ error: "event and location required" }, { status: 400 })
   }
 
-  // Geocode the location
   const coords = await geocode(location)
   if (!coords) {
     return NextResponse.json({ error: `Could not geocode: ${location}` }, { status: 400 })
   }
 
-  // Set the swarm target and add event
-  setSwarmTarget({ ...coords, label: location })
+  setSwarmTarget({ ...coords, label: location, timeHour: timeHour || 19, agentCount: agentCount || 50 })
   addWorldEvent(event)
 
-  return NextResponse.json({ event, target: { ...coords, label: location } })
+  return NextResponse.json({ event, target: { ...coords, label: location, timeHour, agentCount } })
 }
 
-// DELETE: clear swarm
 export async function DELETE() {
   setSwarmTarget(null)
   return NextResponse.json({ cleared: true })
 }
 
-// GET: current swarm target
 export async function GET() {
-  const { getSwarmTarget } = await import("@/lib/world-events")
   return NextResponse.json({ target: getSwarmTarget() })
 }

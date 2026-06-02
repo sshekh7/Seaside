@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Database, Flask, FlowArrow, MapTrifold, Robot } from "@phosphor-icons/react/dist/ssr"
+import { Database, Flask, FlowArrow, Info, MapTrifold, Robot } from "@phosphor-icons/react/dist/ssr"
 
 import { Logo } from "@/components/logo"
 import {
@@ -20,6 +20,7 @@ const navItems = [
   { title: "Experiments", href: "/experiments", icon: Flask },
   { title: "Pipeline", href: "/pipeline", icon: FlowArrow },
   { title: "Create agent", href: "/agents/new", icon: Robot },
+  { title: "About", href: "/about", icon: Info },
 ] as const
 
 export function AppSidebar() {

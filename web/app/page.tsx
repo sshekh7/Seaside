@@ -16,6 +16,14 @@ export default function Page() {
       >
         Seaside
       </span>
+      <div className="pointer-events-none absolute left-8 top-6 z-10 max-w-md sm:left-12 sm:top-10">
+        <p className={`${display.className} text-xl font-medium leading-tight text-foreground/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] sm:text-2xl`}>
+          A city that thinks.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-foreground/60 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]">
+          400 AI agents living in Seattle — reasoning, commuting, adapting to real-world events. Drop a headline, watch the city react.
+        </p>
+      </div>
     </div>
   )
 }
